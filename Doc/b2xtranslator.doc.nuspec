@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>b2xtranslator.doc</id>
-    <version>1.0.5</version>
+    <version>1.0.6</version>
     <authors>b2xtranslator.doc</authors>
     <owners>b2xtranslator.doc</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>

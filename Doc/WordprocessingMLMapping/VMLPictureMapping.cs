@@ -26,7 +26,7 @@ namespace b2xtranslator.WordprocessingMLMapping
         {
             this._targetPart = targetPart;
             this._olePreview = olePreview;
-            this._imageData = this._nodeFactory.CreateElement("v", "imageData", OpenXmlNamespaces.VectorML);
+            this._imageData = this._nodeFactory.CreateElement("v", "imagedata", OpenXmlNamespaces.VectorML);
         }
 
         public void Apply(PictureDescriptor pict)
