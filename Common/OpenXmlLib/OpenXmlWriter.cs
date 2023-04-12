@@ -44,13 +44,13 @@ namespace b2xtranslator.OpenXmlLib
         {
             this.Close();
             this.fileOutputStream = new FileStream(fileName, FileMode.OpenOrCreate, FileAccess.ReadWrite);
-            this.outputArchive = new ZipArchive(this.fileOutputStream, ZipArchiveMode.Update);
+            this.outputArchive = new ZipArchive(this.fileOutputStream, ZipArchiveMode.Create);
         }
 
         public void Open(Stream output)
         {
             this.Close();
-            this.outputArchive = new ZipArchive(output, ZipArchiveMode.Update);
+            this.outputArchive = new ZipArchive(output, ZipArchiveMode.Create);
         }
 
         public void Close()
