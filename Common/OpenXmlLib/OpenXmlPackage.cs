@@ -17,6 +17,8 @@ namespace b2xtranslator.OpenXmlLib
         protected int _imageCounter;
         protected int _vmlCounter;
         protected int _oleCounter;
+
+        protected bool _isClosed = false;
         #endregion
 
         public enum DocumentType
@@ -47,6 +49,13 @@ namespace b2xtranslator.OpenXmlLib
 
         public virtual void Close()
         {
+            // .net core will call dispose for each locally scoped variable set to this instance which will duplicate the package parts 
+            // This check ensures we only write the package once.
+            if (_isClosed)
+            {
+                return;
+            }
+
             // serialize the package on closing
             var writer = new OpenXmlWriter();
             writer.Open(this.FileName);
@@ -54,6 +63,8 @@ namespace b2xtranslator.OpenXmlLib
             this.WritePackage(writer);
 
             writer.Close();
+
+            _isClosed = true;
         }
 
         public string FileName

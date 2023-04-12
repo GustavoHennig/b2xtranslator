@@ -54,18 +54,19 @@ namespace b2xtranslator.doc2x
                     //prepare the output document
                     var outType = Converter.DetectOutputType(doc);
                     string conformOutputFile = Converter.GetConformFilename(ChoosenOutputFile, outType);
-                    var docx = WordprocessingDocument.Create(conformOutputFile, outType);
+                    using (var docx = WordprocessingDocument.Create(conformOutputFile, outType))
+                    {
+                        //start time
+                        var start = DateTime.Now;
+                        TraceLogger.Info("Converting file {0} into {1}", InputFile, conformOutputFile);
 
-                    //start time
-                    var start = DateTime.Now;
-                    TraceLogger.Info("Converting file {0} into {1}", InputFile, conformOutputFile);
+                        //convert the document
+                        Converter.Convert(doc, docx);
 
-                    //convert the document
-                    Converter.Convert(doc, docx);
-
-                    var end = DateTime.Now;
-                    var diff = end.Subtract(start);
-                    TraceLogger.Info("Conversion of file {0} finished in {1} seconds", InputFile, diff.TotalSeconds.ToString(CultureInfo.InvariantCulture));
+                        var end = DateTime.Now;
+                        var diff = end.Subtract(start);
+                        TraceLogger.Info("Conversion of file {0} finished in {1} seconds", InputFile, diff.TotalSeconds.ToString(CultureInfo.InvariantCulture));
+                    }
                 }
             }
             catch (DirectoryNotFoundException ex)

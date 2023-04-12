@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>b2xtranslator</id>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <authors>Evolution Recruitment Solutions and DIaLOGIKa</authors>
     <owners>Evolution Recruitment Solutions and DIaLOGIKa</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -16,6 +16,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="bin\Release\**\b2xtranslator.dll" target="build" />
+    <file src="bin\Release\netcoreapp2.0\b2xtranslator.dll" target="lib\netstandard2.0" />
   </files>
 </package>

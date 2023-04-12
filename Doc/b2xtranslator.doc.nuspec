@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>b2xtranslator.doc</id>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <authors>b2xtranslator.doc</authors>
     <owners>b2xtranslator.doc</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
@@ -14,6 +14,6 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="bin\Release\**\b2xtranslator.doc.dll" target="build" />
+    <file src="bin\Release\netcoreapp2.0\b2xtranslator.doc.dll" target="lib\netstandard2.0" />
   </files>
 </package>
