@@ -18,6 +18,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FC08F5E1-1AD6-43BA-A9E2-6245DA2DA769}"
 	ProjectSection(SolutionItems) = preProject
 		LICENSE = LICENSE
+		nuget.config = nuget.config
 		README.md = README.md
 	EndProjectSection
 EndProject
@@ -30,12 +31,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "b2xtranslator.ppt", "Ppt\b2xtranslator.ppt.csproj", "{84AD595E-CAD1-4990-AC56-C466A4B6D2E0}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "b2xtranslator.xls", "Xls\b2xtranslator.xls.csproj", "{1F35F775-4F50-4724-A429-DAA35021CFCD}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Package", "Package", "{F9035167-29AA-4B9F-A08A-7BB5981C109B}"
-	ProjectSection(SolutionItems) = preProject
-		Package\b2xtranslator.doc.nuspec = Package\b2xtranslator.doc.nuspec
-		Package\b2xtranslator.nuspec = Package\b2xtranslator.nuspec
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
