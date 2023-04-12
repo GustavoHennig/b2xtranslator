@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26730.16
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33414.496
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shell", "Shell", "{B01712A7-034B-48C4-9997-8E3613908080}"
 EndProject
@@ -30,6 +30,12 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "b2xtranslator.ppt", "Ppt\b2xtranslator.ppt.csproj", "{84AD595E-CAD1-4990-AC56-C466A4B6D2E0}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "b2xtranslator.xls", "Xls\b2xtranslator.xls.csproj", "{1F35F775-4F50-4724-A429-DAA35021CFCD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Package", "Package", "{3F537BF5-EC22-4DB8-AC51-1649753A0284}"
+	ProjectSection(SolutionItems) = preProject
+		D:\Downloads\b2xtranslator.doc.nuspec = D:\Downloads\b2xtranslator.doc.nuspec
+		D:\Downloads\b2xtranslator.nuspec = D:\Downloads\b2xtranslator.nuspec
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
