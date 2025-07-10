@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>b2xtranslator</id>
+    <version>1.0.4</version>
+    <authors>Evolution Recruitment Solutions and DIaLOGIKa</authors>
+    <owners>Evolution Recruitment Solutions and DIaLOGIKa</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <licenseUrl>https://github.com/EvolutionJobs/b2xtranslator-core/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/EvolutionJobs/b2xtranslator-core</projectUrl>
+    <description>Convert binary legacy Microsoft Office formats to OpenXML</description>
+    <copyright>2017, Evolution Recruitment Solutions and 2008-2009, DIaLOGIKa</copyright>
+    <repository type="Git" url="https://github.com/EvolutionJobs/b2xtranslator-core" />
+    <dependencies>
+      <group targetFramework=".NETStandard2.0" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\Release\netcoreapp2.0\b2xtranslator.dll" target="lib\netstandard2.0" />
+  </files>
+</package>
