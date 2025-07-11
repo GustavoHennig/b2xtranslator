@@ -28,5 +28,5 @@ nuget.config
 samples-local/
 samples/out/
 samples/*.txt
-!examples/*.expected.txt
+!samples/*.expected.txt
 samples/compare-doc-to-txt.ps1
