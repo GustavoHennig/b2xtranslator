@@ -2,15 +2,14 @@ using System;
 using System.IO;
 using System.Linq;
 using Xunit;
-using WvWareNet;
 using System.Diagnostics;
 using Xunit.Sdk;
 using b2xtranslator.txt;
 using b2xtranslator.txt.TextMapping;
 
-namespace WvWareNet.Tests
+namespace b2xtranslator.Tests
 {
-    public class ExamplesDocTests
+    public class SampleDocFileTextExtractionTests
     {
         public static IEnumerable<object[]> DocFiles()
         {
