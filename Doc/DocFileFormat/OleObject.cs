@@ -72,7 +72,10 @@ namespace b2xtranslator.WordprocessingMLMapping
             {
                 if (streamname.StartsWith(this.Path))
                 {
-                    this.Streams.Add(streamname.Substring(streamname.LastIndexOf("\\") + 1), docStorage.GetStream(streamname));
+
+                    string sKey = streamname.Substring(streamname.LastIndexOf("\\") + 1);
+
+                    this.Streams.TryAdd(sKey, docStorage.GetStream(streamname));
                 }
             }
 

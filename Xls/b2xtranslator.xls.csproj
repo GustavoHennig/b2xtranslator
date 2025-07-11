@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+<TargetFramework>net8.0</TargetFramework>
     <AssemblyOriginatorKeyFile>..\..\key.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
@@ -8,5 +8,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\b2xtranslator.csproj" />
+	  <ProjectReference Include="..\Common.CompoundFileBinary\b2xtranslator.CompoundFileBinary.csproj" />
   </ItemGroup>
 </Project>

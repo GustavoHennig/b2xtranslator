@@ -23,3 +23,9 @@ bld/
 
 # Package sources
 nuget.config
+
+# Samples
+samples-local/
+samples/out/
+samples/*.txt
+!examples/*.expected.txt

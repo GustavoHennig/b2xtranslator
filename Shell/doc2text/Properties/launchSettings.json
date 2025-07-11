@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "doct2text": {
+      "commandName": "Project",
+      "commandLineArgs": "../../samples/AIOOB-Tap.doc",
+      "workingDirectory": "."
+    }
+  }
+}

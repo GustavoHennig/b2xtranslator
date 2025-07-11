@@ -243,6 +243,11 @@ namespace b2xtranslator.DocFileFormat
 
                     //get count of bytes
                     int cb = fcEnd - fcStart;
+
+                    if (cb <= 0)
+                    {
+                        return new List<char>();
+                    }
                     var bytes = new byte[cb];
 
                     //read all bytes 

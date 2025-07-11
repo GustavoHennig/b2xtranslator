@@ -1,5 +1,6 @@
 using b2xtranslator.StructuredStorage.Reader;
 using b2xtranslator.Tools;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -39,7 +40,7 @@ namespace UnitTests
                 var extractionTime = new TimeSpan();
 
                 try
-                {                   
+                {
                     // init StorageReader
                     storageReader = new StructuredStorageReader(file);
 

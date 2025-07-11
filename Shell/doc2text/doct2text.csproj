@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Docx\b2xtranslator.docx.csproj" />
+    <ProjectReference Include="..\..\Doc\b2xtranslator.doc.csproj" />
+    <ProjectReference Include="..\..\Common\b2xtranslator.csproj" />
+    <ProjectReference Include="..\..\Text\b2xtranslator.txt.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+</Project>
