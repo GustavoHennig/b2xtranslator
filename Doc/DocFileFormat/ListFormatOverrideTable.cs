@@ -10,29 +10,43 @@ namespace b2xtranslator.DocFileFormat
 
         public ListFormatOverrideTable(FileInformationBlock fib, VirtualStream tableStream)
         {
-            if (fib.lcbPlfLfo > 0)
+            if (fib.lcbPlfLfo <= 0)
             {
-                var reader = new VirtualStreamReader(tableStream);
-                reader.BaseStream.Seek((long)fib.fcPlfLfo, System.IO.SeekOrigin.Begin);
+                return;
+            }
 
-                //read the count of LFOs
-                int count = reader.ReadInt32();
+            if (fib.fcPlfLfo + fib.lcbPlfLfo > tableStream.Length)
+            {
+                // TODO: Log this
+                return;
+            }
 
-                //read the LFOs
-                for (int i = 0; i < count; i++)
+
+            var reader = new VirtualStreamReader(tableStream);
+            reader.BaseStream.Seek((long)fib.fcPlfLfo, System.IO.SeekOrigin.Begin);
+
+            //read the count of LFOs
+            int count = reader.ReadInt32();
+
+            // Sanity check
+            if (count < 0 || count > 1000)
+                return;
+
+            //read the LFOs
+            for (int i = 0; i < count; i++)
+            {
+                this.Add(new ListFormatOverride(reader, LFO_LENGTH));
+            }
+
+            //read the LFOLVLs
+            for (int i = 0; i < count; i++)
+            {
+                for (int j = 0; j < this[i].clfolvl; j++)
                 {
-                    this.Add(new ListFormatOverride(reader, LFO_LENGTH));
-                }
-
-                //read the LFOLVLs
-                for (int i = 0; i < count; i++)
-                {
-                    for (int j = 0; j < this[i].clfolvl; j++)
-                    {
-                        this[i].rgLfoLvl[j] = new ListFormatOverrideLevel(reader, LFOLVL_LENGTH);
-                    }
+                    this[i].rgLfoLvl[j] = new ListFormatOverrideLevel(reader, LFOLVL_LENGTH);
                 }
             }
+
         }
     }
 }

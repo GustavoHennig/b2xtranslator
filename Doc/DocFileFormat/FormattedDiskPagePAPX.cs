@@ -39,7 +39,7 @@ namespace b2xtranslator.DocFileFormat
             //create and fill the array with the adresses
             this.rgfc = new int[this.crun + 1];
             int j = 0;
-            for (int i = 0; i < this.rgfc.Length; i++)
+            for (int i = 0; i < this.rgfc.Length && bytes.Length > j; i++)
             {
                 this.rgfc[i] = System.BitConverter.ToInt32(bytes, j);
                 j += 4;

@@ -94,8 +94,10 @@ namespace b2xtranslator.txt.TextMapping
                 while (tai.fInTable)
                 {
                     cp = writeTableRow(cp, grid, nestingLevel);
-                    fc = _doc.PieceTable.FileCharacterPositions[cp];
-                    papx = findValidPapx(fc);
+                    if(!_doc.PieceTable.FileCharacterPositions.TryGetValue(cp, out fc))
+                        { break;
+                    }
+                            papx = findValidPapx(fc);
                     tai = new TableInfo(papx);
                 }
             }
@@ -114,7 +116,8 @@ namespace b2xtranslator.txt.TextMapping
         protected int writeTableRow(int initialCp, List<short> grid, uint nestingLevel)
         {
             int cp = initialCp;
-            int fc = _doc.PieceTable.FileCharacterPositions[cp];
+            if (!_doc.PieceTable.FileCharacterPositions.TryGetValue(cp, out int fc)) return cp++;
+
             var papx = findValidPapx(fc);
             var tai = new TableInfo(papx);
 
@@ -127,7 +130,7 @@ namespace b2xtranslator.txt.TextMapping
             var tapx = new TablePropertyExceptions(rowEndPapx, _doc.DataStream);
             var chpxs = _doc.GetCharacterPropertyExceptions(fcRowEnd, fcRowEnd + 1);
 
-            if (tapx != null)
+            if (tapx != null && chpxs.Count > 0)
             {
                 tapx.Convert(new TableRowPropertiesMapping(_writer, chpxs[0]));
             }
@@ -159,7 +162,8 @@ namespace b2xtranslator.txt.TextMapping
                     cellIndex++;
 
                     //each cell has it's own PAPX
-                    fc = _doc.PieceTable.FileCharacterPositions[cp];
+                    if (!_doc.PieceTable.FileCharacterPositions.TryGetValue(cp, out fc))
+                        break;
                     papx = findValidPapx(fc);
                     tai = new TableInfo(papx);
                 }
@@ -207,10 +211,13 @@ namespace b2xtranslator.txt.TextMapping
             while (cp < cpCellEnd)
             {
                 //cp = writeParagraph(cp);
+                if (_doc.PieceTable.FileCharacterPositions.Count <= cp)
+                    break;
+
                 int fc = _doc.PieceTable.FileCharacterPositions[cp];
                 var papx = findValidPapx(fc);
                 var tai = new TableInfo(papx);
-
+                int lastCp = cp;
                 //cp = writeParagraph(cp);
 
                 if (tai.iTap > nestingLevel)
@@ -230,6 +237,13 @@ namespace b2xtranslator.txt.TextMapping
                     //this PAPX is for a normal paragraph
                     cp = writeParagraph(cp);
                 }
+
+                if (lastCp == cp)
+                {
+                    // For some reason write failed
+                    cp++;
+                }
+
             }
 
 
@@ -286,6 +300,10 @@ namespace b2xtranslator.txt.TextMapping
                 papx = findValidPapx(fcRowEnd);
                 tai = new TableInfo(papx);
                 fcRowEnd = findRowEndFc(cp, out cp, nestingLevel);
+                if (fcRowEnd < 0)
+                {
+                    break;
+                }
             }
 
             //build the grid based on the boundaries
@@ -308,6 +326,19 @@ namespace b2xtranslator.txt.TextMapping
         protected int findRowEndFc(int initialCp, out int rowEndCp, uint nestingLevel)
         {
             int cp = initialCp;
+
+            if (!_doc.PieceTable.FileCharacterPositions.ContainsKey(cp))
+            {
+                rowEndCp = cp;
+                return -1;
+            }
+
+            if (_doc.Text.Count <= cp)
+            {
+                rowEndCp = cp++;
+                return -1; 
+            }
+
             int fc = _doc.PieceTable.FileCharacterPositions[cp];
             var papx = findValidPapx(fc);
             var tai = new TableInfo(papx);
@@ -321,11 +352,21 @@ namespace b2xtranslator.txt.TextMapping
                     while (_doc.Text[cp] != TextMark.ParagraphEnd)
                     {
                         cp++;
+                        if (_doc.Text.Count <= cp)
+                        {
+                            break;
+                        }
                     }
                     fc = _doc.PieceTable.FileCharacterPositions[cp];
                     papx = findValidPapx(fc);
                     tai = new TableInfo(papx);
                     cp++;
+
+
+                    if (_doc.Text.Count <= cp)
+                    {
+                        break;
+                    }
                 }
             }
             else 
@@ -337,14 +378,28 @@ namespace b2xtranslator.txt.TextMapping
                     while (_doc.Text[cp] != TextMark.CellOrRowMark)
                     {
                         cp++;
+
+                        if (_doc.Text.Count <= cp)
+                        {
+                            break;
+                        }
                     }
                     fc = _doc.PieceTable.FileCharacterPositions[cp];
                     papx = findValidPapx(fc);
                     tai = new TableInfo(papx);
                     cp++;
+
+
+                    if (_doc.Text.Count <= cp)
+                    {
+                        break;
+                    }
                 }
             }
-
+            if(cp == initialCp)
+            {
+                cp++;
+            }
             rowEndCp = cp;
             return fc;
         }
@@ -375,6 +430,8 @@ namespace b2xtranslator.txt.TextMapping
                     papx = findValidPapx(fc);
                     tai = new TableInfo(papx);
                     cp++;
+                    if (cp >= _doc.Text.Count)
+                        break;
                 }
             }
             else
@@ -386,11 +443,15 @@ namespace b2xtranslator.txt.TextMapping
                     while (_doc.Text[cp] != TextMark.CellOrRowMark)
                     {
                         cp++;
+                        if (cp >= _doc.Text.Count)
+                            break;
                     }
                     fc = _doc.PieceTable.FileCharacterPositions[cp];
                     papx = findValidPapx(fc);
                     tai = new TableInfo(papx);
                     cp++;
+                    if (cp >= _doc.Text.Count)
+                        break;
                 }
             }
 
@@ -423,6 +484,8 @@ namespace b2xtranslator.txt.TextMapping
                 while (_doc.Text[cpCellEnd] != TextMark.CellOrRowMark)
                 {
                     cpCellEnd++;
+                    if (cpCellEnd >= _doc.Text.Count)
+                        break;
                 }
                 cpCellEnd++;
             }
@@ -444,6 +507,13 @@ namespace b2xtranslator.txt.TextMapping
         {
             //search the paragraph end
             int cpParaEnd = cp;
+
+            if (cp >= _doc.Text.Count)
+            {
+                cpParaEnd++;
+                return cpParaEnd;
+            }
+
             while (_doc.Text[cpParaEnd] != TextMark.ParagraphEnd &&
                 _doc.Text[cpParaEnd] != TextMark.CellOrRowMark &&
                 !(_doc.Text[cpParaEnd] == TextMark.PageBreakOrSectionMark && isSectionEnd(cpParaEnd)))
@@ -486,6 +556,11 @@ namespace b2xtranslator.txt.TextMapping
             var chpxFcs = _doc.GetFileCharacterPositions(fc, fcEnd);
             chpxFcs.Add(fcEnd);
 
+            if (chpxs.Count == 0)
+            {
+                return cpEnd++;
+            }
+
             //the last of these CHPX formats the paragraph end mark
             var paraEndChpx = chpxs[chpxs.Count-1];
 
@@ -517,6 +592,8 @@ namespace b2xtranslator.txt.TextMapping
             {
                 //get the FC range for this run
                 int fcChpxStart = chpxFcs[i];
+                if (i + 1 >= chpxFcs.Count)
+                    break;
                 int fcChpxEnd = chpxFcs[i + 1];
 
                 //it's the first chpx and it starts before the paragraph

@@ -14,11 +14,13 @@ This fork aims to significantly expand the capabilities of the original implemen
 - **Extended Format Support**: Support for older Word file formats (Word 6.0, Word 95, etc.)
 - **Robust Error Handling**: Graceful handling of corrupted or non-standard files
 
-### 🔧 Critical Bug Fixes (In Progress)
+### 🔧 Pending Issues
 - **Infinite Loop Resolution**: Address parsing loops that cause applications to hang
 - **Performance Optimization**: Fix extremely slow conversion scenarios
 - **Memory Management**: Resolve memory leaks in large file processing
 - **Parsing Stability**: Fix crashes and exceptions during document parsing
+- Lists are not extracted with proper bullet symbols during text conversion
+- Internal markers are being written to the output: HYPERLINK, MERGEFORMAT, DOCPROPERTY, PAGEREF... See EL_TechnicalTemplateHandling.doc, ProblemExtracting.doc, Bug51686.doc
 
 ### 📊 Reliability Improvements (Planned)
 - Enhanced validation of input files before processing

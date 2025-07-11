@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Text;
 
 namespace b2xtranslator.txt
@@ -6,6 +7,7 @@ namespace b2xtranslator.txt
     public class TextWriter : IWriter
     {
         private readonly StringBuilder _sb = new StringBuilder();
+        private readonly Stack<string> _elementStack = new Stack<string>();
 
         public void Flush()
         {
@@ -67,7 +69,20 @@ namespace b2xtranslator.txt
 
         public void WriteEndElement()
         {
-            // Ignore for plain text
+            if (_elementStack.Count > 0)
+            {
+                string element = _elementStack.Pop();
+                
+                // Add appropriate separators for table elements
+                if (element == "tc")  // Table cell
+                {
+                    _sb.Append("\t");
+                }
+                else if (element == "tr")  // Table row
+                {
+                    _sb.Append(Environment.NewLine);
+                }
+            }
         }
 
         public void WriteNode(INode node)
@@ -90,10 +105,12 @@ namespace b2xtranslator.txt
 
         public void WriteStartElement(params string[] values)
         {
-            //foreach (var v in values)
-            //{
-            //    _sb.Append(v);
-            //}
+            // Track element names for proper closing separators
+            if (values.Length >= 2)
+            {
+                string elementName = values[1]; // The local name is usually the second parameter
+                _elementStack.Push(elementName);
+            }
         }
 
         public void WriteString(string v)

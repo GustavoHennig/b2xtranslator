@@ -237,9 +237,13 @@ namespace b2xtranslator.txt.TextMapping
                     case (int)SinglePropertyModifier.OperationCode.sprmCFtcBi:
                         // complex script font
                         var cs = _nodeFactory.CreateAttribute("w", "cs", OpenXmlNamespaces.WordprocessingML);
-                        var ffnCs = (FontFamilyName)_doc.FontTable.Data[BitConverter.ToUInt16(sprm.Arguments, 0)];
-                        cs.Value = ffnCs.xszFtn;
-                        rFonts.Attributes.Append(cs);
+                        int idxFontData = BitConverter.ToUInt16(sprm.Arguments, 0);
+                        if (idxFontData < _doc.FontTable.Data.Count)
+                        {
+                            var ffnCs = (FontFamilyName)_doc.FontTable.Data[idxFontData];
+                            cs.Value = ffnCs.xszFtn;
+                            rFonts.Attributes.Append(cs);
+                        }
                         break;
 
                     //Underlining
@@ -371,6 +375,9 @@ namespace b2xtranslator.txt.TextMapping
             {
                 try
                 {
+                    if (istd >= styleSheet.Styles.Count)
+                        break;
+
                     var baseChpx = styleSheet.Styles[istd].chpx;
                     if (baseChpx != null)
                     {

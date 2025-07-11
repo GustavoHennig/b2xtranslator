@@ -38,7 +38,7 @@ namespace b2xtranslator.StructuredStorage.Reader
             string rawName = this._fileHandler.ReadString(64);
             ushort lengthOfName = this._fileHandler.ReadUInt16();
             int nameLength = (lengthOfName / 2) - 1;
-            if (nameLength > rawName.Length)
+            if (nameLength > rawName.Length || nameLength < 0)
                 nameLength = rawName.Length;
             this.Name = rawName.Substring(0, nameLength);
 

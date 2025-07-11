@@ -61,9 +61,12 @@ namespace b2xtranslator.txt.TextMapping
             //append style id , do not append "Normal" style (istd 0)
             var pStyle = _nodeFactory.CreateElement("w", "pStyle", OpenXmlNamespaces.WordprocessingML);
             var styleId = _nodeFactory.CreateAttribute("w", "val", OpenXmlNamespaces.WordprocessingML);
-            styleId.Value = StyleSheetMapping.MakeStyleId(_parentDoc.Styles.Styles[papx.istd]);
-            pStyle.Attributes.Append(styleId);
-            _pPr.AppendChild(pStyle);
+            if (papx.istd < _parentDoc.Styles.Styles.Count)
+            {
+                styleId.Value = StyleSheetMapping.MakeStyleId(_parentDoc.Styles.Styles[papx.istd]);
+                pStyle.Attributes.Append(styleId);
+                _pPr.AppendChild(pStyle);
+            }
 
             //append formatting of paragraph end mark
             if (_paraEndChpx != null)

@@ -1434,6 +1434,8 @@ namespace b2xtranslator.DocFileFormat
                                 this.istdClickTypePara = System.BitConverter.ToInt16(bytes, 502);
 
                                 //split byte 504 and 505 into bits
+                                if (bytes.Length <= 505) return;
+
                                 bits = new BitArray(new byte[] { bytes[504], bytes[505] });
                                 this.fLADAllDone = bits[0];
                                 this.fEnvelopeVis = bits[1];
@@ -1533,6 +1535,10 @@ namespace b2xtranslator.DocFileFormat
                                 this.fShowXMLErrors = bits[30];
                                 this.fAlwaysMergeEmptyNamespace = bits[31];
 
+                                if(bytes.Length <= 544)
+                                {
+                                    return;
+                                }
                                 this.cpMaxListCacheMainDoc = System.BitConverter.ToInt32(bytes, 544);
 
                                 //split bytes 548,549 into bits

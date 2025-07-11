@@ -58,8 +58,8 @@ namespace b2xtranslator.Tests
             string expected;
             try
             {
-                result = NormalizeText(Converter.ConvertFileToString(docPath));
                 expected = NormalizeText(File.ReadAllText(expectedPath));
+                result = NormalizeText(Converter.ConvertFileToString(docPath));
                 bool isEqual = string.Equals(result, expected, StringComparison.InvariantCultureIgnoreCase);
                 if (!isEqual)
                 {

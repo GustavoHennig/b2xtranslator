@@ -139,7 +139,7 @@ namespace b2xtranslator.txt.TextMapping
             var pgNumType = _nodeFactory.CreateElement("w", "pgNumType", OpenXmlNamespaces.WordprocessingML);
             
             //convert headers of this section
-            if (_ctx.Doc.HeaderAndFooterTable.OddHeaders.Count > 0)
+            if (_ctx.Doc.HeaderAndFooterTable.OddHeaders.Count > 0 && _ctx.Doc.HeaderAndFooterTable.OddHeaders.Count < _sectNr)
             {
                 var evenHdr = _ctx.Doc.HeaderAndFooterTable.EvenHeaders[_sectNr];
                 if (evenHdr != null)
@@ -167,7 +167,7 @@ namespace b2xtranslator.txt.TextMapping
             }
 
             //convert footers of this section
-            if (_ctx.Doc.HeaderAndFooterTable.OddFooters.Count > 0)
+            if (_ctx.Doc.HeaderAndFooterTable.OddFooters.Count > 0 && _ctx.Doc.HeaderAndFooterTable.OddFooters.Count < _sectNr)
             {
                 var evenFtr = _ctx.Doc.HeaderAndFooterTable.EvenFooters[_sectNr];
                 if (evenFtr != null)

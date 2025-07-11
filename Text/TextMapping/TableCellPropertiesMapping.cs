@@ -68,6 +68,7 @@ namespace b2xtranslator.txt.TextMapping
                     case  SinglePropertyModifier.OperationCode.sprmTDefTable:
                         var tdef = new SprmTDefTable(sprm.Arguments);
                         _tGrid = tdef.rgdxaCenter;
+                        if (tdef.rgTc80.Length <= _cellIndex) break;
                         _tcDef = tdef.rgTc80[_cellIndex];
 
                         appendValueElement(_tcPr, "textDirection", _tcDef.textFlow.ToString(), false);
@@ -209,7 +210,7 @@ namespace b2xtranslator.txt.TextMapping
 
             //grid span
             _gridSpan = 1;
-            if (_width > _grid[_gridIndex])
+            if (_gridIndex < _grid.Count && _width > _grid[_gridIndex])
             {
                 //check the number of merged cells
                 int w = _grid[_gridIndex];

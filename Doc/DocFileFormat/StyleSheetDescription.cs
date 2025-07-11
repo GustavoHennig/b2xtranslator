@@ -435,8 +435,11 @@ namespace b2xtranslator.DocFileFormat
                 }
 
                 //get the count of bytes for UPX
-                ushort cbUPX = System.BitConverter.ToUInt16(bytes, upxOffset);
-
+                ushort cbUPX = 0;
+                if (upxOffset < bytes.Length)
+                {
+                    cbUPX = System.BitConverter.ToUInt16(bytes, upxOffset);
+                }
                 if (cbUPX > 0)
                 {
                     //copy the bytes
