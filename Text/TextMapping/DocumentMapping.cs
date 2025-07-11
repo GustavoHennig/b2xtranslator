@@ -960,7 +960,10 @@ namespace b2xtranslator.txt.TextMapping
                 }
                 else if (c > 31 && c != 0xFFFF)
                 {
-                    _writer.WriteChars(new char[] { c }, 0, 1);
+                    // Convert Windows-1252 control characters to proper Unicode
+                    // TODO: Review this, seems a poor workaround
+                    char convertedChar = ConvertWindows1252ToUnicode(c);
+                    _writer.WriteChars(new char[] { convertedChar }, 0, 1);
                 }
 
                 cp++;
@@ -1032,6 +1035,38 @@ namespace b2xtranslator.txt.TextMapping
             _writer.WriteStartElement("w", "bookmarkEnd", OpenXmlNamespaces.WordprocessingML);
             _writer.WriteAttributeString("w", "id", OpenXmlNamespaces.WordprocessingML, bookmark.ibkl.ToString());
             _writer.WriteEndElement();
+        }
+
+        #endregion
+
+        #region CharacterConversion
+
+        /// <summary>
+        /// Converts Windows-1252 control characters to proper Unicode equivalents
+        /// </summary>
+        /// <param name="c">The character to convert</param>
+        /// <returns>The converted Unicode character</returns>
+        protected char ConvertWindows1252ToUnicode(char c)
+        {
+            // Map Windows-1252 control characters (0x80-0x9F) to Unicode
+            switch ((int)c)
+            {
+                case 0x91: return '\u2018'; // LEFT SINGLE QUOTATION MARK
+                case 0x92: return '\u2019'; // RIGHT SINGLE QUOTATION MARK
+                case 0x93: return '\u201C'; // LEFT DOUBLE QUOTATION MARK
+                case 0x94: return '\u201D'; // RIGHT DOUBLE QUOTATION MARK
+                case 0x95: return '\u2022'; // BULLET
+                case 0x96: return '\u2013'; // EN DASH
+                case 0x97: return '\u2014'; // EM DASH
+                case 0x98: return '\u02DC'; // SMALL TILDE
+                case 0x99: return '\u2122'; // TRADE MARK SIGN
+                case 0x9A: return '\u0161'; // LATIN SMALL LETTER S WITH CARON
+                case 0x9B: return '\u203A'; // SINGLE RIGHT-POINTING ANGLE QUOTATION MARK
+                case 0x9C: return '\u0153'; // LATIN SMALL LIGATURE OE
+                case 0x9E: return '\u017E'; // LATIN SMALL LETTER Z WITH CARON
+                case 0x9F: return '\u0178'; // LATIN CAPITAL LETTER Y WITH DIAERESIS
+                default: return c; // Return the character unchanged if no mapping exists
+            }
         }
 
         #endregion
