@@ -96,7 +96,6 @@ namespace b2xtranslator.txt
 
         public void WriteElementString(string? prefix, string localName, string? ns, string? value)
         {
-
             if ("w".Equals(prefix))
             {
                 if ("tab".Equals(localName))
@@ -114,14 +113,8 @@ namespace b2xtranslator.txt
                 else if ("val".Equals(localName) && value != null)
                 {
                     // _sb.Append(value);
-
                 }
             }
-
-            //foreach (var v in values)
-            //{
-            //    _sb.Append(v);
-            //}
         }
 
         public void WriteEndAttribute()
@@ -143,7 +136,7 @@ namespace b2xtranslator.txt
                 // Restaura o elemento pai como atual
                 _currentTextElement = element.Parent ?? _rootTextElement;
 
-                if (element.Content.ToString().Contains("List Number 1 (Level 3)"))
+                if (element.Content.ToString().Contains("GitHub"))
                 {
 
                 }
@@ -169,6 +162,15 @@ namespace b2xtranslator.txt
                         if (!"tc".Equals(element.Parent?.LocalName))
                         {
                             _currentTextElement.PureContent.Append("\n"); // do not use NewLine
+                        }
+                    }else if ("instrText".Equals(element.LocalName))
+                    {
+                        string content = element.Content.ToString().Trim();
+
+                        if(content.StartsWith("HYPERLINK \""))
+                        {
+                            content = content.Replace("HYPERLINK \"", "").Replace("\"", "").Trim();
+                            element.PureContent.Append(content);
                         }
                     }
                 }
@@ -223,7 +225,7 @@ namespace b2xtranslator.txt
 
         public override string ToString()
         {
-            // Unpop all elements from the stack and append their content to the root
+            // Ensure all elements are closed and their content is appended to the root element
             while (_elementStack.Count > 0)
             {
                 WriteEndElement();
