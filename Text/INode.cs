@@ -2,14 +2,6 @@
 namespace b2xtranslator.txt
 {
 
-    public interface IAttribute
-    {
-        string Name { get; }
-        string Value { get; set; }
-
-        void WriteTo(IWriter writer);
-    }
-
     public interface INode
     {
         List<IAttribute> Attributes { get; }

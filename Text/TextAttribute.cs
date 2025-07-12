@@ -8,16 +8,18 @@ namespace b2xtranslator.txt
 {
     public  class TextAttribute : IAttribute
     {
-        public string Name { get; private set; }
-        public string Value { get; set; }
-        public TextAttribute(string name, string value)
+        public string? Prefix { get; private set; }
+        public string LocalName { get; private set; }
+        public string? Value { get; set; } = null;
+        public TextAttribute(string? prefix, string locaName, string? value)
         {
-            this.Name = name;
+            this.Prefix = prefix;
+            this.LocalName = locaName;
             this.Value = value;
         }
         public void WriteTo(IWriter writer)
         {
-            writer.WriteAttributeString(this.Name, this.Value);
+            writer.WriteAttributeString(this.Prefix, LocalName, null, this.Value);
         }
     }
 }

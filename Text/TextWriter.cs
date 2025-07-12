@@ -1,13 +1,77 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq;
 using System.Text;
+using System.Xml.Linq;
 
 namespace b2xtranslator.txt
 {
     public class TextWriter : IWriter
     {
-        private readonly StringBuilder _sb = new StringBuilder();
-        private readonly Stack<string> _elementStack = new Stack<string>();
+        /*
+           <w:p>
+              <w:r>
+                <w:t>Hello world</w:t>
+              </w:r>
+        </w:p>
+         */
+
+        [DebuggerDisplay("{Prefix}:{LocalName}={ToString()}")]
+        class TextElement
+        {
+            public string? Prefix { get; private set; }
+            public string LocalName { get; private set; }
+            public readonly StringBuilder Content = new StringBuilder();
+            public StringBuilder PureContent = new StringBuilder();
+            public TextElement? Parent { get; private set; }
+
+            public List<INode> Nodes { get; set; }
+            public List<IAttribute> Attributes { get; set; }
+            public TextElement(TextElement? parent, string? prefix, string localName, string? value)
+            {
+                Parent = parent;
+                Prefix = prefix;
+                LocalName = localName;
+                if (value != null)
+                {
+                    this.Content.Append(value);
+                }
+            }
+
+            public void Append(string value)
+            {
+                if (value != null)
+                {
+                    Content.Append(value);
+                }
+            }
+            public void Append(char[] chars, int index, int count)
+            {
+                Content.Append(chars, index, count);
+            }
+
+            public void Append(char ch)
+            {
+                Content.Append(ch);
+            }
+            public override string ToString()
+            {
+                return Content.ToString();
+            }
+        }
+
+        //private readonly StringBuilder _mainSb = new StringBuilder();
+        private readonly TextElement _rootTextElement;
+        private TextElement _currentTextElement;
+        private readonly Stack<TextElement> _elementStack;
+
+        public TextWriter()
+        {
+            _rootTextElement = new TextElement(null, null, "root", null);
+            _currentTextElement = _rootTextElement;
+            _elementStack = new Stack<TextElement>();
+        }
 
         public void Flush()
         {
@@ -16,16 +80,32 @@ namespace b2xtranslator.txt
 
         public void WriteAttributeString(string? prefix, string localName, string? ns, string? value)
         {
+            _currentTextElement.Attributes ??= new List<IAttribute>();
+            _currentTextElement.Attributes.Add(new TextAttribute(prefix,localName, value));
+        }
+
+        public void WriteChars(char[] chars, int index, int count)
+        {
+            _currentTextElement.Append(chars, index, count);
+        }
+
+        public void WriteChar(char c)
+        {
+            _currentTextElement.Append(c);
+        }
+
+        public void WriteElementString(string? prefix, string localName, string? ns, string? value)
+        {
 
             if ("w".Equals(prefix))
             {
                 if ("tab".Equals(localName))
                 {
-                    _sb.Append("\t");
+                    _currentTextElement.PureContent.Append("\t");
                 }
                 else if ("br".Equals(localName))
                 {
-                    _sb.Append(Environment.NewLine);
+                    _currentTextElement.PureContent.Append("\n");
                 }
                 else if ("lang".Equals(localName))
                 {
@@ -33,24 +113,11 @@ namespace b2xtranslator.txt
                 }
                 else if ("val".Equals(localName) && value != null)
                 {
-                   // _sb.Append(value);
+                    // _sb.Append(value);
 
                 }
             }
-        }
 
-        public void WriteChars(char[] chars, int index, int count)
-        {
-            _sb.Append(chars, index, count);
-        }
-
-        public void WriteChar(char c)
-        {
-            _sb.Append(c);
-        }
-
-        public void WriteElementString(params string[] values)
-        {
             //foreach (var v in values)
             //{
             //    _sb.Append(v);
@@ -71,29 +138,63 @@ namespace b2xtranslator.txt
         {
             if (_elementStack.Count > 0)
             {
-                string element = _elementStack.Pop();
-                
-                // Add appropriate separators for table elements
-                if (element == "tc")  // Table cell
+                var element = _elementStack.Pop();
+
+                // Restaura o elemento pai como atual
+                _currentTextElement = element.Parent ?? _rootTextElement;
+
+                if (element.Content.ToString().Contains("List Number 1 (Level 3)"))
                 {
-                    _sb.Append("\t");
+
                 }
-                else if (element == "tr")  // Table row
+                Debug.Print($"Closing {element.Prefix}:{element.LocalName}");
+                Debug.Print($"Content: {element.ToString()}");
+
+                // Para outros elementos estruturais, o conte�do j� foi propagado
+                // dos w:t filhos, ent�o n�o precisamos fazer nada
+
+                // Adiciona separadores ap�s o conte�do, baseado no tipo de elemento
+                if ("w".Equals(element.Prefix))
                 {
-                    _sb.Append(Environment.NewLine);
+                    if ("tc".Equals(element.LocalName))  // Table cell
+                    {
+                        _currentTextElement.PureContent.Append("\t");
+                    }
+                    else if ("tr".Equals(element.LocalName))  // Table row
+                    {
+                        _currentTextElement.PureContent.Append("\n"); // do not use NewLine
+                    }
+                    else if ("p".Equals(element.LocalName))  // Paragraph
+                    {
+                        if (!"tc".Equals(element.Parent?.LocalName))
+                        {
+                            _currentTextElement.PureContent.Append("\n"); // do not use NewLine
+                        }
+                    }
+                }
+
+                _currentTextElement.PureContent.Append(element.PureContent);
+
+                // Propaga conte�do APENAS de elementos w:t
+                if ("w".Equals(element.Prefix) && "t".Equals(element.LocalName))
+                {
+                    _currentTextElement.PureContent.Append(element.Content);
                 }
             }
         }
 
+
         public void WriteNode(INode node)
         {
-            //if (node != null)
-            //{
-            //    _sb.Append(node.ToString());
-            //}
+            if (node != null)
+            {
+                _currentTextElement.Nodes ??= new List<INode>();
+                _currentTextElement.Nodes.Add(node);
+
+            }
         }
 
-        public void WriteStartAttribute(params string[] attrs)
+        public void WriteStartAttribute(string? prefix, string localName, string? ns, string? value)
         {
             // Ignore for plain text
         }
@@ -103,24 +204,31 @@ namespace b2xtranslator.txt
             // Ignore for plain text
         }
 
-        public void WriteStartElement(params string[] values)
+        public void WriteStartElement(string? prefix, string localName, string? ns, string? value)
         {
-            // Track element names for proper closing separators
-            if (values.Length >= 2)
+            //if (("w".Equals(prefix) && "t".Equals(localName)) ||
+            //         localName == "tc" ||
+            //        localName == "tr")
             {
-                string elementName = values[1]; // The local name is usually the second parameter
-                _elementStack.Push(elementName);
+
+                _currentTextElement = new TextElement(_currentTextElement, prefix, localName, value);
+                _elementStack.Push(_currentTextElement);
             }
         }
 
         public void WriteString(string v)
         {
-            _sb.Append(v);
+            _currentTextElement.Append(v);
         }
 
         public override string ToString()
         {
-            return _sb.ToString();
+            // Unpop all elements from the stack and append their content to the root
+            while (_elementStack.Count > 0)
+            {
+                WriteEndElement();
+            }
+            return _rootTextElement.PureContent.ToString();
         }
 
     }

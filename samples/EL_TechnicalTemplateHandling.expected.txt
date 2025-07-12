@@ -1,295 +1,270 @@
- 	EUROPEAN COMMISSION
-DIRECTORATE-GENERAL
-INFORMATICS
-Infrastructure and Logistics Directorate
-Technical solutions and office systems
-	 
 
-Technical&Quality Template
-User's Manual
+		EUROPEAN COMMISSIONDIRECTORATE-GENERALINFORMATICSInfrastructure and Logistics DirectorateTechnical solutions and office systems	
 
 
-Date:	21/07/2005
-
-Version:	0.51
-
-Authors:	Françoise Hontoy
-
-Revised by:	Monique Limbos, Marleen Leunens, Hazel Caplen, Emmanuel Genette
-
-Approved by:	 
 
 
- 
+
+	Date:	
+	Version:	.
+	Authors:	
+	Revised by:	
+	Approved by:	
+
+
 TABLE OF CONTENTS
-1. INTRODUCTION	4
-2. CREATION OF A TECHNICAL AND QUALITY DOCUMENT	4
-2.1. Document Creation	4
-2.2. Properties Dialog	4
-2.3. Properties Dialog: Front Information Table	5
-2.4. Properties Dialog: Document Information	6
-2.5. Properties Dialog: Document Layout	6
-2.5.1. Title Page is one Page	6
-2.5.2. Insert Table of Contents	6
-2.5.3. Insert History Table	7
-3. UPDATE OF A TECHNICAL AND QUALITY DOCUMENT	7
-3.1. Use the Properties Dialog!	7
-3.2. If the document does not update correctly	7
-4. STRUCTURE OF THE TECHNICAL AND QUALITY DOCUMENT	8
-4.1. Title Page	8
-4.2. Introductory Elements	8
-4.3. Document Body	9
-4.4. Elements used in the Technical and Quality document	9
-5. SUMMARY OF IMPORTANT RECOMMENDATIONS	11
-ANNEX: STYLES	12
-INDEX	15
+	
+2. Creation of a Technical and Quality Document	
+2.1. Document Creation	
+2.2. Properties Dialog	
+2.3. Properties Dialog: Front Information Table	
+2.4. Properties Dialog: Document Information	
+2.5. Properties Dialog: Document Layout	
+2.5.1. Title Page is one Page	
+2.5.2. Insert Table of Contents	
+2.5.3. Insert History Table	
+3. Update of a Technical and Quality Document	
+3.1. Use the Properties Dialog!	
+3.2. If the document does not update correctly	
+4. Structure of the Technical and Quality Document	
+4.1. Title Page	
+4.2. Introductory Elements	
+4.3. Document Body	
+4.4. Elements used in the Technical and Quality document	
+5. Summary of important recommendations	
+ANNEX: Styles	
+Index	
 
- 
 Document History
 
-Version	Date	Comment	Modified Pages
-0.00	05/01/2005	Document created by fh	
-0.11	13/01/2005	Created a structure, copied usable information from the existing "Specification for a Technical Document Template" document. 	
-0.12	19/01/2005	Modifications to the structure, new screenshots ..  	
-0.15	20/01/2005	Added Index, updated document at several places	
-0.17	28/01/2005	Integrated some comments and remarks by EmG	
-0.19	31/01/2005	Revision by Monique Limbos, Marleen Leunens, Hazel Caplen	
-0.25	18/02/2005	Intergation of revisions, added Annex and Summary 	
-0.50	01/03/2005	Intergation of further revisions after discussion with Marleen Leunens and Hazel Caplen	
-0.51	21/07/2005	Updated a link from Softline to DiGITLine	
-			
+	Version	Date	Comment	Modified Pages
+	0.00	05/01/2005	Document created by fh	
+	0.11	13/01/2005	Created a structure, copied usable information from the existing "Specification for a Technical Document Template" document. 	
+	0.12	19/01/2005	Modifications to the structure, new screenshots ..  	
+	0.15	20/01/2005	Added Index, updated document at several places	
+	0.17	28/01/2005	Integrated some comments and remarks by EmG	
+	0.19	31/01/2005	Revision by Monique Limbos, Marleen Leunens, Hazel Caplen	
+	0.25	18/02/2005	Intergation of revisions, added Annex and Summary 	
+	0.50	01/03/2005	Intergation of further revisions after discussion with Marleen Leunens and Hazel Caplen	
+	0.51	21/07/2005	Updated a link from Softline to DiGITLine	
+				
 
 Contact:
 Françoise Hontoy, Telephone:(352) 43 01-35414, francoise.hontoy@ext.cec.eu.int
 
- 
-1. INTRODUCTION
+Introduction
 The Technical and Quality document is a new document type in Eurolook which is intended for technical evaluations and studies where long text elements and a deep structure determine the appearance of documents. Throughout this document it will also be called T&Q. 
 The goal of this document is to explain the use and the structure of the Technical & Quality document type.
 This document is set up in the following way: 
-(1)	Creation of a Technical and Quality Document
-•	Properties Dialog
-•	Fields
-(2)	Update of a Technical and Quality Document
-(3)	Description of the different sections present in a Technical and Quality Document
-•	Title Section
-•	Document Information Section
-•	Document Body
-2. CREATION OF A TECHNICAL AND QUALITY DOCUMENT
-2.1. Document Creation
+Creation of a Technical and Quality Document
+Properties Dialog
+Fields
+Update of a Technical and Quality Document
+Description of the different sections present in a Technical and Quality Document
+Title Section
+Document Information Section
+Document Body
+Creation of a Technical and Quality Document
+Document Creation
 The creation of a Technical and Quality document is the same as the creation of any other Eurolook document. To create a document use the Eurolook | Create Document command to open the Eurolook dialog and select the necessary options. Options specific to the T&Q document are preferably set during document creation by using the Fill button in the Eurolook Dialog which will call the Properties Dialog. It is necessary to call this dialog upon document creation because some T&Q document settings are fixed upon document creation and cannot be modified afterwards. 
-2.2. Properties Dialog
+Properties Dialog
 In contrast to other Eurolook document types, the Properties Dialog used during document creation remains available afterwards. This feature was added to the T&Q document type since this document type contains information which is displayed at different places within the document and which may need to be modified frequently, therefore, the use of this information was automated via the properties dialog. Examples of such information are the document date  and the current version number. 
-To display the current information or to update it, the properties dialog can be called via the corresponding button in the Technical&Quality toolbar:  . 
-The Properties Dialog consists of three tabs, the first two are associated with the document properties, the last tab is reserved for layout elements (see Figure 3). The first tab (see Figure 1) contains all the information displayed in the Front Information Table (FIT), the second tab contains the title and subject information (see Figure 2). 
+To display the current information or to update it, the properties dialog can be called via the corresponding button in the Technical&Quality toolbar: 
+ consists of three tabs, the first two are associated with the document properties, the last tab is reserved for layout elements (see ). The first tab (see ) contains all the information displayed in the Front Information Table (FIT), the second tab contains the title and subject information (see ). 
 Updating the value of any property within this dialog will be reflected in the document after closing the dialogue. This is important since all the properties displayed in the document are updated, independently of their number of occurrences in the document. The Properties Dialog can thus be called any time you need to update the document properties. For all properties, the last setting will be memorized by the dialog. 
 NOTE : the options present in this dialog rely on specific bookmarks and fields inside the document in order to be able to add the requested information at the defined spot. If these bookmarks and/or fields are removed or modified, it is possible that the properties dialog will not be able to achieve the desired result. 
-2.3. Properties Dialog: Front Information Table
+Properties Dialog: Front Information Table
 The first tab of the Properties Dialog, the Front Information Table Tab, allows you to enter all the information used to create a table on the cover page(s) of the document. This table is called the Front Information Table (FIT) and consists of one column containing the defined field names and one column displaying the corresponding field value. Moreover, the user can add some options via the "Add even if empty" group. A checked option adds the corresponding field to the FIT. Please note that these two options are only available at document creation. 
- 
-Figure 1: Properties Dialog, parameters for the front information table
+
+Figure : Properties Dialog, parameters for the front information table
 
 The information entered in this tab is not only used to add information to the Front Information Table (FIT) but also to complete the footer of the T&Q document. To this end, Word fields are used which enables the T&Q document to update all occurrences when the properties dialog is closed. Thus the document version as well as the document date which are displayed in the footer, are updated any time the Properties Dialog is used to make changes.
-2.4. Properties Dialog: Document Information
+Properties Dialog: Document Information
 On the Document Information tab the title and the subject of your document can be entered as well as the responsible publisher. Upon document creation, the title and subject properties are inserted on the title page, whereas the publisher is only added to the document properties. 
- 
-Figure 2: Properties Dialog, other document properties
 
-2.5. Properties Dialog: Document Layout
+Figure : Properties Dialog, other document properties
+
+Properties Dialog: Document Layout
 Via the Document Layout tab the user can change the presentation. The last settings of this tab are memorized and reused upon creation of new documents.
-2.5.1. Title Page is one Page 
+Title Page is one Page 
 If this option is checked the Title Page will be only on one page, which is normally the default. After document creation, this setting becomes inaccessible to the user and it is impossible to switch to a two-page title. 
 Using the two-page title option means that the document titles are on the cover page whereas the FIT table is placed on a second page.
-2.5.2. Insert Table of Contents
+Insert Table of Contents
 When checked, a table of contents will be added to the predefined spot in the information part of the document. Since no Heading titles exist when the document is created, the following message will be displayed instead of the Table of Contents: "Error! No table of contents entries found.". This does not cause any problem since further updates of the Table of Contents will include all headings added later on. 
 To update the table of contents, please use the standard Eurolook method that is the ToC button available in the Eurolook toolbar. After inserting a table of contents via the properties dialog the option will be greyed. If it should be necessary to reinsert a Table of Contents in the document, please use the standard Eurolook command, for example the TOC button . 
-2.5.3. Insert History Table
+Insert History Table
 The history table gives the evolution of the document and helps a reviewer to see the latest changes. When checked, a history table is added at the predefined spot in the information part of the document. As long as no history table is inserted via the properties dialog, the option remains available. 
- 
-Figure 3: Properties Dialog, layout elements
-3. UPDATE OF A TECHNICAL AND QUALITY DOCUMENT
-3.1. Use the Properties Dialog!
+
+Figure : Properties Dialog, layout elements
+Update of a Technical and Quality Document
+Use the Properties Dialog!
 Using the Properties Dialog is the only method to guarantee that the T&Q document is able to display the properties as set according to the selected layout. 
 Since some elements of the Properties Dialog are inserted in fields with multiple occurrences in the document, the user is certain that the cover page as well as the footer are updated automatically with valid information.
-3.2. If the document does not update correctly
+If the document does not update correctly
 If the document structure or the document layout has been corrupted, for example by inadvertently replacing fields with typed information or by removing a section break within the predefined structure, it is not possible to repair this with the existing T&Q document features. It is then necessary to create a new T&Q document and to transfer the existing and valid information from the old document to the newly created one. 
 When creating the new document, use the FILL button to complete the Properties Dialog, then after creation, replace the empty history table with the one from the old document and finally copy the body part.
-4. STRUCTURE OF THE TECHNICAL AND QUALITY DOCUMENT
+Structure of the Technical and Quality Document
 The T&Q document initially consists of three sections. 
-4.1. Title Page
-The Title Page information can either be displayed on one page or on two pages depending on the setting chosen upon document creation. (see 2.5.1 Title Page is one Page). 
-None of the information present on the title page should be modified manually. Using the Properties Dialog will update the title as well as the front information table which are fields displaying document properties (see 2.2 Properties Dialog). 
+Title Page
+The Title Page information can either be displayed on one page or on two pages depending on the setting chosen upon document creation. (see  ). 
+None of the information present on the title page should be modified manually. Using the Properties Dialog will update the title as well as the front information table which are fields displaying document properties (see  ). 
 The title page does not display any page numbering information. 
- 
-Figure 4: Title Page (one-page example)
-4.2. Introductory Elements
-This section shows the different document information elements. Depending on the selection made in the Document Layout tab of the properties dialog, the history table and/or table of contents are added. The first element, that is, the document history table, is added upon creation of the document (see 2.5 Properties Dialog: Document Layout). An abstract of the document could be added manually to this section. Upon document creation the contact person can also be inserted into this section. After document creation no automatism is available to add the contact information at the predefined spot. 
+
+Figure : Title Page (one-page example)
+Introductory Elements
+This section shows the different document information elements. Depending on the selection made in the Document Layout tab of the properties dialog, the history table and/or table of contents are added. The first element, that is, the document history table, is added upon creation of the document (see  ). An abstract of the document could be added manually to this section. Upon document creation the contact person can also be inserted into this section. After document creation no automatism is available to add the contact information at the predefined spot. 
 If no table of contents or history table has been inserted upon document creation, the best method to add them afterwards is via the properties dialog. 
 The information present in the document footer of this section consists of document properties and should not be modified manually. To update the information present in the footer please use the Properties Dialog. 
 The section breaks present before and after this section should not be removed since this would influence the document layout. The T&Q document does not provide for any repair mechanism in this case. 
-4.3. Document Body
+Document Body
 The document body can be completed with a glossary and reference section for which the necessary styles have been added to the T&Q document. 
 The information present in the document footer of this section consists of document properties and should not be modified manually. To update the information present in the footer please use the properties dialog. 
-4.4. Elements used in the Technical and Quality document
-Name	Contents
-Title
-Definition: Title of the document
-	May consist of two lines and fields. The first line displays the Title Property and is mandatory; The second line displays the Subject Property value.
-	Style: Title for the Title Property and SubTitle1 for the Subject Property value
-Objects in the Front Information Table
-Date 
-Definition: Date Information line
-	One table cell contains the string "Date:" the other one contains a field displaying the value of the document date property. The intention is to display the date of the current version release.
-	Style: FIT Table
-Version
-Definition: Version of the document
-	Consists of two table cells, the first containing the string "Version:" and the second containing a field displaying the values of the document version and revision property separated by a dot. 
-	Style: FIT Table
-Author
-Definition: Name(s) of the author(s) editing the document
-	Consists of two table cells, the first containing the string "Authors:" and the second containing a field displaying the value of the author property. 
-	Style: FIT Table
-Revised by
-Definition: Contains those responsible for the revision of the document or those who contributed. 
-	Consists of two table cells, the first containing the string " Revised by:" and the second containing a field displaying the value of the revised by property. 
-	Style: FIT Table
-Approved by
-Definition: Contains those responsible for approving and releasing the document. 
-	Consists of two table cells, the first containing the string "Approved by:" and the second containing a field displaying the value of the approved by property.
-	Style: FIT Table
-Public
-Definition: provides the information as to which public the document is addressed. 
-	Consists of two table cells, the first containing the string "Public:" and the second containing a field displaying the value of the public property. This line is not mandatory
-	Style: FIT Table
-Reference Number
-Definition: Reference Number for that document. 
-	Consists of two table cells, the first containing the string "Reference Number:" and the second containing a field displaying the value of the reference number property. This value may be empty and depends on the numbering scheme used in the different DGs. This line is not mandatory
-	Style: FIT Table
-Footer in the information section and the body section
-Footer
-Definition: informs about the document
-	Consists of several document properties displayed as follows:
-•	Document Title, on the left
-•	The version of the document, on the left
-•	The date of the current revision, on the left
-•	On the right: Page number and total number of pages. 
-	Style: A combination of the styles Page Number and Footer.
+Elements used in the Technical and Quality document
+	Name	Contents
+	Title	Definition: Title of the document
+		May consist of two lines and fields. The first line displays the Title Property and is mandatory; The second line displays the Subject Property value.
+		Style: Title for the Title Property and SubTitle1 for the Subject Property value
+	Objects in the Front Information Table
+	Date 	Definition: Date Information line
+		One table cell contains the string "Date:" the other one contains a field displaying the value of the document date property. The intention is to display the date of the current version release.
+		Style: FIT Table
+	Version	Definition: Version of the document
+		Consists of two table cells, the first containing the string "Version:" and the second containing a field displaying the values of the document version and revision property separated by a dot. 
+		Style: FIT Table
+	Author	Definition: Name(s) of the author(s) editing the document
+		Consists of two table cells, the first containing the string "Authors:" and the second containing a field displaying the value of the author property. 
+		Style: FIT Table
+	Revised by	Definition: Contains those responsible for the revision of the document or those who contributed. 
+		Consists of two table cells, the first containing the string " Revised by:" and the second containing a field displaying the value of the revised by property. 
+		Style: FIT Table
+	Approved by	Definition: Contains those responsible for approving and releasing the document. 
+		Consists of two table cells, the first containing the string "Approved by:" and the second containing a field displaying the value of the approved by property.
+		Style: FIT Table
+	Public	Definition: provides the information as to which public the document is addressed. 
+		Consists of two table cells, the first containing the string "Public:" and the second containing a field displaying the value of the public property. This line is not mandatory
+		Style: FIT Table
+	Reference Number	Definition: Reference Number for that document. 
+		Consists of two table cells, the first containing the string "Reference Number:" and the second containing a field displaying the value of the reference number property. This value may be empty and depends on the numbering scheme used in the different DGs. This line is not mandatory
+		Style: FIT Table
+	Footer in the information section and the body section
+	Footer	Definition: informs about the document
+		Consists of several document properties displayed as follows:Document Title, on the leftThe version of the document, on the leftThe date of the current revision, on the leftOn the right: Page number and total number of pages. 
+		Style: A combination of the styles Page Number and Footer.
 
- 
-5. SUMMARY OF IMPORTANT RECOMMENDATIONS
-•	When creating a new T&Q document always use the FILL button present in the Eurolook Dialog. 
-•	Update the document via the FIT toolbar button or the appropriate Eurolook commands (see table)
-•	Never remove initially created section breaks 
-•	Do not update the footer manually
+Summary of important recommendations
+When creating a new T&Q document always use the FILL button present in the Eurolook Dialog. 
+Update the document via the FIT toolbar button or the appropriate Eurolook commands (see table)
+Never remove initially created section breaks 
+Do not update the footer manually
 
-Element	Set at document creation	Update
-Eurolook Header	automatically 	Eurolook Change Author command
-Title/Subject	Via Properties Dialog 	Properties Dialog
-FIT	Via Properties Dialog	Properties Dialog
-Footer	Completed via Properties Dialog	Properties Dialog
-TOC	TOC Position or TOC itself inserted via Properties Dialog	TOC button on the Eurolook toolbar
-History Table	Table created via Properties Dialog. 	To be completed manually
-Initial Section Breaks	Created automatically according to settings in Properties Dialog. 	Should not be removed
-Contact Information	Eurolook Contact option in Eurolook document creation dialog	Eurolook Contact command
+	Element	Set at document creation	Update
+	Eurolook Header	automatically 	Eurolook Change Author command
+	Title/Subject	Via Properties Dialog 	Properties Dialog
+	FIT	Via Properties Dialog	Properties Dialog
+	Footer	Completed via Properties Dialog	Properties Dialog
+	TOC	TOC Position or TOC itself inserted via Properties Dialog	TOC button on the Eurolook toolbar
+	History Table	Table created via Properties Dialog. 	To be completed manually
+	Initial Section Breaks	Created automatically according to settings in Properties Dialog. 	Should not be removed
+	Contact Information	Eurolook Contact option in Eurolook document creation dialog	Eurolook Contact command
 
-ANNEX: STYLES
-In the following paragraphs the different styles available within a technical template are shown as examples. For further information please refer to the "Specification for a Technical Document Template" document which can be found on softline http://www.cc.cec/digitline/u/products/ 
-desktopapp/offaut/docmgmt/eurolookxl/ref/tech&qual.pdf. 
-6. HEADING 1
+ANNEX: Styles
+In the following paragraphs the different styles available within a technical template are shown as examples. For further information please refer to the "Specification for a Technical Document Template" document which can be found on softline 
+
+. 
+Heading 1
 Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal
-6.1. Heading 2
+Heading 2
 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 
 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 Text2 
-6.1.1. Heading 3
+Heading 3
 Text3 Text3 Text3 Text3 Text3 Text3 Text3 Text3 Text3 Text3 Text3 Text3 Text3 Text3 Text3 Text3 Text3 Text3 Text3 Text3 Text3 Text3 Text3 Text3 Text3 Text3 Text3 Text3 Text3 Text3 Text3 
 Citation Citation Citation Citation Citation Citation Citation Citation Citation Citation Citation Citation Citation Citation Citation Citation Citation Citation Citation Citation Citation Citation Citation Citation Citation Citation Citation Citation Citation Citation
-6.1.1.1. Heading 4
-7. NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1
-7.1. NumPar 2 NumPar 2 NumPar 2 NumPar 2 NumPar 2 NumPar 2 NumPar 2 NumPar 2 NumPar 2 NumPar 2 NumPar 2 NumPar 2 NumPar 2 NumPar 2 NumPar 2 NumPar 2 NumPar 2 NumPar 2 NumPar 2 NumPar 2 NumPar 2
-7.1.1. NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3
-7.1.1.1. NumPar 4 NumPar 4 NumPar 4 NumPar 4 NumPar 4 NumPar 4 NumPar 4 NumPar 4 NumPar 4 NumPar 4 NumPar 4 NumPar 4 NumPar 4 NumPar 4 NumPar 4 NumPar 4 NumPar 4 NumPar 4 NumPar 4 NumPar 4 NumPar 4 NumPar 4 NumPar 4 NumPar 4 NumPar 4 NumPar 4 NumPar 4 NumPar 4 NumPar 4
- 
-(1)	List Number 
-(a)	List Number (Level 2)
-(b)	List Number (Level 2)
-–	List Number (Level 3)
-•	List Number (Level 4)
-•	List Number (Level 4)
+Heading 4
+NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1 NumPar 1
+NumPar 2 NumPar 2 NumPar 2 NumPar 2 NumPar 2 NumPar 2 NumPar 2 NumPar 2 NumPar 2 NumPar 2 NumPar 2 NumPar 2 NumPar 2 NumPar 2 NumPar 2 NumPar 2 NumPar 2 NumPar 2 NumPar 2 NumPar 2 NumPar 2
+NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3 NumPar 3
+NumPar 4 NumPar 4 NumPar 4 NumPar 4 NumPar 4 NumPar 4 NumPar 4 NumPar 4 NumPar 4 NumPar 4 NumPar 4 NumPar 4 NumPar 4 NumPar 4 NumPar 4 NumPar 4 NumPar 4 NumPar 4 NumPar 4 NumPar 4 NumPar 4 NumPar 4 NumPar 4 NumPar 4 NumPar 4 NumPar 4 NumPar 4 NumPar 4 NumPar 4
+List Number 
+List Number (Level 2)
+List Number (Level 2)
+List Number (Level 3)
+List Number (Level 4)
+List Number (Level 4)
 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1 Text1
-7.1.1.2. Heading 4
+Heading 4
 Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal
-•	List Number 1
-(a)	List Number 1 (Level 2)
-–	List Number 1 (Level 3)
-–	List Number 1 (Level 3)
-•	List Number 1 (Level 4)
-•	List Number 1
-(b)	List Number 1 (Level 2)
-(c)	List Number 1 (Level 2)
+List Number 1
+List Number 1 (Level 2)
+List Number 1 (Level 3)
+List Number 1 (Level 3)
+List Number 1 (Level 4)
+List Number 1
+List Number 1 (Level 2)
+List Number 1 (Level 2)
 Macro Text Macro Text Macro Text Macro Text Macro Text Macro Text Macro Text Macro Text Macro Text Macro Text Macro Text Macro Text Macro Text Macro Text Macro Text Macro Text Macro Text Macro Text Macro Text Macro Text Macro Text Macro Text Macro Text Macro Text Macro Text
-8. NEW TABLE STYLE
-8.1. New Table Style
-Normal LeftCol 
+New Table Style
+New Table Style
+	Normal LeftCol 
 (new Style)	Normal 
-Text Text Text …	Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal
+	Text Text Text 	Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal
 
-GLOSSARY
+Glossary
 Example 1 for Glossary Entries
 Glossary Entry	Explanation Explanation Explanation Explanation Explanation Explanation Explanation Explanation Explanation Explanation Explanation Explanation Explanation
 Glossary Entry	Explanation Explanation Explanation Explanation Explanation Explanation Explanation Explanation Explanation Explanation Explanation Explanation Explanation
 Glossary Entry	Explanation Explanation Explanation Explanation Explanation Explanation Explanation Explanation Explanation Explanation Explanation Explanation Explanation
 
 Example 2 for Glossary Entries
-Glossary Entry	Explanation Explanation Explanation Explanation Explanation Explanation Explanation Explanation Explanation Explanation Explanation Explanation Explanation Explanation Explanation
-Glossary Entry	Explanation Explanation Explanation Explanation Explanation Explanation Explanation Explanation Explanation Explanation Explanation Explanation Explanation Explanation Explanation
+	Glossary Entry	Explanation Explanation Explanation Explanation Explanation Explanation Explanation Explanation Explanation Explanation Explanation Explanation Explanation Explanation Explanation
+	Glossary Entry	Explanation Explanation Explanation Explanation Explanation Explanation Explanation Explanation Explanation Explanation Explanation Explanation Explanation Explanation Explanation
 
 
 
 
-INDEX
- 
-Abstract	9
-Add even if empty	5
-Approved by	10
-Author	9
-Contact	9
-Date	4, 9
-Document Body	4
-Document Creation	4
-Document Information	6
-Document Information Section	4
-Document Layout	6
-Document properties	4
-Error! No table of contents entries found.	6
-Eurolook Dialog	4
-Fill button	4
-FIT	See Front Information Table
-Footer	10
-Front Information Table	4, 5
-Front Information Table Tab	5
-History Table	7
-Insert History Table	7
-Insert Table of Contents	6
-Layout Elements	7
-Properties Dialog	4, 5, 6, 7
-Document Information	6
-Document Layout	6
-Front Information Table	5
-Public	10
-Publisher	6
-Reference Number	10
-Revised by	10
-Section Breaks	9
-Subject	4, 6
-T&Q document	See Technical and Quality Document
-Table of Contents	6, 8, 9
-Technical and Quality Document	4
-Title	6, 9
-Title Page	6, 8
-Title Page is one Page	6
-Title Section	4
-ToC button	7
-Version	4, 9
- 
+Index
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 
+

@@ -94,10 +94,11 @@ namespace b2xtranslator.txt.TextMapping
                 while (tai.fInTable)
                 {
                     cp = writeTableRow(cp, grid, nestingLevel);
-                    if(!_doc.PieceTable.FileCharacterPositions.TryGetValue(cp, out fc))
-                        { break;
+                    if (!_doc.PieceTable.FileCharacterPositions.TryGetValue(cp, out fc))
+                    {
+                        break;
                     }
-                            papx = findValidPapx(fc);
+                    papx = findValidPapx(fc);
                     tai = new TableInfo(papx);
                 }
             }
@@ -197,7 +198,7 @@ namespace b2xtranslator.txt.TextMapping
 
             //find cell end
             int cpCellEnd = findCellEndCp(initialCp, nestingLevel);
-            
+
             //convert the properties
             var mapping = new TableCellPropertiesMapping(_writer, grid, gridIndex, cellIndex);
             if (tapx != null)
@@ -205,7 +206,7 @@ namespace b2xtranslator.txt.TextMapping
                 tapx.Convert(mapping);
             }
             gridIndex = gridIndex + mapping.GridSpan;
-            
+
 
             //write the paragraphs of the cell
             while (cp < cpCellEnd)
@@ -336,7 +337,7 @@ namespace b2xtranslator.txt.TextMapping
             if (_doc.Text.Count <= cp)
             {
                 rowEndCp = cp++;
-                return -1; 
+                return -1;
             }
 
             int fc = _doc.PieceTable.FileCharacterPositions[cp];
@@ -369,7 +370,7 @@ namespace b2xtranslator.txt.TextMapping
                     }
                 }
             }
-            else 
+            else
             {
                 //Its an outer table.
                 //Search the "table trailer paragraph"
@@ -396,7 +397,7 @@ namespace b2xtranslator.txt.TextMapping
                     }
                 }
             }
-            if(cp == initialCp)
+            if (cp == initialCp)
             {
                 cp++;
             }
@@ -479,7 +480,7 @@ namespace b2xtranslator.txt.TextMapping
                 }
                 cpCellEnd++;
             }
-            else 
+            else
             {
                 while (_doc.Text[cpCellEnd] != TextMark.CellOrRowMark)
                 {
@@ -503,7 +504,7 @@ namespace b2xtranslator.txt.TextMapping
         /// ends at the next paragraph end mark or section end mark
         /// </summary>
         /// <param name="cp"></param>
-        protected int writeParagraph(int cp) 
+        protected int writeParagraph(int cp)
         {
             //search the paragraph end
             int cpParaEnd = cp;
@@ -562,7 +563,7 @@ namespace b2xtranslator.txt.TextMapping
             }
 
             //the last of these CHPX formats the paragraph end mark
-            var paraEndChpx = chpxs[chpxs.Count-1];
+            var paraEndChpx = chpxs[chpxs.Count - 1];
 
             //start paragraph
             _writer.WriteStartElement("w", "p", OpenXmlNamespaces.WordprocessingML);
@@ -761,11 +762,11 @@ namespace b2xtranslator.txt.TextMapping
 
             //detect text type
             string textType = "t";
-            if(writeDeletedText)
+            if (writeDeletedText)
                 textType = "delText";
-            else if(_writeInstrText)
+            else if (_writeInstrText)
                 textType = "instrText";
- 
+
             //open a new w:t element
             writeTextStart(textType);
 
@@ -790,7 +791,7 @@ namespace b2xtranslator.txt.TextMapping
                 }
                 else if (c == TextMark.ParagraphEnd)
                 {
-                    _writer.WriteChar(c);
+                    _writer.WriteChar(c); //text-only ignore
                     //do nothing
                 }
                 else if (c == TextMark.PageBreakOrSectionMark)
@@ -828,7 +829,7 @@ namespace b2xtranslator.txt.TextMapping
                     int cpFieldEnd = searchNextTextMark(_doc.Text, cpFieldStart, TextMark.FieldEndMark);
                     var f = new Field(_doc.Text.GetRange(cpFieldStart, cpFieldEnd - cpFieldStart + 1));
 
-                    if(f.FieldCode.StartsWith(" FORM"))
+                    if (f.FieldCode.StartsWith(" FORM"))
                     {
                         _writer.WriteStartElement("w", "fldChar", OpenXmlNamespaces.WordprocessingML);
                         _writer.WriteAttributeString("w", "fldCharType", OpenXmlNamespaces.WordprocessingML, "begin");
@@ -975,7 +976,7 @@ namespace b2xtranslator.txt.TextMapping
 
                         _writer.WriteEndElement();
                         writeTextStart(textType);
-                    }                   
+                    }
                 }
                 else if (c == TextMark.AutoNumberedFootnoteReference && fSpec)
                 {
@@ -1003,7 +1004,7 @@ namespace b2xtranslator.txt.TextMapping
                     else
                     {
                         // it's not the document, write the short ref
-                        if(GetType() != typeof(FootnotesMapping))
+                        if (GetType() != typeof(FootnotesMapping))
                         {
                             _writer.WriteElementString("w", "footnoteRef", OpenXmlNamespaces.WordprocessingML, "");
                         }
@@ -1102,7 +1103,7 @@ namespace b2xtranslator.txt.TextMapping
                     {
                         writeBookmarkEnd(_doc.BookmarkStartPlex.Elements[b]);
                     }
-                }     
+                }
             }
         }
 
@@ -1187,7 +1188,7 @@ namespace b2xtranslator.txt.TextMapping
             }
 
             //add the last part
-            ret.Add(chars.GetRange(startIndex, chars.Count-startIndex));
+            ret.Add(chars.GetRange(startIndex, chars.Count - startIndex));
 
             return ret;
         }
@@ -1244,7 +1245,7 @@ namespace b2xtranslator.txt.TextMapping
             bool ret = false;
             foreach (var sprm in papx.grpprl)
             {
-                if(sprm.OpCode == SinglePropertyModifier.OperationCode.sprmPWall)
+                if (sprm.OpCode == SinglePropertyModifier.OperationCode.sprmPWall)
                 {
                     //sHasOldProps
                     ret = true;
@@ -1346,7 +1347,7 @@ namespace b2xtranslator.txt.TextMapping
         {
             ParagraphPropertyExceptions ret = null;
 
-            if(_doc.AllPapx.ContainsKey(fc))
+            if (_doc.AllPapx.ContainsKey(fc))
             {
                 ret = _doc.AllPapx[fc];
                 _lastValidPapx = ret;

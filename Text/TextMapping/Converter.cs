@@ -152,7 +152,7 @@ namespace b2xtranslator.txt.TextMapping
                 doc.Styles.Convert(new StyleSheetMapping(context, doc, textDocument.FootnotesWriter));
 
                 //Write numbering.xml
-                doc.ListTable.Convert(new NumberingMapping(context, doc, textDocument.FootnotesWriter));
+                doc.ListTable.Convert(new NumberingMapping(context, doc, context.TextDoc.MainDocumentWriter));
 
                 //Write fontTable.xml
                 doc.FontTable.Convert(new FontTableMapping(context, new TextWriter()));

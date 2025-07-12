@@ -40,19 +40,17 @@ namespace b2xtranslator.txt
             return doc;
         }
 
-        public IAttribute CreateAttribute(string v1, string v2, string wordprocessingML)
+        public IAttribute CreateAttribute(string? prefix, string localName, string? namespaceURI)
         {
-            return new TextAttribute(v1, v2)
+            return new TextAttribute(prefix, localName, null)
             {
-                Value = wordprocessingML,
             };
         }
 
-        public INode CreateElement(string v1, string v2, string wordprocessingML)
+        public INode CreateElement(string? prefix, string localName, string? namespaceURI)
         {
-            return new TextNode(this)
+            return new TextNode(this, $"{prefix}:{localName}")
             {
-                Value = v1,
             };
         }
     }

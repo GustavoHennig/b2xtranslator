@@ -10,19 +10,20 @@ namespace b2xtranslator.txt
     {
         public List<IAttribute> Attributes { get; } = new List<IAttribute>();
 
-        public IDocument OwnerDocument {get; private set; }
+        public IDocument OwnerDocument { get; private set; }
 
-      
 
-        public List<INode> ChildNodes {get; } = new List<INode>();
 
-        string INode.Name => "";
+        public List<INode> ChildNodes { get; } = new List<INode>();
+
+        public string Name { get; }
 
         public string Value { get; set; }
 
-        public TextNode(IDocument ownerDocument)
+        public TextNode(IDocument ownerDocument, string name)
         {
             OwnerDocument = ownerDocument;
+            this.Name = name;
         }
         public void AppendChild(INode tblInd)
         {
