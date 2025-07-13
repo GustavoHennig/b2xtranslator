@@ -9,13 +9,14 @@ Forked from a [.NET 2 Mono implementation](https://sourceforge.net/projects/b2xt
 
 This fork aims to significantly expand the capabilities of the original implementation. The following sections outline planned enhancements and ongoing development goals:
 
-### 🚀 Enhanced Functionality (Roadmap)
-- **Improved Text Extraction**: Better plain text extraction with support for complex document structures
-- **Extended Format Support**: Support for older Word file formats (Word 6.0, Word 95, etc.)
-- **Robust Error Handling**: Graceful handling of corrupted or non-standard files
+### Roadmap
+- **Improve Text Extraction**: Better plain text extraction with support for complex document structures
+- **Extend Format Support**: Support for older Word file formats (Word 6.0, Word 95, etc.)
+- **Improve Error Handling**: Graceful handling of corrupted or non-standard files
+- Make it handle lists (numbers, bullet points, indents)
 
 ### 🔧 Pending Issues
-- **Infinite Loop Resolution**: Address parsing loops that cause applications to hang
+- Address parsing loops that cause applications to hang
 - **Performance Optimization**: Fix extremely slow conversion scenarios
 - **Memory Management**: Resolve memory leaks in large file processing
 - **Parsing Stability**: Fix crashes and exceptions during document parsing
