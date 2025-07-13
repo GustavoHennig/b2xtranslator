@@ -17,6 +17,12 @@ namespace b2xtranslator.txt
         </w:p>
          */
 
+        // Hyperlink state tracking
+        private string? _pendingHyperlinkUrl = null;
+        private StringBuilder _hyperlinkDescription = new StringBuilder();
+        private bool _isInHyperlinkDescription = false;
+        private int _hyperlinkFieldCharCount = 0;
+
         [DebuggerDisplay("{Prefix}:{LocalName}={ToString()}")]
         class TextElement
         {
@@ -140,8 +146,8 @@ namespace b2xtranslator.txt
                 {
 
                 }
-                Debug.Print($"Closing {element.Prefix}:{element.LocalName}");
-                Debug.Print($"Content: {element.ToString()}");
+           //     Debug.Print($"Closing {element.Prefix}:{element.LocalName}");
+           //     Debug.Print($"Content: {element.ToString()}");
 
                 // Para outros elementos estruturais, o conte�do j� foi propagado
                 // dos w:t filhos, ent�o n�o precisamos fazer nada
@@ -163,14 +169,59 @@ namespace b2xtranslator.txt
                         {
                             _currentTextElement.PureContent.Append("\n"); // do not use NewLine
                         }
-                    }else if ("instrText".Equals(element.LocalName))
+                    }
+                    else if ("instrText".Equals(element.LocalName))
                     {
-                        string content = element.Content.ToString().Trim();
+                        string content = element.Content.ToString();
+                        string trimmedContent = content.Trim();
 
-                        if(content.StartsWith("HYPERLINK \""))
+                        if(trimmedContent.StartsWith("HYPERLINK \""))
                         {
-                            content = content.Replace("HYPERLINK \"", "").Replace("\"", "").Trim();
-                            element.PureContent.Append(content);
+                            // Extract URL from field instruction
+                            string url = trimmedContent.Replace("HYPERLINK \"", "").Replace("\"", "").Trim();
+                            _pendingHyperlinkUrl = url;
+                            _hyperlinkDescription.Clear();
+                            _hyperlinkFieldCharCount = 0;
+                            // Don't start collecting description yet - wait for field separator or next instrText
+                        }
+                        else if (_pendingHyperlinkUrl != null && !string.IsNullOrEmpty(trimmedContent))
+                        {
+                            // Collect hyperlink description text from subsequent instrText elements
+                            _hyperlinkDescription.Append(content); // Use original content to preserve spaces
+                            _isInHyperlinkDescription = true;
+                        }
+                        else if (_pendingHyperlinkUrl != null && string.IsNullOrWhiteSpace(trimmedContent) && !string.IsNullOrEmpty(content))
+                        {
+                            // Collect whitespace characters (like spaces) in hyperlink descriptions
+                            _hyperlinkDescription.Append(content);
+                            _isInHyperlinkDescription = true;
+                        }
+                        else if (_pendingHyperlinkUrl == null)
+                        {
+                            // Non-hyperlink field instruction - output as before
+                            element.PureContent.Append(trimmedContent);
+                        }
+                        // Skip truly empty instrText elements during hyperlink processing
+                    }
+                    else if ("fldChar".Equals(element.LocalName))
+                    {
+                        // Handle field character markers
+                        if (_pendingHyperlinkUrl != null)
+                        {
+                            _hyperlinkFieldCharCount++;
+                            
+                            // Output hyperlink after we've seen enough field characters
+                            // Some hyperlinks have 1 fldChar, others have 3 (begin, separator, end)
+                            if (_hyperlinkFieldCharCount >= 1 && _hyperlinkDescription.Length > 0)
+                            {
+                                // We have both URL and description - output complete hyperlink
+                                OutputHyperlink();
+                            }
+                            else if (_hyperlinkFieldCharCount >= 3)
+                            {
+                                // Three field chars means we're definitely at the end
+                                OutputHyperlink();
+                            }
                         }
                     }
                 }
@@ -180,7 +231,18 @@ namespace b2xtranslator.txt
                 // Propaga conte�do APENAS de elementos w:t
                 if ("w".Equals(element.Prefix) && "t".Equals(element.LocalName))
                 {
-                    _currentTextElement.PureContent.Append(element.Content);
+                    string textContent = element.Content.ToString();
+                    
+                    // If we're collecting hyperlink description, capture it
+                    if (_isInHyperlinkDescription && _pendingHyperlinkUrl != null)
+                    {
+                        _hyperlinkDescription.Append(textContent);
+                    }
+                    else
+                    {
+                        // Normal text processing
+                        _currentTextElement.PureContent.Append(textContent);
+                    }
                 }
             }
         }
@@ -231,6 +293,51 @@ namespace b2xtranslator.txt
                 WriteEndElement();
             }
             return _rootTextElement.PureContent.ToString();
+        }
+
+        /// <summary>
+        /// Helper method to get attribute value from an element
+        /// </summary>
+        private string? GetAttributeValue(TextElement element, string attributeName)
+        {
+            if (element.Attributes == null) return null;
+            
+            foreach (var attr in element.Attributes)
+            {
+                if (attributeName.Equals(attr.LocalName))
+                {
+                    return attr.Value;
+                }
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Output the complete hyperlink with both URL and description
+        /// </summary>
+        private void OutputHyperlink()
+        {
+            if (_pendingHyperlinkUrl == null) return;
+
+            string description = _hyperlinkDescription.ToString().Trim();
+            
+            // Format the hyperlink output
+            if (!string.IsNullOrEmpty(description))
+            {
+                // If we have description text, show: "description (url)"
+                _currentTextElement.PureContent.Append($"{description} ({_pendingHyperlinkUrl})");
+            }
+            else
+            {
+                // If no description, just show the URL
+                _currentTextElement.PureContent.Append(_pendingHyperlinkUrl);
+            }
+
+            // Reset hyperlink state
+            _pendingHyperlinkUrl = null;
+            _hyperlinkDescription.Clear();
+            _isInHyperlinkDescription = false;
+            _hyperlinkFieldCharCount = 0;
         }
 
     }
