@@ -22,6 +22,9 @@ namespace b2xtranslator.txt
         private StringBuilder _hyperlinkDescription = new StringBuilder();
         private bool _isInHyperlinkDescription = false;
         private int _hyperlinkFieldCharCount = 0;
+        
+        // Track if we've output any content to prevent leading newline
+        private bool _isFirstStructuralElement = true;
 
         [DebuggerDisplay("{Prefix}:{LocalName}={ToString()}")]
         class TextElement
@@ -161,13 +164,21 @@ namespace b2xtranslator.txt
                     }
                     else if ("tr".Equals(element.LocalName))  // Table row
                     {
-                        _currentTextElement.PureContent.Append("\n"); // do not use NewLine
+                        if (!_isFirstStructuralElement)
+                        {
+                            _currentTextElement.PureContent.Append("\n"); // do not use NewLine
+                        }
+                        _isFirstStructuralElement = false;
                     }
                     else if ("p".Equals(element.LocalName))  // Paragraph
                     {
                         if (!"tc".Equals(element.Parent?.LocalName))
                         {
-                            _currentTextElement.PureContent.Append("\n"); // do not use NewLine
+                            if (!_isFirstStructuralElement)
+                            {
+                                _currentTextElement.PureContent.Append("\n"); // do not use NewLine
+                            }
+                            _isFirstStructuralElement = false;
                         }
                     }
                     else if ("instrText".Equals(element.LocalName))
@@ -196,11 +207,7 @@ namespace b2xtranslator.txt
                             _hyperlinkDescription.Append(content);
                             _isInHyperlinkDescription = true;
                         }
-                        else if (_pendingHyperlinkUrl == null)
-                        {
-                            // Non-hyperlink field instruction - output as before
-                            element.PureContent.Append(trimmedContent);
-                        }
+                        // Note: All other instrText elements (field instructions) are skipped for text output
                         // Skip truly empty instrText elements during hyperlink processing
                     }
                     else if ("fldChar".Equals(element.LocalName))

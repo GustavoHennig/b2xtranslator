@@ -21,6 +21,7 @@ This fork aims to significantly expand the capabilities of the original implemen
 - **Parsing Stability**: Fix crashes and exceptions during document parsing
 - Lists are not extracted with proper bullet symbols during text conversion
 - Internal markers are being written to the output: HYPERLINK, MERGEFORMAT, DOCPROPERTY, PAGEREF... See EL_TechnicalTemplateHandling.doc, ProblemExtracting.doc, Bug51686.doc
+- testPictures.doc: testPictures.doc SHAPE  \* MERGEFORMAT
 
 ### 📊 Reliability Improvements (Planned)
 - Enhanced validation of input files before processing

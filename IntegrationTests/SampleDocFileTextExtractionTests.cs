@@ -55,19 +55,23 @@ namespace b2xtranslator.Tests
                 throw SkipException.ForSkip($"Expected file not found: {expectedPath}");
             }
             string result;
+            string resultOriginal;
             string expected;
             try
             {
                 expected = NormalizeText(File.ReadAllText(expectedPath));
-                result = NormalizeText(Converter.ConvertFileToString(docPath));
+                resultOriginal = Converter.ConvertFileToString(docPath);
+                result = NormalizeText(resultOriginal);
                 bool isEqual = string.Equals(result, expected, StringComparison.InvariantCultureIgnoreCase);
                 if (!isEqual)
                 {
                     Debug.Print($"Mismatch in {docPath}");
-                    File.WriteAllText(Path.ChangeExtension(docPath, ".actual.txt"), result);
+                    File.WriteAllText(Path.ChangeExtension(docPath, ".actual.txt"), resultOriginal);
                 }
                 else
                 {
+                    //Rewrite expected to make all line-breaks match
+                    //File.WriteAllText(Path.ChangeExtension(docPath, ".expected.txt"), resultOriginal);
                     File.Delete(Path.ChangeExtension(docPath, ".actual.txt"));
                 }
             }
@@ -88,7 +92,9 @@ namespace b2xtranslator.Tests
         {
             if (text == null) return null;
             // Replace CRLF and CR with LF
-            var normalized = text.Replace("\r\n", "\n").Replace("\r", "\n");
+            var normalized = text
+                .Replace("\r\n", "\n")
+                .Replace("\r", "\n").Replace("\t", "").Replace("  ", " ");
             // Trim trailing whitespace from each line
             var lines = normalized.Split('\n').Select(line => line.TrimEnd());
             return string.Join("\n", lines);

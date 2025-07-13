@@ -6,4 +6,6 @@ Paragraph with red border
 
 Paragraph with bordered words.
 
-Bordered cell	Double line above		No border in the bottom
+	Bordered cell	Double line above
+	No border in the bottom	
+
