@@ -888,6 +888,12 @@ namespace b2xtranslator.txt.TextMapping
 
                         _skipRuns = 4;
                     }
+                    else if (f.FieldCode?.StartsWith(" HYPERLINK") == true)
+                    {
+                        _writer.WriteStartElement("w", "fldChar", OpenXmlNamespaces.WordprocessingML);
+                        _writer.WriteAttributeString("w", "fldCharType", OpenXmlNamespaces.WordprocessingML, "begin");
+                        _writer.WriteEndElement();
+                    }
                     else
                     {
                         _writer.WriteStartElement("w", "fldChar", OpenXmlNamespaces.WordprocessingML);

@@ -74,6 +74,8 @@ namespace b2xtranslator.Tests
                     //File.WriteAllText(Path.ChangeExtension(docPath, ".expected.txt"), resultOriginal);
                     File.Delete(Path.ChangeExtension(docPath, ".actual.txt"));
                 }
+                File.Delete(Path.ChangeExtension(docPath, ".error.txt"));
+
             }
             catch (Exception ex)
             {

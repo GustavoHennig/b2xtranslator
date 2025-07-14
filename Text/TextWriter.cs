@@ -186,10 +186,20 @@ namespace b2xtranslator.txt
                         string content = element.Content.ToString();
                         string trimmedContent = content.Trim();
 
-                        if(trimmedContent.StartsWith("HYPERLINK \""))
+                        if(trimmedContent.StartsWith("HYPERLINK "))
                         {
-                            // Extract URL from field instruction
-                            string url = trimmedContent.Replace("HYPERLINK \"", "").Replace("\"", "").Trim();
+                            // Extract URL from field instruction - handle both quoted and unquoted formats
+                            string url;
+                            if (trimmedContent.StartsWith("HYPERLINK \""))
+                            {
+                                // Quoted format: HYPERLINK "http://example.com"
+                                url = trimmedContent.Replace("HYPERLINK \"", "").Replace("\"", "").Trim();
+                            }
+                            else
+                            {
+                                // Unquoted format: HYPERLINK http://example.com
+                                url = trimmedContent.Replace("HYPERLINK ", "").Trim();
+                            }
                             _pendingHyperlinkUrl = url;
                             _hyperlinkDescription.Clear();
                             _hyperlinkFieldCharCount = 0;
@@ -329,14 +339,14 @@ namespace b2xtranslator.txt
             string description = _hyperlinkDescription.ToString().Trim();
             
             // Format the hyperlink output
-            if (!string.IsNullOrEmpty(description))
+            if (!string.IsNullOrEmpty(description) && !description.Equals(_pendingHyperlinkUrl, StringComparison.OrdinalIgnoreCase))
             {
-                // If we have description text, show: "description (url)"
+                // If we have description text that's different from URL, show: "description (url)"
                 _currentTextElement.PureContent.Append($"{description} ({_pendingHyperlinkUrl})");
             }
             else
             {
-                // If no description, just show the URL
+                // If no description or description is the same as URL, just show the URL
                 _currentTextElement.PureContent.Append(_pendingHyperlinkUrl);
             }
 
