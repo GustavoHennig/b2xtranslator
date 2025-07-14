@@ -94,6 +94,11 @@ namespace b2xtranslator.DocFileFormat
             {
                 try
                 {
+                    if (pos >= bytes.Length)
+                    {
+                        goon = false;
+                        break;
+                    }
                     byte type = bytes[pos];
 
                     //check if the type of the entry is a piece table

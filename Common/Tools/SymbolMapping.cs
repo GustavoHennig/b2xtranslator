@@ -282,18 +282,10 @@ namespace b2xtranslator.Tools
                 return ((char)charCode).ToString();
             }
 
-            // For high-range characters, try Unicode interpretation
+            // For high-range characters, return placeholder
             if (charCode > 127)
             {
-                try
-                {
-                    // Try to convert as Unicode character
-                    return char.ConvertFromUtf32(charCode);
-                }
-                catch
-                {
-                    // If conversion fails, use placeholder
-                }
+                return "?";
             }
 
             // Log unknown symbol for debugging

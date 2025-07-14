@@ -51,6 +51,191 @@ Infinite loops typically occur in recursive parsing operations within the binary
  - Handle all possible scenarios where a malformed input document has binary information that could cause an infinite loop.
  - Only when, for any reason, it is impossible to prevent the behavior, apply phases 1, 2, and 3.
 
+
+### Phase 0.1: Analysis of Potential Infinite Loops
+
+This phase focuses on identifying and documenting potential infinite loop vulnerabilities in the `b2xtranslator` codebase. The following sections detail the findings and recommended fixes.
+
+#### `PieceTable.cs`
+
+- **Vulnerability**: The `while(goon)` loop in the constructor is not robust against malformed input. If the `type` variable is not `1` or `2`, the loop will never terminate.
+- **Fix**: Add a default case to the `switch` statement that sets `goon` to `false` and logs a warning. Additionally, add a bounds check to the `pos` variable to prevent `IndexOutOfRangeException`.
+
+```csharp
+// In Doc/DocFileFormat/PieceTable.cs
+
+// ... existing code ...
+while (goon)
+{
+    try
+    {
+        if (pos >= bytes.Length)
+        {
+            goon = false;
+            break;
+        }
+        byte type = bytes[pos];
+
+        //check if the type of the entry is a piece table
+        if (type == 2)
+        {
+            // ... existing code ...
+            goon = false;
+        }
+        //entry is no piecetable so goon
+        else if (type == 1)
+        {
+            short cb = System.BitConverter.ToInt16(bytes, pos + 1);
+            pos = pos + 1 + 2 + cb;
+        }
+        else
+        {
+            goon = false;
+        }
+    }
+    catch(Exception)
+    {
+        goon = false;
+    }
+}
+// ... existing code ...
+```
+
+#### `Plex.cs`
+
+- **Vulnerability**: The calculation of `n` in the constructor can lead to an extremely large value if `lcb` is large and `structureLength` is 0, causing the application to hang.
+- **Fix**: Add a sanity check to `n` to ensure it doesn't exceed a reasonable threshold.
+
+```csharp
+// In Doc/DocFileFormat/Plex.cs
+
+// ... existing code ...
+int n = 0;
+if(structureLength > 0)
+{
+    //this PLEX contains CPs and Elements
+    n = ((int)lcb - CP_LENGTH) / (structureLength + CP_LENGTH);
+}
+else
+{
+    //this PLEX only contains CPs
+    n = ((int)lcb - CP_LENGTH) / CP_LENGTH;
+}
+
+if (n < 0 || n > 1000000) // Sanity check
+{
+    // Log a warning and return
+    return;
+}
+
+//read the n + 1 CPs
+// ... existing code ...
+```
+
+#### `ListTable.cs` and `ListFormatOverrideTable.cs`
+
+- **Vulnerability**: The constructors in both classes read a `count` from the stream and then loop that many times. A malformed `count` can cause the application to hang.
+- **Fix**: Add a sanity check to the `count` variable to prevent excessive looping.
+
+```csharp
+// In Doc/DocFileFormat/ListTable.cs
+
+// ... existing code ...
+short count = reader.ReadInt16();
+
+if (count < 0 || count > 10000) // Sanity check
+{
+    return;
+}
+
+//read the LSTF structs
+// ... existing code ...
+```
+
+```csharp
+// In Doc/DocFileFormat/ListFormatOverrideTable.cs
+
+// ... existing code ...
+int count = reader.ReadInt32();
+
+if (count < 0 || count > 10000) // Sanity check
+{
+    return;
+}
+
+//read the LFOs
+// ... existing code ...
+```
+
+#### `FormattedDiskPagePAPX.cs` and `FormattedDiskPageCHPX.cs`
+
+- **Vulnerability**: The `GetAll...` methods calculate `n` based on the `lcb...` value from the FIB. A malformed `lcb...` value can lead to a very large `n`, causing a hang.
+- **Fix**: Add a sanity check to `n` to prevent excessive looping.
+
+```csharp
+// In Doc/DocFileFormat/FormattedDiskPagePAPX.cs
+
+// ... existing code ...
+int n = (((int)fib.lcbPlcfBtePapx - 4) / 8) + 1;
+
+if (n < 0 || n > 1000000) // Sanity check
+{
+    return list;
+}
+
+//Get the indexed PAPX FKPs
+// ... existing code ...
+```
+
+```csharp
+// In Doc/DocFileFormat/FormattedDiskPageCHPX.cs
+
+// ... existing code ...
+int n = (((int)fib.lcbPlcfBteChpx - 4) / 8) + 1;
+
+if (n < 0 || n > 1000000) // Sanity check
+{
+    return list;
+}
+
+//Get the indexed CHPX FKPs
+// ... existing code ...
+```
+
+#### `WordDocument.cs`
+
+- **Vulnerability**: Several loops in the `Parse` method are susceptible to hangs if the counts read from the file are malformed.
+- **Fix**: Add sanity checks to the loops that build the `AllPapx` and `AllSepx` dictionaries.
+
+```csharp
+// In Doc/DocFileFormat/WordDocument.cs
+
+// ... existing code ...
+//build a dictionaries of all PAPX
+this.AllPapx = new Dictionary<int, ParagraphPropertyExceptions>();
+for (int i = 0; i < this.AllPapxFkps.Count; i++)
+{
+    if (i > 10000) break; // Sanity check
+    for (int j = 0; j < this.AllPapxFkps[i].grppapx.Length; j++)
+    {
+        if (j > 10000) break; // Sanity check
+        this.AllPapx.Add(this.AllPapxFkps[i].rgfc[j], this.AllPapxFkps[i].grppapx[j]);
+    }
+}
+
+// ... existing code ...
+
+//build a dictionary of all SEPX
+this.AllSepx = new Dictionary<int, SectionPropertyExceptions>();
+for (int i = 0; i < this.SectionPlex.Elements.Count; i++)
+{
+    if (i > 10000) break; // Sanity check
+    // ... existing code ...
+}
+// ... existing code ...
+```
+
+
 ### Phase 1: Introduce a Parsing Context
 
 1.  **Create a `ParsingContext` Class:**
