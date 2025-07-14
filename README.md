@@ -16,6 +16,7 @@ This fork aims to significantly expand the capabilities of the original implemen
 - Make it handle lists (numbers, bullet points, indents)
 - Handle TextBox content: "news-example.doc"
 - Symbol handling: "Bug49908.doc"
+- Make text extraction shell app accept extraction settings, e.g.: --no-headers-footers --no-textboxes --no-comments --no-bullets ... and make the extactor ignore these elements
 
 ### 🔧 Pending Issues
 - Address parsing loops that cause applications to hang

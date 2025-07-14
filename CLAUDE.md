@@ -59,7 +59,7 @@ dotnet run --project Shell/ppt2x/ppt2x.csproj -- input.ppt output.pptx
 dotnet run --project Shell/xls2x/xls2x.csproj -- input.xls output.xlsx
 
 # Convert DOC to text
-dotnet run --project Shell/doc2text/doct2text.csproj -- input.doc output.txt
+dotnet run --project Shell/doc2text/doc2text.csproj -- input.doc output.txt
 ```
 
 ### Testing with Sample Files
@@ -67,6 +67,15 @@ The repository includes extensive sample files in `samples/` and `samples-local/
 ```bash
 # Sample files follow pattern: filename.doc, filename.expected.txt, filename.actual.txt
 # Integration tests automatically compare actual vs expected output
+
+# Test doc2text conversion with sample files
+dotnet run --project Shell/doc2text/doc2text.csproj -- samples-local/simple-table.doc output.txt
+dotnet run --project Shell/doc2text/doc2text.csproj -- samples-local/bug65255.doc output.txt
+
+# Sample file locations:
+# - samples/ - Main sample files directory
+# - samples-local/ - Additional test files with expected outputs
+# Files include various document types: tables, headers/footers, images, complex formatting
 ```
 
 ## Architecture Overview
