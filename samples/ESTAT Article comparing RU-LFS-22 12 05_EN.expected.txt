@@ -1,1 +1,532 @@
-Expected text not provided.
+Sent to publication on 22.12.05
+
+Registered Unemployment (RU) compared with harmonised (LFS) unemployed 
+
+Africa Melis and Britta Lüdeke 
+
+
+Acknowledgements
+We are extremely grateful to the very useful comments received from the LMP delegates who read several drafts of this article, in particular to Andreas Buzek from Austria, Ilkka Nio and Petri Syvannen from Finland, Ascension Maravall and Almudena Duran from Spain, Cecilia Palm from Sweden and John Maher from Ireland. The same goes to the Eurostat colleagues, responsible for the LFS, who provided us with several sets of data and answered patiently to different requests, in particular Sylvain Jouhette, Ana Franco and Jonny Johansson. We also thank Zuzana Pavlickova-Svalbova and Tanya Aleksandrova, who helped us greatly in a previous version of this article.
+
+
+
+Part 1 – General comments on discrepancies between both sources
+
+Introduction
+
+The figures for the registered unemployed (RU) with the Public Employment Services (PES) are the most commonly used references for the analysis of labour market policies at national level. Unemployed persons need to register with the PES whenever they want to find a job and/or benefit from public support or to participate in a labour market policy measure, and this registration enables the Public Employment Services to calculate the levels of unemployment registration and the monitoring of Labour Market Policy (LMP) measures, in other words, assessing the type of interventions needed and monitoring their impact.
+The share of registered unemployed participating in labour market measures is a useful indicator for monitoring labour market interventions. However, most experts in the field of labour market policies are also familiar with the official figures on harmonised unemployment and are aware of existing discrepancies between the two data sets (see footnote 1 below and paragraph 2 for definition).
+Several studies exist at national level which explain the reasons for the discrepancies between both figures, while there are not so many studies at an international level that try to summarize the main characteristics which account for these differences. This article aims to contribute to the understanding of the differences and the complementarities between the two main official figures for unemployment, namely data on “harmonised unemployment” (unemployment figures provided by the Labour Force Survey-LFS, according to the International Labour Organisation –ILO- definition) and data provided by the registers of the Public Employment Services, which collect data on “registered unemployment”, according to different national definitions and rules. 
+The first part presents the definition and main characteristics of the LFS data on unemployment (survey data), and the definition and main characteristics of the unemployment registered with the Public Employment Services (administrative data). In addition it shows some situations in which the registers are more restrictive than the survey and the reverse case. The article also identifies three groups of population which help to understand the discrepancies between both figures in most countries.
+The second part presents a detailed analysis of both sets of figures (registered unemployed and LFS unemployed) in five countries, Germany, Austria, Sweden, Finland and Spain. It presents the definition (national regulations) and figures of registered unemployed and shows the comparison with the LFS figures with special reference to different age groups.
+Note that in 2005, substantial changes have been introduced in the Labour Force Survey in three countries, Spain, Austria and the United Kingdom, which lead to important changes in the data. However, this article does not take into account these changes or any other adjustments introduced in 2005 in the LFS data.
+
+1 - The Labour Market Policy database as a source of national data on labour market interventions
+
+The LMP - data collection was developed as an instrument which should contribute to improving the follow-up of the Employment Guidelines. The database concentrates on the identification of targeted labour market policies developed and implemented by EU countries as a result of the agreement they reached in November 1997 to launch the European Employment Strategy (Employment Summit in Luxembourg), to provide more jobs and combat and reduce unemployment. The LMP methodology provides the definitions and classification categories used to identify what is to be understood under the term "Labour market policies", and includes a detailed description of the LMP-measures implemented in each country, as well as detailed metadata. 
+The scope of the LMP database refers to “Public interventions in the labour market aimed at reaching its efficient functioning and to correct disequilibria and which can be distinguished from other general employment policy measures in that they act selectively to favour particular groups in the labour market”.
+These “public interventions” are divided into nine categories by type of action: one base category of “labour market services” provided by the Public Employment Services (PES), six categories of “active labour market measures” (such as training, employment incentives, direct job creation or start-up incentives), and two categories of measures providing support for unemployed persons, or for early retirement.
+
+In summary, the LMP database collects data on expenditure and participants in Labour Market Policy measures and presents three main advances as compared to previous sources of information: (1) detailed and comparable descriptions of each labour market policy measure, (2) detailed information on participants’ stock and flows, with breakdowns by age, by gender, by previous labour status, by duration of unemployment prior to participation, etc... (3) detailed information of “Reference data”, including descriptions of the groups registered with the PES as “registered jobseekers” and those registered with the PES as “registered unemployed” which are a particular subgroup of the registered jobseekers especially relevant to this article. The database collects not only the numbers of registered jobseekers and registered unemployed, but it also collects detailed information on the national definitions for the registered unemployed. Given that the registered unemployed are the main reference population for LMP participants, this article tries to explore and compare the national rules for the registration of the unemployed in a number of countries and thus contribute to a better understanding of the discrepancies between the figures on the registered unemployed and the harmonised unemployed. 
+
+2 - Main characteristics of the Labour Force Survey data on unemployment
+
+Labour Force Survey data on unemployment (LFS’U data) are defined as harmonised data, or harmonised unemployment figures. These are survey data presenting the number of persons which correspond to the international definition of the unemployed, measured by the labour force survey. The definition of unemployment used in the Labour Force Survey  (LFS), is as follows: 
+
+
+
+Unemployment
+1 - In accordance with the ILO standards adopted by the 13th and 14th International Conference of Labour Statisticians (ICLS), for the purposes of the Community labour force sample survey, unemployed persons comprise persons aged 15 to 74 who were:
+(a) without work during the reference week, i.e. neither had a job nor were at work (for one hour or more) in paid employment or self-employment;
+(b) currently available for work, i.e. were available for paid employment or self-employment before the end of the two weeks following the reference week;
+(c) actively seeking work, i.e. had taken specific steps in the four week period ending with the reference week to seek paid employment or self-employment or who found a job to start later, i.e. within a period of at most three months.
+For the purposes of point 1(c), the following are considered as specific steps:
+— having been in contact with a public employment office to find work, whoever took the initiative (renewing registration for administrative reasons only is not an active step),
+— having been in contact with a private agency (temporary work agency, firm specialising in recruitment, etc.) to find work,
+— applying to employers directly,
+— asking among friends, relatives, unions, etc., to find work,
+— placing or answering job advertisements,
+— studying job advertisements,
+— taking a recruitment test or examination or being interviewed,
+— looking for land, premises or equipment,
+— applying for permits, licences or financial resources.
+
+2. Education and training are considered as ways of improving employability but not as methods of seeking work. Persons without work and in education or training will only be classified as unemployed if they are ‘currently available for work’ and ‘seeking work’, as defined in points 1(b) and (c).
+
+3. Lay-offs are classified as unemployed if they do not receive any significant wage or salary (significant is set at = 50%) from their employer and if they are ‘currently available for work’ and ‘seeking work’. Lay-offs are treated as a case of unpaid leave initiated by the employer — including leave paid out of government budget or by funds (16th ICLS). In this case, lay-offs are classified as employed if they have an agreed date of return to work and if this date falls within a period of three months.
+
+4. During the off-season, seasonal workers cannot be considered as having a formal attachment to their high-season job because they do not continue to receive a wage or salary from their employer although they may have an assurance of return to work. If they are not at work during the off-season, they are classified as unemployed only if they are ‘currently available for work’ and ‘seeking work’, as defined in points 1(b) and (c).
+
+It should be noted, however, that in three countries, Spain, Sweden and the United Kingdom, the coverage of the survey starts only with the 16 year olds, thus potential unemployed who are aged 15, (although most 15 year olds will still be in education), will not be counted.
+In the Labour Force Survey, data are collected through a questionnaire which a representative sample of the population is asked to complete. Since 2005, the survey is implemented quarterly. The adoption of this common definition of unemployment in all Member States, combined with a great effort to harmonise labour force survey questionnaires, ensures a maximum of international comparability of labour market statistics. The Labour Force Survey (LFS) enables the calculation of comparable data on employment and unemployment across countries.
+
+3 - Main characteristics of the registered unemployment (RU data)
+
+Registered unemployment figures are administrative data which refer to the number of persons registered as unemployed with the National Register’s of the Public Employment Services of each country. The official figure of “registered unemployed” is subject to national rules and definitions specifically linked to each country’s tradition and which differ across countries. 
+National registers apply in most countries the same three criteria established by the ILO and used by the LFS for the measurement of harmonised unemployment. However, some differences appear in the way these are interpreted and specified in the different countries:
+(1) “Persons without work” – The situation of being without work can be more or less strictly interpreted. In some countries persons working one hour in the reference week are strictly excluded from the unemployed, as it is defined by the ILO criteria. However, in several countries persons having involuntarily short term jobs, short working hours, low-paid jobs and temporary jobs, are considered as “without job”, and are under certain conditions registered as unemployed. This is the case in Austria, in Germany and in Finland, for example.
+(2) “Currently available for work” – Being available for work can also be more or less strictly interpreted. In some countries persons who are ill and thus “not currently” available for a job, are not registered as unemployed. However, in the majority of countries they are. In some countries single parents who cannot find a kindergarten for their children are not allowed to register as RU, whereas in others yet they can. In contrast to the LFS, some countries ask for full time availability to register persons as unemployed.
+(3) “Actively seeking work” – The specification of this situation is further qualified in two aspects, the first one concerning the type of work looked for and the second one concerning the type of activity implemented to fulfil an “active” search. In some countries, only those who are looking for a full-time job are allowed to register as RU, whereas those looking for a part-time job are excluded. In others, the job-search is defined as “active” if the person declares to be actively searching a job, whereas in other countries evidence of frequent contacts with the PES and reporting of search activities is required. 
+The two criteria “currently available for work” and “actively seeking work” are further developed by an additional question on the “Obligation to take “a job” offered by the PES”: In some countries, the registered unemployed are obliged to take “any” job offered by the PES or otherwise they are considered not to be available and thus may be excluded from the register, at least for a certain time. In other countries, this rule is interpreted to be valid only for a “suitable” job.
+Apart from the three ILO criteria, there is an additional condition imposed by the national registers:
+(4) Registration: Only those persons who actively contact the PES and go personally to ask for help through registration are included in the registers. Further, not all persons willing to register with the PES will be classified as unemployed, as they might be included in other categories as happens, for example, with the participants in labour market policy measures. PES registers depend on “counting customers”, those persons who contact them for help. The number of customers should depend on how the system is perceived by the individuals. If the system offers practical or financial help in a generous way, such as unemployment benefits, referral to labour market measures, help find a new employment, it will probably have more clients than a PES with less attractive offers. 
+Registered unemployed figures are most relevant for national monitoring since they are submitted to the definitions and legal basis adopted in each country to combat unemployment and at the same time refer to the actual population requesting effective help.
+
+4 – Restrictions of the registers versus restrictions of the survey
+In summary, the restrictions imposed by the registers to count a person as “registered unemployed” are only in theory the same restrictions imposed by the LFS definition. The different interpretation of these conditions leads to different results across countries. In the table below,  seven selected countries have been compared, taking into account the different calculation method in each country (monthly average in some countries, quarterly data in some others).  Three countries, Germany, Austria and Finland, have higher figures of registered unemployed than LFS unemployed and  four countries, Spain, France, the Netherlands and Sweden,have lower figures of registered unemployed than LFS unemployed (Table 1).
+ 
+
+Table 1.- Registered Unemployed (RU), Harmonised Unemployed (LFS'U) and ratio RU/LFS'U. Seven selected countries - 2003 - (in 1000s)
+ 	DE	ES	FR	NL	AT	FI	SE
+RU/LFS’U	1.04	0.76	0.97	0.54	1.27	1.20	0.72
+LFS’U	3890.5	2125.8	2339.8	312.5	182.6	234.7	258.8
+RU	4060.3	1621.3	2258.9	170.0	232.4	281.3	185.8
+Sources – Eurostat – Labour Force Survey, Labour Market Policy database
+
+4. 1 - Registers more restrictive than survey
+The conditions imposed for registration as unemployed are not limited to those mentioned above (“persons without work, currently available for work, actively seeking work, and actively asking for registration”). The regulations for registration as unemployed are often linked to the eligibility for unemployment benefits and consequently not all those persons who fulfil the four previous conditions can or do register with the Public Employment Services as unemployed.
+Some examples might illustrate this situation:
+- Young unemployed people even those actively looking for a job, often do not register with the PES or are excluded from the official figures of registered unemployed, for different reasons such as: (a) they are first job seekers and due to their lack of previous work, they are not eligible for unemployment benefits, (b) they are full-time students and are only looking for a part-time job or a job in their summer holidays, (c) they are part-time students and thus, are not counted among the registered unemployed, even if they are looking for a job and are available to work. This is for example true in Spain. However, the difference between registered unemployment and harmonised unemployment figures for younger age groups is substantially more important than for the main working age groups, and register figures for young unemployed are generally lower than survey figures in all countries. Nevertheless, the survey coverage includes 15 to 74 aged persons. In this respect, the registers are more restrictive since often 15 year olds are not included.
+- Older people are considered in most countries as having little chances of finding a job. Consequently, they are eligible to receive unemployment benefits, but are not obliged to look for a job nor registered as “unemployed” anymore. Similarly, pensioners and retirees receiving a pension are not obliged to look for a job and therefore not considered registered unemployed in some countries. This is true in France, for example. They are not counted as unemployed even when looking for a job. The same applies to beneficiaries of invalidity pensions (if they are not 100% handicapped) and for elderly unemployed receiving unemployment benefits. However, if these groups are looking for a job and comply with the relevant criteria, they are counted as unemployed in the survey until they are 74 years old. Registered unemployed as defined in the PES registers in most countries include only persons in main working ages (between 15/20 and 60/64 year olds depending on countries), but no persons beyond that age. In summary, older people for one or another reason are generally not registered as unemployed, and therefore it is surprising to find higher figures of registered unemployed than LFS’U for the age groups 50 through to 64, as it happens in four out of the five countries shown in the detailed analysis (Spain, Germany, Finland and Austria). 
+- Participants in labour market policy measures such as training, occupational programmes, social employment schemes etc. will probably be classified as unemployed in the survey, but usually they are not counted in the registers as unemployed, as during a full-time measure they are considered as “not immediately available”.
+- People looking for part time jobs (<20 hours a week) or temporary jobs, are excluded from the registers in some countries, as it is the case in Spain. 
+- Receipt of unemployment benefits - In some countries such as the United Kingdom and also in Ireland, there are no official figures on registered unemployed, and the registers of unemployed persons registered with the Public Employment Services include only those persons who receive unemployment benefits. On the contrary, the ILO criteria for definition of unemployment are independent of whether the person is receiving unemployment benefit or not.
+
+ 
+
+4.2. Survey more restrictive than registers 
+While national registers are more restrictive than the survey in the situations mentioned above, the coverage of the survey is more restrictive than the registers in some  particular cases such as persons working short time, part-time or in “minimal” jobs. These persons are excluded from the harmonised unemployment figures because they are “technically” employed while in some countries they are counted as registered unemployed, if their work is involuntarily short or very low paid (under a certain threshold). For example in Portugal, persons hired for domestic tasks, in Germany and Austria persons earning less than 400 € (in Austria 300 €) a month or working less than 15 hours a week can register as RU. This group of persons is important in most countries and might be very relevant in accounting for the differences between LFS-unemployed and registered unemployment figures. 
+
+5 – Groups of people which make the difference
+Considering the rules established by both - registers and LFS survey - for the definition of one person as “unemployed” it cannot be demonstrated that the registers are always more restrictive, nor that the survey is always more restrictive. Consequently, one cannot expect to find systematically lower figures of registered unemployed than survey unemployed, nor the opposite. This is clear from table 1 above.
+The understanding of the discrepancies between RU and LFS’U requires a detailed analysis for each individual country, since the groups that are included in the RU and excluded from the survey, and those that are excluded from the RU and included in the survey, differ across countries and have a different weight in the population of each country. From the analysis of the rules and definitions applied in the registers of the countries mentioned above, it has been observed that three groups of population are subject to a special treatment by the registers of some countries. These three groups are (a) young people, and first job seekers, (b) persons in “marginal” or “minimal” jobs and (c) older people. The special treatment given to these groups in the registers explains its under-representation (young people) or its over-representation (persons in marginal jobs) in certain countries. 
+In addition to this, there is a fourth particular group (d) of “Unemployment Benefit Recipients” which explains the differences between registered unemployed and harmonised unemployed, but this happens only in two countries, Ireland and the United Kingdom (see §3.1), since only those persons receiving benefits are included in the “Live Register” which is the closest to the PES register in other countries. In other countries, the opposite can be observed: there are some groups of persons receiving benefits which are not registered as unemployed with the PES, e.g. older unemployed who agree to take early retirement keeping their right to unemployment benefits while having a lower pension in Germany, (§ 428 Social Code III). The same approach to the older unemployed is found in France – it seems reasonable to think that other countries might have similar regulations for aged persons. Also participants in LMP measures are not registered as unemployed but may receive benefits.
+It is worth considering how the group of “minimal job workers” (persons working a small number of hours) is treated differently in the registers of different countries: As mentioned before, Austria or Germany count them as unemployed, (see §2.1) whereas in Spain these persons are counted as “employed”, and in Sweden they are counted as “part-time employed”. This qualification in Sweden, gives those persons the right to receive part-time unemployment benefits. It is worth mentioning that in Sweden part-time employed receiving part-time unemployment benefits constitute a group nearly as important as the group of those who receive full-time unemployment benefits. In other countries, the numbers of persons who receive part time unemployment benefits are practically negligible. 
+
+Table 2.- LMP data on beneficiaries of Unemployment Benefits - 2003 (in 1000s)
+ 	DE	ES	FR	NL	AT	FI	SE
+8.1	4068.3	1204.3	2597.4	748.0	218.4	260.6	188.6
+8.2	279.9	2.1	4.8	0.0	1.6	0.7	0.0
+8.3	0.3	0.0	0.0	0.0	0.0	31.2	144.1
+Total 	4348.5	1206.4	2602.2	748.0	219.9	292.4	332.7
+Legend Table 2: Data in this table present 3 subcategories in the LMP database including the following data:
+8.1 - Persons receiving Unemployment benefits and Unemployment assistance. 
+8.2 - Persons receiving partial unemployment benefits (due to climatic conditions etc.)	
+8.3 - Persons receiving part-time unemployment benefits (due to having part-time job and looking for full-time job)
+Source: Eurostat, Labour Market Policy database
+
+8.1 - LMP Sub-category that includes persons receiving unemployment benefits and unemployment assistance. In DK it includes also persons in sub-categories 8.2 and 8.3
+8.2 -This category includes partial unemployment benefits (due to climatic conditions etc.)
+8.3 - This category includes part-time unemployment benefits (due to having part-time job and looking for full-time job)
+
+Finally, it is clear that some countries can produce very similar figures of registered unemployed and harmonised unemployed (RU and LFS’U). For example in France, a very rich set of data on each registered person is available and the structure of the registers allows the retrieval of files according to different criteria. Thanks to this flexibility the register can provide a figure of “registered unemployed” matching exactly the figure of harmonised unemployed when necessary.
+
+
+ 
+Part II – Detailed Country Comparison
+
+Achieving an exact picture of the groups included in or excluded from the register can only be part of a bigger study. What can be done using the data that is easily accessible is to look at the age groups of registered persons by labour status, some gender differences and other factors of the sub-groups that are available both in the national registers and in the LFS.
+The second part of this study shows a detailed comparison of LFS and register data on unemployment in five countries, Finland, Austria, Germany, Spain and Sweden. The structure used for the detailed analysis is the following:
+
+II 1. Structure used in the detailed country comparison
+
+(a)	Regulations on registered unemployment compared  to the LFS harmonised regulations on unemployment
+All systems have certain definitions. While the ILO-definition of unemployment adopted by the LFS is the same internationally, each country has its own national system and regulations, for unemployment registration. By comparing the definitions and some other special regulations between the LFS and registered unemployment, a number of differences in the figures can already be explained.
+
+(b)	Unemployment by age, register data vs. LFS-unemployed
+The next step is to look at the differences between the LFS-unemployed data and the registered unemployed data, not only for the totals, but also within the age-groups (5 years in one group) to find out whether or not both sources always show some discrepancies e.g. at the beginning or at the end of the working life.
+In a further study, this should also be examined according to gender, as there may be specific differences between men and women, e.g. usually more women than men have breaks in their employment for childcare reasons.
+
+(c)	Registration with the public employment service, PES vs. LFS data on registration
+Some further insight can be gained by including information on registration. The most important statistical information of the PES is the registered unemployed, which is a subgroup of the total registered jobseekers. Total registered jobseekers usually include other groups like employed jobseekers, active labour market measure participants and other groups not fulfilling the national definitions of registered unemployed.
+A table shows for each country which relevant sub-groups of registered jobseekers can be identified in the respective PES register. Sometimes one group can be matched by definition exactly to one corresponding employment status in the LFS, sometimes one group of the register can include different employment status according to the LFS. This allocation is done in the table. One example: In Germany registered unemployed are allowed to be marginally employed, i.e. their LFS employment status can be either unemployed or employed.
+The LFS also includes questions on PES registration. All participants irrespective of their labour status are asked if they are registered with the PES. Groups identified in the LFS are:
+•	LFS-RU  => LFS employment-status = unemployed and registered with the PES
+•	LFS-RE => LFS employment-status = employed and registered with the PES
+•	LFS–RI => LFS employment-status = inactive and registered with the PES
+This part of the analysis compares the different labour status of the persons who declare themselves to be registered with the PES in the LFS and those actually registered with the PES. In the graph the registered unemployed are set as 100% (=1), in relation to all other groups shown.
+
+(d)	LFS-unemployed claiming not to be registered (only LFS-data)
+The last group observed is the LFS unemployed claiming not to be registered, i.e. the group fulfilling the LFS-criteria on unemployment without being registered. In this study, these data are used to explain the differences between registered unemployed and LFS-unemployed in groups with big differences, i.e. usually the young age group. The picture expected is that in the main working age most LFS-unemployed claim to be registered, whereas among the young age groups most of the population is still in the education system. Young people in the education system usually only look for a job in the holidays. In this case, they can be classified as unemployed in the LFS, but usually not as registered unemployed. Therefore the share of young unemployed not being registered with the PES is relatively high (see graphs “country-code-03”).
+
+Table 3 - Numbers of Registered unemployed and LFS Unemployed by age groups - 2003
+
+ 
+
+
+II 2. Finland
+
+(a) Regulations of registered unemployment compared to the LFS harmonised regulations on unemployment
+To register as unemployed in Finland, a person has to be aged 17-64, be without work and willing to work. The unemployed have to be available to start full-time employment or to have found work they are about to start. Active search is also required.
+Comparing the criteria used by the ILO definition, the age-groups considered comprise persons between 15 and 74. In the detailed definition of the variables qualifying a person as unemployed "availability" is more strict in the unemployment register, as availability for full-time employment is required, while in the LFS availability for part-time would be sufficient. The criteria "without work" in the LSF means no work at all - even one hour in the week changes the status from unemployed to employed. The employment status in the register in Finland changes to “employed” if a person regularly has three or more working hours in the week or works irregularly more than four hours a week and thus is slightly less strict than the ILO definition. For “active search” the PES requires one specific activity, a jobseeker has to turn up at the employment office. In the LFS, one out of several activities is sufficient. In addition to this more generous definition, the LFS is stricter regarding the length of the search, the unemployed must show job search activities in the last four weeks, which is not necessarily required of an unemployed person in the PES (Sitho 2003, p. 162), where the unemployed have to turn up every 3-4 months.
+
+(b) Unemployment by age, register data vs. LFS-unemployed
+In Finland, the registered unemployed for 2003 are about 23 % higher than the LFS-unemployed (table 1). However, looking at the age groups, there is a different picture: younger age-groups 15-19 and 20-24 show lower figures of registered unemployed than LFS-unemployed compared to registered unemployed. 
+The fact that register groups in Finland start at 17 instead of 15 (as for the ILO-definition), only offers a partial explanation. If the LFS-unemployed in the youngest age group are excluded from the figures and the comparison starts with age groups 17-19 as in the Finnish register, the LFS-unemployed are still more than 2.5 times higher than the registration figures. For the age-group of 25-29 the figures equal, and from 30-34 to 55-59 the registered unemployed are higher than the LFS-unemployed figures with an increasing difference. 
+For the older unemployed (not including the unemployed pensioners of 60-64 years ), the registered unemployed are nearly four times as high as the LFS-unemployed. Presumably, a high share of the registered unemployed in this age group do not match the LFS-criteria of unemployment of active search anymore.
+
+Graph FI01
+ 
+
+(c) Registration with the public employment service, PES vs. LFS data on registration
+
+The jobseeker register in Finland includes detailed information about labour status. Several different groups can be identified: (1) unemployed, (2) laid off, (3) on reduced working time, (4) in the conventional labour market, (5) in subsidised employment, (6) inactive persons not in the labour force and (7) unemployed pensioners. These groups are shown in graph FI 02a below in reverse order.
+
+Graph FI02a
+ 
+
+Due to the detailed information available, all groups of the PES register can be clearly assigned to the LFS categories of unemployed, employed and inactive.
+
+Groups identified in the PES register 	Can be in the LFS…
+Registered unemployed + Laid off (RU)	LFS-registered-unemployed + LFS-employed < 4 hours a week (LFS-R-U, LFS-R-E)
+On reduced working time (RJ-E)	LFS- registered-employed (LFS-R-E)
+In the conventional labour market (RJ-E)	LFS- registered-employed (LFS-R-E)
+In subsidized employment (RJ-E)	LFS- registered-employed (LFS-R-E)
+Persons not in the labour force (RJ-I)	LFS- registered-inactive (LFS-R-I)
+Unemployed pensioners (RJ-I)	LFS- registered-inactive (LFS-R-I)
+Training measure participants 	LFS- registered-employed or inactive (LFS-R-E,  LFS-R-I)
+
+Graph FI 02b
+ 
+ (Legend: The three top labels refer to PES columns; the three lower labels refer to LFS columns)
+
+
+As is shown in graph FI02b above, the registered unemployed in Finland (set as 100%, i.e. 1.0) are not the only group of persons registered as the total registration figures, including employed and inactive registered, are about 1.8 times as high. The figures of the total jobseekers registered with the PES are about 45 % higher compared to the total LFS-figures of persons claiming to be registered. The difference results from the PES’ registered unemployed (+ 60 %) and registered employed (+ 68 %) being higher than the LFS figures. The registered inactive in both systems only vary slightly, the PES figures about 4 % higher than the LFS figures (see graph, FI 03). For the main working ages the difference between the LFS and PES registration figures is smaller than for the total, but still amounts to 32 %. This smaller difference results from the registered inactive; in this age-group, the registered inactive in the PES are smaller than in the LFS.
+
+The older age-group (60-64) includes as inactive the unemployed pensioners who have to register at the employment service, though most of this group is outside the labour force. Apparently unemployed pensioners do not claim to be registered in the LFS. If this group is excluded from the comparison, the registration figures of the LFS and PES match for this age-group, though the subgroups again show big differences: In the PES register, 84 % of the registered jobseekers (excluding the unemployed pensioners) are unemployed. On the contrary 70 % of the LFS-registered are inactive. The unemployment figures of the PES in the age-groups 60-64 are nearly four times the size of those in the LFS. This difference is much bigger than for other age groups and could suggest that the registered unemployed in that age-groups often do not fulfil all the unemployment criteria of the ILO anymore, as it is very difficult to find a new employment in the years preceding pensionable age, so that they might have given up and are not searching actively anymore.
+
+(d) LFS-unemployed claiming not to be registered (only LFS-data)
+
+In Finland, about 23 % of the LFS-unemployed claim not to be registered with the PES (women 26 %, men 21 %). The share of LFS-unemployed who claim not to be registered to the LFS-unemployed is highest for the young age-groups (15-19: 69 %) and decreases up to the age-group (35-39: 8 %). For the following age-groups, there is a further but slower rate of decrease until the age group 55-59 (2 %), the share for males rising again for the age-group of 60-64 (10 %). The biggest difference between men (38 %) and women (48 %) is to be found in the 20-24 year-old age group with 10 percentage points.
+
+Graph FI03
+ 
+
+
+
+
+
+II. 3. Austria
+
+(a) Regulations of registered unemployment compared  to the LFS harmonised regulations on unemployment
+
+The conditions necessary to register as unemployed in Austria are to be without work, to apply to the PES and to be available for placement services. The registered unemployed should be immediately available to take up employment, be able and willing to work. They are allowed to earn a minimal income (in 2003: 309,38 Euro). Job search activities are also required.
+For a comparison with LFS-unemployed this means a wider definition concerning "Without work", as the registered unemployed are allowed to have a marginal employment while being registered as unemployed. However the registered unemployed have to be available immediately, not within two weeks as in the LFS. Job search activities are required in both systems, but the particular activity of requesting a job from the PES is not needed for the LFS, so here the demand is different (and given the more detailed requirements), stricter for the registered unemployed. At least one particular activity has to be done by the registered unemployed to qualify as registered unemployed (i.e. to go to the PES) while for the LFS-unemployed, any activity from a list of variables is sufficient, e.g. reading the job advertisements in the newspaper. It is also possible for the PES to check the availability of their clients, which is not the case for the LFS-unemployed. Due to these different approaches, which also accur in other countries, the problem of how to compare job search activities of registered unemployed and LFS-unemployed is also difficult in Austria.
+Women aged 56.5 and men aged 61.5 who receive benefits to facilitate transition into retirement (pension advances, LMP database: intervention AT-4), i.e. their application is checked by the pension administration, are excluded from the unemployment register.
+
+(b) Unemployment by age, register data vs. LFS-unemployed-U
+For the first quarter of 2003 in Austria the total figures of the registered unemployed are about 55,3 % higher than for the LFS-unemployed (see table 1), the age groups at the beginning and the end of the working life being an exception. Both for the 15-19 and the 60-64 age groups, the LFS-unemployed figures are higher than the registered unemployed. 
+
+Even within the main working age, the shares of registered unemployed to LFS-unemployed change. While the figures of the registered unemployed rise from the age-group 25-29 to the age group 35-39, the figures for the LFS-unemployed decrease (see graph AT01). The biggest difference between the registered unemployed and the LFS-unemployed is found in the age group 35 to 39 years, the figures of the registered unemployed being more than twice as high as for the LFS-unemployed. 
+
+Graph AT01
+ 
+
+No explanation for the lower figures of LFS-unemployed as compared with those of registered unemployed in the age groups in the middle of the working life can be found in the definitions and regulations of both systems. To get a better picture, the gender specific shares of registered unemployed and LFS-unemployed are included in the Austrian comparison (see graph AT02a). 
+
+Concerning the differences between men and women, in most age-groups (20-24 – 50-54) the difference between registered unemployed and LFS-unemployed figures is bigger for women than for men, i.e. women have a higher share of registered unemployed compared to LFS-unemployed than men. This relation changes in the older age-groups of 55-59 and 60-64, men having a higher share of registered unemployed compared to LFS-unemployed. The big difference between LFS-unemployed and registered unemployed in the age-group 35-39 years exists for men and women, though it is even higher for men, with figures of registered unemployed being about 2.5 times as high as the LFS-unemployed.
+
+Graph AT02a
+ 
+
+(c) Registration with the public employment service, register data vs. LFS data on registration
+As not all LFS-unemployed are registered with the PES whilst other persons not LFS-unemployed (inactive and employed) are registered, we also compare those in the LFS who claim to be registered with the actual jobseeker register. Besides the registered unemployed, the Austrian registered jobseekers include apprenticeship seekers, the marginally employed and other not unemployed jobseekers. These groups can be identified in the register data.
+
+Register groups	Can be in the LFS…
+Registered unemployed (without marginal employment) (RU)	LFS-R-U
+Registered unemployed with marginal employment = RU-E	LFS-R-E
+Training measure participants (Cat.2) = RJ-I 	LFS-R-I
+Not unemployed jobseekers (RJ)	LFS-R (LFS-R-U, LFS-R-E, LFS-R-I)
+Apprenticeship seekers (AS)	LFS-R (usually LFS-R-I, LFS-R-U)
+
+Graph AT02 – PES-registered by status against LFS persons by status declaring to be registered
+ 
+(Legend: The four top labels refer to PES columns; the three lower labels refer to LFS columns)
+
+In Austria, the inclusion of the registration figures does not explain the differences between LFS-unemployed and registered unemployed. The total figure of the LFS-registered is 30 % smaller than the registered jobseeker figure (see graph AT02). Registered jobseekers in Austria include the registered unemployed (88 %), employed (6 %) and other not-unemployed registered (5 %), with apprenticeship seekers (AS in the graph) amounting to 1 % (24 % in the age group 15-19 years). The LFS-registered being smaller than the registered jobseekers include 76% unemployed, 22 % inactive and only 2% employed. About 16,700 registered unemployed with marginal employment are counted in the PES register compared to only about 4,500 in the LFS. Part of this difference may be explained by the LFS methodology which only includes one reference week. Some of the marginally employed may not work every week, but this cannot explain a difference of this size, the PES figures being four times as high as the LFS-figures.
+
+The registered unemployed (excluding those with marginal employment) amount to 276,000 (first quarter 2003), about 67% higher than the LFS-unemployed who claim to be registered. In the younger age group (15-19) the difference between the registered unemployed and LFS-unemployed can be reduced by including only the registered in both systems. In that case, the figures show about 10,400 registered unemployed (excluding marginally employed) and 11,500 LFS-registered unemployed.
+
+However, for the main working age group (20-59), the registration figures of the PES are 46 % higher than the LFS registration figures. It is interesting to note that about one quarter of the LFS registered claims not to be unemployed, while this is only true for about 10 % of the PES registered jobseeker totals. In the LFS, 42,700 of those claiming to be registered are inactive, only 4,300 are employed. The PES figures however, include 16,000 marginally employed and only 13.000 other not-unemployed jobseekers. The differences in the registration figures of LFS and PES for the main working age are not easy to understand.
+
+In the older age-group (60-64), the difference between the registration figures for the LFS and PES unemployed is only 10 %. In this age-group, nearly half of the LFS-registered are inactive, the other half is unemployed. In the PES, 85 % are unemployed, i.e. a high share of the 60-64 year-old registered unemployed do not fulfil the ILO (LFS) unemployment criteria. This cannot be explained by the early retirement regulations, as those participants are excluded from the register.
+
+(d) LFS-unemployed claiming not to be registered (only LFS-data)
+
+If only the LFS data are taken into account, there is a strong gender effect regarding the registration of LFS-unemployed. For the total it can be observed that 10 % of unemployed men and 15 % of unemployed women claim not to be registered with the public employment office (Graph AT03). The shares for both men and women change significantly from age group to age group, in most cases the shares for women being higher than those for men; up to about 15 percentage points for the age group of the 40-44 year-old (10 % male, 25 % female). The diffrerences between age-groups do not show a clear development, which is different from the other countries observed. One reason may be the group of participants in the LFS, on which the totals are based, are too small for this calculation.
+
+Graph AT03
+ 
+(Legend: LFS Unemployed Not Registered / LFS Unemployed)
+
+
+
+
+II. 4 Germany
+
+(a) Regulations of registered unemployment compared  to the LFS harmonised regulations on unemployment 
+
+To register as unemployed with the German public employment service (PES) a person has to be temporarily without work, actively searching a new employment, be immediately available to start a new job and be available for placement activities offered by the PES. At a first glance the three criteria of being without work, active search and availability are close to the ILO-definition, but a closer look at the definition of the variables shows important differences:
+"Without work" in the LFS means no work at all in the reference week, as one hour would already be counted as employment. In contrast, for the registered unemployed, a marginal part-time employment not subject to social security contributions is allowed without changing the status of a registered unemployed to a registered jobseeker. "Availability" is more strict in the PES definition, the registered unemployed are expected to be available immediately, while the LFS asks for availability within two weeks. Unemployed according to both definitions have to "search actively" to end the unemployment spell. In this case, it is the measurement procedures that might result in a difference. The unemployment requirement of the PES encompasses availability for employment (e.g. placement offers by the PES) and efforts on the part of the unemployed individual to become employed. At the request of the Employment Office, the unemployed must show proof of the efforts made in this regard. Thus "active search" register figures depend on activities both of the registered unemployed and of the PES. The LFS figure relies (for this variable) only on the self-assessment of the persons participating in the survey. This difference in the variable “active search” exists in all the countries included in the comparison. In the case of proxy interviews (2002 about 30 %) the LFS figures also depend to a certain extent on the ability of the person asked and his or her knowledge of the situation of the person he/she is questioned about.
+
+(b) Unemployment by age, register data vs. LFS-unemployed
+In Germany, the figures of the registered unemployed in April 2003 are 15,6 % higher than the figures of the LFS (see table 1). The age groups at the beginning (15-19 years) and the end of the working life (60-64 years) are an exception: for these age groups, the LFS-unemployment figures are higher than the figures of the registered unemployed (see graph DE01). For information on the younger age groups see below (II.7)
+
+Graph DE01
+ 
+
+Though the figures for the registered unemployed in Germany are higher than the LFS figures, the difference decreased from the peak in 2001 of about 800,000 to about 450,000 in 2003. A reason for this phenomenon might be that due to the recent reforms the registered unemployed were checked more often, if they still fulfil the conditions for unemployment registration. (Hartmann/Riede 2005) This figure for the registered unemployed in 2003 (still about 16 % higher than LFS-unemployment), is seen in the age groups from 25-29 to 50-54 with only small variations. It is significantly smaller among the younger (20-24) and the older age-groups (55-54). The difference between LFS-unemployed and registered unemployed is higher for women (18%) than for men (13%). The biggest difference between men and women is to be found in the older working age of 60-64. In this age group, the figures for the LFS-unemployed are higher than the figures for the registered unemployed (women + 17 %, men + 59 %). The difference between men and women in this group may result from the different ages of retirement between men and women and special regulations for the older unemployed (see graph DE02 below).
+
+(c) Registration with the public employment service, register data vs. LFS data on registration
+In the LFS, all participants are asked if they are registered with the public employment service, irrespective of claiming to be unemployed, employed or inactive. In the PES register, the unemployed have to fulfil all the conditions as mentioned above, while registered jobseekers also include for example those who do not fulfil all the conditions required. “Not unemployed registered jobseekers” include “employed at risk of losing their job” or just wanting to change as well as participants in labour market measures and jobseeking people in education or on parental leave or with care duties.
+
+Register groups	Can be in the LFS…
+Registered unemployed (RU)	LFS-R, normally LFS-R-U
+Measure participants (cat. 2) (RJ) 	LFS-R-I
+Registered unemployed with marginal employment receiving benefits - (RU-E)	LFS-R-E
+Other registered jobseekers (RJ)	LFS-R (LFS-R-U, LFS-R-E, LFS-R-I)
+
+Graph DE02
+ 
+(Legend: The three top labels refer to PES columns; the three lower labels refer to LFS columns)
+
+In Germany, the total register figures are about 7 % higher compared to those in the LFS claiming to be registered. The difference results mostly from the neither-unemployed nor-employed registered jobseekers – a group difficult to identify. The relation between PES- and LFS-registration is different for the younger and the older age groups, reflecting their special situations. In the younger age group, there are only a few registered unemployed benefit recipients with marginal employment, instead the group of the registered jobseekers who are not unemployed has a higher share than in other age groups. In the 60-64 year old group, the LFS-unemployed are about 90 % higher than the registered unemployed figures. This may be due to early retirement regulations for the unemployed, with these participants in the PES not registered as unemployed.
+
+In the official PES statistics, the registered unemployed with marginal employment are not identified, i.e. registered unemployed with marginal employment are included in the total figure of the registered unemployed. This refers to the national definition of the registered unemployed, the variable "without work" referring to socially insured employment of at least 15 working hours a week. Though the unemployment statistics do not subdivide the registered unemployed according to marginal employment, it is possible to quantify the registered unemployed benefit recipients with marginal employment (see graph DE02, RU-E). In Spring 2003 about 13 % of the registered unemployed are benefit recipients having some marginal employment. Subtracting this group from the registered unemployed causes the figures of the registered unemployed to be only slightly higher than the LFS-unemployed claiming to be registered and nearly equals the total figures of the LFS-unemployed. 
+
+The group at the end of the working life: For the older unemployed, the registered unemployment figures are only about 60 % of the unemployment figures in the LFS. In the register, there is a regulation allowing the older unemployed not to be available for any new employment without losing their entitlement, if they agree to retire as soon as they are entitled to receive pension.  Only a small part of these unemployed stay in the jobseeker register.  Though most of this group is excluded from the register, it can be assumed that in the LFS a part of this group claims to be registered, as they still are in contact with the PES and receive benefits – some may not know how exactly their status should be defined. To a certain extent, this could explain why the LFS figures of registered unemployed and registered inactive are bigger than the register figures. In April 2003, 370,988 persons received benefits according to § 428 social code III. Detailed information about this group can only be gained by empirical studies.
+
+
+(d) LFS-unemployed claiming not to be registered, only LFS-data
+In Germany, a small minority of LFS-unemployed claims not to be registered with the public employment service. This means a high proportion of the PES registered who have no employment but search actively. The group with the highest share of LFS-unemployed not being registered is that of the < 20 year old (women 15 %, men 10 %), which can be explained by the status “between school, further education and working life“(as above). Furthermore, full time students and pupils can be unemployed in the LFS, while the lack of availability does not allow for this in the PES register. Full-time students are assumed to be studying full-time and thus not be available for a socially insured employment of at least 15 hours a week. Still, it is interesting that for nearly all age groups the proportion of unemployed women claiming not to be registered is bigger than the comparable proportion of unemployed men, especially for the 35-39 year age group belonging to the main working age (see graph DE03). 
+
+Graph DE03
+ 
+
+
+
+(e) The biggest groups resulting in differences between the LFS- and PES-figures in Germany
+Marginal employment
+As registered unemployed are allowed to have a marginal employment while being registered, this opportunity is taken up by a significant number. Up to now only those who are also benefit recipients can be identified, i.e. the total group of marginally-employed registered unemployed is bigger than measured in this study. In the LFS, this group by definition will be counted as employed and registered.
+
+LFS-unemployed excluded from the register
+People actually inactive or not available for a socially insured employment are excluded from the register, e.g. the unemployed benefitting from early retirement regulations, training measure participants, the sick, full-time students. Registered unemployed not eligible for benefits have to renew their registration every three months; otherwise they are excluded from the register. In these cases it is not only the different definitions of the LFS compared to the national regulations that are under discussion but also the difficulties for persons answering the questionnaire, as their own status may not always be clear to themselves.
+
+
+
+II. 5. Spain 
+
+(a) Regulations of registered unemployment compared  to the LFS harmonised regulations on unemployment
+
+To register as unemployed in Spain, a jobseeker has to be without work, be actively seeking and be available for a job. Two other groups of jobseekers are counted in the register: 1. inactive jobseekers who are not working at all and 2. employed jobseekers who have found a job, but stay registered to find a better one.
+Groups excluded from the registered unemployed according to the Ministerial decree of 11 March 1985 are:
+•	employed looking for a second job or want to work more hours a week
+•	employed looking for a different job
+•	employed temporarily laid off
+•	employed with temporary reduced working hours
+•	unemployment benefit recipients who participate in labour market measures
+•	pensioners, i.e. pension benefit recipients who are retired and aged over 65 regardless if they are looking for a job or not
+•	jobseekers looking for a part-time job 
+•	young people under 25 years in vocational training in official institutions (not only university students) or people older than 25 years looking for their first job
+•	young people in vocational training receiving more than 20 hours of training a week, are receiving maintenance allowance and looking for their first job
+•	persons not immediately available to work such as:  those on sick leave, the severely disabled, those serving in the military or in the civil service, persons who register with the PES as a condition for participating in a selection process for a job, persons looking for a job abroad, persons looking for work at home
+•	recipients of unemployment benefits for agricultural workers, jobseekers registered with the PES who are receiving benefits according to LAW 2298/1984 or are no longer eligible for benefits, although it is less than one year since they started receiving benefits.
+
+Several of the groups excluded from the unemployment register match with the LFS definition, i.e. all those who already have some work would be classified as employed in the LFS, those not available in the LFS usually belong to the inactive group.
+Nonetheless, there are some exclusion regulations in the Spanish register that do not accord with the criteria of the LFS (i.e.no work, active search and availability). In Spain, all those older than 25 years who are looking for their first employment are excluded, as are also excluded those looking for part-time jobs or for work at home. These groups will presumably fulfill all the LFS conditions of unemployment. Another group that may account for differences is that of persons in vocational training and perhaps also labour market measure participants, if they are actively searching for employment. An additional group consists of those who have exceeded their eligibility for benefits and thus are excluded from the unemployment register – they may still fulfill the criteria of the LFS.
+
+The Spanish register excludes some groups which qualify as unemployed, according to the LFS. However, according to the PES no groups in Spain which do not fulfill the LFS criteria are included in the register.
+
+(b) Unemployment by age, register data vs. LFS-unemployed
+In Spain, the 2003 figures for the registered unemployed are 20,3 % smaller than the figures of the LFS unemployed (see table 1).  The LFS-unemployment figures are higher than the registered unemployed for age groups 15-19 to 45-49, the biggest differences can be examined for the younger ages 15-19 to 25-29 (+ 80 %). This can be explained by the special regulations for young people as mentioned above.
+
+The difference between the LFS-unemployed and registered unemployed decreases with the older age groups. In the 50/54 age-group the relation changes, the registered unemployed figures are higher compared to the LFS-unemployed. The same applies to the 55-59 and 60-64 unemployed age groups.
+
+Graph ES01
+ 
+
+ 
+
+(c) Registration with the public employment service, register data vs. LFS data on registration
+In the PES register three different categories of jobseekers are added to the total of all jobseekers: 
+1 - unemployed jobseekers, i.e. the registered unemployed
+2 - jobseekers not registered as unemployed because they are excluded from the statistical concept (see definition above)
+3 – employed jobseekers who seek a different employment.
+
+Register groups	Can be in the LFS…
+Unemployed jobseekers, i.e. registered unemployed  (RU)	LFS-R-U
+Jobseekers not registered as unemployed – RJ (JS-not RU)	LFS-R (labour status not identified)
+Employed jobseekers – R-E (JS-E)	LFS-R-E
+
+Graph ES02
+ 
+(Legend: The three top labels refer to PES columns; the three lower labels refer to LFS columns)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+The total figure of registered jobseekers in Spain 2003 was 15 % higher than the LFS-unemployed, employed- or inactive claiming to be registered with the PES. Looking at the different groups 
+available (graph ES 02), this difference results more from the registered inactive and employed than from the registered unemployed. In the PES register, there are about 1,660,000 unemployed compared to about 1,650,000 LFS-unemployed claiming to be registered.
+The comparability between the LFS-unemployed claiming to be registered and the registered unemployed is good for the main working age (20-59 years). The difference between LFS-U and RU before observed in graph ES01 for the younger age group is reduced to 18 %, the LFS figures still being higher than the PES figures. If we compare only the LFS unemployed with the registered unemployed, in this age-group the LFS figures are 88 % higher than the PES registered unemployed (graph ES01).
+In the older age-group (60-64) the registered unemployed are nearly 2,5 times as high as the LFS unemployed who claim to be registered. At first glance, we have a lack of comparability for this age group. The 60-64 year-old LFS-registered include 58 % inactive, a much higher rate than in other age groups. This may be caused by the problem of the older unemployed having difficulty in finding a new employment. If they do not feel they have a chance to be employed again, they might not search actively anymore and thus not fulfil the ILO (LFS) definitions of unemployment. This phenomenon can be observed in other countries too, as in Austria and in Finland.
+
+(d) LFS-unemployed claiming not to be registered, only LFS-data
+In Spain, more than 20 % of the LFS-unemployed claim not to be registered as unemployed. Graph ES03 corresponds to graphs ES01 and ES03 as the difference between the registered unemployed and the LFS-unemployed is included. As in the other countries, the share of the LFS-unemployed who claim not to be registered is highest for the younger ages. The share of the LFS-unemployed with registration to LFS-unemployed decreases for men with increasing age, for women it decreases slowly to 25-29, but then stays around 20 %.
+
+Graph ES03
+ 
+
+
+
+
+II. 6. Sweden
+
+(a) Regulations of registered unemployment compared  to the LFS harmonised regulations on unemployment
+
+The Swedish definition of registered unemployed is quite close to the definition of the LFS and includes persons who are without a job, willing to work, actively seeking and currently available. Excluded are persons who are not immediately available, e.g. because they have to complete their education, are in compulsory military service, on parental leave, or “soon retiring”. Also part-time employed and employed by the hour, people seeking part-time or temporary work and active labour market measure participants are not registered as unemployed. While the exclusion of part-time employed is compatible with the ILO definition, the exclusion of those completing education, on parental leave and “soon retiring” can lead to differences with the LFS as in these cases who are without work the comparability depends to a higher extent on the self-assessment of the availability and job-search activities in the LFS:
+Completing education: A student is not allowed to register as unemployed before the education has ended. Like in other countries it is assumed that people who are in full-time education are not available on the labour market before finishing their studies. The same applies to measure participants. As students sometimes work to finance their studies and thus search actively for an employment, they may fulfil the unemployment criteria of the ILO, though in the Swedish LFS figures students are also excluded – except for the holidays.
+Young people: In Sweden usually the municipalitiy and not the PES is responsible for 16-19 year-old, i.e. most people in this age group do not have any contact to the PES and thus can not be registered.
+Parental leave: The Swedish system guarantees a place in the preschool for children of 16 months and older whose parents are unemployed, i.e. availability is not blocked by caring responsibilities of parents having a problem to find a place for their children. Only unemployed parents who want to start working and search actively before their child is 16 months old could be unemployed in the LFS without being registered as unemployed. But this will only be a minor group.
+“Soon retiring”: 60 to 64 year-old who are long-term unemployed and receive benefits may go on receiving benefits without being available on the labour market any more.  In the register this group is not counted as unemployed. They could be unemployed in the LFS in case that they still fulfil the ILO criteria. Otherwise in both systems they would belong to the inactive. 
+
+In the Swedish PES, as in the ILO definition (even) one hour of work in a week counts as employment, i.e. jobseekers with only a few working hours a week are not registered as unemployed. However, unemployment benefit recipients may work up to 33 hours and still receive unemployment benefits. They are not counted as unemployed, but as part-time unemployed. The beneficiaries want to work up to 40 hours and work less than 34 hours a week. Before being entitled they did work full-time. In the LFS this group by definition belongs to the registered employed.
+
+(b) Unemployment by age, register data vs. LFS-unemployed
+
+In Sweden, the figures of the registered unemployed are 13,8% smaller compared to the LFS unemployed measured by the public employment service (see table 1). The relation varies for different age groups (see graph SE01). In the youngest age group (15-19 years) the difference between registered unemployed and LFS unemployed is much bigger than in other age groups, a phenomenon to be observed in most member states (see below II.7 about youth unemployment). 
+
+The exclusion of the 15-19 year-old reduces the difference between the LFS unemployed and the registered unemployed to only 7 %. There are two more age groups with significantly higher LFS unemployed compared to the figures of the registered unemployed; these are the age groups of 20-24 and 55-59. 
+While the 20-24 might still reflect the typical effect of youth unemployment, the groups of the 55-59 year old with higher LFS than registered unemployment figures is hard to explain, especially if the share of LFS-unemployed who are not registered is taken into account see paragraph (d) on non-registration and graph SE03 below. In most other countries the older age-groups show higher register figures than LFS unemployed giving the impression that the criteria for active search and availabilty are no longer fulfilled by a certain group of the older unemployed.
+
+Graph SE01
+ 
+
+
+(c) Registration with the public employment service, register data vs. LFS data on registration
+
+Besides the registered unemployed in Sweden registered jobseekers (not unemployed), measure participants and part-time unemployed receiving benefits can be identified.
+
+Register groups	Can be in the LFS…
+Registered unemployed (RU)	LFS-R-U
+Measure participants (cat. 2)	LFS-R-I
+Part-time unemployed (receiving benefits) (JS-E)	LFS-R-E
+Other registered jobseekers (RJ not RU)	LFS-R-I, LFS-R-E 
+
+Graph SE02
+ 
+ (Legend: The four top labels refer to PES columns; the three lower labels refer to LFS columns)
+
+In Sweden, the 2003 total number of registered jobseekers for the total of all age-groups is about 28 % bigger compared to the registration figures of the LFS (see graph SE02). The figures for the registered jobseekers are bigger than the LFS-registered for all age-groups except for the 15-19 year-old. Looking at the registered unemployed in both systems these are approximately the same for the total and also for most age groups, the younger age again being an exception: More young people say that they are registered as unemployed than the register figures show.
+
+While the figures of the LFS-unemployed in Sweden are higher than the registered unemployed (see graph SE01), the figures of registered unemployed are comparable to LFS-unemployed claiming to be registered - except for the 15-19 year-old. In Sweden a share of 38 % of the LFS-registered and 23 % of the registered jobseekers in the PES claim to be employed. This is more than in other countries and reflects the regulations for the part-time unemployed receiving benefits. The LFS-employed and registered also include jobseekers who do not get benefits, in the PES they belong to the other registered jobseekers (here identified as JS-E). 
+
+Training measure participants (JS-cat2) in Sweden are not registered as unemployed. This group and the other not (un)employed registered jobseekers in the LFS should equal the LFS-registered inactive.  In this case, the PES figures are much higher than the LFS-figures – not all who are registered by the PES claim to be so in the LFS, though the difference results not from the registered unemployed being equal to the LFS-unemployed claiming to be registered.
+
+Registered unemployed and LFS-unemployed claiming to be registered are very consistent in general, probably because the groups of people with marginal employment who receive benefits are not registered as unemployed, but as jobseekers, according to the LFS-criteria. In this way, the task of the PES to ensure income is fulfilled, as well as the LFS-definition of unemployment.
+
+As the figures of registered unemployed are nearly the same in both systems but the total registration figures differ, the differences in registration has to be found in other groups of registered jobseekers but the registered unemployed. Only 36 % of the registered jobseekers in Sweden belong to the registered unemployed, the other groups are not unemployed jobseekers (32 %) and also the part-time unemployed (23 %) and measure participants (9 %).
+
+(d) LFS-unemployed claiming not to be registered, only LFS-data
+
+About 10 % of the LFS unemployed in Sweden say they are not registered with the PES, the figure for the younger age group (15-19) being much higher (47 %) (see graph SE03) Excluding the 15-19 year olds, the average figure for the other ages is reduced to 6 %. There are only small differences between male and female unemployed, the biggest difference is to be found in the age-group of the 35-39 year olds. Here the share of the LFS-NR of the men (6 %) is about 4 percentage points higher compared to the women (2 %). 
+
+Though the 55-59 year olds show a significantly higher LFS unemployment compared to the PES' registered unemployment figures (+ 33 %), the share of those LFS-unemployed in this age group who say they are not registered compared to all LFS-unemployed, is rather small. (See graphs SE01 and SE03, age group 55-59). This cannot be explained by age-specific regulations as early retirement is only available for long-term unemployed 60-64 year olds.
+
+Graph SE03
+ 
+
+
+
+ 
+
+II. 7 - Observations on registration of Youth unemployed
+
+In all the countries included in the detailed comparison, a different relation between the LFS-unemployment and the PES‘ registered unemployment can be observed for the younger age group of 15-19 year olds. In comparison to the totals, the younger unemployed are to a higher share not registered with the PES (see graph YU01). To a certain extent this can be explained by the situation typical for the younger ages at the beginning of the working age. At this age, most young people leave school and either enter university, some other further education or their first employment (see table YU01). 
+
+The first employment often is a combination of work and vocational training, mostly seen in the apprenticeship systems of for example Austria and Germany, but also to be found in youth programs in Sweden and the United Kingdom. Full-time students often also work to a certain extent, some regularly in their spare time, others in their vacations, i.e. young people enter the labour market in a first step often only part-time besides their full- or part-time education, or in the form of typical employment for young people (first employments, training on the job, etc.). Employment and unemployment of young people both differ from employment and unemployment in the main working ages.
+
+For the ILO definition, the kind of employment and unemployment does not make any difference to categorising someone as employed, unemployed or inactive. In contrast to the LFS, the national definitions follow different goals and thus exclude certain groups like full-time students who only look for a part-time or fixed-term employment.
+
+- Seasonal unemployment of young people in full-time education: Young people who are still in education and look for employment during their vacations may be unemployed due to the LFS definition, but usually will not use the placement services of the PES and even if they use it they will not be registered as unemployed as they still are in education. A study in Finland (Sitho 2003, p. 159-176) compared the LFS-unemployed and the registered unemployed young people over the year. While the LFS figures varied during the year, being higher in the months with vacations, the PES figures of the registered unemployed for this age group were much more stable. A Eurostat study shows 18 year old students as a percentage of the corresponding age population (Andrén/Schmidt 2005).
+
+Table YU01 - Young people in full-time ducation
+	Germany	Spain	Austria	Finland	Sweden
+Students (ISCED levels 1-6) aged 18 year olds as % of corresponding age population	86.9	68.4	69.4	91.9	94.5
+Students (ISCED levels 1-6) aged 15 to 24 year olds as % of corresponding age population	63.5	54.0	50.4	69.4	66.1
+
+
+- The beginning of the working age - work and education. The younger ages are characterized by a combination of education and work. There are countries with a especially historic apprenticeship system offering young people the chance to start working and get an education in a profession at the same time. As these apprenticeships are like other employment they can be placed by the PES. Young people interested in apprenticeships might be younger than in other countries when they are in contact with the PES – although they are not necessarily registered as jobseekers, or even as unemployed.
+
+- Special programmes for young unemployed: Besides the apprenticeship system other measures are offered to young people, most of these measures are for those with disadvantages in the labour market, e.g. who have no secondary school qualifications and also have no vocational qualification. In some countries, the PES is responsible for helping these groups to be integrated in the labour market by offering them additional education.
+
+-Usually young unemployed who didn’t work before are not entitled to unemployment benefits, i.e. this “incentive“ to go to the PES does not exist for the young, but it usually is one of the most important reasons for the unemployed to register. However, there may be other financial reasons to go to the PES and register as jobseeker / unemployed. 
+
+The need for young people to go to their PES depends on several factors like the national system of vocational education, benefits, measures and of course the definitions of employment and unemployment, especially in combination with education.
+
+Graph YU01
+ 
+
+Graph Yu 01 shows the share of registered unemployed to LFS-unemployed for the age group of the 15-19 year olds compared to the total for all countries included in the detailed country comparison. What can be observed for all countries is that in the young ages the share of registered unemployed to LFS-unemployed is smaller than 100 % and also smaller than for the total of all age groups. This means that it is less likely for a young person to be registered with the PES than to be counted as unemployed in the LFS. It is also less likely for a LFS-unemployed young person to be registered with the PES than it is compared to the total of all ages. 
+
+Germany and Austria have the highest share of registered unemployed compared to the LFS in the young age group, about 75 %. This might be explained by the apprenticeship system in these countries, as most of the young people who are interested in an apprenticeship have contact with the PES before. Finland and Sweden have the smallest share of registered unemployed compared to LFS-unemployed for the age group of 15-19 years with only about 25 %. This is interesting comparing the values of table YU01 above. The biggest differences between LSF and registration figures can be observed in Finland and Sweden, the two countries with a higher share of the young people still in full time education.
+
+The biggest difference between the younger age groups and the total in percentage points is to be found in Finland and Austria, with Austria having a total of registered unemployed about 55 % higher compared to LFS-unemployed for the total of all ages. Sweden, with smaller figures of registered unemployed compared to LFS-unemployed for the total of all ages also has a big difference between the total and the younger age group. It is interesting that Austria, who on the one hand is within the countries having the high share of RU / LFS-U for the younger ages, has on the other hand such big differences compared to the total of all ages. 
+
+This picture changes if the 20-24 year olds are only included in the observation of youth unemployment. Except for Spain, the share of registered unemployed to LFS-unemployed is closer to the total of all ages, in Sweden it is even higher than the total. In this age group, more young people are integrated in the regular labour market and thus in case of unemployment may already be entitled to benefits and thus obliged to go to the public employment service.
+
+
+Conclusions
+
+The difference between the LFS unemployed and registered unemployed in each country reflect the different national regulations on unemployment registration in combination with benefit regulations. As these regulations vary between the countries, it can be concluded that there is no systematic pattern valid for all countries which can explain the discrepancies between the figures of registered unemployed and the figures of harmonised unemployed. Unemployment registers are part of the social protection system and usually unemployed persons receive some benefits, therefore, there is a strong connection between unemployment registration regulations and eligibility for benefits. According to the ILO harmonised definitions, a person is counted as employed if he/she only works one hour a week. The earnings coming from this employment would certainly not be enough to live from, therefore the benefit systems in some countries take this fact into account, and extend the consideration as “unemployed” to persons working for a very small salary or working a very small number of hours. However, other countries adopt in their national registers the same strict definition of “employed” and “unemployed” persons as established by the ILO.
+From the analysis of the rules and definitions applied in the registers of the countries studied in this article three groups of population deserve special consideration: Young people, including first-job seekers, in particular youngsters under 19, are less frequently seen in the registers compared with the share of young unemployed persons (of the same age-group) shown in the LFS figures. This is true for all five countries included in the detailed comparison, and not only for those countries where registered unemployed figures (totals) are lower than harmonised unemployed (totals). Persons in “marginal” or “minimal” jobs, although they are technically employed, are classified as “registered unemployed” and are still eligible for unemployment (or similar) benefits in Finland, Germany and Austria. This fact might partly explain why in these three countries the figures of registered unemployed are higher than those of harmonised unemployed. This same group of persons are classified as “employed” in the registers of Sweden and Spain. This fact might explain why in these two countries the figures of registered unemployed are lower than those of registered unemployed. Older unemployed persons, in particular over 60 year olds, are less frequently included in the registers compared with the survey in Germany and Sweden, whereas are more present in the registers than in the surveys of Finland, Austria and Sweden. The reasons might lie in the specific regulations of each country, but need to be further explored. Table 3 summarizes the evidence about the three groups mentioned above, which seem to suggest that only the special treatment of those with “minimal jobs” would partially explain the discrepancies between the registered unemployed and the LFS unemployed figures. 
+
+Table 3 – Comparing RU and LFS data for 3 groups of unemployed persons
+	Total RU	Young RU (15-19)	Older RU (60+)	Minimal jobs
+Finland	> LFS’U	< LFS’U (15-19)	> LFS’U (>60)	Yes RU
+Austria	> LFS’U	< LFS’U (15-19)	> LFS’U (>60)	Yes RU
+Germany	> LFS’U	< LFS’U (15-19)	< LFS’U (>60)	Yes RU
+Spain	< LFS’U	< LFS’U (15-19)	> LFS’U (>60)	Not RU
+Sweden	< LFS’U	< LFS’U (15-19)	< LFS’U (>60)	Not RU
+
+Key:  Example Finland: (1) The total number of registered unemployed is higher than the total number of harmonised unemployed measured in the LFS; (2) The number of young people between 15-19 registered as unemployed is smaller than the same age group as measured in the LFS, (3) The number of registered unemployed persons 60 years or older, is higher than the same age group as measured in the LFS, (4) Persons having some kind of “minimal jobs” can be registered as unemployed.
+
+It should also be mentioned that in addition to these three groups, the group of “Unemployment Benefit Recipients” accounts for some or most of the differences between the registered unemployed and harmonised unemployed in Ireland and the United Kingdom, since in these two countries only persons receiving unemployment or similar benefits are included in the registers, which are not designed to measure unemployment, yet are the closest instrument to what in other countries are called unemployment registers. In both countries, the register unemployment figures are much lower than those of harmonised unemployment.
+The comparison between the numbers of registered unemployed and those who in the LFS say they are registered with the Public Employment Services raises some doubts about the value of this information in some countries, suggesting that questions relating to registration with the PES can be misunderstood by the respondents or even by the interviewers and can produce misleading information.
+On the contrary, it has been observed that analysing the differences between the LFS unemployed and the RU by age groups can provide extremely useful information which cannot be gathered by simply comparing the total figures in both sources. This is true both for young people and also for older people. For the younger, the study has been quite exhaustive. A study of older people would be extremely interesting, and should include the various special regulations for this age group, which are quite complex in most countries. An important feature of the registers is that it is possible to analyze small groups of the population by crossing several variables which result in very small groups (probably too small to be correctly identified in the survey), such as participants in labour market policy measures by gender or pensioners looking for a job. Moreover, in countries with very developed registration systems, this analysis can be exhaustive and consequently these population groups can be observed and followed up. This is one of the reasons why combining the use of both registers and survey provides the richest possible information for small yet very relevant groups which often are targeted by important policy interventions.
+
+
+
+Bibliography
+
+ANDRÉN, Birgitta, SCHMIDT, Pascal, 2005, EUROSTAT,Statistics in Focus 10/2005, “Education in Europe, Key statistics 2002-2003”
+CORTÉS, Luis Toharia, OCANA, Miguel Ángel Malo, 2005, “La influencia de la implantación del SISPE en el paro registrado”, Universidad de Alcalá, Spain
+EUROPEAN COMMISSION, 1999, “Registered unemployment and harmonised unemployment figures”, Annex pp. 143-148, in “EMPLOYMENT IN EUROPE 1998”,
+FRANCO, Ana, JOUHETTE; Sylvain, 2004, EUROSTAT, Statistics in Focus 14/2004, “European Labour Force Survey – Principal Results 2003”
+FRUTOS, Rafael, SANZ, Begoña, Índice – INE, Julio 2005, “Las posibilidades de los registros frente a las limitaciones de la EPA”
+GARCIA, Miguel Ángel, Índice – INE, Julio 2005, “Cambios en la Encuesta de la Población Activa en 2005”
+HARTMANN, Michael, RIEDE, Thomas, Wirtschaft und Statistik 4/2005, Wiesbaden 2005, “Erwerbslosigkeit nach dem Labour-Forke-Konzept – Arbeitslosigkeit nach dem Sozialgesetzbuch: Gemeinsamkeiten und Unterschiede“
+MAHER, John, Working document, 2005, “Note on the Live Register data provided by Ireland”
+PETERS, Marjolein et al., 2004, “Benefit systems and their interaction with active labour market policies”, Final Report for DG-Employment and Social Affairs, European Commission
+SIHTO Matti, in EUROSTAT, 2003 20th CEIES Seminar “Labour statistics – towards enlargement” “Statistics on employment and unemployment: international comparability and national needs”
+
+

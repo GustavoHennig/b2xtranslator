@@ -31,48 +31,48 @@ This line uses the default margins.
 This paragraph is indented.  The first line is shifted half an inch from the left margin but subsequent lines are aligned with the margin.
 This paragraph is indented using a hanging indent.  The first line is aligned with the left margin but subsequent lines are indented three-quarters of an inch.  The example is three lines long so the effect can be seen clearly.
 
-These three lines are single spaced.  This is the typical line spacing for Word documents.  However, for long documents, it’s nice to have a little extra leading to help the reader’s eye find the start of the next line.
+These three lines are single spaced.  This is the typical line spacing for Word documents.  However, for long documents, itâ€™s nice to have a little extra leading to help the readerâ€™s eye find the start of the next line.
 
-Here is an example of “one and a half” (1.5) line spacing.  This is visually more comfortable than single spacing, but it uses considerably more screen real estate (and paper.)
+Here is an example of â€œone and a halfâ€ (1.5) line spacing.  This is visually more comfortable than single spacing, but it uses considerably more screen real estate (and paper.)
 For comparison, here is double spaced text.  This spacing is particularly helpful when the document is likely to be reviewed and annotated.  Double spacing wastes a lot of screen real estate.
-Sometimes it’s necessary to make fine adjustments to a document’s vertical spacing.  Résumés, for example, often have slightly more text than will fit within the available space.  This paragraph is set to “10 points before” (that is, 10 points of vertical space preceding the paragraph), exactly 20 points between lines, and 30 points after (that is, 30 points following the paragraph). The extra spacing is easy to see if you highlight this paragraph.
+Sometimes itâ€™s necessary to make fine adjustments to a documentâ€™s vertical spacing.  RÃ©sumÃ©s, for example, often have slightly more text than will fit within the available space.  This paragraph is set to â€œ10 points beforeâ€ (that is, 10 points of vertical space preceding the paragraph), exactly 20 points between lines, and 30 points after (that is, 30 points following the paragraph). The extra spacing is easy to see if you highlight this paragraph.
 The character spacing is normal in this line.
 In this line, the character spacing is stretched.
 In this line, the character spacing is condensed.
 
 In the following text, each word is formatted accordingly.
-“strikethrough”, “double strikethrough”, “superscript”, “subscript”, “shadow”, “outline”, “emboss”, “engrave”, “small caps”, “all caps”, “hidden” (hidden).
-Note:  “small caps” and “all caps” were entered as lowercase letters, but the font makes them appear capitalized.  The word “hidden” is actually between the quotes, but it is not visible.
+â€œstrikethroughâ€, â€œdouble strikethroughâ€, â€œsuperscriptâ€, â€œsubscriptâ€, â€œshadowâ€, â€œoutlineâ€, â€œembossâ€, â€œengraveâ€, â€œsmall capsâ€, â€œall capsâ€, â€œhiddenâ€ (hidden).
+Note:  â€œsmall capsâ€ and â€œall capsâ€ were entered as lowercase letters, but the font makes them appear capitalized.  The word â€œhiddenâ€ is actually between the quotes, but it is not visible.
 
 Numbered items
 
-    1. Item number one
-    2. Item number two
-    3. Item number three
-    4. Item number four is a long.  It wraps around to the next line to demonstrate how numbering works for long lines.
-    5. Item number five
+Item number one
+Item number two
+Item number three
+Item number four is a long.  It wraps around to the next line to demonstrate how numbering works for long lines.
+Item number five
 
 
 Continuing an interrupted sequence
 
-        a) Alpha
-        b) Bravo
-        c) Charlie
+Alpha
+Bravo
+Charlie
 
 This is an intervening line.
 
-        d) Delta
-        e) Echo
-        f) Foxtrot
+Delta
+Echo
+Foxtrot
 
 
 Bulleted items
 
-    • Item number one
-    • Item number two
-    • Item number three
-    • Item number four is a long.  It wraps around to the next line to demonstrate how bullets work for long lines.
-    • Item number five
+Item number one
+Item number two
+Item number three
+Item number four is a long.  It wraps around to the next line to demonstrate how bullets work for long lines.
+Item number five
 
 
 No indent.
@@ -81,30 +81,30 @@ Indent increased twice.
 Indent decreased once.
 Indent decreased twice.
 
-There is a border around the word “border”.
+There is a border around the word â€œborderâ€.
 
-The word “yellow” is highlighted in yellow.
-The word “green” is highlighted in dark green, but it is hard to read black on dark green, so this time “green” is white text on a dark green background.
-The word “custom” is text of a custom color (RGB = 236,251,41) highlighted in red.  (Note:  This document originated in Word 2003 which allows custom text colors, but has a fixed list of highlighting colors.  This may change in Word 2007.)
+The word â€œyellowâ€ is highlighted in yellow.
+The word â€œgreenâ€ is highlighted in dark green, but it is hard to read black on dark green, so this time â€œgreenâ€ is white text on a dark green background.
+The word â€œcustomâ€ is text of a custom color (RGB = 236,251,41) highlighted in red.  (Note:  This document originated in Word 2003 which allows custom text colors, but has a fixed list of highlighting colors.  This may change in Word 2007.)
 
 The following columns use the default tab stops:
 Column1	Column2	Column3
 
-The following columns use the tab stops at 1.5” and 3”:
+The following columns use the tab stops at 1.5â€ and 3â€:
 Column1	Column2	Column3
 
-The following columns use the tab stops at 2” and 4”:
+The following columns use the tab stops at 2â€ and 4â€:
 Column1	Column2	Column3
 
 
 Red Orange Yellow Green Blue Violet
-This paragraph uses the default margins.  The default left margin is 1.25”.  The default right margin is 1.25”
+This paragraph uses the default margins.  The default left margin is 1.25â€.  The default right margin is 1.25â€
 
-This paragraph uses a left margin of 2.25” and a right margin of 3.25”.
+This paragraph uses a left margin of 2.25â€ and a right margin of 3.25â€.
 
 
 (Note:  Images courtesy of NASA.)
-This is just a picture.  (I think it’s Charles Petzold.)
+This is just a picture.  (I think itâ€™s Charles Petzold.)
 
 
 These three pictures are centered:
@@ -112,9 +112,9 @@ These three pictures are centered:
 
 This picture has a caption:
 
-Figure 1  Spacewalk
+Figure   Spacewalk
 
-Cropped (Left 0.05”, Right 0.06”, Top 0.07”, Bottom 0.08”)
+Cropped (Left 0.05â€, Right 0.06â€, Top 0.07â€, Bottom 0.08â€)
 
 
 Grayscale
@@ -140,50 +140,48 @@ Scaled to 50%
 Scaled to 80% height and 200% width
 
 
-This picture contains the following hyperlink:
-http://www.nasa.gov/multimedia/imagegallery/index.html
+This picture contains the following hyperlink (http://www.nasa.gov/multimedia/imagegallery/index.html):
+http://www.nasa.gov/multimedia/imagegallery/index.html" ()
 
 
 
-This picture uses an “In line with text” layout.  The text will flow above it and below it, but will not fill in beside it.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+This picture uses an â€œIn line with textâ€ layout.  The text will flow above it and below it, but will not fill in beside it.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 
-This picture uses a “Square” layout.  The image has been rotated, but the text flows around the picture like a frame. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+This picture uses a â€œSquareâ€ layout.  The image has been rotated, but the text flows around the picture like a frame. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 
-This picture uses a “Tight” layout.  The image has been rotated and the text flows as close to the picture as possible.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+This picture uses a â€œTightâ€ layout.  The image has been rotated and the text flows as close to the picture as possible.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 
-This picture uses a “Behind text” layout.  The picture is displayed behind the text.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+This picture uses a â€œBehind textâ€ layout.  The picture is displayed behind the text.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 
-This picture uses an “In front of text” layout.  The picture is displayed over the text.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+This picture uses an â€œIn front of textâ€ layout.  The picture is displayed over the text.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 
 This is a 4 x 3 table with varying column widths.  It is split across a page boundry:
 
-Alpha
-Bravo
-Charlie
-Delta
-Echo
-Foxtrot
-Golf
-Hotel
-India
-Juliet
-Kilo
-Lima
+	Alpha	Bravo	Charlie
+	Delta	Echo	Foxtrot
+	Golf	Hotel	India
+	Juliet	Kilo	Lima
 
 This is an embedded 3 x 4 Excel spreadsheet.  It has been stretched horizontally and vertically so the font is funny looking.  It has also been centered.
 
 
 
-A few symbols:  
 
-There is a comment associated with this sentence.
 
-I have no idea what this says…
-??????????????????????????????????????????
 
-This sentence is preceded by a manual page break.  It is on a page that is landscape-oriented.
+
+
+
+
+
+
+A few symbols:  There is a comment associated with this sentence.I have no idea what this saysÂ…æ–‡äº¬åŒºã¨ç›®é»’åŒºã€‚ç·é•·ã®æŒ¨æ‹¶ã€å…¥å­¦æ¡ˆå†…ã€å­¦éƒ¨ã‚„ç ”ç©¶æ‰€çµ„ç¹”ã€é™„å±æ–½è¨­ã®ã‚µã‚¤ãƒˆã¸ã®ãƒªãƒ³ã‚¯ã€‚This is plain text in the header.  The next line contains a centered â€œAutoTextâ€ field. (http://www.nasa.gov/multimedia/imagegallery/index.html)
+This is plain text in the footer.  The next line contains three â€œAutoTextâ€ fields.
+	Page 	
+
+This is a comment.

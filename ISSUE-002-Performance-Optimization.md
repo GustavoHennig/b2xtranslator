@@ -27,7 +27,35 @@ Performance issues typically stem from:
 
 ## Detailed Resolution Plan
 
+### Phase 0: doc2text Pipeline Optimization
+
+1.  **Record Type Filtering:** During the initial read, inspect record headers and process only text-related records (e.g., character, paragraph, and styling records). Skip images, drawings, and metadata not relevant to doc2text.  
+2.  **Indexed Record Parsing:** Pre-scan record offsets to build an index of text-containing records. Iterate this index directly to reduce full document traversals.  
+3.  **Delegate Caching:** Map record types to pre-compiled parsing delegates to avoid expensive type lookups or reflection at runtime.  
+4.  **Batch Text Flushing:** Accumulate extracted text in a buffer or `StringBuilder`, flushing to the output writer in large chunks to minimize I/O calls.  
+5.  **Compiled Regex Cache:** For post-processing (e.g., whitespace normalization, hyphen removal), use pre-compiled `Regex` instances stored in a static cache.  
+6.  **Zero-Copy Span Access:** When slicing record data, use `ReadOnlySpan<byte>` and `MemoryMarshal` to parse text directly without additional allocations.  
+7.  **Lightweight Visitor Pattern:** Implement a visitor interface for record processing to inline the dispatch logic and reduce virtual call overhead.  
+
+
 ### Phase 1: Benchmarking and Profiling
+
+
+ ## Profiling insight 1:
+
+The main reason your code is running slower than expected in GetCharacterPropertyExceptions is due to the nested iteration over all elements in AllChpxFkps and then over each grpchpx array. For every FKP, you loop through its character property exceptions and perform range checks, which can be costly if the data set is large. This approach results in a time complexity proportional to the total number of FKPs multiplied by the number of property exceptions per FKP. If AllChpxFkps or the grpchpx arrays are large, this can quickly become a bottleneck. Additionally, the method creates a new list and adds references to property exceptions, which is necessary, but if the same exceptions are repeatedly added or if the range checks are not optimal, this can lead to redundant work.
+There is no obvious redundancy in storing data, but you could benefit from using a more efficient data structure if you know the ranges are sorted or if you can index into the FKPs more directly. For example, if FKPs are sorted by their range, a binary search could help you quickly locate the relevant FKPs and reduce the number of iterations. Also, if you are always searching for exceptions within a contiguous range, you might consider caching or indexing the FKPs for faster lookup.
+Enumerable calls are not used in this method, but if you are using LINQ or similar constructs elsewhere, replacing them with for-loops can sometimes improve performance, especially in tight loops. Converting data to a different type is not directly applicable here, but if you can represent the ranges as intervals and use an interval tree or similar structure, you could speed up the search for relevant property exceptions.
+Looking at the parent method, writeParagraph, it calls GetCharacterPropertyExceptions and then iterates over the results to write runs. If you can reduce the number of property exceptions returned, or if you can avoid unnecessary splitting of runs (for example, by merging adjacent runs with identical formatting), you could further improve performance. Also, if the parent method repeatedly calls GetCharacterPropertyExceptions for overlapping ranges, consider caching results or reusing data where possible.
+Optimize b2xtranslator.DocFileFormat.WordDocument.GetCharacterPropertyExceptions(int, int):
+•	Use binary search for FKPs: If FKPs are sorted, use binary search to quickly locate relevant FKPs and reduce unnecessary iterations.
+•	Merge adjacent identical exceptions: Avoid adding multiple property exceptions for contiguous ranges with identical formatting to reduce list size.
+•	Index FKPs for fast lookup: Build an index or cache for FKPs to allow direct access to relevant property exceptions, minimizing iteration.
+Optimize b2xtranslator.txt.TextMapping.DocumentMapping.writeParagraph(int, int, bool):
+•	Cache property exceptions: If paragraphs overlap or are processed sequentially, cache results from GetCharacterPropertyExceptions to avoid redundant computation.
+
+
+## Gather more info:
 
 1.  **Establish a Benchmark Suite:**
     Create a dedicated `Benchmark` project using a library like `BenchmarkDotNet`. This will provide a stable, repeatable way to measure performance.

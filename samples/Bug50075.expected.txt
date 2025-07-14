@@ -1,1 +1,1 @@
-                                       Numbered paragraph with null number.
+Numbered paragraph with null number.

@@ -1,13 +1,14 @@
-File name=Bug44431.doc
-
-
-STYLEREF test
+File name=
 
 
 
-TEST TABLE OF CONTENTS
-Heading paragraph in next page	2
-Another heading paragraph in further page	3
+
+
+
+
+Page  of TEST TABLE OF CONTENTS
+	
+	
 
 Heading paragraph in next page
-Another heading paragraph in further page
+Another heading paragraph in further page

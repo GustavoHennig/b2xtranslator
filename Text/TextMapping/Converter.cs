@@ -8,6 +8,7 @@ using System.Globalization;
 using System.IO;
 using System.Text;
 using System.Xml;
+using System.Diagnostics;
 
 namespace b2xtranslator.txt.TextMapping
 {
@@ -85,6 +86,9 @@ namespace b2xtranslator.txt.TextMapping
 
         public static void ConvertFiles(string inputFilePath, string outputFilePath)
         {
+            //start time
+            var stopwatch = Stopwatch.StartNew();
+
             //open the reader
             using (var reader = new StructuredStorageReader(inputFilePath))
             {
@@ -93,8 +97,7 @@ namespace b2xtranslator.txt.TextMapping
 
 
                 var textDoc = TextDocument.Create(outputFilePath);
-                //start time
-                var start = DateTime.Now;
+             
                 TraceLogger.Info("Converting file {0} into {1}", inputFilePath, outputFilePath);
 
                 //convert the document
@@ -103,11 +106,10 @@ namespace b2xtranslator.txt.TextMapping
                 File.WriteAllText(outputFilePath, output);
 
 
-                var end = DateTime.Now;
-                var diff = end.Subtract(start);
+                stopwatch.Stop();
 
 
-                TraceLogger.Info("Conversion of file {0} finished in {1} seconds", inputFilePath, diff.TotalSeconds.ToString(CultureInfo.InvariantCulture));
+                TraceLogger.Info("Conversion of file {0} finished in {1} seconds", inputFilePath, stopwatch.Elapsed.TotalSeconds.ToString(CultureInfo.InvariantCulture));
             }
         }
 

@@ -7,4 +7,12 @@ More on page one
 
 End of page 1
 
-This is page two. It also has a two column heading, and a simple footer.
+This is page two. It also has a two column heading, and a simple footer.
+	[This is an Even Page, with a Header]	August 20, 2008
+
+	August 20, 2008	[ODD Page Header text]
+
+		Page 	
+			
+This is a simple footer on the second page
+Footer Left	Footer Middle Footer Right

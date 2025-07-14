@@ -6,6 +6,22 @@
 ## Problem Description
 The b2xtranslator fails to extract entire paragraphs from certain Word documents, resulting in incomplete text output where significant portions of document content are missing. This is a critical content preservation issue that affects document completeness.
 
+## Affected files:
+
+- 53379.doc
+- "Bug50936_1.doc"
+- "Bug47958.doc"
+- title.doc
+- ob_is.doc
+- o_kurs.doc
+- ESTAT Article comparing RU-LFS-22 12 05_EN.doc
+- complex_sections.doc
+- Bug53380_3.doc
+- Bug52032_3.doc
+- Bug51944.doc
+- Bug47958.doc
+- Bug33519.doc
+
 ## Severity
 **HIGH** - Critical content loss affecting document integrity
 

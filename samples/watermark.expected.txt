@@ -6,11 +6,11 @@ An ever-so-important Master Services Agreement
 
 Table of Contents
 
-	
-	
-	
-	
-	
+	1. TERM1 (\l "__RefHeading__8_476954814")
+	1.1 Termination.  1 (\l "__RefHeading__10_476954814")
+	1.2 Renewal.  1 (\l "__RefHeading__12_476954814")
+	2.  CRITICAL OBLIGATIONS1 (\l "__RefHeading__14_476954814")
+	2.1 Appearance at site.  1 (\l "__RefHeading__16_476954814")
 
 
 1.	TERM

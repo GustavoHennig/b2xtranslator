@@ -39,10 +39,10 @@ Aandachtspunten
 Geen
 Benodigde documenten
 standaardformulier bezwaar/beroep --> inkomend --> OV100
-ontvangstbevestiging één bezwaar (zonder verzoek)  BNBA020
+ontvangstbevestiging één bezwaar (zonder verzoek) ? BNBA020
 ontvangstbevestiging één bezwaar inclusief verzoek om extra informatie --> BNBA001
 ontvangstbevestiging één bezwaar inclusief verzoek om aanvullende motivatie --> BNBA001
-ontvangstbevestiging één bezwaar en verzoek om machtiging --> BNBA001 (CR ingediend voor machtiging 27/10)  goedgekeurd
+ontvangstbevestiging één bezwaar en verzoek om machtiging --> BNBA001 (CR ingediend voor machtiging 27/10) ? goedgekeurd
 ontvangstbevestiging één bezwaar en verzoek om machtiging + extra info --> BNBA001
 ontvangstbevestiging één bezwaar en verzoek om machtiging + motivering --> BNBA001
 rappel inleveren aanvullende motivatie --> BNBA002
@@ -56,8 +56,8 @@ afwijzingsbrief aangezien geen extra info retour één bezwaar --> BNBA008
 kennisgeving horen --> BNBA009
 verslag horen klant één bezwaar --> BNBA010
 brief verlenging behandeltermijn (1ste verzoek zonder instemming klant) --> BNBA011
-brief verzoek instemming klant met verlenging behandeltermijn (2de verzoek, handtekening klant retour)--> BNBA012 --> Change request ingediend 27/10  toegekend
-Brief bevestiging instemming klant met verlenging behandeltermijn --> vervalt en wordt vervangen door bovenstaande brief --> Change request ingediend 27/10  toegekend
+brief verzoek instemming klant met verlenging behandeltermijn (2de verzoek, handtekening klant retour)--> BNBA012 --> Change request ingediend 27/10 ? toegekend
+Brief bevestiging instemming klant met verlenging behandeltermijn --> vervalt en wordt vervangen door bovenstaande brief --> Change request ingediend 27/10 ? toegekend
 ontvangstbevestiging en mededeling geen bezwaarschrift + daarom doorgestuurd --> BNBA013 
 beschikking meerdere bezwaren - ->BNBA014
 ontvangstbevestiging meerdere bezwaren + verzoek (om info, machtiging etc)-->BNBA015
@@ -65,7 +65,7 @@ niet-ontvankelijk brief meerdere bezwaren -->BNBA016
 afwijzingsbrief aangezien geen extra info retour meerdere bezwaren -->BNBA017
 intrekking meerdere bezwaren -->BNBA018
 verslag horen meerdere bezwaren -->BNBA019
-ontvangstbevestiging meerdere bezwaren (zonder verzoek)  BNBA021
+ontvangstbevestiging meerdere bezwaren (zonder verzoek) ? BNBA021
 Inkomende formulieren (Ontvangen)
 	Code	Naam	Huidige doccode
 	OV100	Standaardformulier bezwaar	
@@ -143,4 +143,5 @@ Alle BNBA docs
 		Opgave	
 		Uitnodiging	BNBA009
 		Bevestiging	BNBA007, BNBA018
+
 

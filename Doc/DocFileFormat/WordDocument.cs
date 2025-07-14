@@ -457,7 +457,7 @@ namespace b2xtranslator.DocFileFormat
 
 
         /// <summary>
-        /// Returnes a list of all CharacterPropertyExceptions which correspond to text 
+        /// Returns a list of all CharacterPropertyExceptions which correspond to text 
         /// between the given boundaries.
         /// </summary>
         /// <param name="fcMin">The lower boundary</param>

@@ -7,4 +7,8 @@ More on page one
 
 End of page 1
 
-This is page two. It also has a three column heading, and a three column footer.
+This is page two. It also has a three column heading, and a three column footer.
+First header column!	Mid header Right header!
+I am the header on the first page, and I’m nice and simple
+Footer Left	Footer Middle Footer Right
+The footer of the first page

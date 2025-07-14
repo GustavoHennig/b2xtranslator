@@ -1,4 +1,4 @@
-# Issue #001: Infinite Loops and Application Hanging
+# Issue #001: Infinite Loops and Application Hanging (Partialy fixed)
 
 ## Current Status
 **Could not reproduce with the available files, but a detailed resolution plan is now available.**

@@ -1,10 +1,9 @@
 First paragraph
 
-This is a very long paragraph with “Corpo testo” style; This is a very long paragraph with “Corpo testo” style; This is a very long paragraph with “Corpo testo” style; This is a very long paragraph with “Corpo testo” style; This is a very long paragraph with “Corpo testo” style; This is a very long paragraph with “Corpo testo” style; This is a very long paragraph with “Corpo testo” style; This is a very long paragraph with “Corpo testo” style; This is a very long paragraph with “Corpo del testo 2” style; This is a very long paragraph with “Corpo del testo 2” style; This is a very long paragraph with “Corpo del testo 2” style; This is a very long paragraph with “Corpo del testo 2” style; 
+This is a very long paragraph with â€œCorpo testoâ€ style; This is a very long paragraph with â€œCorpo testoâ€ style; This is a very long paragraph with â€œCorpo testoâ€ style; This is a very long paragraph with â€œCorpo testoâ€ style; This is a very long paragraph with â€œCorpo testoâ€ style; This is a very long paragraph with â€œCorpo testoâ€ style; This is a very long paragraph with â€œCorpo testoâ€ style; This is a very long paragraph with â€œCorpo testoâ€ style; This is a very long paragraph with â€œCorpo del testo 2â€ style; This is a very long paragraph with â€œCorpo del testo 2â€ style; This is a very long paragraph with â€œCorpo del testo 2â€ style; This is a very long paragraph with â€œCorpo del testo 2â€ style; 
 Paragraph with table
 
-Table cell
-Another table cell
+	Table cell	Another table cell
 
 
 
@@ -13,3 +12,4 @@ Crashing Document Part
 After Crashing Part
 
 
+

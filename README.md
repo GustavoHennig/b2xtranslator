@@ -24,13 +24,15 @@ This fork aims to significantly expand the capabilities of the original implemen
 - **Memory Management**: Resolve memory leaks in large file processing
 - **Parsing Stability**: Fix crashes and exceptions during document parsing
 - Lists are not extracted with proper bullet symbols during text conversion
-- Internal markers are being written to the output: HYPERLINK, MERGEFORMAT, DOCPROPERTY, PAGEREF... See EL_TechnicalTemplateHandling.doc, ProblemExtracting.doc, Bug51686.doc
+- Internal markers are being written to the output: HYPERLINK, MERGEFORMAT, DOCPROPERTY, PAGEREF... See EL_TechnicalTemplateHandling.doc, ProblemExtracting.doc, Bug51686.doc, ob_is.doc
 - testPictures.doc: testPictures.doc SHAPE  \* MERGEFORMAT
 - Revisit: samplehtmlfieldandlist.doc
 - fastsavedmix.doc - 1 line is missing
 - Entire paragraphs are missing: "Bug50936_1.doc", "ESTAT Article comparing RU-LFS-22 12 05_EN.doc", "Bug47958.doc", "Bug53380_3.doc"
 - Alternative space chars need to be handled: "Bug47742.doc" (space != 20)
 - URL not being shown: "pad.doc"
+- Not exporting summary, appearing: \l "_Toc70481107" : "parentinvguid.doc"
+- Wrong encoding decoding: Bug60942b.doc, Bug50955.doc, Bug49933.doc
  
 ### 📊 Reliability Improvements (Planned)
 - Enhanced validation of input files before processing

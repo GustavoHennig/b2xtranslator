@@ -9,24 +9,21 @@ This is a sample Microsoft Word Document.
 
 This document includes text that is BOLD and ITALIC.
 
-This is a table
+	This is a table	
+		
+	Nested table	
+		More of our nested table
+	The table has things in it	
 
 
-Nested table
-
-
-More of our nested table
-
-The table has things in it
-
-
-
-Apache Tika: http://tika.apache.org/ Tika
-Apache POI: http://poi.apache.org/ POI
+Apache Tika: http://tika.apache.org/ (http://tika.apache.org/ \h) Tika (http://tika.apache.org/ \h)
+Apache POI: http://poi.apache.org/ (http://poi.apache.org/ \h) POI (http://poi.apache.org/ \h)
 
 This paragraph is in the default text style
 
 This one is in a different one, the Signature style
 
 This is back to the default again
-This links to The Main Heading Bookmark and The Level 3 Bookmark. That’s it!
+This links to The Main Heading Bookmark (\l "OnMainHeading") and The Level 3 Bookmark (\l "OnLevel3"). Thatâ€™s it!
+This is the header for our document
+This is the footer for our document
