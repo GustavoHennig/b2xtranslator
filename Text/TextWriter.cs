@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Xml.Linq;
+using b2xtranslator.Tools;
 
 namespace b2xtranslator.txt
 {
@@ -25,6 +26,11 @@ namespace b2xtranslator.txt
         
         // Track if we've output any content to prevent leading newline
         private bool _isFirstStructuralElement = true;
+        
+        // Symbol handling state
+        private bool _isInSymbolElement = false;
+        private string? _symbolFont = null;
+        private string? _symbolChar = null;
 
         [DebuggerDisplay("{Prefix}:{LocalName}={ToString()}")]
         class TextElement
@@ -91,6 +97,19 @@ namespace b2xtranslator.txt
         {
             _currentTextElement.Attributes ??= new List<IAttribute>();
             _currentTextElement.Attributes.Add(new TextAttribute(prefix,localName, value));
+            
+            // Track symbol attributes
+            if (_isInSymbolElement && "w".Equals(prefix))
+            {
+                if ("font".Equals(localName))
+                {
+                    _symbolFont = value;
+                }
+                else if ("char".Equals(localName))
+                {
+                    _symbolChar = value;
+                }
+            }
         }
 
         public void WriteChars(char[] chars, int index, int count)
@@ -241,6 +260,32 @@ namespace b2xtranslator.txt
                             }
                         }
                     }
+                    else if ("sym".Equals(element.LocalName))
+                    {
+                        // Handle symbol conversion
+                        try
+                        {
+                            if (_symbolFont != null && _symbolChar != null)
+                            {
+                                string symbolText = SymbolMapping.ConvertSymbolHex(_symbolChar, _symbolFont);
+                                _currentTextElement.PureContent.Append(symbolText);
+                            }
+                            else
+                            {
+                                _currentTextElement.PureContent.Append("?");
+                            }
+                        }
+                        catch (Exception ex)
+                        {
+                            System.Diagnostics.Debug.WriteLine($"Error processing symbol: Font={_symbolFont}, Char={_symbolChar}, Error={ex.Message}");
+                            _currentTextElement.PureContent.Append("?");
+                        }
+                        
+                        // Reset symbol state
+                        _isInSymbolElement = false;
+                        _symbolFont = null;
+                        _symbolChar = null;
+                    }
                 }
 
                 _currentTextElement.PureContent.Append(element.PureContent);
@@ -294,6 +339,14 @@ namespace b2xtranslator.txt
 
                 _currentTextElement = new TextElement(_currentTextElement, prefix, localName, value);
                 _elementStack.Push(_currentTextElement);
+                
+                // Track symbol elements
+                if ("w".Equals(prefix) && "sym".Equals(localName))
+                {
+                    _isInSymbolElement = true;
+                    _symbolFont = null;
+                    _symbolChar = null;
+                }
             }
         }
 

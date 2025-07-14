@@ -1,4 +1,4 @@
-# Issue #011: Incorrect Symbol Handling
+# Issue #011: Incorrect Symbol Handling (Partially fixed)
 
 ## Problem Description
 Special symbols, such as those from the "Symbol" or "Wingdings" fonts, are not being handled correctly during text extraction. This can result in missing characters, incorrect characters (e.g., showing a letter instead of the symbol), or garbled text in the output. The `README.md` mentions `Bug49908.doc` as a sample case.
