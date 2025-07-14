@@ -1,2 +1,1 @@
-
 A text with a link to GitHub Profile (https://github.com/GustavoHennig).

@@ -192,20 +192,49 @@ namespace b2xtranslator.DocFileFormat
             this.WordDocumentStream.Seek(fibFC, System.IO.SeekOrigin.Begin);
             this.FIB = new FileInformationBlock(new VirtualStreamReader(this.WordDocumentStream));
 
-            //check the file version
+            //check the file version - now supports Word 95/Word 6 
+            // Word95 files: 100=Word6, 101=Word95, 104=Word97 but some Word95 files use 104
+            bool isWord95 = false;
             if ((int)this.FIB.nFib != 0)
             {
-                if (this.FIB.nFib < FileInformationBlock.FibVersion.Fib1997Beta)
-                    throw new ByteParseException("Could not parse the file because it was created by an unsupported application (Word 95 or older).");
+                isWord95 = this.FIB.nFib == FileInformationBlock.FibVersion.FibWord6 || 
+                          this.FIB.nFib == FileInformationBlock.FibVersion.FibWord95 ||
+                          ((int)this.FIB.nFib == 104); // Some Word95 files use nFib = 104
+
+                if (!isWord95 && this.FIB.nFib < FileInformationBlock.FibVersion.Fib1997Beta)
+                {
+                    throw new ByteParseException("Could not parse the file because it was created by an unsupported application (Word version older than Word 95).");
+                }
             }
             else
             {
-                if (this.FIB.nFibNew < FileInformationBlock.FibVersion.Fib1997Beta)
-                    throw new ByteParseException("Could not parse the file because it was created by an unsupported application (Word 95 or older).");
+                isWord95 = this.FIB.nFibNew == FileInformationBlock.FibVersion.FibWord6 || 
+                          this.FIB.nFibNew == FileInformationBlock.FibVersion.FibWord95 ||
+                          ((int)this.FIB.nFibNew == 104); // Some Word95 files use nFib = 104
+
+                if (!isWord95 && this.FIB.nFibNew < FileInformationBlock.FibVersion.Fib1997Beta)
+                {
+                    throw new ByteParseException("Could not parse the file because it was created by an unsupported application (Word version older than Word 95).");
+                }
             }
 
             //get the streams
-            this.TableStream = reader.GetStream(this.FIB.fWhichTblStm ? "1Table" : "0Table");
+            try
+            {
+                this.TableStream = reader.GetStream(this.FIB.fWhichTblStm ? "1Table" : "0Table");
+            }
+            catch (StreamNotFoundException)
+            {
+                if (isWord95)
+                {
+                    // Word 95 files may not have a table stream, which is expected
+                    this.TableStream = null;
+                }
+                else
+                {
+                    throw; // Re-throw for non-Word95 files as table stream is required
+                }
+            }
 
             try
             {
@@ -216,46 +245,110 @@ namespace b2xtranslator.DocFileFormat
                 this.DataStream = null;
             }
 
-            //Read all needed STTBs
-            this.RevisionAuthorTable = new StringTable(typeof(string), this.TableStream, this.FIB.fcSttbfRMark, this.FIB.lcbSttbfRMark);
-            this.FontTable = new StringTable(typeof(FontFamilyName), this.TableStream, this.FIB.fcSttbfFfn, this.FIB.lcbSttbfFfn);
-            this.BookmarkNames = new StringTable(typeof(string), this.TableStream, this.FIB.fcSttbfBkmk, this.FIB.lcbSttbfBkmk);
-            this.AutoTextNames = new StringTable(typeof(string), this.TableStream, this.FIB.fcSttbfGlsy, this.FIB.lcbSttbfGlsy);
-            //this.ProtectionUsers = new StringTable(typeof(String), this.TableStream, this.FIB.fcSttbProtUser, this.FIB.lcbSttbProtUser);
-            //
-            this.UserVariables = new StwStructure(this.TableStream, this.FIB.fcStwUser, this.FIB.lcbStwUser);
+            //Read all needed STTBs - handle Word95 case where TableStream may be null
+            if (this.TableStream != null)
+            {
+                this.RevisionAuthorTable = new StringTable(typeof(string), this.TableStream, this.FIB.fcSttbfRMark, this.FIB.lcbSttbfRMark);
+                this.FontTable = new StringTable(typeof(FontFamilyName), this.TableStream, this.FIB.fcSttbfFfn, this.FIB.lcbSttbfFfn);
+                this.BookmarkNames = new StringTable(typeof(string), this.TableStream, this.FIB.fcSttbfBkmk, this.FIB.lcbSttbfBkmk);
+                this.AutoTextNames = new StringTable(typeof(string), this.TableStream, this.FIB.fcSttbfGlsy, this.FIB.lcbSttbfGlsy);
+                //this.ProtectionUsers = new StringTable(typeof(String), this.TableStream, this.FIB.fcSttbProtUser, this.FIB.lcbSttbProtUser);
+                //
+                this.UserVariables = new StwStructure(this.TableStream, this.FIB.fcStwUser, this.FIB.lcbStwUser);
+            }
+            else
+            {
+                // Create empty structures for Word 95 files
+                this.RevisionAuthorTable = null;
+                this.FontTable = null;
+                this.BookmarkNames = null;
+                this.AutoTextNames = null;
+                this.UserVariables = null;
+            }
 
-            //Read all needed PLCFs
-            this.AnnotationsReferencePlex = new Plex<AnnotationReferenceDescriptor>(30, this.TableStream, this.FIB.fcPlcfandRef, this.FIB.lcbPlcfandRef);
-            this.TextboxBreakPlex = new Plex<BreakDescriptor>(6, this.TableStream, this.FIB.fcPlcfTxbxBkd, this.FIB.lcbPlcfTxbxBkd);
-            this.TextboxBreakPlexHeader = new Plex<BreakDescriptor>(6, this.TableStream, this.FIB.fcPlcfTxbxHdrBkd, this.FIB.lcbPlcfTxbxHdrBkd);
-            this.OfficeDrawingPlex = new Plex<FileShapeAddress>(26, this.TableStream, this.FIB.fcPlcSpaMom, this.FIB.lcbPlcSpaMom);
-            this.OfficeDrawingPlexHeader = new Plex<FileShapeAddress>(26, this.TableStream, this.FIB.fcPlcSpaHdr, this.FIB.lcbPlcSpaHdr);
-            this.SectionPlex = new Plex<SectionDescriptor>(12, this.TableStream, this.FIB.fcPlcfSed, this.FIB.lcbPlcfSed);
-            this.BookmarkStartPlex = new Plex<BookmarkFirst>(4, this.TableStream, this.FIB.fcPlcfBkf, this.FIB.lcbPlcfBkf);
-            this.EndnoteReferencePlex = new Plex<short>(2, this.TableStream, this.FIB.fcPlcfendRef, this.FIB.lcbPlcfendRef);
-            this.FootnoteReferencePlex = new Plex<short>(2, this.TableStream, this.FIB.fcPlcffndRef, this.FIB.lcbPlcffndRef);
-            // PLCFs without types
-            this.BookmarkEndPlex = new Plex<Exception>(0, this.TableStream, this.FIB.fcPlcfBkl, this.FIB.lcbPlcfBkl);
-            this.AutoTextPlex = new Plex<Exception>(0, this.TableStream, this.FIB.fcPlcfGlsy, this.FIB.lcbPlcfGlsy);
+            //Read all needed PLCFs - handle Word95 case where TableStream may be null
+            if (this.TableStream != null)
+            {
+                this.AnnotationsReferencePlex = new Plex<AnnotationReferenceDescriptor>(30, this.TableStream, this.FIB.fcPlcfandRef, this.FIB.lcbPlcfandRef);
+                this.TextboxBreakPlex = new Plex<BreakDescriptor>(6, this.TableStream, this.FIB.fcPlcfTxbxBkd, this.FIB.lcbPlcfTxbxBkd);
+                this.TextboxBreakPlexHeader = new Plex<BreakDescriptor>(6, this.TableStream, this.FIB.fcPlcfTxbxHdrBkd, this.FIB.lcbPlcfTxbxHdrBkd);
+                this.OfficeDrawingPlex = new Plex<FileShapeAddress>(26, this.TableStream, this.FIB.fcPlcSpaMom, this.FIB.lcbPlcSpaMom);
+                this.OfficeDrawingPlexHeader = new Plex<FileShapeAddress>(26, this.TableStream, this.FIB.fcPlcSpaHdr, this.FIB.lcbPlcSpaHdr);
+                this.SectionPlex = new Plex<SectionDescriptor>(12, this.TableStream, this.FIB.fcPlcfSed, this.FIB.lcbPlcfSed);
+                this.BookmarkStartPlex = new Plex<BookmarkFirst>(4, this.TableStream, this.FIB.fcPlcfBkf, this.FIB.lcbPlcfBkf);
+                this.EndnoteReferencePlex = new Plex<short>(2, this.TableStream, this.FIB.fcPlcfendRef, this.FIB.lcbPlcfendRef);
+                this.FootnoteReferencePlex = new Plex<short>(2, this.TableStream, this.FIB.fcPlcffndRef, this.FIB.lcbPlcffndRef);
+                // PLCFs without types
+                this.BookmarkEndPlex = new Plex<Exception>(0, this.TableStream, this.FIB.fcPlcfBkl, this.FIB.lcbPlcfBkl);
+                this.AutoTextPlex = new Plex<Exception>(0, this.TableStream, this.FIB.fcPlcfGlsy, this.FIB.lcbPlcfGlsy);
+            }
+            else
+            {
+                // Create empty PLCFs for Word 95 files
+                this.AnnotationsReferencePlex = new Plex<AnnotationReferenceDescriptor>(30);
+                this.TextboxBreakPlex = new Plex<BreakDescriptor>(6);
+                this.TextboxBreakPlexHeader = new Plex<BreakDescriptor>(6);
+                this.OfficeDrawingPlex = new Plex<FileShapeAddress>(26);
+                this.OfficeDrawingPlexHeader = new Plex<FileShapeAddress>(26);
+                this.SectionPlex = new Plex<SectionDescriptor>(12);
+                this.BookmarkStartPlex = new Plex<BookmarkFirst>(4);
+                this.EndnoteReferencePlex = new Plex<short>(2);
+                this.FootnoteReferencePlex = new Plex<short>(2);
+                this.BookmarkEndPlex = new Plex<Exception>(0);
+                this.AutoTextPlex = new Plex<Exception>(0);
+            }
 
-            //read the FKPs
-            this.AllPapxFkps = FormattedDiskPagePAPX.GetAllPAPXFKPs(this.FIB, this.WordDocumentStream, this.TableStream, this.DataStream);
-            this.AllChpxFkps = FormattedDiskPageCHPX.GetAllCHPXFKPs(this.FIB, this.WordDocumentStream, this.TableStream);
+            //read the FKPs - handle Word95 case where TableStream may be null
+            if (this.TableStream != null)
+            {
+                this.AllPapxFkps = FormattedDiskPagePAPX.GetAllPAPXFKPs(this.FIB, this.WordDocumentStream, this.TableStream, this.DataStream);
+                this.AllChpxFkps = FormattedDiskPageCHPX.GetAllCHPXFKPs(this.FIB, this.WordDocumentStream, this.TableStream);
+            }
+            else
+            {
+                // Create empty FKP lists for Word 95 files
+                this.AllPapxFkps = new List<FormattedDiskPagePAPX>();
+                this.AllChpxFkps = new List<FormattedDiskPageCHPX>();
+            }
 
-            //read custom tables
-            this.DocumentProperties = new DocumentProperties(this.FIB, this.TableStream);
-            this.Styles = new StyleSheet(this.FIB, this.TableStream, this.DataStream);
-            this.ListTable = new ListTable(this.FIB, this.TableStream);
-            this.ListFormatOverrideTable = new ListFormatOverrideTable(this.FIB, this.TableStream);
-            this.OfficeArtContent = new OfficeArtContent(this.FIB, this.TableStream);
-            this.HeaderAndFooterTable = new HeaderAndFooterTable(this);
-            this.AnnotationReferenceExtraTable = new AnnotationReferenceExtraTable(this.FIB, this.TableStream);
-            this.CommandTable = new CommandTable(this.FIB, this.TableStream);
-            this.AnnotationOwners = new AnnotationOwnerList(this.FIB, this.TableStream);
+            //read custom tables - handle Word95 case where TableStream may be null
+            if (this.TableStream != null)
+            {
+                this.DocumentProperties = new DocumentProperties(this.FIB, this.TableStream);
+                this.Styles = new StyleSheet(this.FIB, this.TableStream, this.DataStream);
+                this.ListTable = new ListTable(this.FIB, this.TableStream);
+                this.ListFormatOverrideTable = new ListFormatOverrideTable(this.FIB, this.TableStream);
+                this.OfficeArtContent = new OfficeArtContent(this.FIB, this.TableStream);
+                this.HeaderAndFooterTable = new HeaderAndFooterTable(this);
+                this.AnnotationReferenceExtraTable = new AnnotationReferenceExtraTable(this.FIB, this.TableStream);
+                this.CommandTable = new CommandTable(this.FIB, this.TableStream);
+                this.AnnotationOwners = new AnnotationOwnerList(this.FIB, this.TableStream);
+            }
+            else
+            {
+                // Create minimal structures for Word 95 files
+                this.DocumentProperties = null;
+                this.Styles = null;
+                this.ListTable = null;
+                this.ListFormatOverrideTable = null;
+                this.OfficeArtContent = null;
+                this.HeaderAndFooterTable = null;
+                this.AnnotationReferenceExtraTable = null;
+                this.CommandTable = null;
+                this.AnnotationOwners = null;
+            }
 
             //parse the piece table and construct a list that contains all chars
-            this.PieceTable = new PieceTable(this.FIB, this.TableStream);
+            if (isWord95 && this.TableStream == null)
+            {
+                // Use the Word 95 single-piece fallback constructor
+                this.PieceTable = new PieceTable(this.FIB);
+            }
+            else
+            {
+                // Use the standard piece table parser
+                this.PieceTable = new PieceTable(this.FIB, this.TableStream);
+            }
             this.Text = this.PieceTable.GetAllChars(this.WordDocumentStream);
 
             //build a dictionaries of all PAPX
@@ -266,6 +359,13 @@ namespace b2xtranslator.DocFileFormat
                 {
                     this.AllPapx.Add(this.AllPapxFkps[i].rgfc[j], this.AllPapxFkps[i].grppapx[j]);
                 }
+            }
+
+            // For Word 95 files, add a default PAPX to ensure text mapping works
+            if (isWord95 && this.AllPapx.Count == 0)
+            {
+                var defaultPapx = new ParagraphPropertyExceptions();
+                this.AllPapx.Add(this.FIB.fcMin, defaultPapx);
             }
 
             //build a dictionary of all SEPX
@@ -283,6 +383,13 @@ namespace b2xtranslator.DocFileFormat
                 var sepx = new SectionPropertyExceptions(wordReader.ReadBytes(cbSepx - 2));
 
                 this.AllSepx.Add(cp, sepx);
+            }
+
+            // For Word 95 files, add a default SEPX to ensure text mapping works
+            if (isWord95 && this.AllSepx.Count == 0)
+            {
+                var defaultSepx = new SectionPropertyExceptions();
+                this.AllSepx.Add(this.FIB.ccpText, defaultSepx);
             }
 
             //read the Glossary

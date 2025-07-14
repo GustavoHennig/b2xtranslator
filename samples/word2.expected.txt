@@ -1,0 +1,102 @@
+	Member of 3GPP (ARIB)
+Mr. Benni Alexander	Nokia Japan Co, Ltd	3GPPMEMBER (ARIB)	FI	+358 7180 68683	benni.alexander@nokia.com	YES  -  NO
+
+Mr. Frank Korinek	MOTOROLA JAPAN LTD	3GPPMEMBER (ARIB)	US	+1 847 576-1643	frank.korinek@motorola.com	YES  -  NO
+
+	Member of 3GPP (CCSA)
+Mr. Liangzhong Gong	HuaWei Technologies Co., Ltd	3GPPMEMBER (CCSA)	CN	+86 755 28789504	dmyglz@huawei.com	YES  -  NO
+
+Dr. Yewen Li	China Mobile Com. Corporation	3GPPMEMBER (CCSA)	CN	+86 10 66006688-1	liyewen@chinamobile.com	YES  -  NO
+
+Mr. Yelei Li	HuaWei Technologies Co., Ltd	3GPPMEMBER (CCSA)	CN	+86 0755 28970890	liyelei@huawei.com	YES  -  NO
+
+Miss Lanlan Rui	China Mobile Com. Corporation	3GPPMEMBER (CCSA)	CN	+86 10 62283259	llrui@bupt.edu.cn	YES  -  NO
+
+Mr. Li Yang	HuaWei Technologies Co., Ltd	3GPPMEMBER (CCSA)	CN	+86 21 50991214	afi@huawei.com	YES  -  NO
+
+	Member of 3GPP (ETSI)
+Mr. Istvan Aba	T-Mobile AUSTRIA	3GPPMEMBER (ETSI)	AT	+43 1 79585 6178	istvan.aba@t-mobile.at	YES  -  NO
+
+Mr. Alain Bibas	ORANGE FRANCE	3GPPMEMBER (ETSI)	FR	+33 1 45 29 46 63	alain.bibas@rd.francetelecom.com	YES  -  NO
+
+Mr. Frédéric Bonneau	NORTEL NETWORKS (EUROPE)	3GPPMEMBER (ETSI)	FR	+33 1 6955 5172	frederic.bonneau@nortelnetworks.com	YES  -  NO
+
+Mr. Paolo Bostica	TELECOM ITALIA S.p.A.	3GPPMEMBER (ETSI)	IT	+39 011 228 6877	paolo.bostica@telecomitalia.it	YES  -  NO
+
+Mr. Baptiste Caroz	ORANGE FRANCE	3GPPMEMBER (ETSI)	FR	+33 1 45 29 47 94	baptiste.caroz@francetelecom.com	YES  -  NO
+
+Mr. Emmanuel Dujardin	France Telecom	3GPPMEMBER (ETSI)	FR	+ 33 145296480	emmanuel.dujardin@francetelecom.co	YES  -  NO
+
+Ms. Brigitte Faouën	NORTEL NETWORKS (EUROPE)	3GPPMEMBER (ETSI)	GB	+33 1 6955 4643	bfaouen@nortelnetworks.com	YES  -  NO
+
+Dr. Peter Gaigg	SIEMENS AG	3GPPMEMBER (ETSI)	AT	+435170721078	peter.gaigg@siemens.com	YES  -  NO
+
+Mr. Gerald Görmer	SIEMENS Mobile Communications	3GPPMEMBER (ETSI)	DE	+49 30 386 29322	Gerald.goermer@siemens.com	YES  -  NO
+
+Mr. Ulf Hübinette	ERICSSON LM	3GPPMEMBER (ETSI)	SE	+46 13 28 4891	ulf.hubinette@ericsson.com	YES  -  NO
+
+Mr. John Islip	Lucent Technologies N. S. UK	3GPPMEMBER (ETSI)	GB	+44 1793 897312	islip@lucent.com	YES  -  NO
+
+Mr. Steve Mecrow	mmO2 plc	3GPPMEMBER (ETSI)	GB	+44 1 394 380694	steve.mecrow@o2.com	YES  -  NO
+
+Mr. John Mudge	VODAFONE LTD	3GPPMEMBER (ETSI)	GB	+44 1635 673587	john.mudge@vodafone.co.uk	YES  -  NO
+
+Mr. Karl-Heinz Nenner	T-MOBILE DEUTSCHLAND	3GPPMEMBER (ETSI)	DE	+49 228 936 33343	karl-heinz.nenner@t-mobile.de	YES  -  NO
+
+Mr. Habib Nouira	ALCATEL S.A.	3GPPMEMBER (ETSI)	FR	+331 3077 5109	habib.nouira@alcatel.fr	YES  -  NO
+
+Mr. Tapinder Pal	T-MOBILE DEUTSCHLAND	3GPPMEMBER (ETSI)	DE	+49 228 936 33349	tapinder.pal@t-mobile.de	YES  -  NO
+
+Mr. Trevor Pirt	MOTOROLA GmbH	3GPPMEMBER (ETSI)	IE	+353 21 4511 218	trevor.pirt@motorola.com	YES  -  NO
+
+Dr. Olaf Pollakowski	SIEMENS AG	3GPPMEMBER (ETSI)	DE	+49 30 386 32928	olaf.pollakowski@siemens.com	YES  -  NO
+
+Mr. Mohan Rao	Lucent Technologies N. S. UK	3GPPMEMBER (ETSI)	GB	+44 1793 897872	mohanr@lucent.com	YES  -  NO
+
+Mr. Harry Rau	ALCATEL S.A.	3GPPMEMBER (ETSI)	DE	+49 711 821 47855	harry.rau@alcatel.de	YES  -  NO
+
+Mr. Christopher Richards	NORTEL NETWORKS (EUROPE)	3GPPMEMBER (ETSI)	FR	+19726843281	crich@nortelnetworks.com	YES  -  NO
+
+Mr. Kari Ronka	NOKIA Corporation	3GPPMEMBER (ETSI)	FI	+358 7180 77010	kari.t.ronka@nokia.com	YES  -  NO
+
+Mr. Joerg Schmidt	MOTOROLA A/S	3GPPMEMBER (ETSI)	US	+1 480 732 6493	J.Schmidt@Motorola.com	YES  -  NO
+
+Mr. Samuel Sida	ADC Telecommunications LTD	3GPPMEMBER (ETSI)	US	+442083343266	samuel_sida@adc.com	YES  -  NO
+
+Mr. Clemens Suerbaum	SIEMENS AG	3GPPMEMBER (ETSI)	DE	+49 89 636 75198	clemens.suerbaum@siemens.com	YES  -  NO
+
+Mr. Patrik Teppo	ERICSSON LM	3GPPMEMBER (ETSI)	SE	+46 455 395831	patrik.teppo@ericsson.com	YES  -  NO
+
+Mr. Christian Toche	NORTEL NETWORKS (EUROPE)	3GPPMEMBER (ETSI)	FR	+33 1 69 55 44 91	toche@nortelnetworks.com	YES  -  NO
+
+Mr. Michael Truss	MOTOROLA Ltd	3GPPMEMBER (ETSI)	IE	+353 21 4511 327	Michael.Truss@motorola.com	YES  -  NO
+
+Mr. Enxi Wang	NOKIA Corporation	3GPPMEMBER (ETSI)	CN	+86 10 65392828	enxi.wang@nokia.com	YES  -  NO
+
+Dr. Georg Wegmann	T-MOBILE DEUTSCHLAND	3GPPMEMBER (ETSI)	DE	+49 228 936 33468	georg.wegmann@t-mobile.de	YES  -  NO
+
+Mr. Ove Wikberg	ERICSSON LM	3GPPMEMBER (ETSI)	SE	+4684045939	ove.wikberg@ericsson.com	YES  -  NO
+
+	Member of 3GPP (T1)
+Ms. Catherine FitzPatrick	Lucent Technologies	3GPPMEMBER (T1)	US	+1 630 979-7928	fitz50@lucent.com	YES  -  NO
+
+Mr. Rick Porter	Telcordia Technologies Inc.	3GPPMEMBER (T1)	US	+1-973-829-4490	fdpo@research.telcordia.com	YES  -  NO
+
+Mr. Mikael Rutanen	Nokia Telecommunications Inc.	3GPPMEMBER (T1)	FI	+358503872903	mikael.rutanen@nokia.com	YES  -  NO
+
+Mr. Venson Shaw	AT&T Wireless Services, Inc.	3GPPMEMBER (T1)	US	+1 425 580 7816	Venson.Shaw@attws.com	YES  -  NO
+
+Mr. David Sidor	Nortel Networks	3GPPMEMBER (T1)	US	+1 919 997 3628	djsidor@nortelnetworks.com	YES  -  NO
+
+Mr. Edwin Tse	Ericsson Inc.	3GPPMEMBER (T1)	CA	+1 514 345 7900	edwin.tse@ericsson.com	YES  -  NO
+
+	Member of 3GPP (TTA)
+Mr. Robert Petersen	Ericsson Korea	3GPPMEMBER (TTA)	SE	+46 13 28 46 01	robert.petersen@ericsson.com	YES  -  NO
+
+	Member of 3GPP (TTC)
+Mr. Thomas Tovinger	Nippon Ericsson K.K.	3GPPMEMBER (TTC)	SE	+46 31 747 3010	thomas.tovinger@ericsson.com	YES  -  NO
+
+	Organisation partner representative (ETSI)
+Mr. Adrian Zoicas	Mobile Competence Centre	FR	+33 4 92 94 42 21	adrian.zoicas@etsi.org	YES  -  NO
+
+

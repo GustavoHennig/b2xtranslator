@@ -1,4 +1,3 @@
-
 		EUROPEAN COMMISSIONDIRECTORATE-GENERALINFORMATICSInfrastructure and Logistics DirectorateTechnical solutions and office systems	
 
 
@@ -12,6 +11,14 @@
 	Approved by:	
 
 
+
+
+Commission européenne, L-2920 Luxembourg. Telephone: (352) 43 01-1.
+Office: JMO B2/27b. Telephone: direct line (352) 43 01-35414. Fax: (352) 43 01-32709.
+
+Commission européenne, B-1049 Bruxelles / Europese Commissie, B-1049 Brussel - Belgium. Telephone: (32-2) 299 11 11.
+
+E-mail: francoise.hontoy@ext.cec.eu.int
 TABLE OF CONTENTS
 	
 2. Creation of a Technical and Quality Document	
@@ -169,7 +176,7 @@ Do not update the footer manually
 
 ANNEX: Styles
 In the following paragraphs the different styles available within a technical template are shown as examples. For further information please refer to the "Specification for a Technical Document Template" document which can be found on softline 
-
+desktopapp/offaut/docmgmt/eurolookxl/ref/tech&qual.pdf" (http://www.cc.cec/digitline/u/products/)
 . 
 Heading 1
 Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal
@@ -222,7 +229,10 @@ Example 2 for Glossary Entries
 
 
 Index
-	
+
+ - 	Page  / 
+Document Version . dated 
+	
 	
 	
 	

@@ -7,6 +7,8 @@ namespace b2xtranslator.DocFileFormat
     {
         public enum FibVersion
         {
+            FibWord6 = 0x0065,  // Word 6.0/95 NFib value
+            FibWord95 = 0x0065, // Same as Word 6, alias for clarity
             Fib1997Beta = 0x00C0,
             Fib1997 = 0x00C1,
             Fib2000 = 0x00D9,
@@ -492,7 +494,78 @@ namespace b2xtranslator.DocFileFormat
 
             this.cbRgFcLcb = reader.ReadUInt16();
 
-            if (this.nFib >= FibVersion.Fib1997Beta)
+            // Handle Word95 files (nFib = 100, 101, 104) with specific field offsets
+            bool isWord95 = this.nFib == FibVersion.FibWord6 || 
+                           this.nFib == FibVersion.FibWord95 ||
+                           ((int)this.nFib == 104); // Some Word95 files use nFib = 104
+
+            if (isWord95)
+            {
+                // For Word95 files, read fields at Word95-specific offsets
+                // Based on reference code, use simplified field reading for Word95
+                // Most fields are not available or at different positions in Word95
+                
+                // Save current position and read key fields at known Word95 offsets
+                long savedPosition = reader.BaseStream.Position;
+                
+                try
+                {
+                    // Read CLX information at Word95 offset (0x00A4)
+                    reader.BaseStream.Seek(0x00A4, System.IO.SeekOrigin.Begin);
+                    this.fcClx = reader.ReadUInt32();
+                    this.lcbClx = reader.ReadUInt32();
+                    
+                    // Read stylesheet at Word95 offset (0x00A0)  
+                    reader.BaseStream.Seek(0x00A0, System.IO.SeekOrigin.Begin);
+                    this.fcStshf = reader.ReadUInt32();
+                    this.lcbStshf = reader.ReadUInt32();
+                    
+                    // For Word95, most formatting fields are not available or at different locations
+                    // Set defaults for missing fields
+                    this.fcPlcfBteChpx = 0;
+                    this.lcbPlcfBteChpx = 0;
+                    this.fcPlcfBtePapx = 0;  
+                    this.lcbPlcfBtePapx = 0;
+                    this.fcPlcfHdd = 0;
+                    this.lcbPlcfHdd = 0;
+                    this.fcSttbfFfn = 0;
+                    this.lcbSttbfFfn = 0;
+                    
+                    // For Word95 files, calculate text length from fcMac - fcMin if ccpText is 0
+                    if (this.ccpText == 0 && this.fcMac > this.fcMin)
+                    {
+                        this.ccpText = this.fcMac - this.fcMin;
+                    }
+                }
+                catch
+                {
+                    // If seeking fails, set safe defaults
+                    this.fcClx = 0;
+                    this.lcbClx = 0;
+                    this.fcStshf = 0;
+                    this.lcbStshf = 0;
+                    this.fcPlcfBteChpx = 0;
+                    this.lcbPlcfBteChpx = 0;
+                    this.fcPlcfBtePapx = 0;
+                    this.lcbPlcfBtePapx = 0;
+                    this.fcPlcfHdd = 0;
+                    this.lcbPlcfHdd = 0;
+                    this.fcSttbfFfn = 0;
+                    this.lcbSttbfFfn = 0;
+                    
+                    // For Word95 files, calculate text length from fcMac - fcMin if ccpText is 0
+                    if (this.ccpText == 0 && this.fcMac > this.fcMin)
+                    {
+                        this.ccpText = this.fcMac - this.fcMin;
+                    }
+                }
+                finally
+                {
+                    // Restore position for any further reading
+                    reader.BaseStream.Seek(savedPosition, System.IO.SeekOrigin.Begin);
+                }
+            }
+            else if (this.nFib >= FibVersion.Fib1997Beta)
             {
                 //Read the FibRgFcLcb97
                 this.fcStshfOrig = reader.ReadUInt32();

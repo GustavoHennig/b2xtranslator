@@ -13,7 +13,7 @@ namespace b2xtranslator.txt.TextMapping
         private INode _sectPr;
         private int _sectNr;
         private ConversionContext _ctx;
-       private SectionType _type = SectionType.nextPage;
+        private SectionType _type = SectionType.nextPage;
 
         private enum SectionType
         {
@@ -114,7 +114,7 @@ namespace b2xtranslator.txt.TextMapping
         /// the properties to a given node.
         /// </summary>
         /// <param name="sectPr">The sectPr node</param>
-        public SectionPropertiesMapping(INode sectPr, ConversionContext ctx, int sectionNr) 
+        public SectionPropertiesMapping(INode sectPr, ConversionContext ctx, int sectionNr)
             : base(null)
         {
             _ctx = ctx;
@@ -137,9 +137,9 @@ namespace b2xtranslator.txt.TextMapping
             var paperSrc = _nodeFactory.CreateElement("w", "paperSrc", OpenXmlNamespaces.WordprocessingML);
             var footnotePr = _nodeFactory.CreateElement("w", "footnotePr", OpenXmlNamespaces.WordprocessingML);
             var pgNumType = _nodeFactory.CreateElement("w", "pgNumType", OpenXmlNamespaces.WordprocessingML);
-            
+
             //convert headers of this section
-            if (_ctx.Doc.HeaderAndFooterTable.OddHeaders.Count > 0 && _ctx.Doc.HeaderAndFooterTable.OddHeaders.Count < _sectNr)
+            if (_ctx.Doc.HeaderAndFooterTable != null && _ctx.Doc.HeaderAndFooterTable.OddHeaders.Count > 0 && _sectNr < _ctx.Doc.HeaderAndFooterTable.OddHeaders.Count)
             {
                 var evenHdr = _ctx.Doc.HeaderAndFooterTable.EvenHeaders[_sectNr];
                 if (evenHdr != null)
@@ -167,7 +167,7 @@ namespace b2xtranslator.txt.TextMapping
             }
 
             //convert footers of this section
-            if (_ctx.Doc.HeaderAndFooterTable.OddFooters.Count > 0 && _ctx.Doc.HeaderAndFooterTable.OddFooters.Count < _sectNr)
+            if (_ctx.Doc.HeaderAndFooterTable != null && _ctx.Doc.HeaderAndFooterTable.OddFooters.Count > 0 && _sectNr < _ctx.Doc.HeaderAndFooterTable.OddFooters.Count)
             {
                 var evenFtr = _ctx.Doc.HeaderAndFooterTable.EvenFooters[_sectNr];
                 if (evenFtr != null)
@@ -298,17 +298,17 @@ namespace b2xtranslator.txt.TextMapping
                         {
                             fncFtn = (FootnoteRestartCode)sprm.Arguments[0];
                         }
-                            
+
                         appendValueElement(footnotePr, "numRestart", fncFtn.ToString(), true);
                         break;
                     case SinglePropertyModifier.OperationCode.sprmSFpc:
                         //position code
                         short fpc = 0;
-                        if(sprm.Arguments.Length == 2)
+                        if (sprm.Arguments.Length == 2)
                             fpc = BitConverter.ToInt16(sprm.Arguments, 0);
                         else
                             fpc = sprm.Arguments[0];
-                        if(fpc == 2)
+                        if (fpc == 2)
                             appendValueElement(footnotePr, "pos", "beneathText", true);
                         break;
                     case SinglePropertyModifier.OperationCode.sprmSNfcFtnRef:
@@ -344,7 +344,7 @@ namespace b2xtranslator.txt.TextMapping
                         break;
                     case SinglePropertyModifier.OperationCode.sprmSDxaColWidth:
                         //there is at least one width set, so create the array
-                        if(_colWidth == null)
+                        if (_colWidth == null)
                             _colWidth = new short[_colNumber];
 
                         byte index = sprm.Arguments[0];
@@ -493,7 +493,7 @@ namespace b2xtranslator.txt.TextMapping
         private void appendRef(INode parent, string element, string refType, string refId)
         {
             var headerRef = _nodeFactory.CreateElement("w", element, OpenXmlNamespaces.WordprocessingML);
-            
+
             var headerRefType = _nodeFactory.CreateAttribute("w", "type", OpenXmlNamespaces.WordprocessingML);
             headerRefType.Value = refType;
             headerRef.Attributes.Append(headerRefType);

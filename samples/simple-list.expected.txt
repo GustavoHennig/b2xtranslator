@@ -1,0 +1,5 @@
+This is a simple word document created using Word 97 – SR2.  It contains a paragraph, a list and a paragraph.
+First item in list
+Second item in list
+Third item in list
+This is the last paragraph.

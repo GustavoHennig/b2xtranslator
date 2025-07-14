@@ -1,0 +1,1 @@
+Before text; Hyperlink text (http://testuri.org/); after text

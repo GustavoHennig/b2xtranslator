@@ -145,17 +145,29 @@ namespace b2xtranslator.txt.TextMapping
 
 
 
-                //convert the command table
-                doc.CommandTable.Convert(new CommandTableMapping(context, textDocument.FootnotesWriter));
+                //convert the command table (skip for Word 95 files where it may be null)
+                if (doc.CommandTable != null)
+                {
+                    doc.CommandTable.Convert(new CommandTableMapping(context, textDocument.FootnotesWriter));
+                }
 
-                //Write styles.xml
-                doc.Styles.Convert(new StyleSheetMapping(context, doc, textDocument.FootnotesWriter));
+                //Write styles.xml (skip for Word 95 files where it may be null)
+                if (doc.Styles != null)
+                {
+                    doc.Styles.Convert(new StyleSheetMapping(context, doc, textDocument.FootnotesWriter));
+                }
 
-                //Write numbering.xml
-                doc.ListTable.Convert(new NumberingMapping(context, doc, context.TextDoc.MainDocumentWriter));
+                //Write numbering.xml (skip for Word 95 files where it may be null)
+                if (doc.ListTable != null)
+                {
+                    doc.ListTable.Convert(new NumberingMapping(context, doc, context.TextDoc.MainDocumentWriter));
+                }
 
-                //Write fontTable.xml
-                doc.FontTable.Convert(new FontTableMapping(context, new TextWriter()));
+                //Write fontTable.xml (skip for Word 95 files where it may be null)
+                if (doc.FontTable != null)
+                {
+                    doc.FontTable.Convert(new FontTableMapping(context, new TextWriter()));
+                }
 
                 //write document.xml and the header and footers
                 doc.Convert(new MainDocumentMapping(context, context.TextDoc.MainDocumentWriter));

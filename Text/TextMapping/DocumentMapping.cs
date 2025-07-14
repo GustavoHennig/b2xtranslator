@@ -515,13 +515,19 @@ namespace b2xtranslator.txt.TextMapping
                 return cpParaEnd;
             }
 
-            while (_doc.Text[cpParaEnd] != TextMark.ParagraphEnd &&
+            while (cpParaEnd < _doc.Text.Count &&
+                _doc.Text[cpParaEnd] != TextMark.ParagraphEnd &&
                 _doc.Text[cpParaEnd] != TextMark.CellOrRowMark &&
-                !(_doc.Text[cpParaEnd] == TextMark.PageBreakOrSectionMark && isSectionEnd(cpParaEnd)))
+                !(_doc.Text[cpParaEnd] == TextMark.PageBreakOrSectionMark &&
+                isSectionEnd(cpParaEnd)))
             {
                 cpParaEnd++;
             }
 
+            if (cpParaEnd >= _doc.Text.Count)
+            {
+                cpParaEnd = _doc.Text.Count - 1;
+            }
             if (_doc.Text[cpParaEnd] == TextMark.PageBreakOrSectionMark)
             {
                 //there is a page break OR section mark,
@@ -559,7 +565,11 @@ namespace b2xtranslator.txt.TextMapping
 
             if (chpxs.Count == 0)
             {
-                return cpEnd++;
+                // For Word95 files or files without character formatting,
+                // create a default CHPX to ensure text is still extracted
+                var defaultChpx = new CharacterPropertyExceptions();
+                chpxs.Add(defaultChpx);
+                chpxFcs = new List<int> { fc, fcEnd };
             }
 
             //the last of these CHPX formats the paragraph end mark
@@ -829,7 +839,7 @@ namespace b2xtranslator.txt.TextMapping
                     int cpFieldEnd = searchNextTextMark(_doc.Text, cpFieldStart, TextMark.FieldEndMark);
                     var f = new Field(_doc.Text.GetRange(cpFieldStart, cpFieldEnd - cpFieldStart + 1));
 
-                    if (f.FieldCode.StartsWith(" FORM"))
+                    if (f.FieldCode?.StartsWith(" FORM")==true)
                     {
                         _writer.WriteStartElement("w", "fldChar", OpenXmlNamespaces.WordprocessingML);
                         _writer.WriteAttributeString("w", "fldCharType", OpenXmlNamespaces.WordprocessingML, "begin");
@@ -846,7 +856,7 @@ namespace b2xtranslator.txt.TextMapping
 
                         _writer.WriteEndElement();
                     }
-                    else if (f.FieldCode.StartsWith(" EMBED") || f.FieldCode.StartsWith(" LINK"))
+                    else if (f.FieldCode != null && (f.FieldCode.StartsWith(" EMBED") || f.FieldCode.StartsWith(" LINK")))
                     {
                         _writer.WriteStartElement("w", "object", OpenXmlNamespaces.WordprocessingML);
 

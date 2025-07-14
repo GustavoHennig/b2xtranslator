@@ -23,6 +23,57 @@ namespace b2xtranslator.DocFileFormat
         public Dictionary<int, int> CharacterPositions;
 
         /// <summary>
+        /// Creates an empty piece table for Word 95 files (single piece fallback)
+        /// </summary>
+        /// <param name="fib">The FIB</param>
+        public PieceTable(FileInformationBlock fib)
+        {
+            this.Pieces = new List<PieceDescriptor>();
+            this.FileCharacterPositions = new Dictionary<int, int>();
+            this.CharacterPositions = new Dictionary<int, int>();
+
+            // Create a single piece descriptor covering the entire document text
+            // Word 95 files typically store text as a single piece from fcMin to fcMac
+            Encoding encoding1252;
+            try
+            {
+                // Try to register encoding provider for .NET Core compatibility
+                Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+                encoding1252 = Encoding.GetEncoding(1252);
+            }
+            catch
+            {
+                // Fallback to Latin1 if 1252 is not available
+                encoding1252 = Encoding.GetEncoding("iso-8859-1");
+            }
+
+            var singlePiece = new PieceDescriptor()
+            {
+                cpStart = 0,
+                cpEnd = fib.ccpText,
+                fc = (uint)fib.fcMin,
+                encoding = encoding1252 // Word 95 typically uses Windows-1252
+            };
+
+            this.Pieces.Add(singlePiece);
+
+            // Build the position mappings for the single piece
+            int f = fib.fcMin;
+            for (int c = 0; c < fib.ccpText; c++)
+            {
+                if (!this.FileCharacterPositions.ContainsKey(c))
+                    this.FileCharacterPositions.Add(c, f);
+                if (!this.CharacterPositions.ContainsKey(f))
+                    this.CharacterPositions.Add(f, c);
+                f++;
+            }
+            
+            // Add the final position
+            this.FileCharacterPositions.Add(fib.ccpText, fib.fcMac);
+            this.CharacterPositions.Add(fib.fcMac, fib.ccpText);
+        }
+
+        /// <summary>
         /// Parses the pice table and creates a list of PieceDescriptors.
         /// </summary>
         /// <param name="fib">The FIB</param>

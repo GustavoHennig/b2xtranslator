@@ -1,0 +1,92 @@
+ " L'incapacité de travail après une hysterectomie "
+			
+  
+Questionnaire rempli par le médecin conseil de la fédération :	"Tekstvak7"      
+
+Date de l’examen médical (premier contact) :			""          
+                  
+Concerne l'assuré en incapacité de travail :
+
+Numéro du Registre national:	 	""          
+Numéro federal:     				""      §/""µ          §
+Code postal :        				""µ        §
+Âge:						""µ    §
+Statut social:			 FORMDROPDOWN  §
+				Autre, à spéc?fier : "Text1"µ          §
+
+
+Formation
+
+Jusqu’à quel âge :  "Text3"µ    §
+Degré de formation le plus élevé avec diplôme/certificat : FORMDROPDOWN  §	
+
+Profession
+
+Catégorie :			 FORMDROPDOWN  § 
+Demandeur d'emploi : 	 FORMDROPDOWN  §                	depuis :        "Text2"µ          §       
+Régime de travail :	 	 FORMDROPDOWN  §   nombre d'heures par semaine :      ""µ    § 
+Charge de travail : 		 FORMDROPDOWN  §
+Satisfaction du travail :     Etes vous content de votre emploi ?         FORMDROPDOWN  §  
+ 
+                                                                                       
+Façon de vivre
+
+Fumeur :	     FORMDROPDOWN  § 
+Alcool : 	     FORMDROPDOWN  § 
+Sport :	     FORMDROPDOWN  § 
+
+Comorbidités		 FORMDROPDOWN  §
+
+Intervention:
+
+Type :		sans laxarascopie:	 FORMDROPDOWN  §
+		avec laparascopie:	 FORMDROPDOWN  §
+Indications:					 FORMDROPDOWN  §    
+Hôpital:                    			 FORMDROPDOWN  §
+Médecin:						 FORMDROPDOWN  §  
+
+
+
+
+
+Incapacité de travail :
+
+Date de début :          ""µ          §
+Première prescription de l’incapacité de travail prescrit par:	 FORMDROPDOWN  § 	
+Si autres, à spécifier: 	""µ          §
+Durée de la première incapacité de travail prescrite (en semaines) : 	 FORMDROPDOWN  §           
+Information préopératoire obtenu au sujet de l'incapacité de travail prévue:   	  FORMDROPDOWN  §  
+Interdiction de soulever des poids imposé par le gynécologue     FORMDROPDOWN  §  si oui durée:  FORMDROPDOWN  §
+Contrôle chez le médecin prévu combien de semaines après l’intervention:   	   FORMDROPDOWN  §
+                      					   
+
+Les plaintes principales au moment de la consultation :
+
+Généralement :
+anémie :     					 FORMDROPDOWN  §
+fatigue :             				 FORMDROPDOWN  § 
+douleur abdominale:        			 FORMDROPDOWN  § 
+usage limité des muscles ventraux	 FORMDROPDOWN  §                       
+incontinence urinaire   			 FORMDROPDOWN  §
+Gynécologiquement :
+douleurs gynécologiques                	 FORMDROPDOWN  §	
+pertes de sang 	  	          	 FORMDROPDOWN  §                                                
+problèmes hormonaux        		 FORMDROPDOWN  § 
+Mentalement :
+depuis l’operation sentiment abattu, moins de plaisir ou moins d’intérêt dans les choses journalières                                  			 FORMDROPDOWN  §                  
+depuis l’opération sentiment tendu, inquiet ou craintif          FORMDROPDOWN  §        
+Incidence émotionnelle de l’intervention				 FORMDROPDOWN  §
+                                         
+Medication utilisation spécifique après l’hystérectomie :
+
+Contre la douleur				 FORMDROPDOWN  §
+Les préparations hormonales 		 FORMDROPDOWN  §
+Autre           					 FORMDROPDOWN  §    si oui, spécifier      ""µ          §
+
+
+
+
+Vous pouvez envoyer ce questionnaire à:
+
+ HYPERLINK "mailto:mireille.debruyn2@socmut.be" µmireille.debruyn2@socmut.be§ ou
+ HYPERLINK "mailto:philiep.berkein@socmut.be" µphiliep.berkein@socmut.be§                                       

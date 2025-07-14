@@ -1,7 +1,7 @@
 # Binary(doc,xls,ppt) to OpenXMLTranslator
 
 .NET Core library to convert Microsoft Office binary files (`doc`, `xls` and `ppt`) to Open XML (`docx`, `xlsx` and `pptx`).
-You can use the [Open XML SDK](https://github.com/OfficeDev/Open-XML-SDK) to mainpulate those.
+You can use the [Open XML SDK](https://github.com/OfficeDev/Open-XML-SDK) to manipulate those.
 
 Forked from a [.NET 2 Mono implementation](https://sourceforge.net/projects/b2xtranslator/) under the BSD license.
 
@@ -14,6 +14,8 @@ This fork aims to significantly expand the capabilities of the original implemen
 - **Extend Format Support**: Support for older Word file formats (Word 6.0, Word 95, etc.)
 - **Improve Error Handling**: Graceful handling of corrupted or non-standard files
 - Make it handle lists (numbers, bullet points, indents)
+- Handle TextBox content: "news-example.doc"
+- Symbol handling: "Bug49908.doc"
 
 ### 🔧 Pending Issues
 - Address parsing loops that cause applications to hang
@@ -23,7 +25,12 @@ This fork aims to significantly expand the capabilities of the original implemen
 - Lists are not extracted with proper bullet symbols during text conversion
 - Internal markers are being written to the output: HYPERLINK, MERGEFORMAT, DOCPROPERTY, PAGEREF... See EL_TechnicalTemplateHandling.doc, ProblemExtracting.doc, Bug51686.doc
 - testPictures.doc: testPictures.doc SHAPE  \* MERGEFORMAT
-
+- Revisit: samplehtmlfieldandlist.doc
+- fastsavedmix.doc - 1 line is missing
+- Entire paragraphs are missing: "Bug50936_1.doc", "ESTAT Article comparing RU-LFS-22 12 05_EN.doc", "Bug47958.doc", "Bug53380_3.doc"
+- Alternative space chars need to be handled: "Bug47742.doc" (space != 20)
+- URL not being shown: "pad.doc"
+ 
 ### 📊 Reliability Improvements (Planned)
 - Enhanced validation of input files before processing
 - Better error recovery mechanisms

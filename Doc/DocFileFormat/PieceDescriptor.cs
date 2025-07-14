@@ -17,6 +17,11 @@ namespace b2xtranslator.DocFileFormat
 
         public int cpEnd;
 
+        /// <summary>Default constructor for manually creating PieceDescriptors (Word 95 support)</summary>
+        public PieceDescriptor()
+        {
+        }
+
         /// <summary>Parses the bytes to retrieve a PieceDescriptor</summary>
         /// <param name="bytes">The bytes</param>
         public PieceDescriptor(byte[] bytes)

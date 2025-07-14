@@ -11,6 +11,13 @@ namespace b2xtranslator.DocFileFormat
         public List<int> CharacterPositions;
         public List<T> Elements;
 
+        // Default constructor for Word 95 support
+        public Plex(int structureLength)
+        {
+            this.CharacterPositions = new List<int>();
+            this.Elements = new List<T>();
+        }
+
         public Plex(int structureLength, VirtualStream tableStream, uint fc, uint lcb)
         {
             tableStream.Seek((long)fc, System.IO.SeekOrigin.Begin);

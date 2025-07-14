@@ -1,0 +1,4 @@
+Test text
+	TestFootnote
+	TestEndnote
+TestComment

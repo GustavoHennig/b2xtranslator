@@ -173,6 +173,7 @@ namespace b2xtranslator.txt.TextMapping
         /// <returns></returns>
         public static string MakeStyleId(StyleSheetDescription std)
         {
+            if (std is null) return "";
             if (std.sti != StyleSheetDescription.StyleIdentifier.User &&
                 std.sti != StyleSheetDescription.StyleIdentifier.Null)
             {

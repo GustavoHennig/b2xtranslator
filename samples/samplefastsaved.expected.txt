@@ -1,8 +1,8 @@
 
 Thirteen museum Web sites for review
 
-They’re from France, Denmark, Australia, even Ireland,…
-They’re on water, planets, computers, fine arts,…
+They’re from France, Denmark, Australia, even Ireland,
+They’re on water, planets, computers, fine arts,
 They’re world-famous and less famous
 They’re backed by physical museums and virtual only
 But they’re not representative
@@ -17,4 +17,18 @@ To be discussed Thursday afternoon, February 26th.
 
 
 
-Museum	URL		Crawford Municipal Art Gallery, Cork	http://www.synergy.ie/crawford/		The Louvre, Paris	http://mistral.culture.fr/louvre/louvrea.htm		Château de Versailles, near Paris	http://www.chateauversailles.fr/en/		The Louisiana Museum of Modern Art, north of Copenhagen	http://www.louisiana.dk/english1.html		Tycho Brahe Planetarium & Omnimaxtheater, Copenhagen	http://www.astro.ku.dk/tycho.html		Aquaria Vattenmuseum, Stockholm	http://home2.swipnet.se/~w-23154/ehome.html		Fredrikstad Museum, Fredrikstad, Norway	http://www.hiof.no/fredrikstad-museum/		Exploratorium, San Francisco	http://www.exploratorium.edu/		National Gallery of Art, Washington DC	http://www.nga.gov/		Uffizi Gallery, Florence, Italy	http://www.uffizi.firenze.it/welcomeE.html		National Museum of Australia, Canberra	http://www.nma.gov.au/		EXPO Ticket Office, virtual only	http://sunsite.unc.edu/expo/ticket_office.html		The Virtual Museum of Computing, virtual only	http://www.comlab.ox.ac.uk/archive/other/museums/computing.html
+	Museum	URL
+	Crawford Municipal Art Gallery, Cork	http://www.synergy.ie/crawford/
+	The Louvre, Paris	http://mistral.culture.fr/louvre/louvrea.htm
+	Château de Versailles, near Paris	http://www.chateauversailles.fr/en/
+	The Louisiana Museum of Modern Art, north of Copenhagen	http://www.louisiana.dk/english1.html
+	Tycho Brahe Planetarium & Omnimaxtheater, Copenhagen	http://www.astro.ku.dk/tycho.html
+	Aquaria Vattenmuseum, Stockholm	http://home2.swipnet.se/~w-23154/ehome.html
+	Fredrikstad Museum, Fredrikstad, Norway	http://www.hiof.no/fredrikstad-museum/
+	Exploratorium, San Francisco	http://www.exploratorium.edu/
+	National Gallery of Art, Washington DC	http://www.nga.gov/
+	Uffizi Gallery, Florence, Italy	http://www.uffizi.firenze.it/welcomeE.html
+	National Museum of Australia, Canberra	http://www.nma.gov.au/
+	EXPO Ticket Office, virtual only	http://sunsite.unc.edu/expo/ticket_office.html
+	The Virtual Museum of Computing, virtual only	http://www.comlab.ox.ac.uk/archive/other/museums/computing.html
+	This is an extra line to test fastsave so there.

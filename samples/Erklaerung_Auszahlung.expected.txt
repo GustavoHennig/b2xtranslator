@@ -1,1 +1,29 @@
-Expected text not provided.
+	FORMULAR FÜR DIE AUSZAHLUNG DES BEITRAGES	MODULO PER LA LIQUIDAZIONE DEL CONTRIBUTO
+		
+		
+	Der/Die Unterfertigte	Il/La sottoscritto/a
+	.	......................................................................
+		
+	gesetzlicher/e Vertreter/in der Organisation	legale rappresentante dell’organizzazione
+	.	.......................................................................
+		
+	erklärt	dichiara
+		
+	für das Projekt(bitte Beschreibung des Projektes einfügen)	che per il progetto(prego inserire descrizione del progetto)
+		..............................................................
+	1)  keine anderen finanziellen Unterstützungen erhalten zu haben.	1)  non ha ricevuto altri aiuti finanziari.
+		
+	2)  folgende andere finanzielle Unterstützungen erhalten zu haben:(bitte Körperschaft, wie Bank, öffentliche Verwaltung usw., und den erhaltenen Betrag angeben)....Euro	2)  ha ricevuto i seguenti aiuti altri finanziari:(indicare l’ente, p.es. banca, ente pubblico ecc., e l’importo ricevuto).Euro ...
+		
+	dass das obgenannte Projekt den vom Landesgesetz vom 12. Juli 1975, Nr. 34 vorgeschriebenen Voraussetzungen ent-spricht,	che il progetto di cui sopra corrisponde ai requisiti prescritti dalla legge provinciale 12 luglio 1975, n. 34;
+		
+	in Kenntnis zu sein, dass unwahre Erklärungen gemäß Art. 76 des D.P.R. 28. Dezember 2000, Nr. 445, strafrechtlich verfolgt werden, und dass diese Verwaltung auch stichprobenartige Kontrollen in Bezug auf die abgegebenen Erklärungen durchführen wird.	di essere a conoscenza che le dichiarazioni mendaci sono punite penalmente ai sensi dell'art. 76 del D.P.R. 28 dicembre 2000, n. 445, e che codesta Amministrazione effettuerà controlli, anche a campione, sulle dichiarazioni rese.
+		
+		
+	Datum	Data
+		
+	Unterschrift des gesetzlichen Vertreters	Firma del legale rappresentate
+	.	.............................................................................
+
+
+Version 1/2005

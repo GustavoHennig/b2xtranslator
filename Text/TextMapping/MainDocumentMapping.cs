@@ -27,7 +27,17 @@ namespace b2xtranslator.txt.TextMapping
             _writer.WriteStartElement("w", "body", OpenXmlNamespaces.WordprocessingML);
 
             //convert the document
-            _lastValidPapx = _doc.AllPapxFkps[0].grppapx[0];
+            // Handle Word95 files which may not have AllPapxFkps
+            if (_doc.AllPapxFkps != null && _doc.AllPapxFkps.Count > 0 && 
+                _doc.AllPapxFkps[0].grppapx != null && _doc.AllPapxFkps[0].grppapx.Length > 0)
+            {
+                _lastValidPapx = _doc.AllPapxFkps[0].grppapx[0];
+            }
+            else
+            {
+                // For Word95 files, create a default PAPX
+                _lastValidPapx = new ParagraphPropertyExceptions();
+            }
             int cp = 0;
             while (cp < doc.FIB.ccpText)
             {
@@ -44,12 +54,16 @@ namespace b2xtranslator.txt.TextMapping
             }
 
             //write the section properties of the body with the last SEPX
-            int lastSepxCp = 0;
-            foreach (int sepxCp in _doc.AllSepx.Keys)
-                lastSepxCp = sepxCp;
-            
-            var lastSepx = _doc.AllSepx[lastSepxCp];
-            lastSepx.Convert(new SectionPropertiesMapping(_writer, _ctx, _sectionNr));
+            // Handle Word95 files which may not have AllSepx
+            if (_doc.AllSepx != null && _doc.AllSepx.Count > 0)
+            {
+                int lastSepxCp = 0;
+                foreach (int sepxCp in _doc.AllSepx.Keys)
+                    lastSepxCp = sepxCp;
+                
+                var lastSepx = _doc.AllSepx[lastSepxCp];
+                lastSepx.Convert(new SectionPropertiesMapping(_writer, _ctx, _sectionNr));
+            }
 
             //end the document
             _writer.WriteEndElement();

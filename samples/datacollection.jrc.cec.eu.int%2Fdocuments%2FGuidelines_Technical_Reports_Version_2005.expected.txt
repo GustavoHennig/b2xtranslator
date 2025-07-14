@@ -1,1 +1,494 @@
-Expected text not provided.
+
+COMMISSION 
+
+
+
+
+
+
+
+Guidelines for the submission of
+Technical Reports on the
+National Data Collection Programs under
+Commission Regulation (EC) N° 1639/2001 
+as amended by
+Commission Regulation (EC) N° 1581/2004
+
+
+Version 2005
+
+
+Table of contents ()
+
+
+G.1.	Purpose of the Guidelines	2
+G.2.	Effectiveness and periodical revision of the Guidelines	2
+G.3.	Circulation of the Guidelines	2
+G.4.	Deadline for the submission of Technical Reports	3
+G.5.	Evaluation of the Technical Reports	3
+G.6.	Scope and format of the Technical Reports	4
+G.7.	Standard tables	8
+G.8.	Revised versions of Technical Reports and standard tables	8
+G.9.	Report section '1. Introduction'	9
+G.10.	Report section '2. Participating institutes'	9
+G.11.	Report section '3. Precision levels'	10
+G.12.	Report section '4. Data transmission'	11
+G.13.	General remark on report sections 5. (Module C) to 13. (Module K)	12
+G.14.	Report section '5. Module C - Fishing capacities'	13
+G.15.	Report section '6. Module D - Fishing effort'	14
+G.16.	Report section '7. Module E - Catches and landings'	15
+G.17.	Report section '8. Module F - Catches per unit effort'	17
+G.18.	Report section '9. Module G - Scientific evaluation surveys'	18
+G.19.	Report section '10. Module H - Length and age sampling'	20
+G.20.	Report section '11. Module I - Other biological sampling'	23
+G.21.	Report section '12. Module J - Economic data on fishing vessels'	24
+G.22.	Report section '13. Module K - Data concerning the fish processing 
+	industry' 	26
+G.23.	Report section '14. Databases'	27
+G.24.	Report section '15. National and international co-ordination'	28
+G.25.	Report section '16. List of acronyms and abbreviations'	30
+G.26.	Report section '17. Comments, suggestions and reflections'	30
+G.27.	Report section '18. References'	30
+G.28.	Report section 'Annexes'	30
+
+Purpose of the Guidelines
+The Guidelines for the submission of Technical Reports on the completed National Data Collection Programs under Commission Regulation (EC) N° 1639/2001, as amended by Commission Regulation (EC) N° 1581/2004 (the 'Data Collection Regulation' or DCR), are intended to help Member States (MS) in producing Technical Reports that contain all the necessary information for their subsequent evaluation by the Scientific, Technical and Economic Committee on Fisheries (STECF), more particularly its Sub-group on Research Needs (SGRN), and the European Commission (EC). 
+
+Effectiveness and periodical revision of the Guidelines
+The Guidelines become effective on January 1st, 2005, and should be used for the first time in the submission of the Technical Reports on the 2004 National Data Collection Programs (NP). 
+The Guidelines will regularly be reviewed and updated by SGRN, in principle on an annual basis, and new versions of the Guidelines may be issued in the future. New versions of the Guidelines will always be published as stand-alone documents. 
+The present document contains Version 2005 of the Guidelines, and should be used for the first time in the submission of the Technical Reports on the 2005 NPs. Paragraphs that were added / changed compared to the previous version of the Guidelines, are shown in red. The most important amendments / changes are in Sections G.21 (Module J) and G.24 (National and international co-ordination). 
+
+Circulation of the Guidelines
+The Guidelines will be circulated to the MS by the EC, through the National Correspondents. This will be done annually, at the latest by January 31st, so that MS are always provided with the most recent version of the Guidelines. 
+The Guidelines will also be available on both STECF websites:
+http://fish.jrc.cec.eu.int/fisheries/stecf/stecf.html 
+and
+http://europa.eu.int/comm/fisheries/doc_et_publ/factsheets/legal_texts/rapp_en.htm 
+
+Deadline for the submission of Technical Reports 
+Following the provisions of the DCR, the deadline for the submission of the Technical Reports on completed NPs is May 31st of the ensuing year. MS are urged to scrupulously respect this deadline. Delays in submission may lead to the nonevaluation of the overdue Technical Reports during the June/July evaluation round by SGRN and to delays in their final approval by the EC. 
+
+Evaluation of the Technical Reports
+The Technical Reports are evaluated by SGRN during its summer meeting in late June or early July. 
+SGRN may accept a Technical Report as it stands, or ask a MS for further clarification when its Technical Report or parts thereof are not sufficiently clear. The requests for further clarification will be laid down in SGRN's summer meeting report. SGRN cannot advise to reject a Technical Report or parts thereof, without having given the MS the opportunity to reply (see next paragraph for procedural details). Neither can SGRN decide on the financial implications of the nonacceptance of parts of a Technical Report. This is the EC's responsibility. 
+After approval/amendment of SGRN's summer meeting report by STECF, the EC will follow-up the comments made by SGRN and STECF, and address the MS directly with a request to reply to SGRN's and STECF's queries. The deadline for the submission of the MS's replies is to be decided by the EC. 
+Unless explicitly asked for by the EC, the replies by the MS are not re-evaluated by SGRN. The final acceptance of the MS's replies and the decision on the possible financial implications are the EC's responsibility. 
+As part of its evaluation, SGRN will not only consider the contents of the Technical Reports but also the extent to which the Guidelines have been followed. Major non-compliance with the Guidelines may result in a report not being evaluated by SGRN and in a request to the MS to re-submit its Technical Report in the proper format. 
+
+Scope and format of the Technical Reports
+Scope
+The prime aim of the Technical Reports is to allow SGRN and STECF to evaluate: 
+What was planned according to the MS's NP Proposal.
+What was actually achieved.
+What were the reasons for any shortfalls. 
+The Technical Reports should particularly address these aspects of the completed NP, in a brief but comprehensive way. There is no need for lengthy descriptions of methods used or results obtained unless these are essential to the better understanding of the report or to the evaluation process. Whenever possible, any such descriptions should not be included in the main body of the report but be given in annex. 
+Format
+MS should produce a single national Technical Report. Submissions consisting of a collection of separate documents from different institutes or administrative regions are not acceptable. 
+The Technical Reports should be provided in one or two physical documents (two if the standard tables are provided separately, also see Section G.7.). Annexes (if any) should be physically part of the main report, not in separate files. 
+Plain text should be in Times New Roman 11 or 12, in Arial 10, or in a font of similar type and size. 
+Coloured graphs and charts should be avoided unless their complexity is such that the use of grey scales only makes reading difficult. 
+Technical Report files should be named as follows: 
+Country_Technical-Report_Reference-year_Text_Submission-date, for the main body of the report. 
+Example: Italy_Technical-Report_2004_Text_31-May-05. 
+Country_Technical-Report_Reference-year_Tables_Submission-date, for the standard tables, if these are submitted as a separate document.
+Example: Italy_Technical-Report_2004_Tables_31-May-05. 
+Language
+MS are encouraged to submit their Technical Reports in English, but all other official EU-languages are equally acceptable. 
+Technical Reports that are submitted in languages other than English, have to be translated prior to SGRN's meeting. In the past, this has caused serious delays in the evaluation process. Moreover, translated versions may contain translation errors. SGRN realises that it cannot request MS to submit their Technical Reports in English, but it likes to stress that doing so is in the MS's own interest: (i) it helps to speed up the evaluation process, and (ii) it prevents translation errors and hence, mis-interpretation by the evaluators. 
+General section lay-out
+The Technical Reports should have the following sections and sub-sections: 
+	Section no.	Section title	Requirement
+		Table of contents	Mandatory
+	1	Introduction	Mandatory
+	2	Participating institutes	
+	2.1	    National correspondent	Mandatory
+	2.2	    Participating institutes	Mandatory
+	3	Precision levels	
+	3.1	    Required and achieved precision levels	Mandatory
+	3.2	    Methods used to calculate precision levels	Mandatory
+	3.3	    Other relevant issues	Optional
+	4	Data transmission	
+	4.1	    Data transmitted	Mandatory
+	4.2	    Reasons for non-transmission of data	Mandatory
+	4.3	    Other relevant issues	Optional
+	5	Module C - Fishing capacities	
+	5.1	    MP - Required and achieved sampling	Mandatory
+	5.2	    MP - Deviations from aim	Mandatory
+	5.3	    EP  - Required and achieved sampling	Mandatory (a)
+	5.4	    EP  - Deviations from aim	Mandatory (a)
+	5.5	    Action taken to remedy shortfalls	Mandatory
+	6	Module D - Fishing effort	
+	6.1	    MP - Required and achieved sampling	Mandatory
+	6.2	    MP - Deviations from aim	Mandatory
+	6.3	    EP  - Required and achieved sampling	Mandatory (a)
+	6.4	    EP  - Deviations from aim	Mandatory (a)
+	6.5	    Action taken to remedy shortfalls	Mandatory
+	7	Module E - Catches and landings	
+	7.1	    MP - Landings - Required and achieved sampling	Mandatory
+	7.2	    MP - Landings - Deviations from aim	Mandatory
+	7.3	    EP  - Landings - Required and achieved sampling	Mandatory (a)
+	7.4	    EP  - Landings - Deviations from aim	Mandatory (a)
+	7.5	    MP & EP - Discards - Required and achieved sampling	Mandatory
+	7.6	    MP & EP - Discards - Deviations from aim	Mandatory
+	7.7	    MP - Recreational - Required and achieved sampling	Mandatory
+	7.8	    MP - Recreational - Deviations from aim	Mandatory
+	7.9	    EP  - Recreational - Required and achieved sampling	Mandatory (a)
+	7.10	    EP  - Recreational - Deviations from aim	Mandatory (a)
+	7.11	    Action taken to remedy shortfalls	Mandatory
+	8	Module F - Catches per unit effort	
+	8.1	    MP - Required and achieved sampling	Mandatory
+	8.2	    MP - Deviations from aim	Mandatory
+	8.3	    EP  - Required and achieved sampling	Mandatory (a)
+	8.4	    EP  - Deviations from aim	Mandatory (a)
+	8.5	    Action taken to remedy shortfalls	Mandatory
+	9	Module G - Scientific evaluation surveys	
+	9.1	    MP - Required and achieved Priority 1 surveys	Mandatory
+	9.2	    MP - Deviations from aim	Mandatory
+	9.3	    EP  - Required and achieved Priority 2 surveys	Mandatory (a)
+	9.4	    EP  - Deviations from aim	Mandatory (a)
+	9.5	    Action taken to remedy shortfalls	Mandatory
+	10	Module H - Length and age sampling	
+	10.1	    MP - Landings - Required and achieved sampling	Mandatory
+	10.2	    MP - Landings - Deviations from aim	Mandatory
+	10.3	    EP  - Landings - Required and achieved sampling	Mandatory (a)
+	10.4	    EP  - Landings - Deviations from aim	Mandatory (a)
+	10.5	    MP & EP - Discards - Required and achieved sampling	Mandatory
+	10.6	    MP & EP - Discards - Deviations from aim	Mandatory
+	10.7	    Action taken to remedy shortfalls	Mandatory
+	11	Module I - Other biological sampling	
+	11.1	    MP - Required and achieved sampling	Mandatory
+	11.2	    MP - Deviations from aim	Mandatory
+	11.3	    EP  - Required and achieved sampling	Mandatory (a)
+	11.4	    EP  - Deviations from aim	Mandatory (a)
+	11.5	    Action taken to remedy shortfalls	Mandatory
+	12	Module J - Economic data by group of vessels	
+	12.1	    MP - Required and achieved sampling	Mandatory
+	12.2	    MP - Deviations from aim	Mandatory
+	12.3	    EP - Required and achieved sampling	Mandatory (a)
+	12.4	    EP - Deviations from aim	Mandatory (a)
+	12.5	    Action taken to remedy shortfalls	Mandatory
+	13	Module K - Data concerning fish processing industry	
+	13.1	    MP - Required and achieved sampling	Mandatory (b)
+	13.2	    MP - Deviations from aim	Mandatory (b)
+	13.3	    EP  - Required and achieved sampling	Mandatory (a)
+	13.4	    EP  - Deviations from aim	Mandatory (a)
+	13.5	    Action taken to remedy shortfalls	Mandatory (b)
+	14	Databases	
+	14.1	    Database development and data management	Mandatory (c)
+	14.2	    Other relevant issues	Optional
+	15	National and international co-ordination	
+	15.1	    National co-ordination	Mandatory
+	15.2	    International co-ordination	Mandatory
+	15.3	    Follow-up of RCM recommendations and initiatives	Mandatory
+	15.4	    Other relevant issues	Optional
+	16	List of acronyms and abbreviations	Mandatory
+	17	Comments, suggestions and reflections	Optional
+	18	References	Optional
+		Annexes	Optional
+	(a) These sections are mandatory only if the MS submitted an Extended Program. If no EP was applied for, then this should explicitly be stated in the relevant sections 'EP - Required and achieved sampling' and the corresponding sections 'EP - Deviations from aim' can then be skipped. 
+	(b) Note that this Module of the DCR is not compulsory until 2006. If no action was undertaken in 2004 or 2005, then this should explicitly be stated in Section 13.1., and Sections 13.2. to 13.5. can be skipped. 
+	(c) This section is mandatory only if the MS applied for financial support from the EC for the development of a database in support of its NP, otherwise it is optional. 
+
+The lay-out of the Technical Report and the numbering of the sections should strictly be adhered to. 
+Details on the expected contents of each section and sub-section of the Technical Report are given in Sections G.9.-G.28. of the Guidelines. 
+
+Standard tables
+The Guidelines come with a mandatory set of standard tables. These are included in a separate file, called Guidelines_Technical-Report_Standard-Tables_Version-X, where X is the version number. 
+As for the Guidelines, the standard tables will regularly be reviewed and updated by SGRN, in principle on an annual basis, and new versions of the tables may be issued in the future. New versions of the standard tables will always be published as stand-alone documents, which are circulated together with the Guidelines. 
+Version 2005 of the Guidelines comes with a new set of standard tables. All existing tables in the 2004 set of the standard tables were left unchanged (apart from the inclusion of the table number in the table headers) but there is one new table (standard table 12.1.), which goes with Module J (Economic data by group of vessels) of the DCR. 
+The standard tables should either be pasted into the main body of the Technical Report (preferably at the end, but before the Annexes), or submitted as a separate file (also see Section G.6. of the Guidelines). 
+All standard tables in the tables file have a number of rows highlighted in pale yellow, with examples of how the tables should be filled in. The pale yellow rows should be deleted from the tables before these are submitted to the EC. 
+Printer settings of the standard tables are pre-defined, so that the tables can readily be printed. MS are kindly requested not to change these settings. 
+Details on which tables go with which Modules of the DCR and on the types of data that should be included in the tables, are given in Sections G.9.G.28. of the Guidelines. 
+
+Revised versions of Technical Reports and standard tables
+Revisions of Technical Reports and/or standard tables (e.g. because omissions or errors were discovered after the original had been sent to the EC) are acceptable, provided that the revised versions are forwarded in due time for consideration by SGRN at its summer meeting. 
+Should a revision be necessary, then the MS has two options: either send a separate document with a list of corrigenda, or submit a revised version of the entire report. In case a revised version of the entire report is submitted, then all modified paragraphs (not single figures, words or sentences), tables and graphs should be highlighted in red, to allow easy identification of the sections that were changed. 
+Revised versions of the Technical Report should be named following the same rules as for the initial versions (see Section G.6.). 
+
+Report section '1. Introduction'
+Outline the general framework of the achieved National Data Collection Program in relation to the relevant version(s) of the DCR. Also mention which year of activities (the so-called 'reference year') is covered by the Technical Report and whether there have been major changes in approach compared to the year before. 
+
+Report section '2. Participating institutes'
+Report section '2.1. National correspondent'
+Give name and contact details of the national correspondent (postal address, phone and fax number, e-mail). 
+Report section '2.2. Participating institutes' 
+Give full name, acronym and contact details of all institutes that contributed to the NP (postal address, phone and fax number, website – if any). There is, however, no need to specify in which part of the NP the different institutes were involved. 
+
+Report section '3. Precision levels'
+Report section '3.1. Required and achieved precision levels'
+Use standard table 3.1. to give an overview of the required and achieved precision levels for each Module of the DCR. 
+In case different levels of precision were achieved for a variable (e.g. level 1 for the age composition of species x1 in area y1 and level 2 for the age composition of species x2 in area y2), then give a range of precision levels (e.g. 1-2). Use '0' if achieved precision was lower than level 1, 'NA' (not available) if precision was not calculated and 'NR' (not required) if no target precision level is specified in the DCR. 
+Deviations from the required levels of precision should not be explained/documented in this section of the Technical Report but in the relevant Module sections (under the heading 'Deviations from aim'). 
+In the column 'Data sources and data collection methods used' of table 3.1., give a keyword description of the data sources and/or the method(s) used to collect the data, e.g. census, logbooks, sales notes, self-sampling (2), sea sampling (2), port sampling (2), market sampling (), etc. Combinations of different methods are possible. 
+In the column 'Calculation method used', give a keyword description of the method(s) used to calculate precision levels, e.g. bootstrap, analytical, Bayesian, etc. 
+Report section '3.2. Methods used to calculate precision levels'
+This section should contain a brief overview of the methods used (as listed in standard table 3.1.) to calculate precision levels. More extensive descriptions or discussions on the methods used can be given in annex to the report. 
+Report section '3.3. Other relevant issues'
+Use this optional section to comment on problems encountered when calculating precision levels, to suggest improvements, etc. 
+
+Report section '4. Data transmission'
+Report section '4.1. Data transmitted'
+Use standard table 4.1. to give an overview of the data that were transmitted to international working groups, study groups, advisory committees, ad hoc expert groups, etc. International bodies to be covered include ICES, NAFO, GFCM, ICCAT, IOTC, CECAF, WECAF, STECF and its sub-groups, Regional Co-ordination Meetings (RCMs), Regional Advisory Committees (RACs), etc. Use acronyms or abbreviations for the expert groups and give their plain names in the List of acronyms and abbreviations (Section 16. of the Technical Report). 
+Obviously, in the vast majority of cases, the data transferred in the reference year will be data collected the year before (and in the case of economic data even two years before), since there is a time-lag between the year of data collection and the year of data transmission to expert groups. 
+EU- and other international projects that make use of data colleted under the DCR, can also be included in table 4.1., but this is not mandatory. 
+Report section '4.2. Reasons for non-transmission of data'
+Give the reasons for non-transmission of data (if any), when their transmission has been requested. 
+Report section '4.3. Other relevant issues'
+Use this optional section to comment on problems encountered in data transmission, to suggest improvements, etc. 
+
+General remark on report sections 5. (Module C) 
+to 13. (Module K)
+Minimum and Extended Program
+In Sections 5. (Module C of the DCR) to 13. (Module K of the DCR) of the Technical Report, a distinction should be made between the achievements under the Minimum (MP) and the Extended Program (EP). The overall approach for both, however, is the same and always comprises two major parts: an overview of the required and achieved sampling, and an overview of the reasons why the targets were not met, should this have been the case. There is one exception to this rule, however, viz. for all discard-related sampling programs (discards under Modules E and H). For discards, the distinction between MP and EP is much less straightforward than for e.g. landings, and therefore, the two programs should be treated as one. 
+If the MS did not apply for an EP, the nonapplication for an EP should clearly be mentioned, so that the evaluators do not have to go back to the MS's original NP Proposal to find out whether it had submitted an EP or not. 
+
+Report section '5. Module C - Fishing capacities'
+Report section '5.1. MP - Required and achieved sampling'
+Briefly describe which fishing capacity data were collected and how the relevant information was obtained (census, vessel register, etc.). 
+Report section '5.2. MP - Deviations from aim'
+List the shortfalls (if any) in the achieved data collection compared to what is required by the DCR and explain the reasons for these shortfalls. 
+Report section '5.3. EP - Required and achieved sampling'
+As for the MP, but with focus on the achievements under the EP. 
+Report section '5.4. EP - Deviations from aim'
+As for the MP, but with focus on the deviations in the EP. 
+Report section '5.5. Action taken to avoid shortfalls'
+Briefly describe the actions that will be considered / have been taken to avoid the shortfalls in the completed NP and when these actions are expected to produce effect. If there are no shortfalls, then this section can be skipped. 
+
+Report section '6. Module D - Fishing effort'
+Report section '6.1. MP - Required and achieved sampling'
+Briefly describe the data collected in terms set out in the NP proposal and how the relevant information was obtained. In so doing, pay particular attention to the procedures used for vessels less than 10 m. 
+Report section '6.2. MP - Deviations from aim'
+List the shortfalls (if any) in the achieved data collection compared to what is required by the DCR and explain the reasons for these shortfalls. 
+Report section '6.3. EP - Required and achieved sampling'
+As for the MP, but with focus on the achievements under the EP. 
+Report section '6.4. EP - Deviations from aim'
+As for the MP, but with focus on the deviations in the EP. 
+Report section '6.5. Action taken to avoid shortfalls'
+Briefly describe the actions that will be considered / have been taken to avoid the shortfalls in the completed NP and when these actions are expected to produce effect. If there are no shortfalls, then this section can be skipped. 
+
+Report section '7. Module E - Catches and landings'
+Report section '7.1. MP - Landings - Required and achieved sampling'
+Briefly describe which landings data were collected and how the relevant information was obtained (logbooks, sales notes, census, etc.). In so doing, pay particular attention to the procedures used for vessels less than 10 m. 
+Report section '7.2. MP - Landings - Deviations from aim'
+List the shortfalls (if any) in the achieved data collection compared to what is required by the DCR and explain the reasons for these shortfalls. 
+Report section '7.3. EP - Landings - Required and achieved sampling'
+As for the MP, but with focus on the achievements under the EP. 
+Report section '7.4. EP - Landings - Deviations from aim'
+As for the MP, but with focus on the deviations in the EP. 
+Report section '7.5. MP & EP - Discards - Required and achieved sampling'
+Discard sampling programs usually are fleet or métier based and not stock based, and therefore, the difference between MP and EP is likely to be in the species covered by the sampling programs, not in the number of observer trips performed or the number of hauls analysed. Hence, the MP and the EP for the estimation of the quantities discarded should be discussed in combination, and the distinction between MP and EP species should only be made in the report sections that deal with length and age sampling of the discards (Sections 10.5. and 10.6. of the Technical Report - See Section G.19. of the Guidelines for details). 
+Use standard table 7.1. to give an overview of the planned and achieved numbers of seagoing observer trips per fleet segment or métier, the planned and achieved numbers of hauls analysed for discards, the proportions of fishing voyages sampled, and the species covered by discard sampling. 
+In the column 'Fleet or métier', of table 7.1., give a keyword description of the fleet segments or métiers for which the data were collected. 
+If targets were only set for the number of sea-going observer trips but not for the number of hauls to be analysed, then leave the columns 'No. Hauls - Planned' and 'No. Hauls - % achieved' empty. 
+In the columns under 'Species analysed', enter 'X' in column 'App XII' if all Appendix XII species caught (the MP-species) were covered by the discard sampling program. Do the same in column 'App XIII' if also all Appendix XIII species caught (the EP-species) were covered. Combinations of the two are possible. If only a restricted number of selected species was sampled for discards, then list these in the column 'Restricted list'. Combinations of a restricted list and all Appendix XII and/or all Appendix XIII species are impossible. 
+Report section '7.6. MP & EP - Discards - Deviations from aim'
+List the shortfalls (if any) in the achieved data collection compared to what was planned (not to what is required by the DCR, since the DCR does not set unequivocal targets with respect to discard sampling) and explain the reasons for the shortfalls. 
+Shortfalls of less than 10 % from the target are considered to be an acceptable operational margin for observer programs and need not be justified. 
+Report section '7.7. MP - Recreational - Required and achieved sampling'
+Briefly describe which data were collected and how the relevant information was obtained (census, questionnaires, etc.). 
+If the MS obtained derogation for the collection of landings data on recreational fisheries, then it should explicitly be mentioned in this section. 
+Report section '7.8. MP - Recreational - Deviations from aim'
+List the shortfalls (if any) in the achieved data collection compared to what was planned and explain the reasons for these shortfalls. 
+Report section '7.9. EP - Recreational - Required and achieved sampling'
+As for the MP, but with focus on the achievements under the EP. 
+Report section '7.10. EP - Recreational - Deviations from aim'
+As for the MP, but with focus on the deviations in the EP. 
+Report section '7.11. Action taken to avoid shortfalls'
+Briefly describe the actions that will be considered / have been taken to avoid the shortfalls in the completed NP and when these actions are expected to produce effect. If there are no shortfalls, then this section can be skipped. 
+
+Report section '8. Module F - Catches per unit effort'
+Report section '8.1. MP - Required and achieved sampling'
+Use standard table 8.1. to specify which MP CPUE data series were collected and how the relevant information was obtained (census, from landings and effort records, etc.). Put the MP CPUE data series in the upper part of the table, in the same format as used by STECF (see SEC 2003 843). 
+Report section '8.2. MP - Deviations from aim'
+List the shortfalls (if any) in the achieved data collection compared to what is required by the DCR and explain the reasons for the shortfalls. 
+Report section '8.3. EP - Required and achieved sampling'
+Use standard table 8.1. to specify which EP CPUE data series were collected and how the relevant information was obtained. Put the EP CPUE data series underneath the MP CPUE data series, in the same format as used by STECF (see SEC 2003 843). 
+Report section '8.4. EP - Deviations from aim'
+As for the MP, but with focus on the deviations in the EP. 
+Report section '8.5. Action taken to avoid shortfalls'
+Briefly describe the actions that will be considered / have been taken to avoid the shortfalls in the completed NP and when these actions are expected to produce effect. If there are no shortfalls, then this section can be skipped. 
+
+Report section '9. Module G - Scientific evaluation surveys'
+Report section '9.1. MP - Required and achieved Priority 1 surveys'
+For each Priority 1 survey, a brief (!) overview should be given of:
+The main aims of the survey (target species, target data).
+The main achievements (types of data collected).
+How and where the data are stored. 
+Use standard table 9.1. to give an overview of the planned and achieved numbers of days at sea, and the planned and achieved numbers of echo sounding tracks, UWTV tracks, plankton hauls for fish eggs and/or larvae, fishing hauls or sampling stations. In the column 'Sampling activities - Type', specify the types of sampling activities that were undertaken during the survey, using the following conventions: 
+Echo Nm, if the target was to perform a pre-set distance (in nautical miles) of echo sounding, regardless of the sampling strategy used. 
+TV Tracks, if the target was to perform a pre-set number of underwater TV tracks, regardless of the sampling strategy used (simple random, stratified random or fixed stations). 
+Fish Hauls, if the target was to perform a pre-set number of fishing hauls, regardless of the sampling strategy used (simple random, stratified random or fixed stations). 
+Plankton Hauls, if the target was to perform a pre-set number of plankton hauls for fish eggs and/or larvae, regardless of the sampling strategy used (simple random, stratified random or fixed stations). 
+Tagging, if the target was to tag a pre-set number of fish. 
+If different methods are deployed during the same survey, then use more than one line and specify the targets and achievements for each method separately (see example). 
+Both in the text of the Technical Report and in the standard tables, surveys should be listed in the same order and with exactly the same names as in Appendix XIV of the DCR. 
+There is no need to provide extensive narrative reports of the surveys with lists of participating scientists, day-to-day accounts of activities, etc. If essential to the evaluation of the report, they should be given in annex. 
+Report section '9.2. MP - Deviations from aim'
+List the shortfalls (if any) in the achieved data collection compared to what is required by the DCR and explain the reasons for the shortfalls. Since the level of achievement of a survey is measured in relation to its output in terms of actual data and not in relation to its duration as such, the focus should be on the deviations in terms of nautical miles echo sounding, the number of fishing hauls, etc., not on the deviations in terms of numbers of days at sea. 
+Shortfalls of less than 10 % from the target are considered to be an acceptable operational margin for sea-going surveys and need not be justified. 
+Report section '9.3. EP - Required and achieved Priority 2 surveys'
+As for the MP, but with focus on the achievements under the EP. Use table 9.2 instead of table 9.1. Table 9.2. has the same entries as table 9.1., but a different header. 
+Report section '9.4. EP - Deviations from aim'
+As for the MP, but with focus on the deviations in the EP. 
+Report section '9.5. Action taken to avoid shortfalls'
+Briefly describe the actions that will be considered / have been taken to avoid the shortfalls in the completed NP and when these actions are expected to produce effect. If there are no shortfalls, then this section can be skipped. 
+
+Report section '10. Module H - Length and age sampling'
+Report section '10.1. MP - Landings - Required and achieved sampling'
+Use standard table 10.1. to provide details on the number of length and age measurements required (i.e. according to the provisions of the DCR), planned (i.e. according to the MS's NP proposal) and achieved, for all stocks listed in the NP Proposal. The distinction between numbers required and planned is made because for many stocks, the numbers planned exceed the numbers required, either because the stock is under an EC recovery plan or because the data series is used for analytical stock assessment purposes. Numbers required and planned should be given as single figures, not as a combination of number of samples taken and number of measurements per sample. All numbers may be rounded to the nearest 5 or 10. 
+Table 10.1. should contain both data obtained from port or market sampling programs on the landings as such and data obtained from length and age measurements on the retained fractions of the catches during sea-going observer trips. 
+With respect to achieved sampling for age, the numbers in the table should refer to the numbers of fish sampled for age, not to the number of age readings actually performed. Otholits or illicias may have been collected, but the age readings may not have been performed yet, pending e.g. the outcome of an age-reading workshop, the purchase of new age-reading equipment, etc. Nevertheless, the mere fact that the samples were taken is considered to be part of the MS's achievements and therefore, they should be included in the table. 
+In the columns 'Recovery stock' enter 'Yes', if the stock is under an EC Recovery Plan. Do the same in column 'Tuning series', if the length or age data series are used for tuning purposes in analytical stock assessments. Otherwise enter 'No'. 
+Achieved precision levels in table 10.1. only need to be filled in for age, and strictly speaking, only from 2006 onwards. Analytical stock assessments are usually age-based and therefore, SGRN is primarily interested in the achieved precision levels for the age composition of the landings (and discards). Achieved precision may differ between age classes, with the predominant age classes in the landings most likely being the ones with the highest precision levels. Hence, the precision levels to be entered in table 10.1. will most often be a range of values (e.g. 1-2), but this is acceptable. Use '0' if achieved precision was lower than level 1 and 'NA' (not available) if no precision was calculated (for whatever reason). 
+Species and stocks that are (also) part of an EP should not be included in table 10.1., but should be listed in table 10.2. 
+Report section '10.2. MP - Landings - Deviations from aim'
+List the shortfalls (if any) in the achieved length and age sampling compared
+to what was planned by the MS for the stocks that are under an EC Recovery Plan and/or for which the data series are used for tuning purposes; and 
+to what is required by the DCR for all other stocks. 
+Explain the reasons for these shortfalls. Shortfalls of less than 10 % from the target are considered to be an acceptable operational margin for length and age sampling, and need not be justified. 
+In the event of 'over-sampling' (= sampling in excess of what was planned by the MS for recovery stocks and/or tuning series, or sampling in excess of what is required by the DCR for all other stocks), an explanation should be given on the scientific or other reasons for the 'over-sampling'. It is also worth mentioning whether the excess sampling was at the MS's national expense or not. 
+Excess sampling of less than 50 % above the target is considered to be an acceptable operational margin for length and age sampling and need not be justified. 
+Report section '10.3. EP - Landings - Required and achieved sampling'
+As for the MP, but with focus on the achievements under the EP. Use table 10.2 instead of table 10.1. Table 10.2. has the same entries as table 10.1., but a different header. 
+Report section '10.4. EP - Landings - Deviations from aim'
+As for the MP, but with focus on the deviations in the EP. 
+Report section '10.5. MP & EP - Discards - Required and achieved sampling'
+Use standard table 10.3. to give an overview of the numbers of length and age measurements achieved during the discard sampling programs. 
+Since discard sampling programs are usually fleet or métier based and not stock based, the table is structured in line with that approach. 
+In the column 'Fleet or métier' of table 10.3., give a keyword description of the fleet segments or métiers for which the data were collected. These descriptions should be identical to the ones in standard table 7.1. 
+In the column 'Species', list all species of Appendix XII (MP) and XIII (EP) for which length and age measurements were made. For Appendix XII species, enter 'MP' in the column 'MP/EP', and for Appendix XIII species, enter 'EP'. Since the revised version of the DCR was not yet in force when the 2004 NPs were carried out, Appendices XII and XIII of the original version of the DCR (1639/2001) should be used as a guideline when filling in these columns. 
+The columns 'Unsorted catches' (one for length, one for age) should only be filled in when length and age sampling was done on unsorted samples of the catches (= catches not sub-divided into landings and discards). If sampling was on landings and discards separately, then only the columns 'Landings' and 'Discards' should be filled in and the column 'Unsorted catches' should be left blank. All numbers may be rounded to the nearest 5 or 10. 
+Table 10.3. does not have entries for required or planned sampling levels. In most discard sampling programs, the targets are defined in terms of numbers of observer trips to be performed and/or numbers of hauls to be analysed and this information is already included in standard table 7.1. 
+As for the landings (see above), the numbers with respect to achieved sampling for age should refer to the numbers of fish sampled, not to the number of age readings actually performed. 
+Achieved precision levels in table 10.3. only need to be filled in for age, strictly speaking only from 2006 onwards, and only for species for which annual updates of the discards are required. When filling in the column 'Precision achieved', adopt the same approach as for the landings (see above). 
+Report section '10.6. MP & EP - Discards - Deviations from aim'
+List the shortfalls (if any) in the achieved data collection compared to what was planned and explain the reasons for the shortfalls. If the shortfalls are an immediate consequence of the shortfalls listed in Section 7.6. of the Technical Report (see Section G.16. of the Guidelines), and just that, then a simple reference to this section is sufficient. 
+Report section '10.7. Action taken to avoid shortfalls'
+Briefly describe the actions that will be considered / have been taken to avoid the shortfalls in the completed NP and when these actions are expected to produce effect. If there are no shortfalls, then this section can be skipped. 
+
+Report section '11. Module I - Other biological sampling'
+Report section '11.1. MP - Required and achieved sampling'
+Use standard table 11.1. to give an overview of the long-term sampling strategy with respect to 'Other biological parameters'. For each parameter (length at age as an index for growth, sex ratios, sexual maturity and fecundity) and year, enter 'X' if data collection has taken place or is planned. This table should allow the evaluators to identify in which year(s) data were / will be collected and hence, whether the MS is respecting the required periodicity of triennial or six-yearly updates. Weight at age is not included in this table, since it is assumed that sampling for length and weight at age is done concurrently. 
+Use standard tables 11.2. and 11.3. to give an overview of the achieved sampling for length at age (if applicable), sex ratios, sexual maturity and fecundity (if applicable) in the reference year of the Technical Report. In the columns 'Data sources', give a keyword description of the main data sources (e.g. surveys, market samples, discard samples, etc., or any combination of these). 
+Achieved precision levels in tables 11.2. and 11.3. only need to be filled in each time an actual update of a biological parameter is made. With the current system of triennial and six-yearly updates, data may be collected throughout the whole period of three or six years, while the actual updates may be made once every three or six years. See the provisions of the DCR (EU Regulation 1639/2001, paragraph I,1,c) for details on the definition of precision levels for 'Other biological parameters'. 
+Report section '11.2. MP - Deviations from aim'
+List the shortfalls (if any) in the achieved data collection compared to what was planned and explain the reasons for the shortfalls.
+Report section '11.3. EP - Required and achieved sampling'
+Use standard tables 11.4., 11.5. and 11.6., and proceed as explained for the MP. Tables 11.4., 11.5. and 11.6. have the same entries as tables 11.1., 11.2. and 11.3., but different headers. 
+Report section '11.4. EP - Deviations from aim'
+As for the MP, but with focus on the deviations in the EP. 
+Report section '11.5. Action taken to avoid shortfalls'
+Briefly describe the actions that will be considered / have been taken to avoid the shortfalls in the completed NP and when these actions are expected to produce effect. If there are no shortfalls, then this section can be skipped. 
+Report section '12. Module J - Economic data on fishing vessels'
+Report section '12.1. MP - Required and achieved sampling'
+Use standard table 12.1. to give a general description of the fleet. In so doing, use the fleet segments set out in Appendix III of the DCR. 
+The main body of the Technical Reports should include the following information about economic data collection:
+What data is being collected. Referring to the relevant parts of the Appendices in the DCR as a guide and checklist, the Report should set out precisely and in some detail what economic parameters are being collected and how these are defined. For example, under the heading 'Other operational costs' in Appendix XVII of the DCR, the data collected in this category should be fully listed (e.g., lubricating oil, ice, food, fish boxes, etc.). 
+Who the data is being collected from. Information is required on the number of vessels in the target population (sample frame) and the sample size, broken down by relevant fleet segments. It should be clearly indicated how the population is defined. Note that the target population requirements are set out in Article 2.2 of the DCR and that data should be disaggregated as set out in Appendix III (MP) and Appendix IV (EP) of the DCR
+How the data are being collected. Further information on the definition of the economic parameters for practical data collection purposes is required where appropriate, for example the actual parameters used to measure 'Fixed costs' and 'Investment' in Appendix XVII of the DCR. Data sources should be clearly stated for each segment and data category (e.g., company accounts, logbooks, sales notes and settlement sheets, etc.). Where survey work is being undertaken, concise details should be given about methodology (face-to-face interviews, questionnaires, etc.) including sampling procedures, while avoiding lengthy descriptions of standard procedures. 
+The information provided should be set out in tabular form using standard table 12.1. 
+Report section '12.2. MP - Deviations from aim'
+List the shortfalls (if any) in the achieved data collection compared to what is required by the DCR and explain the reasons for the shortfalls. 
+Report section '12.3. EP - Required and achieved sampling'
+Use standard table 12.2. instead of table 12.1. and proceed as explained for the MP. Table 12.2. has the same entries as table 12.1., but a different header.
+Report section '12.4. EP - Deviations from aim'
+As for the MP, but with focus on the deviations in the EP. 
+
+
+Report section '12.5. Action taken to avoid shortfalls'
+Briefly describe the actions that will be considered / have been taken to avoid the shortfalls in the completed NP and when these actions are expected to produce effect. If there are no shortfalls, then this section can be skipped. 
+
+Report section '13. Module K - Data concerning the fish processing industry'
+Report section '13.1. MP - Required and achieved sampling'
+The Reports should include the following information about economic data collection for the fish processing industry:
+What data is being collected. Referring to the relevant parts of the Appendices in the DCR as a guide and checklist, the Report should set out precisely and in some detail what economic parameters are being collected and how these are defined. For example, under the heading 'Other running costs' in Appendix XIX of the DCR, the data collected in this category should be fully listed (e.g. administration, waste disposal, etc.). 
+Who the data is being collected from. Information is required on the number of enterprises/establishments in the target population (sample frame) and the sample size. It should be clearly indicated how the population is defined. Note that the target population requirements are set out in Article 2.11-2.12 of the DCR. 
+How the data are being collected. Further information on the definition of the economic parameters for practical data collection purposes is required where appropriate, for example the actual parameters used to measure 'Fixed costs' and 'Investment' in Appendix XIX of the DCR. Data sources should be clearly stated for each data category (e.g., company accounts, etc.). Where survey work is being undertaken, concise details should be given about methodology (face-to-face interviews, questionnaires, etc.) including sampling procedures, while avoiding lengthy descriptions of standard procedures.
+The information provided should be set out in tabular form using standard table 13.1. 
+Report section '13.2. MP - Deviations from aim'
+List the shortfalls (if any) in the achieved data collection compared to what is required by the DCR and explain the reasons for the shortfalls. 
+Report section '13.3. EP - Required and achieved sampling'
+Use standard table 13.2. instead of table 13.1. and proceed as explained for the MP. Table 13.2. has the same entries as table 13.1., but a different header. 
+Report section '13.4. EP - Deviations from aim'
+As for the MP, but with focus on the deviations in the EP. 
+Report section '13.5. Action taken to avoid shortfalls'
+Briefly describe the actions that will be considered / have been taken to avoid the shortfalls in the completed NP and when these actions are expected to produce effect. If there are no shortfalls, then this section can be skipped. 
+
+Report section '14. Databases'
+Report section '14.1. Database development and data management'
+In principle, this section of the Technical Report should only be completed if the MS applied for financial support from the EC for the development of a database. If so, then Section 14.1. should contain a concise but complete description of the progress made in database development, without however too many technical details on the structure of the database. 
+The section also may comprise information on data management (which data are stored in which databases, national and/or international), data exchange systems, etc., but this is not mandatory. 
+Report section '14.2. Other relevant issues'
+Use this optional section to comment on problems encountered in database development and data management, to suggest improvements, etc. 
+
+
+Report section '15. National and international co-ordination'
+Report section '15.1. National co-ordination'
+Give an overview of the national co-ordination meetings (dates and venues) and a brief summary of their main aims and conclusions. 
+Report section '15.2. International co-ordination'
+Use standard table 15.1. to give an overview of the international co-ordination meetings (Planning Groups, Study Groups, Regional Co-ordination Meetings, etc.) and the workshops that were attended, and of the inter-calibration exercises and ring-tests in which the MS participated. 
+International co-ordination meetings and workshops that are not eligible under the DCR but that can be considered as having been helpful to co-ordinate data collection between MS, may also be included in table 15.1., but this is not mandatory. 
+For international meetings, workshops, etc. that are eligible under the DCR (see annual list of eligible meetings provided by the EC), enter 'Yes' in the column 'Eligible under DCR' in table 15.1. For the meetings, workshops, etc. that were organised/attended at national expense, enter 'No'. 
+Report section '15.3. Follow-up of RCM recommendations and initiatives'
+The Regional Co-ordination Meetings (RCMs) were established to improve the overall quality of the data collected in support of the CFP, through task and cost sharing, data pooling and, in general, all bilateral, regional and pan-European initiatives that can help increasing the accuracy, effectiveness and costefficiency of data collection. As such, the RCMs are an integral part of the DCR-machinery, and it is in the MS' general interest to duly consider the RCM's recommendations and to closely follow up their initiatives and concerted actions. 
+Although there is no formal obligation to do so, a MS's agreement (as expressed during a RCM) with the recommendations of a RCM or with its initiatives to set up concerted actions, implies that the MS will take the necessary steps to implement these recommendations and to participate in the proposed concerted actions. Therefore, MS are urged to provide evidence in their Technical Reports of the steps they have taken in response to the RCM recommendations and initiatives. 
+To that aim, list the recommendations from all relevant RCMs (also see the text table on next page) and give a brief description of the responsive actions taken. Use subheaders to make the distinction between the different RCMs, and print recommendations and responses in a different font style (e.g. bold and/or italic for the recommendations and normal text for the descriptions of the action taken). There is no need to also list recommendations that do not apply to MS (e.g. on the terms of reference of ICES expert groups, on actions to be taken by the EC, etc.). 
+In doing so, you may have to go back several years in time and refer to RCM reports of more than one year ago. Most of the RCM recommendations and proposed actions will only take effect in the year following the actual meeting of the RCM and the actions taken by MS will only become visible in the Technical Reports that are submitted two or three years later. 
+	Expected involvement of MS in Regional Co-ordination Meetings
+		Baltic Sea	North Sea & East Arctic	NE Atlantic	Mediterranean		
+	Belgium		X	X			
+	Cyprus				X		
+	Denmark	X	X	X			
+	Estonia	X					
+	Finland	X					
+	France		X	X	X		
+	Germany	X	X	X			
+	Greece				X		
+	Ireland			X			
+	Italy				X		
+	Latvia	X		X			
+	Lithuania	X		X			
+	Malta				X		
+	Netherlands		X	X			
+	Poland	X	X	X			
+	Portugal			X			
+	Slovenia				X		
+	Spain			X	X		
+	Sweden	X	X				
+	United Kingdom		X	X			
+
+REQUEST: Can someone who is more familiar with the fisheries of Latvia and Lithuania tell me whether we expect an involvement of these two countries in the RCM NE Atlantic? Same question for Poland and RCM NS & EA. What about highly migratory species? Is there a RCM for these and if so, which countries are / should be involved?
+Report section '15.4. Other relevant issues'
+Use this optional section to comment on problems encountered in international coordination, to suggest improvements, etc. 
+
+Report section '16. List of acronyms and abbreviations'
+Contents
+Provide a full list, in alphabetical order, of all acronyms and abbreviations used in the main body of the Technical Report, together with their meaning in plain language. 
+
+
+Report section '17. Comments, suggestions and reflections'
+Contents
+Use this section to comment on general problems encountered while executing the NP, to indicate inconsistencies in the DCR, to suggest improvements, etc. 
+
+
+Report section '18. References'
+Contents
+Provide a full list of bibliographic references, in alphabetical order. 
+
+
+Report section 'Annexes'
+Contents
+Use this section to add methodological overviews, working papers, etc., that are essential to the understanding and evaluation of the Technical Report. Annexes should be concise and have the general structure and lay-out of a scientific paper. 
+
+Guidelines - Version 2004 - page 
+
+()	To avoid confusion, sections in the Technical Report are numbered with regular numbers (1., 1.1., 1.2., etc.), while sections in the Guidelines are numbered G.--. 
+ 
+
+()	Standard nomenclature for biological sampling regimes: 
+	Self-sampling = Samples taken by fishermen, which could include measurements. 
+	Observer at sea sampling = Sampling at sea by qualified sea-going observers. 
+	Port sampling = Sampling by qualified personnel while the vessel is in port, but before the landings are transferred to an auction. 
+	Market sampling = Sampling by qualified personnel in the auction. 
