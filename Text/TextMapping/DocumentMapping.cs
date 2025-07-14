@@ -935,10 +935,13 @@ namespace b2xtranslator.txt.TextMapping
                     _writer.WriteEndElement();
 
                     var s = getSymbol(chpx);
-                    _writer.WriteStartElement("w", "sym", OpenXmlNamespaces.WordprocessingML);
-                    _writer.WriteAttributeString("w", "font", OpenXmlNamespaces.WordprocessingML, s.FontName);
-                    _writer.WriteAttributeString("w", "char", OpenXmlNamespaces.WordprocessingML, s.HexValue);
-                    _writer.WriteEndElement();
+                    if (s != null)
+                    {
+                        _writer.WriteStartElement("w", "sym", OpenXmlNamespaces.WordprocessingML);
+                        _writer.WriteAttributeString("w", "font", OpenXmlNamespaces.WordprocessingML, s.FontName);
+                        _writer.WriteAttributeString("w", "char", OpenXmlNamespaces.WordprocessingML, s.HexValue);
+                        _writer.WriteEndElement();
+                    }
 
                     writeTextStart(textType);
                 }

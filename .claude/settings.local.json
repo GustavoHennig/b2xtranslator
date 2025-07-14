@@ -11,7 +11,10 @@
       "Bash(./TestWord95.exe)",
       "Bash(.binDebugnet8.0TestWord95.exe)",
       "Bash(\"./bin/Debug/net8.0/TestWord95.exe\")",
-      "Bash(cat:*)"
+      "Bash(cat:*)",
+      "Bash(diff:*)",
+      "Bash(echo:*)",
+      "Bash(sed:*)"
     ],
     "deny": []
   }

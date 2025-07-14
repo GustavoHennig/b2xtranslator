@@ -8,12 +8,13 @@ The b2xtranslator fails to extract entire paragraphs from certain Word documents
 
 ## Affected files:
 
+- fastsavedmix.doc
 - 53379.doc
 - "Bug50936_1.doc"
 - "Bug47958.doc"
 - title.doc
 - ob_is.doc
-- o_kurs.doc
+- o_kurs.doc (repeating page)
 - ESTAT Article comparing RU-LFS-22 12 05_EN.doc
 - complex_sections.doc
 - Bug53380_3.doc

@@ -43,6 +43,7 @@ namespace b2xtranslator.DocFileFormat
         public bool fLoadOverridePage;
         public bool fFutureSavedUndo;
         public bool fWord97Saved;
+        public bool fFastSaved;  // Fast save flag - indicates if document uses fast save format
         public int fcMin;
         public int fcMac;
         #endregion
@@ -467,6 +468,7 @@ namespace b2xtranslator.DocFileFormat
             this.fLoadOverridePage = Utils.BitmaskToBool((int)flag8, 0x04);
             this.fFutureSavedUndo = Utils.BitmaskToBool((int)flag8, 0x08);
             this.fWord97Saved = Utils.BitmaskToBool((int)flag8, 0x10);
+            this.fFastSaved = Utils.BitmaskToBool((int)flag8, 0x20);
             reader.ReadBytes(4);
             this.fcMin = reader.ReadInt32();
             this.fcMac = reader.ReadInt32();
