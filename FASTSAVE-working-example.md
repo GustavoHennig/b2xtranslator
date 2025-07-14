@@ -1,5 +1,10 @@
 
 
+# Fastsave  (quicksave) solution plan
+
+Applying the fixes described here makes `fastsavedmix.doc` work, but it affects all other documents. Nevertheless, the information needed to make it work is available.
+
+As for the file `o_kurs.doc`, this change was able to extract its content, but some blocks are repeated; this needs to be addressed.
 
 
 

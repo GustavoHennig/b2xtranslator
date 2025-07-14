@@ -38,6 +38,9 @@ The b2xtranslator fails to extract entire paragraphs from certain Word documents
 
 The root cause for missing paragraphs can be complex, often stemming from how Word structures its files, especially with features like "Fast Save" or specific paragraph formatting properties.
 
+### Important:
+Applying the fixes described in `FASTSAVE-working-example.md` makes `fastsavedmix.doc` work, but it affects all other documents. Anyway, the information to make it work is there.
+
 ### Phase 1: Enhanced Diagnostics and Logging
 
 Before fixing the issue, we need to pinpoint exactly *why* content is being dropped. This requires adding more detailed logging to the parsing process.
