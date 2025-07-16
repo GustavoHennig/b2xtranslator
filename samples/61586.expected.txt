@@ -1,8 +1,8 @@
 
 
 TEST? 
-111�?g.h/mL (AUC) and 15 ?g/mL (Cmax).  
+111 μg.h/mL (AUC) and 15 μg/mL (Cmax).  
 TEST? 
-Greek mu?
+Greek muμ
 (
-
+
