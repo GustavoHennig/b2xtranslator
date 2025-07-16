@@ -14,7 +14,10 @@
       "Bash(cat:*)",
       "Bash(diff:*)",
       "Bash(echo:*)",
-      "Bash(sed:*)"
+      "Bash(sed:*)",
+      "Bash(od:*)",
+      "Bash(timeout:*)",
+      "Bash(fi)"
     ],
     "deny": []
   }
