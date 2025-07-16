@@ -46,7 +46,7 @@ namespace b2xtranslator.DocFileFormat
             TOC7,
             TOC8,
             TOC9,
-            NormalIndent, 
+            NormalIndent,
             FootnoteText,
             AnnotationText,
             Header,
@@ -333,8 +333,8 @@ namespace b2xtranslator.DocFileFormat
         /// Creates an empty STD object
         /// </summary>
         public StyleSheetDescription()
-        { 
-        
+        {
+
         }
 
         /// <summary>
@@ -420,7 +420,7 @@ namespace b2xtranslator.DocFileFormat
             byte characterCount = bytes[cbStdBase];
             //characters are zero-terminated, so 1 char has 2 bytes:
             var name = new byte[characterCount * 2];
-            Array.Copy(bytes, cbStdBase+2, name, 0, name.Length);
+            Array.Copy(bytes, cbStdBase + 2, name, 0, name.Length);
             //remove zero-termination
             this.xstzName = Encoding.Unicode.GetString(name);
 
@@ -443,7 +443,8 @@ namespace b2xtranslator.DocFileFormat
                 if (cbUPX > 0)
                 {
                     //copy the bytes
-                    var upxBytes = new byte[cbUPX];
+                    var copyLength = Math.Min((int)cbUPX, Math.Max(0, bytes.Length - (upxOffset + 2)));
+                    var upxBytes = new byte[copyLength];
                     Array.Copy(bytes, upxOffset + 2, upxBytes, 0, upxBytes.Length);
 
                     if (this.stk == StyleKind.table)
@@ -452,13 +453,13 @@ namespace b2xtranslator.DocFileFormat
                         switch (i)
                         {
                             case 0:
-                                this.tapx = new TablePropertyExceptions(upxBytes); 
+                                this.tapx = new TablePropertyExceptions(upxBytes);
                                 break;
                             case 1:
                                 this.papx = new ParagraphPropertyExceptions(upxBytes, dataStream);
                                 break;
-                            case 2: 
-                                this.chpx = new CharacterPropertyExceptions(upxBytes); 
+                            case 2:
+                                this.chpx = new CharacterPropertyExceptions(upxBytes);
                                 break;
                         }
                     }
@@ -468,10 +469,10 @@ namespace b2xtranslator.DocFileFormat
                         switch (i)
                         {
                             case 0:
-                                this.papx = new ParagraphPropertyExceptions(upxBytes, dataStream); 
+                                this.papx = new ParagraphPropertyExceptions(upxBytes, dataStream);
                                 break;
-                            case 1: 
-                                this.chpx = new CharacterPropertyExceptions(upxBytes); 
+                            case 1:
+                                this.chpx = new CharacterPropertyExceptions(upxBytes);
                                 break;
                         }
                     }
@@ -494,7 +495,7 @@ namespace b2xtranslator.DocFileFormat
                 }
 
                 //increase the offset for the next run
-                upxOffset += (2 + cbUPX );
+                upxOffset += (2 + cbUPX);
             }
 
         }

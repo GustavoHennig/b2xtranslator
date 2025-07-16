@@ -8,6 +8,9 @@ namespace b2xtranslator.DocFileFormat
     {
         public StwStructure(VirtualStream tableStream, uint fc, uint lcb) : base()
         {
+            if (fc > tableStream.Length)
+                return;
+
             tableStream.Seek((long)fc, System.IO.SeekOrigin.Begin);
 
             // parse the names

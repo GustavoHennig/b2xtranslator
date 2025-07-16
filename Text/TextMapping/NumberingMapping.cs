@@ -87,7 +87,7 @@ namespace b2xtranslator.txt.TextMapping
                     //The style id is used for a reverse reference. 
                     //It can happen that the reference points to the wrong style.
                     short styleIndex = lstf.rgistd[j];
-                    if(styleIndex != ListData.ISTD_NIL)
+                    if(styleIndex != ListData.ISTD_NIL && styleIndex > 0 && styleIndex < _ctx.Doc.Styles.Styles.Count)
                     {
                         _writer.WriteStartElement("w", "pStyle", OpenXmlNamespaces.WordprocessingML);
                         _writer.WriteAttributeString("w", "val", OpenXmlNamespaces.WordprocessingML, StyleSheetMapping.MakeStyleId(_ctx.Doc.Styles.Styles[styleIndex]));

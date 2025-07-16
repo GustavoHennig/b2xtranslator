@@ -357,7 +357,14 @@ namespace b2xtranslator.DocFileFormat
             {
                 for (int j = 0; j < this.AllPapxFkps[i].grppapx.Length; j++)
                 {
-                    this.AllPapx.Add(this.AllPapxFkps[i].rgfc[j], this.AllPapxFkps[i].grppapx[j]);
+                    var grppapx = this.AllPapxFkps[i].grppapx[j];
+                    if (grppapx != null)
+                    {
+                        if (!this.AllPapx.TryAdd(this.AllPapxFkps[i].rgfc[j], grppapx))
+                        {
+                            //LOG
+                        }
+                    }
                 }
             }
 
@@ -380,6 +387,8 @@ namespace b2xtranslator.DocFileFormat
                 var wordReader = new VirtualStreamReader(this.WordDocumentStream);
                 this.WordDocumentStream.Seek(sed.fcSepx, System.IO.SeekOrigin.Begin);
                 short cbSepx = wordReader.ReadInt16();
+                if (cbSepx - 2 <= 0)
+                    break;
                 var sepx = new SectionPropertyExceptions(wordReader.ReadBytes(cbSepx - 2));
 
                 this.AllSepx.Add(cp, sepx);

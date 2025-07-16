@@ -131,7 +131,7 @@ namespace b2xtranslator.txt.TextMapping
             var tapx = new TablePropertyExceptions(rowEndPapx, _doc.DataStream);
             var chpxs = _doc.GetCharacterPropertyExceptions(fcRowEnd, fcRowEnd + 1);
 
-            if (tapx != null && chpxs.Count > 0)
+            if (tapx != null && chpxs.Count > 0 && chpxs[0] != null)
             {
                 tapx.Convert(new TableRowPropertiesMapping(_writer, chpxs[0]));
             }
@@ -299,6 +299,11 @@ namespace b2xtranslator.txt.TextMapping
 
                 //get the next papx
                 papx = findValidPapx(fcRowEnd);
+                if (papx == null)
+                {
+                    //if no valid papx is found, break the loop
+                    break;
+                }
                 tai = new TableInfo(papx);
                 fcRowEnd = findRowEndFc(cp, out cp, nestingLevel);
                 if (fcRowEnd < 0)
@@ -387,6 +392,8 @@ namespace b2xtranslator.txt.TextMapping
                     }
                     fc = _doc.PieceTable.FileCharacterPositions[cp];
                     papx = findValidPapx(fc);
+                    if (papx == null)
+                        break;
                     tai = new TableInfo(papx);
                     cp++;
 
@@ -672,12 +679,19 @@ namespace b2xtranslator.txt.TextMapping
                             writeBookmarkEnds(cp);
                         }
 
-                        cp = writeRun(runs[s], chpxs[i], cp);
+                        if (chpxs[i] != null)
+                        {
+                            cp = writeRun(runs[s], chpxs[i], cp);
+                        }
+
                     }
                 }
                 else
                 {
-                    cp = writeRun(chpxChars, chpxs[i], cp);
+                    if (chpxs[i] != null)
+                    {
+                        cp = writeRun(chpxChars, chpxs[i], cp);
+                    }
                 }
             }
 
@@ -839,7 +853,7 @@ namespace b2xtranslator.txt.TextMapping
                     int cpFieldEnd = searchNextTextMark(_doc.Text, cpFieldStart, TextMark.FieldEndMark);
                     var f = new Field(_doc.Text.GetRange(cpFieldStart, cpFieldEnd - cpFieldStart + 1));
 
-                    if (f.FieldCode?.StartsWith(" FORM")==true)
+                    if (f.FieldCode?.StartsWith(" FORM") == true)
                     {
                         _writer.WriteStartElement("w", "fldChar", OpenXmlNamespaces.WordprocessingML);
                         _writer.WriteAttributeString("w", "fldCharType", OpenXmlNamespaces.WordprocessingML, "begin");
@@ -850,8 +864,11 @@ namespace b2xtranslator.txt.TextMapping
                             int fcPic = _doc.PieceTable.FileCharacterPositions[cpPic];
                             var chpxPic = _doc.GetCharacterPropertyExceptions(fcPic, fcPic + 1)[0];
                             var npbd = new NilPicfAndBinData(chpxPic, _doc.DataStream);
-                            var ffdata = new FormFieldData(npbd.binData);
-                            ffdata.Convert(new FormFieldDataMapping(_writer));
+                            if (npbd.binData != null)
+                            {
+                                var ffdata = new FormFieldData(npbd.binData);
+                                ffdata.Convert(new FormFieldDataMapping(_writer));
+                            }
                         }
 
                         _writer.WriteEndElement();

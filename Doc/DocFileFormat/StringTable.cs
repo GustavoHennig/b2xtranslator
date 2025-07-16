@@ -44,8 +44,15 @@ namespace b2xtranslator.DocFileFormat
 
         void Parse(Type dataType, VirtualStreamReader reader, uint fc)
         {
-            //read fExtend
-            if (reader.ReadUInt16() == 0xFFFF)
+            if(reader.BaseStream.Position >= reader.BaseStream.Length)
+            {
+                return;
+            }
+
+
+
+                //read fExtend
+                if (reader.ReadUInt16() == 0xFFFF)
             {
                 //if the first 2 bytes are 0xFFFF the STTB contains unicode characters
                 this.fExtend = true;

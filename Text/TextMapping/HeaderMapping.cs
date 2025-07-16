@@ -18,8 +18,16 @@ namespace b2xtranslator.txt.TextMapping
         {
             _doc = doc;
 
+            if(_doc.AllPapxFkps[0].grppapx.Length == 0)
+                {
+                //if there are no PAPX, then there is nothing to convert
+                return;
+            }
+
             _writer.WriteStartDocument();
             _writer.WriteStartElement("w", "hdr", OpenXmlNamespaces.WordprocessingML);
+
+
 
             //convert the header text
             _lastValidPapx = _doc.AllPapxFkps[0].grppapx[0];
@@ -34,6 +42,12 @@ namespace b2xtranslator.txt.TextMapping
             {
                 int fc = _doc.PieceTable.FileCharacterPositions[cp];
                 var papx = findValidPapx(fc);
+                if (papx == null)
+                {
+                    // If no valid PAPX is found, skip to the next character position
+                    cp++;
+                    continue;
+                }
                 var tai = new TableInfo(papx);
 
                 if (tai.fInTable)

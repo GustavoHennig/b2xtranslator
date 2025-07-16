@@ -61,6 +61,11 @@ namespace b2xtranslator.StructuredStorage.Reader
         private void GetAllDirectoryEntriesRecursive(uint sid, string path)
         {
             var entry = ReadDirectoryEntry(sid, path);
+            if(entry == null)
+            {
+                // No entry found, return
+                return;
+            }
             uint left = entry.LeftSiblingSid;
             uint right = entry.RightSiblingSid;
             uint child = entry.ChildSiblingSid;
@@ -96,9 +101,10 @@ namespace b2xtranslator.StructuredStorage.Reader
         /// <summary>
         /// Returns a directory entry for a given sid
         /// </summary>
-        private DirectoryEntry ReadDirectoryEntry(uint sid, string path)
+        private DirectoryEntry? ReadDirectoryEntry(uint sid, string path)
         {
-            SeekToDirectoryEntry(sid);
+            if (!SeekToDirectoryEntry(sid))
+                return null;
             var result = new DirectoryEntry(this._header, this._fileHandler, sid, path, _logger);            
             return result;
         }
@@ -107,14 +113,16 @@ namespace b2xtranslator.StructuredStorage.Reader
         /// <summary>
         /// Seeks to the start sector of the directory entry of the given sid
         /// </summary>        
-        private void SeekToDirectoryEntry(uint sid)
+        private bool SeekToDirectoryEntry(uint sid)
         {
             int sectorInDirectoryChain = (int)(sid * Measures.DirectoryEntrySize) / this._header.SectorSize;
             if (sectorInDirectoryChain < 0)
             {
-                throw new ArgumentOutOfRangeException();
+                //TODO: log throw new ArgumentOutOfRangeException();
+                return false;
             }
-            this._fileHandler.SeekToPositionInSector(this._sectorsUsedByDirectory[sectorInDirectoryChain], (sid * Measures.DirectoryEntrySize) % this._header.SectorSize);            
+            this._fileHandler.SeekToPositionInSector(this._sectorsUsedByDirectory[sectorInDirectoryChain], (sid * Measures.DirectoryEntrySize) % this._header.SectorSize);
+            return true;
         }
 
 

@@ -43,6 +43,12 @@ namespace b2xtranslator.txt.TextMapping
             {
                 int fc = _doc.PieceTable.FileCharacterPositions[cp];
                 var papx = findValidPapx(fc);
+                if(papx == null)
+                {
+                    // If no valid PAPX is found, skip to the next character position
+                    cp++;
+                    continue;
+                }
                 var tai = new TableInfo(papx);
 
                 if (tai.fInTable)

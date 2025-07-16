@@ -81,7 +81,8 @@ namespace b2xtranslator.DocFileFormat
         public static List<FormattedDiskPageCHPX> GetAllCHPXFKPs(FileInformationBlock fib, VirtualStream wordStream, VirtualStream tableStream)
         {
             var list = new List<FormattedDiskPageCHPX>();
-
+            try
+            { 
             //get bintable for CHPX
             var binTableChpx = new byte[fib.lcbPlcfBteChpx];
             tableStream.Read(binTableChpx, 0, binTableChpx.Length, (int)fib.fcPlcfBteChpx);
@@ -101,7 +102,10 @@ namespace b2xtranslator.DocFileFormat
                 //parse the FKP and add it to the list
                 list.Add(new FormattedDiskPageCHPX(wordStream, offset));
             }
-
+        }
+            catch (Exception)
+            {
+            }
             return list;
         }
     }

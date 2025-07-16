@@ -108,8 +108,11 @@ namespace b2xtranslator.DocFileFormat
         {
             var list = new List<FormattedDiskPagePAPX>();
 
-            //get bintable for PAPX
-            var binTablePapx = new byte[fib.lcbPlcfBtePapx];
+            try
+            {
+
+                //get bintable for PAPX
+                var binTablePapx = new byte[fib.lcbPlcfBtePapx];
             tableStream.Read(binTablePapx, 0, binTablePapx.Length, (int)fib.fcPlcfBtePapx);
 
             //there are n offsets and n-1 fkp's in the bin table
@@ -126,6 +129,11 @@ namespace b2xtranslator.DocFileFormat
 
                 //parse the FKP and add it to the list
                 list.Add(new FormattedDiskPagePAPX(wordStream, offset, dataStream));
+            }
+
+            }
+            catch (Exception)
+            {
             }
 
             return list;

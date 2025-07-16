@@ -22,6 +22,10 @@ namespace b2xtranslator.txt.TextMapping
             _writer.WriteStartElement("w", "ftr", OpenXmlNamespaces.WordprocessingML);
 
             //convert the footer text
+            if(_doc.AllPapxFkps[0].grppapx.Length == 0)
+            {
+                return;
+            }
             _lastValidPapx = _doc.AllPapxFkps[0].grppapx[0];
             int cp = _ftr.CharacterPosition;
             int cpMax = _ftr.CharacterPosition + _ftr.CharacterCount;
@@ -34,6 +38,12 @@ namespace b2xtranslator.txt.TextMapping
             {
                 int fc = _doc.PieceTable.FileCharacterPositions[cp];
                 var papx = findValidPapx(fc);
+                if (papx == null)
+                {
+                    // If no valid PAPX is found, skip to the next character position
+                    cp++;
+                    continue;
+                }
                 var tai = new TableInfo(papx);
 
                 if (tai.fInTable)
