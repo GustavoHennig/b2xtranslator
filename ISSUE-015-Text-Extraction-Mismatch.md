@@ -36,9 +36,8 @@ The text extraction for the sample file `samples/other.doc` does not match the e
 
 ## Important
 
-Possible to find a partial solution here `FASTSAVE-working-example.md`
-
-do regression tests
+- It is possible to find a partial solution in `FASTSAVE-working-example.md`.
+- Perform regression tests using the file `47950_normal.doc` to verify whether other files have been affected.
 
 ## Initial Analysis (Hypothesis)
 The cause could be related to several factors, including but not limited to:

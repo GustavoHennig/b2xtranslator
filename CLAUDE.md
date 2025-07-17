@@ -1,5 +1,6 @@
 # CLAUDE.md
 
+
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Overview
@@ -154,6 +155,8 @@ The solution follows a layered architecture with clear separation of concerns:
 - Part-based architecture matching OpenXML specification
 
 ## Development Guidelines
+
+**IMPORTANT:** Do not run any write GIT operations. You are only authorized to perform READ operations with GIT. Any attempt to perform write operations (such as push, commit, merge, rebase, etc.) is strictly prohibited.
 
 ### Testing Strategy
 - Unit tests cover core parsing and conversion logic

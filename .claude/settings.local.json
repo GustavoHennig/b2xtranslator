@@ -17,7 +17,9 @@
       "Bash(sed:*)",
       "Bash(od:*)",
       "Bash(timeout:*)",
-      "Bash(fi)"
+      "Bash(fi)",
+      "Bash(fc:*)",
+      "Bash(powershell:*)"
     ],
     "deny": []
   }
