@@ -2,7 +2,7 @@
 # Line-break very specific scenario
 
 Please check the file `samples\Bug44292.doc`, a specific line break is missing.  
-99% of the line breaks of other files, only special ones like this are not working.
+99% of the line breaks in other files work; only special ones like this are not working.
 
 
 The expected result is:

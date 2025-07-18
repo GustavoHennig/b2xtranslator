@@ -14,7 +14,7 @@ The b2xtranslator fails to properly extract list formatting during text conversi
 
 ## Detailed Resolution Plan
 
-IMPORTANT: Consider that this plan is a guide, but may not be totally accurate, be crictical.
+IMPORTANT: Consider that this plan is a guide, but may not be totally accurate, be critical.
 
 ### Phase 1: Enhance List Data Parsing
 

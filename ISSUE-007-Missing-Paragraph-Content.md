@@ -23,23 +23,23 @@ The b2xtranslator fails to extract entire paragraphs from certain Word documents
 - Bug47958.doc
 - Bug33519.doc
 
-## Severity
-**HIGH** - Critical content loss affecting document integrity
 
-## Impact
-- Complete loss of document sections and paragraphs
-- Incomplete information in converted text
-- Poor reliability for document preservation
-- Potential legal and compliance issues with incomplete records
-- User distrust due to missing content
-- Inconsistent conversion results across similar documents
+## Scenarios
+
+This paragraph is missing from the file: `\samples\EL_TechnicalTemplateHandling.doc`
+
+```
+Updating the value of any property within this dialog will be reflected in the document after closing the dialogue. This is important since all the properties displayed in the document are updated, independently of their number of occurrences in the document. The Properties Dialog can thus be called any time you need to update the document properties. For all properties, the last setting will be memorized by the dialog. 
+NOTE : the options present in this dialog rely on specific bookmarks and fields inside the document in order to be able to add the requested information at the defined spot. If these bookmarks and/or fields are removed or modified, it is possible that the properties dialog will not be able to achieve the desired result. 
+Properties Dialog: Front Information Table
+```
 
 ## Detailed Resolution Plan
 
 The root cause for missing paragraphs can be complex, often stemming from how Word structures its files, especially with features like "Fast Save" or specific paragraph formatting properties.
 
 ### Important:
-Applying the fixes described in `FASTSAVE-working-example.md` makes `fastsavedmix.doc` work, but it affects all other documents. Anyway, the information to make it work is there.
+Applying the fixes described in `FASTSAVE-working-example.md` makes `fastsavedmix.doc` work, but it affects all other documents. However, the information needed to make it work is there.
 
 ### Phase 1: Enhanced Diagnostics and Logging
 

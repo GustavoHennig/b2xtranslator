@@ -36,7 +36,7 @@ See the image `ISSUE-011-Symbol-Handling.png`
 The output should show the exact corresponding UTF-8 code of the symbol presented.
 
 
-Expected result (it is the last working version result, this result is satisfatory)
+Expected result (it is the last working version result, this result is satisfactory)
 ```
 !"#$%&'()∗±,−./0123456789:;<=>?@ΑΒΧΔΕΦΓΗΙϑΚΛΜΝΟΠΘΡΣΤΥςΩ
 ΞΨΖ[\]^_`αβχδεφγηιϕκλμνοπθρστυϖωξψζ{|}~¡¢≤¤∞¦§¨©ª←↑­®¯°±
@@ -44,6 +44,23 @@ Expected result (it is the last working version result, this result is satisfato
 		
 ä∅∈∉∋∌∩∪⊂⊃⊆⊇⊥∴∵óôõö÷øùúûüýþÿ
 ``` 
+
+### Scenario 3 `61586.doc`
+
+The only issue here is the symbol: μ
+
+```txt
+
+
+TEST? 
+111 μg.h/mL (AUC) and 15 μg/mL (Cmax).  
+TEST? 
+Greek muμ
+(
+
+
+```
+
 
 ## Testing Strategy
 

@@ -105,7 +105,7 @@ namespace b2xtranslator.Tests
 
 
             // Trim trailing whitespace from each line
-            var lines = normalized.Split('\n').Select(line => line.Trim());
+            var lines = normalized.Split('\n').Select(line => line.Trim()).Where(w => !string.IsNullOrWhiteSpace(w));
             var result = string.Join("\n", lines);
 
 

@@ -1,6 +1,6 @@
 
 
-This parser has good support for Word 97 files but currently ignores the Word 95 format, even though it is less complex.
+This parser has good support for Word 97 files but currently ignores the Word 95 format, even though it is less complex than Word 97.
 Please add support for Word 95 files using the code below as a reference. Try to keep the existing class structure intact and avoid excessive refactoring.
 
 It must work with the file `samples/a-idade-media.word95.doc`, it has nFib = 104, and the document is valid.

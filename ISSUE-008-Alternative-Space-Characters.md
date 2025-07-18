@@ -118,7 +118,7 @@ The most robust way to solve this issue is to normalize all whitespace character
 
 ### Phase 3: Consolidate Whitespace (Optional but Recommended)
 
-After normalization, the output might contain sequences of multiple spaces. A final cleanup step can improve readability.
+After normalization, the output might contain sequences of multiple spaces. A final cleanup step will improve readability.
 
 1.  **Use a `StringBuilder` and Post-Process:**
     Instead of writing directly to the `TextWriter`, append the normalized characters to a `StringBuilder`. At the end of the conversion, get the final string and use a regular expression to consolidate whitespace before writing to the output stream.

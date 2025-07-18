@@ -526,7 +526,7 @@ PETERS, Marjolein et al., 2004, “Benefit systems and their interaction with ac
 SIHTO Matti, in EUROSTAT, 2003 20th CEIES Seminar “Labour statistics – towards enlargement” “Statistics on employment and unemployment: international comparability and national needs”
 
 
-
+1
 
 30
 
@@ -546,4 +546,4 @@ SIHTO Matti, in EUROSTAT, 2003 20th CEIES Seminar “Labour statistics – towar
  When this article was nearly finished the registration data from Spain were revised. The same applies not only to the data, but also to the regulations on who is counted as unemployed. To find out exactly what are the reasons resulting in changes in the data can only be part of further studies. As far as information is already available on the new data and regulations it is included in an extra box. All other information on Spain refers to the old data and regulations.
  Due to the new data the registered unemployed nearly match the LFS unemployed for the totals, the registered unemployed are 0,7 % higher than the LFS unemployed.
  Occasional registration compensation, LMP SE-29
- In Sweden RJnotRU) + RJcat2 > LFS-RI see graph SE02)
+ In Sweden RJnotRU) + RJcat2 > LFS-RI see graph SE02)

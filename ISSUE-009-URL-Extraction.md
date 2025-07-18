@@ -1,7 +1,7 @@
 # Issue #009: URL Extraction Issues (Duplicate of #006)
 
 ## Current Status
-**This issue is was fixed than returned because is not showing the links, so is not resolved.**
+**This issue was fixed, but then returned because links are not being shown, so it is not resolved.**
 
 The root cause and the resolution for this problem are identical to those described in `ISSUE-006` (`CompletedIssues\ISSUE-006-Internal-Field-Markers.md`). The core of the problem is the incorrect handling of Word's `HYPERLINK` field codes. The implementation of the resolution plan is missing.
 
@@ -28,6 +28,11 @@ Expected result with the extract URLS flag disabled (this is already working):
 ```
 A text with a link to GitHub Profile.
 ```
+
+## Scenario 2
+`Bug50936_2.doc`, `Bug51686.doc`
+
+There are a lot of hyperlinks that don't follow the pattern: `Display Name (URL)`
 
 
 ## Resolution Plan (Old issue)
