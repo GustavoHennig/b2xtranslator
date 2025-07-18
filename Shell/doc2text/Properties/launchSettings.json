@@ -1,8 +1,8 @@
 {
   "profiles": {
-    "doct2text": {
+    "doc2text": {
       "commandName": "Project",
-      "commandLineArgs": "../../samples/AIOOB-Tap.doc",
+      "commandLineArgs": "../../samples/news-example.doc",
       "workingDirectory": "."
     }
   }

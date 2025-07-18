@@ -1,11 +1,15 @@
+using b2xtranslator.Common.Exceptions;
+using b2xtranslator.DocFileFormat;
+using b2xtranslator.StructuredStorage.Common;
+using b2xtranslator.Tools;
+using b2xtranslator.txt;
+using b2xtranslator.txt.TextMapping;
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using Xunit;
-using System.Diagnostics;
 using Xunit.Sdk;
-using b2xtranslator.txt;
-using b2xtranslator.txt.TextMapping;
 
 namespace b2xtranslator.Tests
 {
@@ -57,9 +61,10 @@ namespace b2xtranslator.Tests
             string result;
             string resultOriginal;
             string expected;
+            expected = NormalizeText(File.ReadAllText(expectedPath));
+
             try
             {
-                expected = NormalizeText(File.ReadAllText(expectedPath));
                 resultOriginal = Converter.ConvertFileToString(docPath);
                 result = NormalizeText(resultOriginal);
                 bool isEqual = string.Equals(result, expected, StringComparison.InvariantCultureIgnoreCase);
@@ -79,8 +84,19 @@ namespace b2xtranslator.Tests
             }
             catch (Exception ex)
             {
-                File.WriteAllText(Path.ChangeExtension(docPath, ".error.txt"), ex.ToString());
                 File.Delete(Path.ChangeExtension(docPath, ".actual.txt"));
+
+                if (ex.Message.Contains(expected, StringComparison.InvariantCultureIgnoreCase))
+                {
+                    // Expected error matches the exception message
+                    File.Delete(Path.ChangeExtension(docPath, ".actual.txt"));
+                    File.Delete(Path.ChangeExtension(docPath, ".error.txt"));
+                    return;
+                }
+                else
+                {
+                    File.WriteAllText(Path.ChangeExtension(docPath, ".error.txt"), ex.ToString());
+                }
                 throw;
             }
             Assert.Equal(expected, result, true, true, true, true);

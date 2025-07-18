@@ -1,1 +1,1 @@
-Wrong extension, DOCX file not supported.
+Magic Number not found in file.

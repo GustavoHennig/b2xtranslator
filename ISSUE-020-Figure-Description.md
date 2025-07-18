@@ -1,0 +1,1 @@
+Figure descriptions are not being extracted.

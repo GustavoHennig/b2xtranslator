@@ -5,6 +5,7 @@ using b2xtranslator.StructuredStorage.Reader;
 using System;
 using System.Collections.Generic;
 using System.Reflection;
+using b2xtranslator.Common.Exceptions;
 
 namespace b2xtranslator.DocFileFormat
 {
@@ -191,6 +192,12 @@ namespace b2xtranslator.DocFileFormat
             //parse FIB
             this.WordDocumentStream.Seek(fibFC, System.IO.SeekOrigin.Begin);
             this.FIB = new FileInformationBlock(new VirtualStreamReader(this.WordDocumentStream));
+
+            if (this.FIB.fEncrypted || this.FIB.fCrypto)
+            {
+                //TODO: Implement decryption if password is provided
+                throw new EncryptedFileException("The file is encrypted and cannot be processed.");
+            }
 
             //check the file version - now supports Word 95/Word 6 
             // Word95 files: 100=Word6, 101=Word95, 104=Word97 but some Word95 files use 104

@@ -441,7 +441,12 @@ namespace b2xtranslator.DocFileFormat
 
             //read the FIB base
             this.wIdent = reader.ReadUInt16();
-            this.nFib = (FibVersion)reader.ReadUInt16();
+            ushort nFibRaw = reader.ReadUInt16();
+            if (this.wIdent == 0xA5EC && nFibRaw == 0x000B)
+            {
+                throw new UnspportedFileVersionException("Word 2.0 files are not supported.");
+            }
+            this.nFib = (FibVersion)nFibRaw;
             reader.ReadBytes(2);
             this.lid = reader.ReadUInt16();
             this.pnNext = reader.ReadInt16();
