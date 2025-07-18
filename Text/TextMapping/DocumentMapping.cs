@@ -565,6 +565,9 @@ namespace b2xtranslator.txt.TextMapping
             int fcEnd = _doc.PieceTable.FileCharacterPositions[cpEnd];
             var papx = findValidPapx(fc);
 
+            // DEBUG: Show paragraph boundaries
+            System.Console.WriteLine($"[PARA] Writing paragraph CP {initialCp}-{cpEnd}, FC {fc}-{fcEnd}");
+
             //get all CHPX between these boundaries to determine the count of runs
             var chpxs = _doc.GetCharacterPropertyExceptions(fc, fcEnd);
             var chpxFcs = _doc.GetFileCharacterPositions(fc, fcEnd);
@@ -605,92 +608,160 @@ namespace b2xtranslator.txt.TextMapping
                 }
             }
 
-            //write a runs for each CHPX
+            // ENHANCED FIX: Handle complex fast-saved documents with piece table fragmentation
+            bool usedFallbackExtraction = false;
+            List<char> allParagraphChars = new List<char>();
+            
+            // First pass: Check if we need fallback extraction for this entire paragraph
+            int totalValidChars = 0;
             for (int i = 0; i < chpxs.Count; i++)
             {
-                //get the FC range for this run
+                if (i + 1 >= chpxFcs.Count) break;
+                
                 int fcChpxStart = chpxFcs[i];
-                if (i + 1 >= chpxFcs.Count)
-                    break;
                 int fcChpxEnd = chpxFcs[i + 1];
-
-                //it's the first chpx and it starts before the paragraph
-                if (i == 0 && fcChpxStart < fc)
+                
+                // Adjust ranges to paragraph boundaries
+                if (i == 0 && fcChpxStart < fc) fcChpxStart = fc;
+                if (i == chpxs.Count - 1 && fcChpxEnd > fcEnd) fcChpxEnd = fcEnd;
+                
+                var testChars = _doc.PieceTable.GetChars(fcChpxStart, fcChpxEnd, _doc.WordDocumentStream);
+                totalValidChars += testChars.Count;
+            }
+            
+            // If CHPXs are returning very few characters compared to the paragraph length, use fallback
+            int expectedCharCount = cpEnd - initialCp - 1; // Exclude paragraph end mark
+            
+            // For fast-saved documents with fragmented pieces, prefer fallback extraction for reliability
+            bool shouldUseFallback = false;
+            if (expectedCharCount > 3 && totalValidChars < Math.Max(expectedCharCount / 2, 3))
+            {
+                shouldUseFallback = true;
+                System.Console.WriteLine($"[PARA] CHPXs extracting {totalValidChars} chars vs expected {expectedCharCount}, using direct fallback");
+            }
+            else if (expectedCharCount > 10 && _doc.FIB.cQuickSaves > 0)
+            {
+                // For larger paragraphs in fast-saved documents, use fallback if piece table is fragmented
+                shouldUseFallback = true;
+                System.Console.WriteLine($"[PARA] Fast-saved document with {expectedCharCount} chars, using fallback for reliability");
+            }
+            
+            if (shouldUseFallback)
+            {
+                allParagraphChars = _doc.Text.GetRange(initialCp, expectedCharCount);
+                usedFallbackExtraction = true;
+                
+                string fallbackText = new string(allParagraphChars.ToArray()).Replace('\r', '↵').Replace('\n', '↓').Replace('\t', '→');
+                System.Console.WriteLine($"[PARA] Fallback extracted: \"{fallbackText}\"");
+                
+                // Write the entire paragraph as one run with first available CHPX formatting
+                if (chpxs.Count > 0 && chpxs[0] != null)
                 {
-                    //so use the FC of the paragraph
-                    fcChpxStart = fc;
+                    cp = writeRun(allParagraphChars, chpxs[0], cp);
                 }
-
-                //it's the last chpx and it exceeds the paragraph
-                if (i == chpxs.Count - 1 && fcChpxEnd > fcEnd)
+            }
+            
+            // Second pass: Process CHPXs normally if fallback wasn't used
+            if (!usedFallbackExtraction)
+            {
+                //write a runs for each CHPX
+                for (int i = 0; i < chpxs.Count; i++)
                 {
-                    //so use the FC of the paragraph
-                    fcChpxEnd = fcEnd;
-                }
+                    //get the FC range for this run
+                    int fcChpxStart = chpxFcs[i];
+                    if (i + 1 >= chpxFcs.Count)
+                        break;
+                    int fcChpxEnd = chpxFcs[i + 1];
 
-                //read the chars that are formatted via this CHPX
-                var chpxChars = _doc.PieceTable.GetChars(fcChpxStart, fcChpxEnd, _doc.WordDocumentStream);
-
-                //search for bookmarks in the chars
-                var bookmarks = searchBookmarks(chpxChars, cp);
-
-                //if there are bookmarks in this run, split the run into several runs
-                if (bookmarks.Count > 0)
-                {
-                    var runs = splitCharList(chpxChars, bookmarks);
-                    for (int s = 0; s < runs.Count; s++)
+                    //it's the first chpx and it starts before the paragraph
+                    if (i == 0 && fcChpxStart < fc)
                     {
-                        if (_doc.BookmarkStartPlex.CharacterPositions.Contains(cp) &&
-                            _doc.BookmarkEndPlex.CharacterPositions.Contains(cp))
-                        {
-                            //there start and end bookmarks here
+                        //so use the FC of the paragraph
+                        fcChpxStart = fc;
+                    }
 
-                            //so get all bookmarks that end here
-                            for (int b = 0; b < _doc.BookmarkEndPlex.CharacterPositions.Count; b++)
+                    //it's the last chpx and it exceeds the paragraph
+                    if (i == chpxs.Count - 1 && fcChpxEnd > fcEnd)
+                    {
+                        //so use the FC of the paragraph
+                        fcChpxEnd = fcEnd;
+                    }
+
+                    //read the chars that are formatted via this CHPX
+                    var chpxChars = _doc.PieceTable.GetChars(fcChpxStart, fcChpxEnd, _doc.WordDocumentStream);
+
+                    // DEBUG: Show extracted characters
+                    string extractedText = new string(chpxChars.ToArray()).Replace('\r', '↵').Replace('\n', '↓').Replace('\t', '→');
+                    System.Console.WriteLine($"[CHPX] Extracted {chpxChars.Count} chars from FC {fcChpxStart}-{fcChpxEnd}: \"{extractedText}\"");
+                    
+                    // Skip empty CHPX extractions
+                    if (chpxChars.Count == 0)
+                    {
+                        System.Console.WriteLine($"[PARA] Skipping empty CHPX {i} for FC range {fcChpxStart}-{fcChpxEnd}");
+                        continue;
+                    }
+
+                    //search for bookmarks in the chars
+                    var bookmarks = searchBookmarks(chpxChars, cp);
+
+                    //if there are bookmarks in this run, split the run into several runs
+                    if (bookmarks.Count > 0)
+                    {
+                        var runs = splitCharList(chpxChars, bookmarks);
+                        for (int s = 0; s < runs.Count; s++)
+                        {
+                            if (_doc.BookmarkStartPlex.CharacterPositions.Contains(cp) &&
+                                _doc.BookmarkEndPlex.CharacterPositions.Contains(cp))
                             {
-                                if (_doc.BookmarkEndPlex.CharacterPositions[b] == cp)
+                                //there start and end bookmarks here
+
+                                //so get all bookmarks that end here
+                                for (int b = 0; b < _doc.BookmarkEndPlex.CharacterPositions.Count; b++)
                                 {
-                                    //and check if the matching start bookmark also starts here
-                                    if (_doc.BookmarkStartPlex.CharacterPositions[b] == cp)
+                                    if (_doc.BookmarkEndPlex.CharacterPositions[b] == cp)
                                     {
-                                        //then write a start and a end
-                                        if (_doc.BookmarkStartPlex.Elements.Count > b)
+                                        //and check if the matching start bookmark also starts here
+                                        if (_doc.BookmarkStartPlex.CharacterPositions[b] == cp)
                                         {
-                                            writeBookmarkStart(_doc.BookmarkStartPlex.Elements[b]);
+                                            //then write a start and a end
+                                            if (_doc.BookmarkStartPlex.Elements.Count > b)
+                                            {
+                                                writeBookmarkStart(_doc.BookmarkStartPlex.Elements[b]);
+                                                writeBookmarkEnd(_doc.BookmarkStartPlex.Elements[b]);
+                                            }
+                                        }
+                                        else
+                                        {
+                                            //write a end
                                             writeBookmarkEnd(_doc.BookmarkStartPlex.Elements[b]);
                                         }
                                     }
-                                    else
-                                    {
-                                        //write a end
-                                        writeBookmarkEnd(_doc.BookmarkStartPlex.Elements[b]);
-                                    }
                                 }
+
+                                writeBookmarkStarts(cp);
+                            }
+                            else if (_doc.BookmarkStartPlex.CharacterPositions.Contains(cp))
+                            {
+                                writeBookmarkStarts(cp);
+                            }
+                            else if (_doc.BookmarkEndPlex.CharacterPositions.Contains(cp))
+                            {
+                                writeBookmarkEnds(cp);
                             }
 
-                            writeBookmarkStarts(cp);
-                        }
-                        else if (_doc.BookmarkStartPlex.CharacterPositions.Contains(cp))
-                        {
-                            writeBookmarkStarts(cp);
-                        }
-                        else if (_doc.BookmarkEndPlex.CharacterPositions.Contains(cp))
-                        {
-                            writeBookmarkEnds(cp);
-                        }
+                            if (chpxs[i] != null)
+                            {
+                                cp = writeRun(runs[s], chpxs[i], cp);
+                            }
 
+                        }
+                    }
+                    else
+                    {
                         if (chpxs[i] != null)
                         {
-                            cp = writeRun(runs[s], chpxs[i], cp);
+                            cp = writeRun(chpxChars, chpxs[i], cp);
                         }
-
-                    }
-                }
-                else
-                {
-                    if (chpxs[i] != null)
-                    {
-                        cp = writeRun(chpxChars, chpxs[i], cp);
                     }
                 }
             }

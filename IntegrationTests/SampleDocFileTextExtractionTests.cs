@@ -96,10 +96,21 @@ namespace b2xtranslator.Tests
             // Replace CRLF and CR with LF
             var normalized = text
                 .Replace("\r\n", "\n")
-                .Replace("\r", "\n").Replace("\t", "").Replace("  ", " ");
+                .Replace("\r", "\n")
+                .Replace("\t", "")
+                .Replace("  ", " ")
+                .Replace("\n\n", "\n")
+                .Replace("\n\n", "\n")
+                ;
+
+
             // Trim trailing whitespace from each line
-            var lines = normalized.Split('\n').Select(line => line.TrimEnd());
-            return string.Join("\n", lines);
+            var lines = normalized.Split('\n').Select(line => line.Trim());
+            var result = string.Join("\n", lines);
+
+
+            // Remove all line breaks and spaces from the end of the file
+            return result.TrimEnd(' ', '\n', '\r');
         }
 
 

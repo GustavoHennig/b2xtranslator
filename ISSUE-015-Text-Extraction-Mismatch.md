@@ -9,6 +9,16 @@ The text extraction for the sample file `samples/other.doc` does not match the e
 ## Severity
 **MEDIUM** - Affects the quality and reliability of text extraction.
 
+## Expected output
+
+Line breaks or spaces are not important.
+
+```txt
+Big line
+Bold simple line
+Italic line
+```
+
 ## Impact
 - Incorrect text output for certain documents.
 - Reduced trust in the accuracy of the conversion process.
@@ -37,6 +47,7 @@ The text extraction for the sample file `samples/other.doc` does not match the e
 ## Important
 
 - It is possible to find a partial solution in `FASTSAVE-working-example.md`.
+- There is a complete functional C code showing how to hanlde fastsaved documents pasted here `REFERENCE_FOR_FULL_WORD_PARSING.md` (the file is HUGE).
 - Perform regression tests using the file `47950_normal.doc` to verify whether other files have been affected.
 
 ## Initial Analysis (Hypothesis)

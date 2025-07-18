@@ -19,7 +19,8 @@
       "Bash(timeout:*)",
       "Bash(fi)",
       "Bash(fc:*)",
-      "Bash(powershell:*)"
+      "Bash(powershell:*)",
+      "Bash(xxd:*)"
     ],
     "deny": []
   }
