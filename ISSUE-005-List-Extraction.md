@@ -6,18 +6,15 @@
 ## Problem Description
 The b2xtranslator fails to properly extract list formatting during text conversion, resulting in plain text output that lacks bullet points, numbering, and proper indentation. This significantly impacts document readability and structure preservation.
 
-## Severity
-**MEDIUM** - Affects document structure and readability but doesn't prevent conversion
 
 ## Impact
 - Loss of document structure and organization
-- Poor readability of converted text documents
 - Missing visual hierarchy from lists
 - Inability to distinguish between regular paragraphs and list items
-- Poor user experience when converting documents with extensive lists
-- Information organization is lost in the conversion process
 
 ## Detailed Resolution Plan
+
+IMPORTANT: Consider that this plan is a guide, but may not be totally accurate, be crictical.
 
 ### Phase 1: Enhance List Data Parsing
 

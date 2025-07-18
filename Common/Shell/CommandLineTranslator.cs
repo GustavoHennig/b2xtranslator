@@ -12,6 +12,7 @@ namespace b2xtranslator.Shell
         // parsed arguments
         public static string InputFile;
         public static string ChoosenOutputFile;
+        public static bool ExtractUrls = true; // Default to true as per requirements
 
         public static void InitializeLogger()
         {
@@ -42,8 +43,9 @@ namespace b2xtranslator.Shell
         public static void PrintUsage(string toolname)
         {
             var usage = new StringBuilder();
-            usage.AppendLine("Usage: " + toolname + " [-c | inputfile] [-o outputfile] [-v level] [-?]");
+            usage.AppendLine("Usage: " + toolname + " [-c | inputfile] [-o outputfile] [-v level] [--no-urls] [-?]");
             usage.AppendLine("-o <outputfile>  change output filename");
+            usage.AppendLine("--no-urls       disable URL extraction from hyperlinks (default: enabled)");
             usage.AppendLine("-v <level>     set trace level, where <level> is one of the following:");
             usage.AppendLine("               none (0)    print nothing");
             usage.AppendLine("               error (1)   print all errors");
@@ -155,6 +157,11 @@ namespace b2xtranslator.Shell
                     {
                         //parse output file name
                         ChoosenOutputFile = args[i + 1];
+                    }
+                    else if (args[i].ToLower() == "--no-urls")
+                    {
+                        //disable URL extraction
+                        ExtractUrls = false;
                     }
                 }
             }

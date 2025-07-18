@@ -5,6 +5,6 @@ als “Word 97 – 2003” Dokument wieder zurück in das “doc” Format konve
 
 Ich bin die Kopfzeile
 
-Supply Agreement / Territorial Concession Austria                                                                              page 
-Ich bin die Fußzeile                                                                              page 
+Supply Agreement / Territorial Concession Austria                                                                              page 6
+Ich bin die Fußzeile                                                                              page 1
 

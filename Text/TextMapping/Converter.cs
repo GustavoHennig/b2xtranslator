@@ -4,6 +4,7 @@ using b2xtranslator.OpenXmlLib.WordprocessingML;
 using b2xtranslator.StructuredStorage.Reader;
 using b2xtranslator.Tools;
 using b2xtranslator.WordprocessingMLMapping;
+using b2xtranslator.Shell;
 using System.Globalization;
 using System.IO;
 using System.Text;
@@ -96,12 +97,12 @@ namespace b2xtranslator.txt.TextMapping
                 var doc = new WordDocument(reader);
 
 
-                var textDoc = TextDocument.Create(outputFilePath);
+                var textDoc = TextDocument.Create(outputFilePath, null, CommandLineTranslator.ExtractUrls);
              
                 TraceLogger.Info("Converting file {0} into {1}", inputFilePath, outputFilePath);
 
                 //convert the document
-                string output = ConvertFileToString(inputFilePath);
+                string output = ConvertFileToString(inputFilePath, CommandLineTranslator.ExtractUrls);
 
                 File.WriteAllText(outputFilePath, output);
 
@@ -113,7 +114,7 @@ namespace b2xtranslator.txt.TextMapping
             }
         }
 
-        public static string ConvertFileToString(string inputFilePath)
+        public static string ConvertFileToString(string inputFilePath, bool extractUrls = true)
         {
             //open the reader
             using (var reader = new StructuredStorageReader(inputFilePath))
@@ -121,26 +122,26 @@ namespace b2xtranslator.txt.TextMapping
                 //parse the input document
                 var doc = new WordDocument(reader);
 
-                var textDoc = TextDocument.Create("");
+                var textDoc = TextDocument.Create("", null,  extractUrls);
                
                 //convert the document
-                return Converter.ConvertToString(doc, textDoc);
+                return Converter.ConvertToString(doc, textDoc, extractUrls);
 
             }
         }
 
-        public static void Convert(WordDocument doc, TextDocument textDocument)
+        public static void Convert(WordDocument doc, TextDocument textDocument, bool extractUrls = true)
         {
             //Create a new conversion context
-            var context = new ConversionContext(doc);
-            string output = ConvertToString(doc, textDocument);
+            var context = new ConversionContext(doc, extractUrls);
+            string output = ConvertToString(doc, textDocument, extractUrls);
             File.WriteAllText(context.TextDoc.FilePath, output);
 
         }
 
-        public static string ConvertToString(WordDocument doc, TextDocument textDocument)
+        public static string ConvertToString(WordDocument doc, TextDocument textDocument, bool extractUrls = true)
         {
-            var context = new ConversionContext(doc);
+            var context = new ConversionContext(doc, extractUrls);
             {
                 //Setup the context
                 context.TextDoc = textDocument;
@@ -168,7 +169,7 @@ namespace b2xtranslator.txt.TextMapping
                 //Write fontTable.xml (skip for Word 95 files where it may be null)
                 if (doc.FontTable != null)
                 {
-                    doc.FontTable.Convert(new FontTableMapping(context, new TextWriter()));
+                    doc.FontTable.Convert(new FontTableMapping(context, new TextWriter(context.ExtractUrls)));
                 }
 
                 //write document.xml and the header and footers

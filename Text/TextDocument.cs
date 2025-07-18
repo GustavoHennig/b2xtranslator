@@ -33,9 +33,9 @@ namespace b2xtranslator.txt
             this.CommentsPartWriter = writer;
         }
 
-        public static TextDocument Create(string fileName, IWriter? writer = null)
+        public static TextDocument Create(string fileName, IWriter? writer = null, bool extractUrls = true)
         {
-            var doc = new TextDocument(fileName, writer ?? new TextWriter());
+            var doc = new TextDocument(fileName, writer ?? new TextWriter(extractUrls));
 
             return doc;
         }

@@ -35,6 +35,16 @@ Symbols in Word documents are often represented by a character code within a run
 See the image `ISSUE-011-Symbol-Handling.png`
 The output should show the exact corresponding UTF-8 code of the symbol presented.
 
+
+Expected result (it is the last working version result, this result is satisfatory)
+```
+!"#$%&'()∗±,−./0123456789:;<=>?@ΑΒΧΔΕΦΓΗΙϑΚΛΜΝΟΠΘΡΣΤΥςΩ
+ΞΨΖ[\]^_`αβχδεφγηιϕκλμνοπθρστυϖωξψζ{|}~¡¢≤¤∞¦§¨©ª←↑­®¯°±
+²≥´μ∂·¸¹º→¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐ∑ÒÓÔ∏√×∝ÙÚ↔∠↕Þß◊áâã
+		
+ä∅∈∉∋∌∩∪⊂⊃⊆⊇⊥∴∵óôõö÷øùúûüýþÿ
+``` 
+
 ## Testing Strategy
 
 ### Integration Tests

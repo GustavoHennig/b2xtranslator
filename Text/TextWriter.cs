@@ -27,6 +27,9 @@ namespace b2xtranslator.txt
         // Track if we've output any content to prevent leading newline
         private bool _isFirstStructuralElement = true;
         
+        // Flag to control URL extraction
+        private bool _extractUrls = true;
+        
         // Symbol handling state
         private bool _isInSymbolElement = false;
         private string? _symbolFont = null;
@@ -81,11 +84,12 @@ namespace b2xtranslator.txt
         private TextElement _currentTextElement;
         private readonly Stack<TextElement> _elementStack;
 
-        public TextWriter()
+        public TextWriter(bool extractUrls = true)
         {
             _rootTextElement = new TextElement(null, null, "root", null);
             _currentTextElement = _rootTextElement;
             _elementStack = new Stack<TextElement>();
+            _extractUrls = extractUrls;
         }
 
         public void Flush()
@@ -362,6 +366,7 @@ namespace b2xtranslator.txt
             {
                 WriteEndElement();
             }
+            
             return _rootTextElement.PureContent.ToString();
         }
 
@@ -391,16 +396,27 @@ namespace b2xtranslator.txt
 
             string description = _hyperlinkDescription.ToString().Trim();
             
-            // Format the hyperlink output
-            if (!string.IsNullOrEmpty(description) && !description.Equals(_pendingHyperlinkUrl, StringComparison.OrdinalIgnoreCase))
+            // Format the hyperlink output based on _extractUrls flag
+            if (_extractUrls)
             {
-                // If we have description text that's different from URL, show: "description (url)"
-                _currentTextElement.PureContent.Append($"{description} ({_pendingHyperlinkUrl})");
+                if (!string.IsNullOrEmpty(description) && !description.Equals(_pendingHyperlinkUrl, StringComparison.OrdinalIgnoreCase))
+                {
+                    // If we have description text that's different from URL, show: "description (url)"
+                    _currentTextElement.PureContent.Append($"{description} ({_pendingHyperlinkUrl})");
+                }
+                else
+                {
+                    // If no description or description is the same as URL, just show the URL
+                    _currentTextElement.PureContent.Append(_pendingHyperlinkUrl);
+                }
             }
             else
             {
-                // If no description or description is the same as URL, just show the URL
-                _currentTextElement.PureContent.Append(_pendingHyperlinkUrl);
+                // If URL extraction is disabled, just show the description text
+                if (!string.IsNullOrEmpty(description))
+                {
+                    _currentTextElement.PureContent.Append(description);
+                }
             }
 
             // Reset hyperlink state

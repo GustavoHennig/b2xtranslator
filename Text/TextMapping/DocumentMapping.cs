@@ -654,6 +654,12 @@ namespace b2xtranslator.txt.TextMapping
                 string fallbackText = new string(allParagraphChars.ToArray()).Replace('\r', '↵').Replace('\n', '↓').Replace('\t', '→');
                 System.Console.WriteLine($"[PARA] Fallback extracted: \"{fallbackText}\"");
                 
+                // Process hyperlink fields in fallback text
+                allParagraphChars = ProcessHyperlinkFieldsInFallbackText(allParagraphChars);
+                
+                string processedText = new string(allParagraphChars.ToArray()).Replace('\r', '↵').Replace('\n', '↓').Replace('\t', '→');
+                System.Console.WriteLine($"[PARA] After hyperlink processing: \"{processedText}\"");
+                
                 // Write the entire paragraph as one run with first available CHPX formatting
                 if (chpxs.Count > 0 && chpxs[0] != null)
                 {
@@ -778,7 +784,7 @@ namespace b2xtranslator.txt.TextMapping
         protected int writeRun(List<char> chars, CharacterPropertyExceptions chpx, int initialCp)
         {
             int cp = initialCp;
-
+            
             if (_skipRuns <= 0 && chars.Count > 0)
             {
                 var rev = new RevisionData(chpx);
@@ -845,6 +851,73 @@ namespace b2xtranslator.txt.TextMapping
             return cp + chars.Count;
         }
 
+        /// <summary>
+        /// Processes hyperlink fields in fallback text extraction
+        /// </summary>
+        /// <param name="chars">The raw text characters</param>
+        /// <returns>Modified characters with hyperlink fields processed</returns>
+        protected List<char> ProcessHyperlinkFieldsInFallbackText(List<char> chars)
+        {
+            if (!_ctx.ExtractUrls)
+            {
+                // If URL extraction is disabled, just remove hyperlink field codes
+                return RemoveHyperlinkFieldCodes(chars);
+            }
+            
+            string text = new string(chars.ToArray());
+            
+            // Pattern to match HYPERLINK fields: HYPERLINK "url"DisplayText
+            var hyperlinkPattern = @"HYPERLINK\s+""([^""]+)""([^.]+)";
+            var regex = new System.Text.RegularExpressions.Regex(hyperlinkPattern);
+            
+            string processedText = regex.Replace(text, match =>
+            {
+                string url = match.Groups[1].Value;
+                string displayText = match.Groups[2].Value.Trim();
+                
+                if (!string.IsNullOrEmpty(displayText))
+                {
+                    // Format as "display text (url)"
+                    return $"{displayText} ({url})";
+                }
+                else
+                {
+                    // No display text, just return the URL
+                    return url;
+                }
+            });
+            
+            return processedText.ToCharArray().ToList();
+        }
+
+        /// <summary>
+        /// Removes hyperlink field codes from text when URL extraction is disabled
+        /// </summary>
+        /// <param name="chars">The raw text characters</param>
+        /// <returns>Text with hyperlink field codes removed</returns>
+        protected List<char> RemoveHyperlinkFieldCodes(List<char> chars)
+        {
+            string text = new string(chars.ToArray());
+            
+            // Remove HYPERLINK field codes but keep the display text
+            var hyperlinkPattern = @"HYPERLINK\s+""([^""]+)""";
+            var regex = new System.Text.RegularExpressions.Regex(hyperlinkPattern);
+            
+            string processedText = regex.Replace(text, match =>
+            {
+                // Find the text that comes after the hyperlink field
+                int matchEnd = match.Index + match.Length;
+                string remainingText = text.Substring(matchEnd);
+                
+                // Extract the hyperlink display text (everything until the next period or end of string)
+                var displayMatch = new System.Text.RegularExpressions.Regex(@"^([^.]*?)\.?").Match(remainingText);
+                string displayText = displayMatch.Groups[1].Value.Trim();
+                
+                return displayText;
+            });
+            
+            return processedText.ToCharArray().ToList();
+        }
 
         /// <summary>
         /// Writes the given text to the document
@@ -861,6 +934,10 @@ namespace b2xtranslator.txt.TextMapping
                 textType = "delText";
             else if (_writeInstrText)
                 textType = "instrText";
+
+            // Debug output to check what text is being written
+            string debugText = new string(chars.ToArray()).Replace('\r', '↵').Replace('\n', '↓').Replace('\t', '→');
+            System.Console.WriteLine($"[WRITETEXT] Writing text: \"{debugText}\"");
 
             //open a new w:t element
             writeTextStart(textType);
@@ -992,6 +1069,12 @@ namespace b2xtranslator.txt.TextMapping
                     _writeInstrText = true;
 
                     writeTextStart("instrText");
+                    
+                    // Write the field code to the instrText element
+                    if (f.FieldCode != null)
+                    {
+                        _writer.WriteString(f.FieldCode);
+                    }
                 }
                 else if (c == TextMark.FieldSeperator)
                 {

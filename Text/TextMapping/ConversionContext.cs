@@ -19,15 +19,20 @@ namespace b2xtranslator.txt.TextMapping
         /// </summary>
         public TextDocument TextDoc { get; set; }
 
+        /// <summary>
+        /// Flag indicating whether to extract URLs from hyperlinks in text output.
+        /// </summary>
+        public bool ExtractUrls { get; set; }
 
         /// <summary>
         /// A list thta contains all revision ids.
         /// </summary>
         public List<string> AllRsids;
 
-        public ConversionContext(WordDocument doc)
+        public ConversionContext(WordDocument doc, bool extractUrls = true)
         {
             Doc = doc;
+            ExtractUrls = extractUrls;
             AllRsids = new List<string>();
         }
 

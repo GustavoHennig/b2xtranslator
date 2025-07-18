@@ -34,42 +34,14 @@ The README outlines a roadmap to support extraction settings such as:
 
 ## Reproduction Steps
 
-1. Build the solution:  
-   ```bash
-   dotnet build b2xtranslator.sln
-   ```
 
-2. Run conversion on `news-example.doc`:  
+- Run conversion on `news-example.doc`:  
    ```bash
    dotnet run --project Shell/doc2text/doc2text.csproj -- samples/news-example.doc output.txt
    ```
 
-3. Inspect `output.txt`—verify TextBox content is missing.
-
-4. Compare to reference tools:  
-   ```bash
-   antiword samples/news-example.doc > antiword.txt
-   catdoc  samples/news-example.doc > catdoc.txt
-   diff samples/news-example.expected.txt output.txt
-   ```
-
-## Testing Strategy
-
-### Unit Tests
-- Verify that parsed `WordDocument.TextBoxes` collection is non-empty for known samples.  
-- Assert `DocumentConverter.ConvertToText` output contains expected TextBox strings.  
-- Compare word counts against expected files with ≥80% preservation.
-
-### Integration Tests
-- Add TextBox-rich samples (e.g., `news-example.doc`) to `IntegrationTests/SampleDocFileTextExtractionTests.cs`.  
-- Verify extraction includes TextBox content without duplication.
-
-### Automated Shell Tests
-```bash
-dotnet test IntegrationTests/IntegrationTests.csproj --filter "Category=TextBoxContent"
-dotnet run --project Shell/doc2text/doc2text.csproj -- samples/news-example.doc temp.txt
-grep -i "Caixa de texto" temp.txt
-```
+- Inspect `output.txt`, should appear  `Existe uma Caixa de texto aqui` in the end.
+``
 
 ## Proposed Solutions
 
@@ -108,7 +80,5 @@ grep -i "Caixa de texto" temp.txt
 
 ## Testing Commands
 ```bash
-dotnet build b2xtranslator.sln
-dotnet test IntegrationTests/IntegrationTests.csproj
 dotnet run --project Shell/doc2text/doc2text.csproj -- samples/news-example.doc output.txt
-grep "Caixa de texto" output.txt
+grep "Existe uma Caixa de texto aqui" output.txt
