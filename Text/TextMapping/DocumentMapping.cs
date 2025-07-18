@@ -628,9 +628,9 @@ namespace b2xtranslator.txt.TextMapping
                 var testChars = _doc.PieceTable.GetChars(fcChpxStart, fcChpxEnd, _doc.WordDocumentStream);
                 totalValidChars += testChars.Count;
             }
-            
+
             // If CHPXs are returning very few characters compared to the paragraph length, use fallback
-            int expectedCharCount = cpEnd - initialCp - 1; // Exclude paragraph end mark
+            int expectedCharCount = cpEnd - initialCp;// - 1; // Exclude paragraph end mark (removed -1, the line breaks are required)
             
             // For fast-saved documents with fragmented pieces, prefer fallback extraction for reliability
             bool shouldUseFallback = false;

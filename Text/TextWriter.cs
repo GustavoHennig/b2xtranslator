@@ -23,13 +23,13 @@ namespace b2xtranslator.txt
         private StringBuilder _hyperlinkDescription = new StringBuilder();
         private bool _isInHyperlinkDescription = false;
         private int _hyperlinkFieldCharCount = 0;
-        
+
         // Track if we've output any content to prevent leading newline
         private bool _isFirstStructuralElement = true;
-        
+
         // Flag to control URL extraction
         private bool _extractUrls = true;
-        
+
         // Symbol handling state
         private bool _isInSymbolElement = false;
         private string? _symbolFont = null;
@@ -100,8 +100,8 @@ namespace b2xtranslator.txt
         public void WriteAttributeString(string? prefix, string localName, string? ns, string? value)
         {
             _currentTextElement.Attributes ??= new List<IAttribute>();
-            _currentTextElement.Attributes.Add(new TextAttribute(prefix,localName, value));
-            
+            _currentTextElement.Attributes.Add(new TextAttribute(prefix, localName, value));
+
             // Track symbol attributes
             if (_isInSymbolElement && "w".Equals(prefix))
             {
@@ -165,20 +165,9 @@ namespace b2xtranslator.txt
             {
                 var element = _elementStack.Pop();
 
-                // Restaura o elemento pai como atual
                 _currentTextElement = element.Parent ?? _rootTextElement;
 
-                if (element.Content.ToString().Contains("GitHub"))
-                {
 
-                }
-           //     Debug.Print($"Closing {element.Prefix}:{element.LocalName}");
-           //     Debug.Print($"Content: {element.ToString()}");
-
-                // Para outros elementos estruturais, o conte�do j� foi propagado
-                // dos w:t filhos, ent�o n�o precisamos fazer nada
-
-                // Adiciona separadores ap�s o conte�do, baseado no tipo de elemento
                 if ("w".Equals(element.Prefix))
                 {
                     if ("tc".Equals(element.LocalName))  // Table cell
@@ -209,7 +198,7 @@ namespace b2xtranslator.txt
                         string content = element.Content.ToString();
                         string trimmedContent = content.Trim();
 
-                        if(trimmedContent.StartsWith("HYPERLINK "))
+                        if (trimmedContent.StartsWith("HYPERLINK "))
                         {
                             // Extract URL from field instruction - handle both quoted and unquoted formats
                             string url;
@@ -249,7 +238,7 @@ namespace b2xtranslator.txt
                         if (_pendingHyperlinkUrl != null)
                         {
                             _hyperlinkFieldCharCount++;
-                            
+
                             // Output hyperlink after we've seen enough field characters
                             // Some hyperlinks have 1 fldChar, others have 3 (begin, separator, end)
                             if (_hyperlinkFieldCharCount >= 1 && _hyperlinkDescription.Length > 0)
@@ -284,7 +273,7 @@ namespace b2xtranslator.txt
                             System.Diagnostics.Debug.WriteLine($"Error processing symbol: Font={_symbolFont}, Char={_symbolChar}, Error={ex.Message}");
                             _currentTextElement.PureContent.Append("?");
                         }
-                        
+
                         // Reset symbol state
                         _isInSymbolElement = false;
                         _symbolFont = null;
@@ -298,7 +287,7 @@ namespace b2xtranslator.txt
                 if ("w".Equals(element.Prefix) && "t".Equals(element.LocalName))
                 {
                     string textContent = element.Content.ToString();
-                    
+
                     // If we're collecting hyperlink description, capture it
                     if (_isInHyperlinkDescription && _pendingHyperlinkUrl != null)
                     {
@@ -343,7 +332,7 @@ namespace b2xtranslator.txt
 
                 _currentTextElement = new TextElement(_currentTextElement, prefix, localName, value);
                 _elementStack.Push(_currentTextElement);
-                
+
                 // Track symbol elements
                 if ("w".Equals(prefix) && "sym".Equals(localName))
                 {
@@ -366,7 +355,7 @@ namespace b2xtranslator.txt
             {
                 WriteEndElement();
             }
-            
+
             return _rootTextElement.PureContent.ToString();
         }
 
@@ -376,7 +365,7 @@ namespace b2xtranslator.txt
         private string? GetAttributeValue(TextElement element, string attributeName)
         {
             if (element.Attributes == null) return null;
-            
+
             foreach (var attr in element.Attributes)
             {
                 if (attributeName.Equals(attr.LocalName))
@@ -395,7 +384,7 @@ namespace b2xtranslator.txt
             if (_pendingHyperlinkUrl == null) return;
 
             string description = _hyperlinkDescription.ToString().Trim();
-            
+
             // Format the hyperlink output based on _extractUrls flag
             if (_extractUrls)
             {
