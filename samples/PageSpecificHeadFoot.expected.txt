@@ -12,7 +12,7 @@ This is page two. It also has a two column heading, and a simple footer.
 
 	August 20, 2008	[ODD Page Header text]
 
-		Page 	
+		Page 2	
 			
 This is a simple footer on the second page
-Footer Left	Footer Middle Footer Right
+Footer Left	Footer Middle Footer Right

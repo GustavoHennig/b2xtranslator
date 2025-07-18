@@ -482,7 +482,7 @@ Report section 'Annexes'
 Contents
 Use this section to add methodological overviews, working papers, etc., that are essential to the understanding and evaluation of the Technical Report. Annexes should be concise and have the general structure and lay-out of a scientific paper. 
 
-Guidelines - Version 2004 - page 
+Guidelines - Version 2004 - page 2
 
 ()	To avoid confusion, sections in the Technical Report are numbered with regular numbers (1., 1.1., 1.2., etc.), while sections in the Guidelines are numbered G.--. 
  
@@ -491,4 +491,4 @@ Guidelines - Version 2004 - page
 	Self-sampling = Samples taken by fishermen, which could include measurements. 
 	Observer at sea sampling = Sampling at sea by qualified sea-going observers. 
 	Port sampling = Sampling by qualified personnel while the vessel is in port, but before the landings are transferred to an auction. 
-	Market sampling = Sampling by qualified personnel in the auction. 
+	Market sampling = Sampling by qualified personnel in the auction. 
