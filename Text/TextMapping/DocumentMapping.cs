@@ -853,6 +853,7 @@ namespace b2xtranslator.txt.TextMapping
 
         /// <summary>
         /// Processes hyperlink fields in fallback text extraction
+        /// Handles Word field structure: \u0013HYPERLINK "url" \h\u0014DisplayText\u0015
         /// </summary>
         /// <param name="chars">The raw text characters</param>
         /// <returns>Modified characters with hyperlink fields processed</returns>
@@ -866,8 +867,9 @@ namespace b2xtranslator.txt.TextMapping
             
             string text = new string(chars.ToArray());
             
-            // Pattern to match HYPERLINK fields: HYPERLINK "url"DisplayText
-            var hyperlinkPattern = @"HYPERLINK\s+""([^""]+)""([^.]+)";
+            // Pattern 1: Handle Word field structure with field start (0x13), separator (0x14), and end (0x15) characters
+            // Format: \u0013HYPERLINK "url" \h\u0014DisplayText\u0015
+            var hyperlinkPattern = @"\u0013HYPERLINK\s+""([^""]+)""\s*\\h\u0014([^\u0015]*)\u0015";
             var regex = new System.Text.RegularExpressions.Regex(hyperlinkPattern);
             
             string processedText = regex.Replace(text, match =>
@@ -877,7 +879,35 @@ namespace b2xtranslator.txt.TextMapping
                 
                 if (!string.IsNullOrEmpty(displayText))
                 {
-                    // Format as "display text (url)"
+                    // Format as "display text (url \h)" to match expected output
+                    return $"{displayText} ({url} \\h)";
+                }
+                else
+                {
+                    // No display text, just return the URL with field parameter
+                    return $"{url} (\\h)";
+                }
+            });
+            
+            // Pattern 2: Handle simple hyperlink format without field characters (common in fallback text)
+            // Format: HYPERLINK "url"DisplayText (no space between URL and display text)
+            var simpleHyperlinkPattern = @"HYPERLINK\s+""([^""]+)""([^↵]+?)(?=\.?↵|\.?\s*$)";
+            var simpleRegex = new System.Text.RegularExpressions.Regex(simpleHyperlinkPattern);
+            
+            processedText = simpleRegex.Replace(processedText, match =>
+            {
+                string url = match.Groups[1].Value;
+                string displayText = match.Groups[2].Value.Trim();
+                
+                // Remove trailing period if it exists
+                if (displayText.EndsWith("."))
+                {
+                    displayText = displayText.Substring(0, displayText.Length - 1);
+                }
+                
+                if (!string.IsNullOrEmpty(displayText))
+                {
+                    // Format as "display text (url)" for simple hyperlinks
                     return $"{displayText} ({url})";
                 }
                 else
@@ -885,6 +915,69 @@ namespace b2xtranslator.txt.TextMapping
                     // No display text, just return the URL
                     return url;
                 }
+            });
+            
+            // Handle internal bookmark links in different formats
+            // Pattern 1: \u0013HYPERLINK \l "bookmark"\u0014DisplayText\u0015
+            var bookmarkPattern1 = @"\u0013HYPERLINK\s+\\l\s+""([^""]+)""\u0014([^\u0015]*)\u0015";
+            var bookmarkRegex1 = new System.Text.RegularExpressions.Regex(bookmarkPattern1);
+            
+            processedText = bookmarkRegex1.Replace(processedText, match =>
+            {
+                string bookmark = match.Groups[1].Value;
+                string displayText = match.Groups[2].Value.Trim();
+                
+                if (!string.IsNullOrEmpty(displayText))
+                {
+                    // Format as "display text (\l "bookmark")" to match expected output
+                    return $"{displayText} (\\l \"{bookmark}\")";
+                }
+                else
+                {
+                    // No display text, just return the bookmark reference
+                    return $"\\l \"{bookmark}\"";
+                }
+            });
+            
+            // Pattern 2: Handle raw bookmark links without field characters (fallback text format)
+            // Format: HYPERLINK \l "bookmark" DisplayText
+            var bookmarkPattern2 = @"HYPERLINK\s+\\l\s+""([^""]+)""\s+([^H\\]+?)(?=\s+HYPERLINK|\s+\\l|\s*$)";
+            var bookmarkRegex2 = new System.Text.RegularExpressions.Regex(bookmarkPattern2);
+            
+            processedText = bookmarkRegex2.Replace(processedText, match =>
+            {
+                string bookmark = match.Groups[1].Value;
+                string displayText = match.Groups[2].Value.Trim();
+                
+                if (!string.IsNullOrEmpty(displayText))
+                {
+                    // Format as "display text (\l "bookmark")" to match expected output
+                    return $"{displayText} (\\l \"{bookmark}\")";
+                }
+                else
+                {
+                    // No display text, just return the bookmark reference
+                    return $"\\l \"{bookmark}\"";
+                }
+            });
+            
+            // Pattern 3: Handle orphaned bookmark references that weren't caught by other patterns
+            // Clean up any remaining \l "bookmark" patterns that appear standalone
+            var orphanBookmarkPattern = @"\\l\s+""([^""]+)""";
+            var orphanBookmarkRegex = new System.Text.RegularExpressions.Regex(orphanBookmarkPattern);
+            
+            // Don't replace if it's already in parentheses (already processed)
+            processedText = orphanBookmarkRegex.Replace(processedText, match =>
+            {
+                // Check if this is already wrapped in parentheses
+                int matchStart = match.Index;
+                if (matchStart > 0 && processedText[matchStart - 1] == '(')
+                {
+                    return match.Value; // Keep as is, already processed
+                }
+                
+                string bookmark = match.Groups[1].Value;
+                return $"(\\l \"{bookmark}\")";
             });
             
             return processedText.ToCharArray().ToList();

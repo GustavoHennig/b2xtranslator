@@ -167,6 +167,9 @@ namespace b2xtranslator.txt
 
                 _currentTextElement = element.Parent ?? _rootTextElement;
 
+                if (element.PureContent.ToString().Contains("Apache Tika"))
+                { 
+                }
 
                 if ("w".Equals(element.Prefix))
                 {

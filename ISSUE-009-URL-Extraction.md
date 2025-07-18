@@ -14,7 +14,7 @@ The b2xtranslator fails to properly extract and display URLs from Word documents
 
 `dotnet run --project Shell/doc2text/doc2text.csproj -- samples/text-with-link.doc text-with-link.txt`
 
-## New expected solution
+## New expected solution (completed)
 
 - Have a parameter to define if URLs should be extracted with the display text of hyperlinks:
 The file `text-with-link.doc` should return:

@@ -95,7 +95,7 @@ namespace b2xtranslator.doc2x
             }
             catch (Exception ex)
             {
-                TraceLogger.Error("Conversion of file {0} failed.", InputFile);
+                TraceLogger.Error("Conversion of file {0} failed: {1}", InputFile, ex.Message);
                 TraceLogger.Debug(ex.ToString());
             }
         }

@@ -68,12 +68,11 @@ namespace b2xtranslator.Shell
             try
             {
                 var a = Assembly.GetEntryAssembly();
-                using (var s = a.GetManifestResourceStream(revisionResource))
-                using (var reader = new StreamReader(s))
-                {
-                    rev = int.Parse(reader.ReadLine());
-                    s.Close();
-                }
+                using var s = a.GetManifestResourceStream(revisionResource);
+                if (s is null) return rev;
+                using var reader = new StreamReader(s);
+                rev = int.Parse(reader.ReadLine());
+                s.Close();
             }
             catch (Exception) { }
 
