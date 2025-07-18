@@ -20,7 +20,8 @@
       "Bash(fi)",
       "Bash(fc:*)",
       "Bash(powershell:*)",
-      "Bash(xxd:*)"
+      "Bash(xxd:*)",
+      "Bash(grep:*)"
     ],
     "deny": []
   }

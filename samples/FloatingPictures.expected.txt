@@ -141,8 +141,8 @@ Scaled to 80% height and 200% width
 
 
 This picture contains the following hyperlink: (http://www.nasa.gov/multimedia/imagegallery/index.html)
-http://www.nasa.gov/multimedia/imagegallery/index.html http://www http://www.nasa.gov/multimedia/imagegallery/index.html).nasa.gov/multimedia/imagegallery/index.html
-http://www.nasa.gov/multimedia/imagegallery/index.html  http://www.nasa.gov/multimedia/imagegallery/index.html)
+http://www.nasa.gov/multimedia/imagegallery/index.htmlhttp://www.nasa.gov/multimedia/imagegallery/index.html http://www.nasa.gov/multimedia/imagegallery/index.html)
+http://www.nasa.gov/multimedia/imagegallery/index.html http://www.nasa.gov/multimedia/imagegallery/index.html)
 
 
 This picture uses an “In line with text” layout.  The text will flow above it and below it, but will not fill in beside it.  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
@@ -169,7 +169,7 @@ This is a 4 x 3 table with varying column widths.  It is split across a page bou
 
 This is an embedded 3 x 4 Excel spreadsheet.  It has been stretched horizontally and vertically so the font is funny looking.  It has also been centered.
 
-EMBED Excel.Sheet.8   EMBED Excel.Sheet.8 (http://www.nasa.gov/multimedia/imagegallery/index.html )
+EMBED Excel.Sheet.8   EMBED Excel.Sheet.8 (http://www.nasa.gov/multimedia/imagegallery/index.html)
 
 
 
@@ -181,4 +181,4 @@ Office Open XML sample.doc
 This is plain text in the footer.  The next line contains three “AutoText” fields.
 John Greer	Page 2	4/26/2006
 This sentence is preceded by a manual page break.  It is on a page that is landscape-oriented.
-This is a comment.
+This is a comment.

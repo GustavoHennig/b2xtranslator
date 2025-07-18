@@ -5,18 +5,18 @@ to
 Lakeland Electric 
 by
 Enron North America Corp.
-(Revised September 1728, 1999)
+(Revised September 28, 1999)
 
 
 
-Buyer:	Lakeland Electric (ìLakelandî)
+Buyer:	Lakeland Electric (‚ÄúLakeland‚Äù)
 
-Seller:	Enron North America Corp. (ìENAî)
+Seller:	Enron North America Corp. (‚ÄúENA‚Äù)
 
 
 Scope of Agreement
 
-ENA proposes to provide: (1) a competitively priced delivered Firm Gas Supply to Lakelandís 360 MW Westinghouse combined-cycle ì501-Gî installation at the McIntosh Plant (ìMcIntosh Plantî), (2) a Supplemental Gas Supply, as needed by Lakeland, and (3)  a Nominating and Scheduling Service. 
+ENA proposes to provide: (1) a competitively priced delivered Firm Gas Supply to Lakeland‚Äôs 360 MW Westinghouse combined-cycle ‚Äú501-G‚Äù installation at the McIntosh Plant (‚ÄúMcIntosh Plant‚Äù), (2) a Supplemental Gas Supply, as needed by Lakeland, and (3)  a Nominating and Scheduling Service. 
 
 
 Term of Agreement
@@ -30,13 +30,13 @@ The term of the agreement would extend year to year thereafter, unless either pa
 
 Quantity
 
-The Maximum Daily Quantity (ìMaxDQî) under the agreement would be 100,000 MMBtu per day.  62,000 MMBtu per day would be the Firm Gas Supply quantities (ìFirm MaxDQî).  38,000 MMBtu per day would be the Supplemental Gas Supply quantities (ìSupplemental MaxDQî).  The Firm MaxDQ and the Supplemental MaxDQ are further defined in Tables 1, 2, 3, and 4. 
+The Maximum Daily Quantity (‚ÄúMaxDQ‚Äù) under the agreement would be 100,000 MMBtu per day.  62,000 MMBtu per day would be the Firm Gas Supply quantities (‚ÄúFirm MaxDQ‚Äù).  38,000 MMBtu per day would be the Supplemental Gas Supply quantities (‚ÄúSupplemental MaxDQ‚Äù).  The Firm MaxDQ and the Supplemental MaxDQ are further defined in Tables 1, 2, 3, and 4. 
 
-The Firm MaxDQ would be scheduled each day by ENA for Lakeland unless Lakeland elects to exercise its option under the Buy Back pProvisions herein, or unless ENA elects to exercise its option under the  Recall of Delivered Gas Supply provision herein.  
+The Firm MaxDQ would be scheduled each day by ENA for Lakeland unless Lakeland elects to exercise its option under the Buy Back provision herein, or unless ENA elects to exercise its option under the  Recall of Delivered Gas Supply provision herein.  
 
-The MaxDQ will increase in the future to 110,000 MMBtu/day and the Firm MaxDQ will increase in the future to 72,000 MMBtu per day, coincident with start up of operations of the ANR Pipeline capacity if Lakeland has elected to exercise its option under the ANR Incremental Transportation Capacity  provision herein..  
+The MaxDQ will increase in the future to 110,000 MMBtu/day and the Firm MaxDQ will increase in the future to 72,000 MMBtu per day, coincident with start up of operations of the ANR Pipeline capacity if Lakeland has elected to exercise its option under the ANR Incremental Transportation Capacity  provision herein.
 
-The Supplemental MaxDQ would be requested by Lakeland on a day ahead basis for any day in which such gas might be needed by Lakeland.  Upon Lakelandís request, ENA would propose available quantities, pricing, and timing.  Lakeland would accept or reject all or a portion of the quantity proposed as Lakelandís fuel and power economics dictate. The quantity ultimately agreed to between the parties would be a firm obligation of the parties.
+The Supplemental MaxDQ would be requested by Lakeland on a day ahead basis for any day in which such gas might be needed by Lakeland.  Upon Lakeland‚Äôs request, ENA would propose available quantities, pricing, and timing.  Lakeland would accept or reject all or a portion of the quantity proposed as Lakeland‚Äôs fuel and power economics dictate. The quantity ultimately agreed to between the parties would be a firm obligation of the parties.
 
 
 
@@ -67,304 +67,111 @@ The Supplemental MaxDQ would be requested by Lakeland on a day ahead basis for a
 
 Table 1 :  Firm MaxDQ during Combined-Cycle Term
 (FGT Transportation Only)
-Month
-Assigned 
-FTS-1 (MMBtu/d)
-Assigned
-FTS-2 (MMBtu/d)
-Incremental Firm Volumes (MMBtu/d)
-Firm
-MaxDQ (MMBtu/d)
-January
-11,485
-13,444
-37,071
-62,000
-February
-11,485
-13,444
-37,071
-62,000
-March
-3,261
-20,944
-37,795
-62,000
-April
-7,672
-22,636
-31,692
-62,000
-May
-8,306
-20,223
-33,471
-62,000
-June
-8,306
-20,223
-33,471
-62,000
-July
-8,306
-20,223
-33,471
-62,000
-August
-8,306
-20,223
-33,471
-62,000
-September
-8,306
-20,223
-33,471
-62,000
-October
-9,952
-20,948
-31,100
-62,000
-November
-17,724
-13,444
-30,832
-62,000
-December
-11,485
-13,444
-37,071
-62,000
+	Month	Assigned FTS-1 (MMBtu/d)	AssignedFTS-2 (MMBtu/d)	Incremental Firm Volumes (MMBtu/d)	FirmMaxDQ (MMBtu/d)
+	January	11,485	13,444	37,071	62,000
+	February	11,485	13,444	37,071	62,000
+	March	3,261	20,944	37,795	62,000
+	April	7,672	22,636	31,692	62,000
+	May	8,306	20,223	33,471	62,000
+	June	8,306	20,223	33,471	62,000
+	July	8,306	20,223	33,471	62,000
+	August	8,306	20,223	33,471	62,000
+	September	8,306	20,223	33,471	62,000
+	October	9,952	20,948	31,100	62,000
+	November	17,724	13,444	30,832	62,000
+	December	11,485	13,444	37,071	62,000
 
 
 Table 2 :  Firm MaxDQ during Combined-Cycle Term 
 (With FGT & ANR Transportation)
-Month
-Designee Status 
-FTS-1 (MMBtu/d)
-Designee Status ANR Firm
-(MMBtu/d)
-
-Incremental Firm Volumes (MMBtu/d)
-Firm
-MaxDQ (MMBtu/d)
-January
-11,485
-13,44430,000
-37,07130,515
-62,00072,000
-February
-11,485
-13,44430,000
-37,07130,515
-62,00072,000
-March
-3,261
-20,94430,000
-37,79538,739
-62,00072,000
-April
-7,672
-22,63630,000
-31,69234,328
-62,00072,000
-May
-8,306
-20,22330,000
-33,47133,694
-62,00072,000
-June
-8,306
-20,22330,000
-33,47133,694
-62,00072,000
-July
-8,306
-20,22330,000
-33,47133,694
-62,00072,000
-August
-8,306
-20,22330,000
-33,47133,694
-62,00072,000
-September
-8,306
-20,22330,000
-33,47133,694
-62,00072,000
-October
-9,952
-20,94830,000
-31,10032,048
-62,00072,000
-November
-17,724
-13,44430,000
-30,83224,276
-62,00072,000
-December
-11,485
-13,44430,000
-37,07130,515
-62,00072,000
+	Month	Designee Status FTS-1 (MMBtu/d)	Designee Status ANR Firm(MMBtu/d)	Incremental Firm Volumes (MMBtu/d)	FirmMaxDQ (MMBtu/d)
+	January	11,485	30,000	30,515	72,000
+	February	11,485	30,000	30,515	72,000
+	March	3,261	30,000	38,739	72,000
+	April	7,672	30,000	34,328	72,000
+	May	8,306	30,000	33,694	72,000
+	June	8,306	30,000	33,694	72,000
+	July	8,306	30,000	33,694	72,000
+	August	8,306	30,000	33,694	72,000
+	September	8,306	30,000	33,694	72,000
+	October	9,952	30,000	32,048	72,000
+	November	17,724	30,000	24,276	72,000
+	December	11,485	30,000	30,515	72,000
 
 
 
 
 Table 3:  Firm and Supplemental MaxDQ
 (FGT Transportation Only)
-Month
-Supplemental MaxDQ
-MMBtu/d)
-Firm
-MaxDQ (MMBtu/d)
-MaxDQ (MMBtu/d)
-January
-38,000
-62,000
-100,000
-February
-38,000
-62,000
-100,000
-March
-38,000
-62,000
-100,000
-April
-38,000
-62,000
-100,000
-May
-38,000
-62,000
-100,000
-June
-38,000
-62,000
-100,000
-July
-38,000
-62,000
-100,000
-August
-38,000
-62,000
-100,000
-September
-38,000
-62,000
-100,000
-October
-38,000
-62,000
-100,000
-November
-38,000
-62,000
-100,000
-December
-38,000
-62,000
-100,000
+	Month	Supplemental MaxDQMMBtu/d)	FirmMaxDQ (MMBtu/d)	MaxDQ (MMBtu/d)
+	January	38,000	62,000	100,000
+	February	38,000	62,000	100,000
+	March	38,000	62,000	100,000
+	April	38,000	62,000	100,000
+	May	38,000	62,000	100,000
+	June	38,000	62,000	100,000
+	July	38,000	62,000	100,000
+	August	38,000	62,000	100,000
+	September	38,000	62,000	100,000
+	October	38,000	62,000	100,000
+	November	38,000	62,000	100,000
+	December	38,000	62,000	100,000
 
 
 Table 4:  Firm and Supplemental MaxDQ
 (With FGT & ANR  Transportation)
-Month
-Supplemental MaxDQ
-MMBtu/d)
-Firm
-MaxDQ (MMBtu/d)
-MaxDQ (MMBtu/d)
-January
-38,000
-72,000
-110,000
-February
-38,000
-72,000
-110,000
-March
-38,000
-72,000
-110,000
-April
-38,000
-72,000
-110,000
-May
-38,000
-72,000
-110,000
-June
-38,000
-72,000
-110,000
-July
-38,000
-72,000
-110,000
-August
-38,000
-72,000
-110,000
-September
-38,000
-72,000
-110,000
-October
-38,000
-72,000
-110,000
-November
-38,000
-72,000
-110,000
-December
-38,000
-72,000
-110,000
+	Month	Supplemental MaxDQMMBtu/d)	FirmMaxDQ (MMBtu/d)	MaxDQ (MMBtu/d)
+	January	38,000	72,000	110,000
+	February	38,000	72,000	110,000
+	March	38,000	72,000	110,000
+	April	38,000	72,000	110,000
+	May	38,000	72,000	110,000
+	June	38,000	72,000	110,000
+	July	38,000	72,000	110,000
+	August	38,000	72,000	110,000
+	September	38,000	72,000	110,000
+	October	38,000	72,000	110,000
+	November	38,000	72,000	110,000
+	December	38,000	72,000	110,000
 
 
 
 
 Delivery Point(s)
 
-The primary delivery point for all deliveries hereunder would be the interconnection between Florida Gas Transmission (ìFGTî) and (i) Lakeland - McIntosh Plant, and/or (ii) Lakeland Generating.  The secondary delivery point(s) would be any other Delivery Point(s) on the entire FGT system, subject to limitations by FGT for secondary deliveries. To the extent ANR Pipeline was added to this agreement, the primary delivery point(s) would be revised accordingly.  
+The primary delivery point for all deliveries hereunder would be the interconnection between Florida Gas Transmission (‚ÄúFGT‚Äù) and (i) Lakeland - McIntosh Plant, and/or (ii) Lakeland Generating.  The secondary delivery point(s) would be any other Delivery Point(s) on the entire FGT system, subject to limitations by FGT for secondary deliveries. To the extent ANR Pipeline was added to this agreement, the primary delivery point(s) would be revised accordingly.  
 
 Buy Back Provisions
 
-ìDay Aheadî Buy Back of Gas 
-By providing notice by 9:00 a.m. Eastern Time on the morning of FGTís chart time nomination deadline, Lakeland would have the option to request quantities to be delivered less than the Firm MaxDQ.  In such event, ENA would buy back such excess quantities of gas at the price set forth below.
+‚ÄúDay Ahead‚Äù Buy Back of Gas 
+By providing notice by 9:00 a.m. Eastern Time on the morning of FGT‚Äôs chart time nomination deadline, Lakeland would have the option to request quantities to be delivered less than the Firm MaxDQ.  In such event, ENA would buy back such excess quantities of gas at the price set forth below.
 
-ìIntradayî Buy Back of Gas
-Upon providing two (2) hours notice prior to FGTís intraday nomination deadlines for the applicable gas day, Lakeland would have the option to request quantities to be delivered less than the quantities previously scheduled.  In such event, ENA would buy back such excess quantities of gas at the price set forth below.
+‚ÄúIntraday‚Äù Buy Back of Gas
+Upon providing two (2) hours notice prior to FGT‚Äôs intraday nomination deadlines for the applicable gas day, Lakeland would have the option to request quantities to be delivered less than the quantities previously scheduled.  In such event, ENA would buy back such excess quantities of gas at the price set forth below.
 
 Recall of Delivered Gas Supply
 
-On a day ahead basis, and as set forth in the Nominations and Scheduling paragraph below, ENA would have the right to recall the gas supply that Lakeland has requested to be scheduled and delivered to its citygate.  At any time that ENA recalls delivered gas supply requested by Lakeland, ENA would buy such Recall Gas at the price set forth below.  In addition, Lakeland has the right to buy back such Recall Gas if neededLakeland relieved of its obligation to pay ENA the applicable Contract Price and would receive a credit on the next monthís invoice.  Further, during such recall period, Lakeland would have the right to buy back from ENA such delivered gas which was recalled by ENA at an agreed to price which is reflective of current market conditions. at the price set forth below.
+On a day ahead basis, and as set forth in the Nominations and Scheduling paragraph below, ENA would have the right to recall the gas supply that Lakeland has requested to be scheduled and delivered to its citygate.  At any time that ENA recalls delivered gas supply requested by Lakeland, ENA would buy such Recall Gas at the price set forth below.  In addition, Lakeland has the right to buy back such Recall Gas if needed at the price set forth below.
 
 Contract Price
 
 Firm Gas Supply Price
-Lakeland would pay ENA a two-part rate consisting of a Monthly Demand Charge and a Commodity Charge (ìContract Priceî) as follows:
+Lakeland would pay ENA a two-part rate consisting of a Monthly Demand Charge and a Commodity Charge (‚ÄúContract Price‚Äù) as follows:
 
 Monthly Demand Charge - Lakeland would pay ENA the sum of (i) the FGT FTS-1 demand charge in effect for any month, times the corresponding Lakeland capacity FTS-1 volumes in Table 1, times the number of days for such month, and (ii) the FGT FTS-2 demand charge in effect for any month, times the sum of the corresponding Lakeland capacity FTS-2 volumes and the Incremental Firm Volumes in Table 1, times the number of days for such month.
 
-Commodity Charge - The sum of (i) the first of the month Index as published in Inside F.E.R.C.ís Gas Market Report, (ìIndex Priceî) for all gas delivered in FGT Zone 2, plus (ii) the applicable FTS-1 and FTS-2 variable transport costs (including fuel retention) on FGT, less (iii) a discount for the assigned FTS-1 and FTS-2 volumes of $0.07 per MMBtu, and a discount for the Incremental Firm Volumes of $0.15 per MMBtu ( such discount would not be applicable for quantities under the proposed ANR Pipeline capacity.)
+Commodity Charge - The sum of (i) the first of the month Index as published in Inside F.E.R.C.‚Äôs Gas Market Report, (‚ÄúIndex Price‚Äù) for all gas delivered in FGT Zone 2, plus (ii) the applicable FTS-1 and FTS-2 variable transport costs (including fuel retention) on FGT, less (iii) a discount for the assigned FTS-1 and FTS-2 volumes of $0.07 per MMBtu, and a discount for the Incremental Firm Volumes of $0.15 per MMBtu ( such discount would not be applicable for quantities under the proposed ANR Pipeline capacity.)
 
-Lakeland would have the option to periodically request ENA to modify the Commodity Charge to reflect a price other than the Index Price, such as a fixed price, fixed basis price, floating basis price, Gas Daily price, or any other mutually agreed to pricing structure, as more fully described in ENAís Master Firm Agreement. 
+Lakeland would have the option to periodically request ENA to modify the Commodity Charge to reflect a price other than the Index Price, such as a fixed price, fixed basis price, floating basis price, Gas Daily price, or any other mutually agreed to pricing structure, as more fully described in ENA‚Äôs Master Firm Agreement. 
 
 
 
 Buyback Provision Gas Price
 
-ENA would pay Lakeland a fixed price for ìDay Aheadî Buyback Gas as mutually agreed to each day, or a default price of the Gas Daily, Citygate, common, low posting for Florida gates via FGT. ENA would pay Lakeland a fixed price for ìIntradayî Buyback Gas as mutually agreed to each day, or a default price of the Gas Daily, Citygate, common, low posting for Florida gates via FGT, as posted for the higher of the flowing gas day or the day after the flowing gas day. 
+ENA would pay Lakeland a fixed price for ‚ÄúDay Ahead‚Äù Buyback Gas as mutually agreed to each day, or a default price of the Gas Daily, Citygate, common, low posting for Florida gates via FGT. ENA would pay Lakeland a fixed price for ‚ÄúIntraday‚Äù Buyback Gas as mutually agreed to each day, or a default price of the Gas Daily, Citygate, common, low posting for Florida gates via FGT, as posted for the higher of the flowing gas day or the day after the flowing gas day. 
 
 Recall Provision Gas Price
-ENA would pay Lakeland for Recall Gas quantities whereby Lakeland would be relieved of its obligation to pay ENA the applicable Contract Price and would receive a credit on the next monthís invoice.  Further, if Lakeland needs to buy back such Recall Gas from ENA, Lakeland would pay ENA an agreed to price each day, which is reflective of current market conditions, or a default price of the Gas Daily, Citygate, common, high posting for Florida gates via FGT. 
+ENA would pay Lakeland for Recall Gas quantities whereby Lakeland would be relieved of its obligation to pay ENA the applicable Contract Price and would receive a credit on the next month‚Äôs invoice.  Further, if Lakeland needs to buy back such Recall Gas from ENA, Lakeland would pay ENA an agreed to price each day, which is reflective of current market conditions, or a default price of the Gas Daily, Citygate, common, high posting for Florida gates via FGT. 
 
 
 Supplemental Gas Supply Price
@@ -372,7 +179,7 @@ Lakeland would pay ENA a price for each Supplemental Gas Supply package as perio
 
 Nominating and Scheduling Service
 
-ENA would provide all nominating and scheduling for the Firm Gas Supply and the Supplemental Gas Supply hereunder. Pursuant to this agreement, Lakeland has the right to request ENA to nominate and schedule gas supply from third parties (ìThird Party Gas Supplyî). There are no additional charges associated with ENA providing such service for Lakeland. 
+ENA would provide all nominating and scheduling for the Firm Gas Supply and the Supplemental Gas Supply hereunder. Pursuant to this agreement, Lakeland has the right to request ENA to nominate and schedule gas supply from third parties (‚ÄúThird Party Gas Supply‚Äù). There are no additional charges associated with ENA providing such service for Lakeland. 
 
 Take and Delivery Obligations
 
@@ -380,11 +187,11 @@ Lakeland would purchase and take 100% of the gas that it requests each day. ENA 
 
 ANR Incremental Transportation Capacity
 
-To the extent ANR, or other pipeline companies, constructs a new pipeline (ìANR Pipelineî) into the state of Florida, Lakeland may currently has the option to contract for such incremental firm transportation capacity, and. Pursuant to this agreement, Lakeland would have the option to put such  firm capacity to ENA for use by ENA to provide delivered gas supply to Lakeland hereunder.
+To the extent ANR, or other pipeline companies, constructs a new pipeline (‚ÄúANR Pipeline‚Äù) into the state of Florida, Lakeland may contract for such incremental firm transportation capacity, and Lakeland would have the option to put such firm capacity to ENA for use by ENA to provide delivered gas supply to Lakeland hereunder.
 
-Coincident with start up of operations of such ANR Pipeline capacity, Lakeland will take back from ENA the use of its FGT FTS-2 capacity for use in a separate Lakeland prearranged capacity transaction.  
+Coincident with start up of operations of such ANR Pipeline capacity, Lakeland will take back from ENA the use of its FGT FTS-2 capacity for use in a separate Lakeland prearranged capacity transaction.
 
-Lakelandís option to put such capacity to ENA would be contingent various competitive factors, including but not limited to the (i) in-service date of the ANR Pipeline is no later than December 31, 2001, (ii) ANR Pipeline demand,  and commodity charges, fuel retention, and other applicable surcharges, (iii) gas supply pricing and availability on ANR Pipeline, and (iv) nominating and scheduling requirements on ANR Pipeline, (v) operating conditions on ANR Pipeline, and (vi) seasonal volume differences between Lakelandís FGT FTS-2 and ANR Pipeline capacity configurations. To the extent all the above factors are satisfactory to Lakeland and ENA, the Contract Price hereunder with respect to the discount provided to Lakeland herein, would be adjusted downward to reflect the reduction in the winter quantities delivered to Lakeland via FGT and the increase in the summer quantities delivered to Lakeland via FGT. 
+Lakeland‚Äôs option to put such capacity to ENA would be contingent various competitive factors, including but not limited to the (i) in-service date of the ANR Pipeline is no later than December 31, 2001, (ii) ANR Pipeline demand, commodity charges, fuel retention, and other applicable surcharges, (iii) gas supply pricing and availability on ANR Pipeline, (iv) nominating and scheduling requirements on ANR Pipeline, (v) operating conditions on ANR Pipeline, and (vi) seasonal volume differences between Lakeland‚Äôs FGT FTS-2 and ANR Pipeline capacity configurations. 
 
 Nominations and Scheduling 
 
@@ -392,71 +199,33 @@ Lakeland would be responsible for directly requesting its daily gas supply requi
 
 Transportation Contract Designee Status
 
-This proposal contemplates that Lakeland would authorize ìDesignee Statusî for ENA to operate Lakelandís existing FTS-1 and FTS-2 firm transportation capacity on amountsFGT. Lakelandís capacity amounts are indicated in Table agreements3. Lakeland would be responsible for extending the term of such agreements at the request of ENA during the term of this agreementhereunder.  ECT would be hereunder. ECT would beresponsible  Upon termination of the agreement, ENA ìDesignee Statusî would be rescinded and would go back to Lakeland.  The receipt points on these Firm Transportation agreements are outlined on Exhibit ìAî attached hereto. Both parties shall mutually agree on changes or modifications to receipt and/or delivery points. 
-Month
-FTS-1 
-(MMBtu/d)
-FTS-2 
-(MMBtu/d)
-
-
-
-Month
-Designee Status
-FTS-1 
-(MMBtu/d)
-Designee Status
-FTS-2 
-(MMBtu/d)
-January
-11,485
-13,444
-February
-11,485
-13,444
-March
-3,261
-20,944
-April
-7,672
-22,636
-May
-8,306
-20,223
-June
-8,306
-20,223
-July
-8,306
-20,223
-August
-8,306
-20,223
-September
-8,306
-20,223
-October
-9,952
-20,948
-November
-17,724
-13,444
-December
-11,485
-13,444
-
-
-
+This proposal contemplates that Lakeland would authorize ‚ÄúDesignee Status,‚Äù or other applicable agency status, for ENA to operate Lakeland‚Äôs existing FGT FTS-1 and FTS-2 firm transportation capacity, and proposed ANR Pipeline firm transportation capacity. Lakeland would be responsible for extending the term of such agreements at the request of ENA should such agreements reach a termination date Upon termination of the agreement, ENA ‚ÄúDesignee Status‚Äù would be rescinded and would go back to Lakeland.  The receipt points on these Firm Transportation agreements are outlined on Exhibit ‚ÄúA‚Äù attached hereto. Both parties shall mutually agree on changes or modifications to receipt and/or delivery points. 
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 
 Billing and Payment
 
-ENA would provide its demand charge invoice by the first (1st) day of each month for thee upcoming monthís Demand Charge.  Lakeland would pay ENA the Monthly Demand Charge on or before the tenth (10th) day of such month.  ENA would provide its commodity charge invoice by the tenth (10th) day of each month forall the monthís Commodity Charges. due from the previous month.  Lakeland would pay ENA the Commodity Charge on or before the twentieth (20th) day of such month.  Any liquidated damages replacement gas cost and buyback arrangements would be settled on a monthly basis.   Interest on unpaid amounts would accrue from the date such payments were due at a rate equal to LIBOR plus 2%.  
+ENA would provide its demand charge invoice by the first (1st) day of each month for the month‚Äôs Demand Charge.  Lakeland would pay ENA the Monthly Demand Charge on or before the tenth (10th) day of such month.  ENA would provide its commodity charge invoice by the tenth (10th) day of each month for the month‚Äôs Commodity Charges.  Lakeland would pay ENA the Commodity Charge on or before the twentieth (20th) day of such month.  Any  replacement gas cost and buyback arrangements would be settled on a monthly basis.   Interest on unpaid amounts would accrue from the date such payments were due at a rate equal to LIBOR plus 2%.  
 
 Replacement Gas Provisions
 
-In the event of ENAís unexcused failure to schedule gas requested by Lakeland on any given day, ENA would pay liquidated damages equal to the sum of (i) the difference, if positive, between the Gas Daily, Midpoint, posting for deliveries in FGT-Zone 2 and the delivered contract price inclusive of Lakelandís unitized demand charge, and (ii) applicable penalties and/or balancing requirements on FGT. ENA shall be limited to ten (10) unexcused failures to schedule gas requested by Lakeland in any twelve (12) month period. 
+In the event of ENA‚Äôs unexcused failure to schedule gas requested by Lakeland on any given day, ENA would pay liquidated damages equal to the sum of (i) the difference, if positive, between the Gas Daily, Midpoint, posting for deliveries in FGT-Zone 2 and the delivered contract price inclusive of Lakeland‚Äôs unitized demand charge, and (ii) applicable penalties and/or balancing requirements on FGT. ENA shall be limited to ten (10) unexcused failures to schedule gas requested by Lakeland in any twelve (12) month period. 
 
-In the event that Lakeland fails to take its obligation on any given day, Lakeland would pay liquidated damages calculated daily as the sum of (i) the difference, if positive, between the Gas Daily, Midpoint, posting for deliveries in FGT-Zone 2 and the delivered contract price inclusive of Lakelandís unitized demand charge, charge, plus (2) applicable penalties and/or balancing requirements on FGT and applicable upstream pipelines.
+In the event that Lakeland fails to take its obligation on any given day, Lakeland would pay liquidated damages calculated daily as the sum of (i) the difference, if positive, between the Gas Daily, Midpoint, posting for deliveries in FGT-Zone 2 and the delivered contract price inclusive of Lakeland‚Äôs unitized demand charge, charge, plus (2) applicable penalties and/or balancing requirements on FGT and applicable upstream pipelines.
 
 Reasonable efforts would be exercised by ENA and Lakeland for mitigation of replacement costs and associated factors. Both parties would be obligated to inform the other party of its intent to replace gas markets or supplies, respectively, prior to taking such actions.  
 
@@ -464,7 +233,7 @@ As part of its nominating and scheduling service, it is understood that ENA is n
 
 Confidentiality
 
-All terms and conditions of this proposal are proprietary trade secrets of ENA and are exempted by the ìFlorida Public Records Lawî and must be kept confidential between Lakeland, ENA and their duly appointed agents.
+All terms and conditions of this proposal are proprietary trade secrets of ENA and are exempted by the ‚ÄúFlorida Public Records Law‚Äù and must be kept confidential between Lakeland, ENA and their duly appointed agents.
 
 
 
@@ -479,4 +248,9 @@ The prices in this proposal are subject to change until a final agreement is rea
 
 
 
-Lakegas2326.doc	09/1728/99
+Lakegas26.doc	09/28/99
+Confidential For Discussion Only
+Page 
+		
+
+		

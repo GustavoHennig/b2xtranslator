@@ -7,7 +7,7 @@ Maecenas mauris lectus, lobortis et purus mattis, blandit dictum tellus.
 Maecenas non lorem quis tellus placerat varius. 
 Nulla facilisi. 
 Aenean congue fringilla justo ut aliquam. 
-Mauris id ex erat. (https://products.office.com/en-us/word)Nunc vulputate neque vitae justo facilisis, non condimentum ante sagittis. 
+Mauris id ex erat. Nunc vulputate neque vitae justo facilisis, non condimentum ante sagittis https://products.office.com/en-us/word). 
 Morbi viverra semper lorem nec molestie. 
 Maecenas tincidunt est efficitur ligula euismod, sit amet ornare est vulputate.
 

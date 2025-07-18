@@ -341,7 +341,11 @@ The difference between the LFS-unemployed and registered unemployed decreases wi
 
 Graph ES01
 
+The new national system on registered unemployed SISPE = Sistema de Información Público de Empleo is available since June 2005.
+The revised data on registered unemployment in Spain are 26,3 % higher than the respective old data. The figures are higher for all age groups, but the biggest changes are within the main working age with changes of 30 % and more for the age groups 25-29 to 40-44.
+The groups to be included in the registered unemployed have been reclassified. From the several changes that have occurred, those resulting in higher figures may be the inclusion of unemployed immigrants and unemployed agricultural workers. A different calculation is also used for the marginally employed (less than 20 hours a week), but this should only reflect the registered jobseekers and not the registered unemployed, (Cortés, Ocana 2005).
 
+Graph ES01_new
 
 
 (c) Registration with the public employment service, register data vs. LFS data on registration
@@ -358,7 +362,11 @@ In the PES register three different categories of jobseekers are added to the to
 Graph ES02
 
 (Legend: The three top labels refer to PES columns; the three lower labels refer to LFS columns)
+Whereas the unemployment registration information for the old data was quite close between LFS and PES, except for the older age group (see graph ES02), this is different, if the new data are taken into account. Now more people are registered as unemployed than compared to those unemployed in the LFS claiming to be registered:
 
+Graph ES02_new
+
+(Legend: The three top labels refer to PES columns; the three lower labels refer to LFS columns)
 
 
 

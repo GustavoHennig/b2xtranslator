@@ -1,92 +1,92 @@
- " L'incapacité de travail après une hysterectomie "
+Â " L'incapacitÃ© de travail aprÃ¨s une hysterectomieÂ "
 			
   
-Questionnaire rempli par le médecin conseil de la fédération :	"Tekstvak7"      
+Questionnaire rempli par le mÃ©decin conseil de la fÃ©dÃ©ration :	
 
-Date de l’examen médical (premier contact) :			""          
+Date de lâ€™examen mÃ©dical (premier contact) :			
                   
-Concerne l'assuré en incapacité de travail :
+Concerne l'assurÃ© en incapacitÃ© de travail :
 
-Numéro du Registre national:	 	""          
-Numéro federal:     				""      §/""µ          §
-Code postal :        				""µ        §
-Âge:						""µ    §
-Statut social:			 FORMDROPDOWN  §
-				Autre, à spéc?fier : "Text1"µ          §
+NumÃ©ro du Registre national:	Â 	
+NumÃ©ro federal:Â Â Â Â Â 				
+				
+Ã‚ge:						    
+Statut social:			
+				Autre, Ã  spÃ©cï¡¨fier :Â           
 
 
 Formation
 
-Jusqu’à quel âge :  "Text3"µ    §
-Degré de formation le plus élevé avec diplôme/certificat : FORMDROPDOWN  §	
+Jusquâ€™Ã  quel Ã¢ge :Â      
+DegrÃ© de formation le plus Ã©levÃ© avec diplÃ´me/certificat :	
 
 Profession
 
-Catégorie :			 FORMDROPDOWN  § 
-Demandeur d'emploi : 	 FORMDROPDOWN  §                	depuis :        "Text2"µ          §       
-Régime de travail :	 	 FORMDROPDOWN  §   nombre d'heures par semaine :      ""µ    § 
-Charge de travail : 		 FORMDROPDOWN  §
-Satisfaction du travail :     Etes vous content de votre emploi ?         FORMDROPDOWN  §  
- 
+CatÃ©gorie :			Â 
+Demandeur d'emploi :Â 	Â Â Â Â  Â Â Â Â Â Â Â Â Â Â Â 	depuis : Â Â Â Â Â Â Â           Â Â Â Â Â Â  
+RÃ©gime de travail :	Â 	   nombre d'heures par semaine :Â Â Â Â Â Â      
+Charge de travail :Â 		
+Satisfaction du travail : Â Â Â Â Etes vous content de votre emploi ?Â Â Â Â Â Â Â  Â Â 
+
                                                                                        
-Façon de vivre
+FaÃ§on de vivre
 
-Fumeur :	     FORMDROPDOWN  § 
-Alcool : 	     FORMDROPDOWN  § 
-Sport :	     FORMDROPDOWN  § 
+Fumeur :	Â Â Â Â Â 
+Alcool :Â 	Â Â Â Â Â 
+SportÂ :	    Â 
 
-Comorbidités		 FORMDROPDOWN  §
+ComorbiditÃ©s		
 
 Intervention:
 
-Type :		sans laxarascopie:	 FORMDROPDOWN  §
-		avec laparascopie:	 FORMDROPDOWN  §
-Indications:					 FORMDROPDOWN  §    
-Hôpital:                    			 FORMDROPDOWN  §
-Médecin:						 FORMDROPDOWN  §  
+Type :		sans laxarascopie:	
+		avec laparascopie:	
+Indications:					    
+HÃ´pital:                    			
+MÃ©decin:						  
 
 
 
 
 
-Incapacité de travail :
+IncapacitÃ© de travail :
 
-Date de début :          ""µ          §
-Première prescription de l’incapacité de travail prescrit par:	 FORMDROPDOWN  § 	
-Si autres, à spécifier: 	""µ          §
-Durée de la première incapacité de travail prescrite (en semaines) : 	 FORMDROPDOWN  §           
-Information préopératoire obtenu au sujet de l'incapacité de travail prévue:   	  FORMDROPDOWN  §  
-Interdiction de soulever des poids imposé par le gynécologue     FORMDROPDOWN  §  si oui durée:  FORMDROPDOWN  §
-Contrôle chez le médecin prévu combien de semaines après l’intervention:   	   FORMDROPDOWN  §
-                      					   
+Date de dÃ©but :Â Â Â Â Â Â Â Â Â            
+PremiÃ¨re prescription de lâ€™incapacitÃ© de travail prescrit par:	 	
+Si autres, Ã  spÃ©cifier: 	          
+DurÃ©e de la premiÃ¨re incapacitÃ© de travail prescrite (en semaines) :Â 	Â Â Â Â Â Â Â Â Â Â  
+Information prÃ©opÃ©ratoire obtenu au sujet de l'incapacitÃ© de travail prÃ©vue:Â Â Â 	 Â Â 
+Interdiction de soulever des poids imposÃ© par le gynÃ©cologueÂ Â Â Â Â Â si oui durÃ©e:Â 
+ContrÃ´le chez le mÃ©decin prÃ©vu combien de semaines aprÃ¨s lâ€™intervention:Â Â Â 	Â Â 
+Â Â Â Â Â  Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â 					Â Â  
 
 Les plaintes principales au moment de la consultation :
 
-Généralement :
-anémie :     					 FORMDROPDOWN  §
-fatigue :             				 FORMDROPDOWN  § 
-douleur abdominale:        			 FORMDROPDOWN  § 
-usage limité des muscles ventraux	 FORMDROPDOWN  §                       
-incontinence urinaire   			 FORMDROPDOWN  §
-Gynécologiquement :
-douleurs gynécologiques                	 FORMDROPDOWN  §	
-pertes de sang 	  	          	 FORMDROPDOWN  §                                                
-problèmes hormonaux        		 FORMDROPDOWN  § 
+GÃ©nÃ©ralement :
+anÃ©mie :Â Â Â Â Â 					
+fatigue :Â Â Â Â Â Â Â Â Â Â Â Â Â 				 
+douleur abdominale:Â Â Â Â Â Â Â Â 			 
+usage limitÃ© des muscles ventraux	Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â  
+incontinence urinaireÂ Â Â 			
+GynÃ©cologiquement :
+douleurs gynÃ©cologiquesÂ Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â 		
+pertes de sangÂ 	Â Â 	Â Â Â Â Â Â Â Â Â Â 	Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â  
+problÃ¨mesÂ hormonauxÂ Â Â Â Â Â Â Â 		 
 Mentalement :
-depuis l’operation sentiment abattu, moins de plaisir ou moins d’intérêt dans les choses journalières                                  			 FORMDROPDOWN  §                  
-depuis l’opération sentiment tendu, inquiet ou craintif          FORMDROPDOWN  §        
-Incidence émotionnelle de l’intervention				 FORMDROPDOWN  §
-                                         
-Medication utilisation spécifique après l’hystérectomie :
+depuis lâ€™operation sentiment abattu, moins de plaisir ou moins dâ€™intÃ©rÃªt dans les choses journaliÃ¨res Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â 			Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â  
+depuis lâ€™opÃ©ration sentiment tendu, inquiet ou craintifÂ Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â  
+Incidence Ã©motionnelle de lâ€™intervention				
+Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â Â  
+Medication utilisation spÃ©cifique aprÃ¨s lâ€™hystÃ©rectomie :
 
-Contre la douleur				 FORMDROPDOWN  §
-Les préparations hormonales 		 FORMDROPDOWN  §
-Autre           					 FORMDROPDOWN  §    si oui, spécifier      ""µ          §
-
-
+Contre la douleur				
+Les prÃ©parations hormonalesÂ 		
+AutreÂ Â Â Â Â Â Â Â Â Â Â 					Â    si oui, spÃ©cifierÂ Â Â Â Â            
 
 
-Vous pouvez envoyer ce questionnaire à:
 
- HYPERLINK "mailto:mireille.debruyn2@socmut.be" µmireille.debruyn2@socmut.be§ ou
- HYPERLINK "mailto:philiep.berkein@socmut.be" µphiliep.berkein@socmut.be§                                       
+
+Vous pouvez envoyer ce questionnaire Ã :
+
+mireille.debruyn2@socmut.be ou (mailto:mireille.debruyn2@socmut.be)
+mailto:mireille.debruyn2@socmut.bephiliep.berkein@socmut.be (mailto:philiep.berkein@socmut.be)                                       

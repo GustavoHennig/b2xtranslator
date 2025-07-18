@@ -18,10 +18,10 @@ providing macro-financial assistance to Georgia
 
 
 (SEC(2005)1449)
-ah: source= http://eur-lex.europa.eu/lexuriserv/site/en/com/2005/com2005_0571en01.doc (http://eur-lex.europa.eu/LexUriServ/site/en/com/2005/com2005_0571en01.doc \o http://eur-lex.europa.eu/LexUriServ/site/en/com/2005/com2005_0571en01.doc).
+ah: source= http://eur-lex.europa.eu/lexuriserv/site/en/com/2005/com2005_0571en01.doc (http://eur-lex.europa.eu/LexUriServ/site/en/com/2005/com2005_0571en01.doc).
 (presented by the Commission)
 
-EN			EN
+EN		http://eur-lex.europa.eu/LexUriServ/site/en/com/2005/com2005_0571en01.doc 	EN
 EN			EN
 EXPLANATORY MEMORANDUM
 	Context of the proposal
@@ -51,8 +51,8 @@ EXPLANATORY MEMORANDUM
 		Review/revision/sunset clause
 	533	The proposal includes a sunset clause.
 
-EN			EN
-EN			ENEN			ENEN			ENEN			ENEN			ENEN			ENEN			ENEN			ENEN			ENEN			ENEN			ENEN			ENEN			ENEN			ENEN			ENEN			ENEN			ENEN			ENEN			ENEN			ENEN			ENEN		EN
+EN	16	 	EN
+EN	16	 	ENEN	16	 	ENEN	17	 	ENEN	17	 	ENEN	7	 	ENEN	17	 	ENEN	8	 	ENEN	12	 	ENEN	1	 	ENEN	0	 	ENEN	18	 	ENEN	18	 	ENEN	18	 	ENEN	18	 	ENEN	0	 	ENEN	18	 	ENEN	18	 	ENEN	18	 	ENEN	18	 	ENEN	18	 	ENEN	2	 	ENEN	 	EN
 2005/0224(CNS)
 Proposal for a
 COUNCIL DECISION

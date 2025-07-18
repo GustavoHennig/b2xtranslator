@@ -64,10 +64,6 @@ The parsing logic often lacks sufficient validation and error-trapping. It proce
 - `Doc/DocFileFormat/FileInformationBlock.cs`
 - Any code that involves reading from `byte[]` or `Stream` objects based on offsets read from the file itself.
 
-## Success Criteria
-1.  **No Crashes**: The application no longer crashes with unhandled exceptions when processing malformed files.
-2.  **Meaningful Errors**: When a file is too corrupt to process, a specific and informative error is reported to the user or calling application.
-3.  **Partial Success**: Where possible, the library extracts as much content as it can from a partially corrupt file.
 
 ## Current Status (Verified)
 **PARTIALLY IMPLEMENTED** - Testing shows basic error handling exists but needs enhancement:
