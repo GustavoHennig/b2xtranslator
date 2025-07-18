@@ -28,8 +28,16 @@ namespace b2xtranslator.txt.TextMapping
         {
             _doc = doc;
 
-            _writer.WriteStartElement("v", "textbox", OpenXmlNamespaces.VectorML);
-            _writer.WriteStartElement("w", "txbxContent", OpenXmlNamespaces.WordprocessingML);
+            // Check if we're doing plain text extraction
+            bool isPlainText = !(_writer.GetType() == typeof(MainDocumentPart) || 
+                                _writer.GetType() == typeof(HeaderPart) || 
+                                _writer.GetType() == typeof(FooterPart));
+
+            if (!isPlainText)
+            {
+                _writer.WriteStartElement("v", "textbox", OpenXmlNamespaces.VectorML);
+                _writer.WriteStartElement("w", "txbxContent", OpenXmlNamespaces.WordprocessingML);
+            }
 
             int cp = 0;
             int cpEnd = 0;
@@ -42,12 +50,27 @@ namespace b2xtranslator.txt.TextMapping
                 cpEnd = txtbxSubdocStart + doc.TextboxBreakPlex.CharacterPositions[_textboxIndex + 1];
                 bkd = doc.TextboxBreakPlex.Elements[_textboxIndex];
             }
-            if (_writer.GetType() == typeof(HeaderPart) || _writer.GetType() == typeof(FooterPart)) // FIXME (Types not used)
+            else if (_writer.GetType() == typeof(HeaderPart) || _writer.GetType() == typeof(FooterPart)) // FIXME (Types not used)
             {
                 txtbxSubdocStart += doc.FIB.ccpTxbx;
                 cp = txtbxSubdocStart + doc.TextboxBreakPlexHeader.CharacterPositions[_textboxIndex];
                 cpEnd = txtbxSubdocStart + doc.TextboxBreakPlexHeader.CharacterPositions[_textboxIndex + 1];
                 bkd = doc.TextboxBreakPlexHeader.Elements[_textboxIndex];
+            }
+            else if (isPlainText)
+            {
+                // For plain text extraction, default to main document textbox handling
+                if (doc.TextboxBreakPlex != null && _textboxIndex < doc.TextboxBreakPlex.CharacterPositions.Count - 1)
+                {
+                    cp = txtbxSubdocStart + doc.TextboxBreakPlex.CharacterPositions[_textboxIndex];
+                    cpEnd = txtbxSubdocStart + doc.TextboxBreakPlex.CharacterPositions[_textboxIndex + 1];
+                    if (_textboxIndex < doc.TextboxBreakPlex.Elements.Count)
+                    {
+                        bkd = doc.TextboxBreakPlex.Elements[_textboxIndex];
+                    }
+                    
+                    System.Console.WriteLine($"[DEBUG] Plain text textbox: index={_textboxIndex}, cp={cp}, cpEnd={cpEnd}, txtbxSubdocStart={txtbxSubdocStart}");
+                }
             }
 
             //convert the textbox text
@@ -71,8 +94,11 @@ namespace b2xtranslator.txt.TextMapping
                 }
             }
 
-            _writer.WriteEndElement();
-            _writer.WriteEndElement();
+            if (!isPlainText)
+            {
+                _writer.WriteEndElement();
+                _writer.WriteEndElement();
+            }
 
             _writer.Flush();
         }

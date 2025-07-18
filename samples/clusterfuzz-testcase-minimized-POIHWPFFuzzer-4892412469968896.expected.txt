@@ -139,7 +139,7 @@ Scaled to 50%
 Scaled to 80% height and 200% width
 
 
-This picture contains the following hyperlink:HYPERLINK \l "http://www http://www.nasa.gov/multimedia/imagegallery/index.html).nasa.gov/multimedia/imagegallery/index.html" http://www.nasa.gov/multimedia/imagegallery/index.html http://www.nasa.gov/multimedia/imagegallery/index.html
+This picture contains the following hyperlink:http://www.nasa.gov/multimedia/imagegallery/index.htmlhttp://www.nasa.gov/multimedia/imagegallery/index.html http://www.nasa.gov/multimedia/imagegallery/index.html) \l "http://www.nasa.gov/multimedia/imagegallery/index.html")
  http://www.nasa.gov/multimedia/imagegallery/index.html)
 
 
@@ -167,7 +167,7 @@ This is a 4 x 3 table with varying column widths.  It is split across a page bou
 
 This is an embedded 3 x 4 Excel spreadsheet.  It has been stretched horizontally and vertically so the font is funny looking.  It has also been centered.
 
-EMBED Excel.Sheet.8   EMBED Excel.Sheet.8 (http://www.nasa.gov/multimedia/imagegallery/index.html )
+EMBED Excel.Sheet.8   EMBED Excel.Sheet.8 (http://www.nasa.gov/multimedia/imagegallery/index.html)
 
 
 
@@ -179,4 +179,4 @@ Office Open XML sample.doc
 This is plain text in the footer.  The next line contains three “AutoText” fields.
 John Greer	Page 2	4/26/2006
 This sentence is preceded by a manual page break.  It is on a page that is landscape-oriented.
-This is a comment.
+This is a comment.

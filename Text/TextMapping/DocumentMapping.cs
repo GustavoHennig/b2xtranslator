@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Text;
 using b2xtranslator.DocFileFormat;
 using b2xtranslator.CommonTranslatorLib;
 using System.Xml;
@@ -1211,6 +1212,7 @@ namespace b2xtranslator.txt.TextMapping
                 }
                 else if (c == TextMark.DrawnObject && fSpec)
                 {
+                    System.Console.WriteLine($"[DEBUG] Found DrawnObject at CP {cp}");
                     FileShapeAddress fspa = null;
                     if (GetType() == typeof(MainDocumentMapping))
                     {
@@ -1226,14 +1228,41 @@ namespace b2xtranslator.txt.TextMapping
                         var shape = _doc.OfficeArtContent.GetShapeContainer(fspa.spid);
                         if (shape != null)
                         {
-                            //close previous w:t ...
-                            _writer.WriteEndElement();
-                            _writer.WriteStartElement("w", "pict", OpenXmlNamespaces.WordprocessingML);
-
-                            shape.Convert(new VMLShapeMapping(_writer, fspa, null, _ctx));
-
-                            _writer.WriteEndElement();
-                            writeTextStart(textType);
+                            System.Console.WriteLine($"[DEBUG] Processing shape with spid {fspa.spid}");
+                            // Check if we're doing plain text output
+                            bool isPlainText = _writer.GetType().Name == "TextWriter";
+                            
+                            // Extract TextBox content for plain text output
+                            string textboxContent = extractTextBoxContent(shape, fspa);
+                            System.Console.WriteLine($"[DEBUG] TextBox content extracted: '{textboxContent}', isPlainText={isPlainText}");
+                            
+                            if (!string.IsNullOrEmpty(textboxContent) && isPlainText)
+                            {
+                                // For plain text output, write the textbox content directly
+                                _writer.WriteString(textboxContent);
+                                System.Console.WriteLine($"[DEBUG] Writing TextBox content to plain text output: '{textboxContent}'");
+                            }
+                            else if (!isPlainText)
+                            {
+                                // For OpenXML output, proceed with normal VML processing
+                                //close previous w:t ...
+                                _writer.WriteEndElement();
+                                
+                                if (!string.IsNullOrEmpty(textboxContent))
+                                {
+                                    // Write the textbox content as OpenXML
+                                    _writer.WriteString(textboxContent);
+                                    writeTextStart(textType);
+                                }
+                                else
+                                {
+                                    // If no textbox content, proceed with normal VML processing for shapes/images
+                                    _writer.WriteStartElement("w", "pict", OpenXmlNamespaces.WordprocessingML);
+                                    shape.Convert(new VMLShapeMapping(_writer, fspa, null, _ctx));
+                                    _writer.WriteEndElement();
+                                    writeTextStart(textType);
+                                }
+                            }
                         }
                     }
                 }
@@ -1433,6 +1462,94 @@ namespace b2xtranslator.txt.TextMapping
         #endregion
 
         #region HelpFunctions
+
+        /// <summary>
+        /// Extracts plain text content from a TextBox shape
+        /// </summary>
+        /// <param name="shape">The shape container</param>
+        /// <param name="fspa">File shape address</param>
+        /// <returns>Plain text content from the TextBox, or empty string if no TextBox content</returns>
+        protected string extractTextBoxContent(ShapeContainer shape, FileShapeAddress fspa)
+        {
+            try
+            {
+                System.Console.WriteLine($"[DEBUG] Checking shape for TextBox content");
+                // Check if shape contains textbox content
+                var textboxRecord = shape.FirstChildWithType<ClientTextbox>();
+                if (textboxRecord != null)
+                {
+                    System.Console.WriteLine($"[DEBUG] Found ClientTextbox record");
+                    // Word text box with ClientTextbox record
+                    var box = (ClientTextbox)textboxRecord;
+                    short textboxIndex = BitConverter.ToInt16(box.Bytes, 2);
+                    textboxIndex--;
+                    
+                    return extractTextboxText(textboxIndex, GetType() == typeof(HeaderMapping) || GetType() == typeof(FooterMapping));
+                }
+                else 
+                {
+                    System.Console.WriteLine($"[DEBUG] No ClientTextbox record, checking for lTxid property");
+                    // Check if it's an Open Office textbox or has lTxid property
+                    var options = shape.ExtractOptions();
+                    System.Console.WriteLine($"[DEBUG] Found {options.Count} shape options");
+                    foreach (var entry in options)
+                    {
+                        System.Console.WriteLine($"[DEBUG] Shape option: {entry.pid}");
+                        if (entry.pid == ShapeOptions.PropertyId.lTxid)
+                        {
+                            System.Console.WriteLine($"[DEBUG] Found lTxid property");
+                            // Open Office textbox - use sequential indexing
+                            return extractTextboxText(TextboxMapping.TextboxCount, GetType() == typeof(HeaderMapping) || GetType() == typeof(FooterMapping));
+                        }
+                    }
+                    System.Console.WriteLine($"[DEBUG] No TextBox properties found in shape");
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine($"Error extracting textbox content: {ex.Message}");
+            }
+            
+            return string.Empty;
+        }
+
+        /// <summary>
+        /// Extracts text from a textbox subdocument by leveraging existing TextboxMapping infrastructure
+        /// </summary>
+        /// <param name="textboxIndex">Index of the textbox</param>
+        /// <param name="isHeader">True if processing header/footer textbox</param>
+        /// <returns>Plain text content</returns>
+        protected string extractTextboxText(int textboxIndex, bool isHeader)
+        {
+            try
+            {
+                System.Console.WriteLine($"[DEBUG] Extracting textbox text for index {textboxIndex}, isHeader={isHeader}");
+                
+                // Use a temporary TextWriter to capture textbox content as plain text
+                var tempWriter = new TextWriter();
+                var tempCtx = new ConversionContext(_doc);
+                
+                // Create and apply TextboxMapping to extract the content
+                var textboxMapping = new TextboxMapping(tempCtx, textboxIndex, tempWriter);
+                textboxMapping.Apply(_doc);
+                
+                // Get the plain text output
+                string result = tempWriter.ToString();
+                
+                System.Console.WriteLine($"[DEBUG] Raw textbox result: '{result}'");
+                
+                // Clean up the result - remove empty lines and trim
+                string cleaned = result.Trim();
+                System.Console.WriteLine($"[DEBUG] Cleaned textbox result: '{cleaned}'");
+                
+                return cleaned;
+            }
+            catch (Exception ex)
+            {
+                System.Console.WriteLine($"[DEBUG] Error extracting textbox text: {ex.Message}");
+                return string.Empty;
+            }
+        }
 
         protected bool isWordArtShape(ShapeContainer shape)
         {
@@ -1641,6 +1758,26 @@ namespace b2xtranslator.txt.TextMapping
             }
 
             return ret;
+        }
+
+        /// <summary>
+        /// Finds the next PAPX after the given FC.
+        /// </summary>
+        /// <param name="fc"></param>
+        /// <returns></returns>
+        protected ParagraphPropertyExceptions findNextValidPapx(int fc)
+        {
+            if (_doc.AllPapx == null) return null;
+            
+            foreach (var kvp in _doc.AllPapx)
+            {
+                if (kvp.Key > fc)
+                {
+                    return kvp.Value;
+                }
+            }
+            
+            return null;
         }
 
         /// <summary>

@@ -198,7 +198,11 @@ namespace b2xtranslator.txt.TextMapping
                     //doc.Glossary.DocumentProperties.Convert(new SettingsMapping(context, docx.MainDocumentPart.GlossaryPart.SettingsPart, writer));
                 }
 
-                return context.TextDoc.MainDocumentWriter.ToString();
+
+                // TODO: Put a final cleanup here if needed, for example:
+                string cleanText = context.TextDoc.MainDocumentWriter.ToString().Replace("\u2002", " ");
+
+                return cleanText;
 
             }
         }

@@ -2,6 +2,7 @@
 Tratar caracteres 0x13, 0x14 e 0x15 como no manual do MS-DOC.
 
 
+Esse padrão aparece ao debugar o método: `ProcessHyperlinkFieldsInFallbackText`
 
 Eu estava parseando um fragmento de um arquivo doc, na parte dos links, e vi essa sequência, isso é um padrão esperado do doc, certo? Me refiro ao \u0013, \u0014 e \u0015 (parecem separadores)
 Note que há um erro no doc original, Um link que aparentemente é um são 2, um grudado ao outro.

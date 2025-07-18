@@ -168,7 +168,7 @@ namespace b2xtranslator.txt
                 _currentTextElement = element.Parent ?? _rootTextElement;
 
                 if (element.PureContent.ToString().Contains("Apache Tika"))
-                { 
+                {
                 }
 
                 if ("w".Equals(element.Prefix))
@@ -207,8 +207,17 @@ namespace b2xtranslator.txt
                             string url;
                             if (trimmedContent.StartsWith("HYPERLINK \""))
                             {
-                                // Quoted format: HYPERLINK "http://example.com"
-                                url = trimmedContent.Replace("HYPERLINK \"", "").Replace("\"", "").Trim();
+                                // Use a regular expression to find the first quoted string, which is the URL.
+                                var match = System.Text.RegularExpressions.Regex.Match(trimmedContent, @"""([^""]+)""");
+                                if (match.Success)
+                                {
+                                    url = match.Groups[1].Value;
+                                }
+                                else
+                                {
+                                    // Fallback to the old logic if the regex fails for some reason.
+                                    url = trimmedContent.Replace("HYPERLINK \"", "").Replace("\"", "").Trim();
+                                }
                             }
                             else
                             {
