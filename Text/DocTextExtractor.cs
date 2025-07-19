@@ -58,8 +58,6 @@ namespace b2xtranslator.txt
                 //Setup the context
                 context.TextDoc = textDocument;
 
-
-
                 //convert the command table (skip for Word 95 files where it may be null)
                 if (doc.CommandTable != null)
                 {
@@ -96,26 +94,17 @@ namespace b2xtranslator.txt
                 //write the comments
                 doc.Convert(new CommentsMapping(context));
 
-                //write settings.xml at last because of the rsid list
-                //doc.DocumentProperties.Convert(new SettingsMapping(context, docx.MainDocumentPart.SettingsPart, writer));
-
                 //convert the glossary subdocument
                 if (doc.Glossary != null)
                 {
                     doc.Glossary.Convert(new GlossaryMapping(context, context.TextDoc.MainDocumentWriter));
-                    //doc.Glossary.FontTable.Convert(new FontTableMapping(context, docx.MainDocumentPart.GlossaryPart.FontTablePart, writer));
                     //doc.Glossary.Styles.Convert(new StyleSheetMapping(context, doc.Glossary, docx.MainDocumentPart.GlossaryPart.StyleDefinitionsPart));
-
-                    //write settings.xml at last because of the rsid list
-                    //doc.Glossary.DocumentProperties.Convert(new SettingsMapping(context, docx.MainDocumentPart.GlossaryPart.SettingsPart, writer));
                 }
-
 
                 // TODO: Put a final cleanup here if needed, for example:
                 string cleanText = context.TextDoc.MainDocumentWriter.ToString().Replace("\u2002", " ");
 
                 return cleanText;
-
             }
         }
     }

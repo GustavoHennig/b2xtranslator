@@ -3,6 +3,7 @@ using b2xtranslator.OpenXmlLib;
 using b2xtranslator.DocFileFormat;
 using b2xtranslator.OpenXmlLib.WordprocessingML;
 using b2xtranslator.txt.TextModel;
+using b2xtranslator.Tools;
 
 namespace b2xtranslator.txt.TextMapping
 {
@@ -70,7 +71,7 @@ namespace b2xtranslator.txt.TextMapping
                         bkd = doc.TextboxBreakPlex.Elements[_textboxIndex];
                     }
                     
-                    System.Console.WriteLine($"[DEBUG] Plain text textbox: index={_textboxIndex}, cp={cp}, cpEnd={cpEnd}, txtbxSubdocStart={txtbxSubdocStart}");
+                    TraceLogger.Debug("[DEBUG] Plain text textbox: index={0}, cp={1}, cpEnd={2}, txtbxSubdocStart={3}", _textboxIndex, cp, cpEnd, txtbxSubdocStart);
                 }
             }
 

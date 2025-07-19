@@ -79,7 +79,6 @@ namespace b2xtranslator.txt.TextModel
             }
         }
 
-        //private readonly StringBuilder _mainSb = new StringBuilder();
         private readonly TextElement _rootTextElement;
         private TextElement _currentTextElement;
         private readonly Stack<TextElement> _elementStack;
@@ -102,7 +101,7 @@ namespace b2xtranslator.txt.TextModel
             _currentTextElement.Attributes ??= new List<IAttribute>();
             _currentTextElement.Attributes.Add(new TextAttribute(prefix, localName, value));
 
-            // Track symbol attributes
+            // Track symbol font and char attributes for symbol conversion
             if (_isInSymbolElement && "w".Equals(prefix))
             {
                 if ("font".Equals(localName))
@@ -140,11 +139,11 @@ namespace b2xtranslator.txt.TextModel
                 }
                 else if ("lang".Equals(localName))
                 {
-                    // Ignore language attribute for plain text export
+                    // Language attribute is ignored for plain text export
                 }
                 else if ("val".Equals(localName) && value != null)
                 {
-                    // _sb.Append(value);
+                    // Value attribute is ignored for plain text export
                 }
             }
         }
@@ -282,7 +281,7 @@ namespace b2xtranslator.txt.TextModel
                         }
                         catch (Exception ex)
                         {
-                            Debug.WriteLine($"Error processing symbol: Font={_symbolFont}, Char={_symbolChar}, Error={ex.Message}");
+                            TraceLogger.Warning("Error processing symbol: Font={0}, Char={1}, Error={2}", _symbolFont, _symbolChar, ex.Message);
                             _currentTextElement.PureContent.Append("?");
                         }
 
@@ -295,7 +294,7 @@ namespace b2xtranslator.txt.TextModel
 
                 _currentTextElement.PureContent.Append(element.PureContent);
 
-                // Propaga conte�do APENAS de elementos w:t
+                // Propagate content ONLY from w:t elements
                 if ("w".Equals(element.Prefix) && "t".Equals(element.LocalName))
                 {
                     string textContent = element.Content.ToString();
@@ -314,7 +313,6 @@ namespace b2xtranslator.txt.TextModel
             }
         }
 
-
         public void WriteNode(INode node)
         {
             if (node != null)
@@ -327,7 +325,7 @@ namespace b2xtranslator.txt.TextModel
 
         public void WriteStartAttribute(string? prefix, string localName, string? ns, string? value)
         {
-            // Ignore for plain text
+
         }
 
         public void WriteStartDocument()
@@ -337,22 +335,18 @@ namespace b2xtranslator.txt.TextModel
 
         public void WriteStartElement(string? prefix, string localName, string? ns, string? value)
         {
-            //if (("w".Equals(prefix) && "t".Equals(localName)) ||
-            //         localName == "tc" ||
-            //        localName == "tr")
+
+            _currentTextElement = new TextElement(_currentTextElement, prefix, localName, value);
+            _elementStack.Push(_currentTextElement);
+
+            // Track symbol elements
+            if ("w".Equals(prefix) && "sym".Equals(localName))
             {
-
-                _currentTextElement = new TextElement(_currentTextElement, prefix, localName, value);
-                _elementStack.Push(_currentTextElement);
-
-                // Track symbol elements
-                if ("w".Equals(prefix) && "sym".Equals(localName))
-                {
-                    _isInSymbolElement = true;
-                    _symbolFont = null;
-                    _symbolChar = null;
-                }
+                _isInSymbolElement = true;
+                _symbolFont = null;
+                _symbolChar = null;
             }
+
         }
 
         public void WriteString(string v)
@@ -372,7 +366,7 @@ namespace b2xtranslator.txt.TextModel
         }
 
         /// <summary>
-        /// Helper method to get attribute value from an element
+        /// Helper method to get attribute value from an element.
         /// </summary>
         private string? GetAttributeValue(TextElement element, string attributeName)
         {
@@ -389,7 +383,7 @@ namespace b2xtranslator.txt.TextModel
         }
 
         /// <summary>
-        /// Output the complete hyperlink with both URL and description
+        /// Output the complete hyperlink with both URL and description.
         /// </summary>
         private void OutputHyperlink()
         {

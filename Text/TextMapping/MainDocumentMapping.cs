@@ -1,6 +1,7 @@
 using b2xtranslator.DocFileFormat;
 using b2xtranslator.OpenXmlLib;
 using b2xtranslator.txt.TextModel;
+using b2xtranslator.Tools;
 using System.Collections.Generic;
 
 namespace b2xtranslator.txt.TextMapping
@@ -48,14 +49,14 @@ namespace b2xtranslator.txt.TextMapping
             int skippedPositions = 0;
 
             // Debug for fast-saved documents only when needed
-            System.Console.WriteLine($"[DEBUG] Document has {doc.FIB.ccpText} characters to process");
-            System.Console.WriteLine($"[DEBUG] Fast save count: {doc.FIB.cQuickSaves}");
-            System.Console.WriteLine($"[DEBUG] Fast save flag: {doc.FIB.fFastSaved}");
+            TraceLogger.Debug("[DEBUG] Document has {0} characters to process", doc.FIB.ccpText);
+            TraceLogger.Debug("[DEBUG] Fast save count: {0}", doc.FIB.cQuickSaves);
+            TraceLogger.Debug("[DEBUG] Fast save flag: {0}", doc.FIB.fFastSaved);
             
             // FAST-SAVE RECONSTRUCTION: Piece table analysis for debugging
-            System.Console.WriteLine($"[PIECE] Document has {doc.FIB.cQuickSaves} quick saves");
-            System.Console.WriteLine($"[PIECE] Piece table has {_doc.PieceTable.Pieces.Count} pieces");
-            System.Console.WriteLine($"[PIECE] FC range: {doc.FIB.fcMin} - {doc.FIB.fcMac}");
+            TraceLogger.Debug("[PIECE] Document has {0} quick saves", doc.FIB.cQuickSaves);
+            TraceLogger.Debug("[PIECE] Piece table has {0} pieces", _doc.PieceTable.Pieces.Count);
+            TraceLogger.Debug("[PIECE] FC range: {0} - {1}", doc.FIB.fcMin, doc.FIB.fcMac);
             
             // Verify piece table coverage
             int totalPieceCoverage = 0;
@@ -64,9 +65,9 @@ namespace b2xtranslator.txt.TextMapping
                 var piece = _doc.PieceTable.Pieces[i];
                 int pieceLength = piece.cpEnd - piece.cpStart;
                 totalPieceCoverage += pieceLength;
-                System.Console.WriteLine($"[PIECE] Piece {i}: CP {piece.cpStart}-{piece.cpEnd} (length: {pieceLength}), FC: {piece.fc}");
+                TraceLogger.Debug("[PIECE] Piece {0}: CP {1}-{2} (length: {3}), FC: {4}", i, piece.cpStart, piece.cpEnd, pieceLength, piece.fc);
             }
-            System.Console.WriteLine($"[PIECE] Total piece coverage: {totalPieceCoverage} vs expected: {doc.FIB.ccpText}");
+            TraceLogger.Debug("[PIECE] Total piece coverage: {0} vs expected: {1}", totalPieceCoverage, doc.FIB.ccpText);
 
             int cp = 0;
             while (cp < doc.FIB.ccpText)
@@ -76,7 +77,7 @@ namespace b2xtranslator.txt.TextMapping
                 // Check if we have a valid piece table entry
                 if (!_doc.PieceTable.FileCharacterPositions.ContainsKey(cp))
                 {
-                    System.Console.WriteLine($"[WARNING] Missing piece table entry at CP {cp}, skipping to next");
+                    TraceLogger.Warning("Missing piece table entry at CP {0}, skipping to next", cp);
                     skippedPositions++;
                     cp++;
                     continue;
@@ -86,21 +87,21 @@ namespace b2xtranslator.txt.TextMapping
                 var papx = findValidPapx(fc);
                 var tai = new TableInfo(papx);
 
-                System.Console.WriteLine($"[DEBUG] Processing CP {cp}, FC {fc}, InTable: {tai.fInTable}");
+                TraceLogger.Debug("[DEBUG] Processing CP {0}, FC {1}, InTable: {2}", cp, fc, tai.fInTable);
 
                 if (tai.fInTable)
                 {
                     //this PAPX is for a table
-                    System.Console.WriteLine($"[DEBUG] Processing table at CP {cp}");
+                    TraceLogger.Debug("[DEBUG] Processing table at CP {0}", cp);
                     cp = writeTable(cp, tai.iTap);
                     tableCount++;
                 }
                 else
                 {
                     //this PAPX is for a normal paragraph
-                    System.Console.WriteLine($"[DEBUG] Processing paragraph at CP {cp}");
+                    TraceLogger.Debug("[DEBUG] Processing paragraph at CP {0}", cp);
                     int newCp = writeParagraph(cp);
-                    System.Console.WriteLine($"[DEBUG] Paragraph processing returned CP {newCp}");
+                    TraceLogger.Debug("[DEBUG] Paragraph processing returned CP {0}", newCp);
                     cp = newCp;
                     paragraphCount++;
                 }
@@ -114,11 +115,11 @@ namespace b2xtranslator.txt.TextMapping
                 // Safety check to prevent infinite loops
                 if (cp == lastCp)
                 {
-                    System.Console.WriteLine($"[ERROR] No progress made at CP {cp}, advancing by 1 to prevent infinite loop");
+                    TraceLogger.Error("No progress made at CP {0}, advancing by 1 to prevent infinite loop", cp);
                     cp++;
                 }
 
-                System.Console.WriteLine($"[DEBUG] Advanced from CP {lastCp} to {cp}");
+                TraceLogger.Debug("[DEBUG] Advanced from CP {0} to {1}", lastCp, cp);
             }
 
             // Report coverage gaps
@@ -141,19 +142,19 @@ namespace b2xtranslator.txt.TextMapping
                 uncoveredRanges.Add((rangeStart, coverageMap.Length - 1));
             }
 
-            System.Console.WriteLine($"[DEBUG] Processing complete: {paragraphCount} paragraphs, {tableCount} tables, {skippedPositions} skipped positions");
+            TraceLogger.Debug("[DEBUG] Processing complete: {0} paragraphs, {1} tables, {2} skipped positions", paragraphCount, tableCount, skippedPositions);
             if (uncoveredRanges.Count > 0)
             {
-                System.Console.WriteLine($"[WARNING] Found {uncoveredRanges.Count} uncovered character ranges:");
+                TraceLogger.Warning("Found {0} uncovered character ranges:", uncoveredRanges.Count);
                 foreach (var range in uncoveredRanges)
                 {
                     int rangeSize = range.end - range.start + 1;
-                    System.Console.WriteLine($"  CP {range.start}-{range.end} ({rangeSize} characters)");
+                    TraceLogger.Warning("  CP {0}-{1} ({2} characters)", range.start, range.end, rangeSize);
                 }
             }
             else
             {
-                System.Console.WriteLine("[DEBUG] All character positions were processed successfully");
+                TraceLogger.Debug("[DEBUG] All character positions were processed successfully");
             }
 
             //write the section properties of the body with the last SEPX

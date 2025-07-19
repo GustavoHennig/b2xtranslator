@@ -278,7 +278,7 @@ namespace b2xtranslator.txt.TextMapping
 
             while (tai.fInTable)
             {
-                //TODO: Eventual infinite loop
+                // TODO: Possible infinite loop
 
                 //check all SPRMs of this TAPX
                 foreach (var sprm in papx.grpprl)
@@ -569,7 +569,7 @@ namespace b2xtranslator.txt.TextMapping
             var papx = findValidPapx(fc);
 
             // DEBUG: Show paragraph boundaries
-            System.Console.WriteLine($"[PARA] Writing paragraph CP {initialCp}-{cpEnd}, FC {fc}-{fcEnd}");
+            TraceLogger.Debug("[PARA] Writing paragraph CP {0}-{1}, FC {2}-{3}", initialCp, cpEnd, fc, fcEnd);
 
             //get all CHPX between these boundaries to determine the count of runs
             var chpxs = _doc.GetCharacterPropertyExceptions(fc, fcEnd);
@@ -640,13 +640,13 @@ namespace b2xtranslator.txt.TextMapping
             if (expectedCharCount > 3 && totalValidChars < Math.Max(expectedCharCount / 2, 3))
             {
                 shouldUseFallback = true;
-                System.Console.WriteLine($"[PARA] CHPXs extracting {totalValidChars} chars vs expected {expectedCharCount}, using direct fallback");
+                TraceLogger.Debug("[PARA] CHPXs extracting {0} chars vs expected {1}, using direct fallback", totalValidChars, expectedCharCount);
             }
             else if (expectedCharCount > 10 && _doc.FIB.cQuickSaves > 0)
             {
                 // For larger paragraphs in fast-saved documents, use fallback if piece table is fragmented
                 shouldUseFallback = true;
-                System.Console.WriteLine($"[PARA] Fast-saved document with {expectedCharCount} chars, using fallback for reliability");
+                TraceLogger.Debug("[PARA] Fast-saved document with {0} chars, using fallback for reliability", expectedCharCount);
             }
             
             if (shouldUseFallback)
@@ -655,13 +655,13 @@ namespace b2xtranslator.txt.TextMapping
                 usedFallbackExtraction = true;
                 
                 string fallbackText = new string(allParagraphChars.ToArray()).Replace('\r', '↵').Replace('\n', '↓').Replace('\t', '→');
-                System.Console.WriteLine($"[PARA] Fallback extracted: \"{fallbackText}\"");
+                TraceLogger.Debug("[PARA] Fallback extracted: \"{0}\"", fallbackText);
                 
                 // Process hyperlink fields in fallback text
                 allParagraphChars = ProcessHyperlinkFieldsInFallbackText(allParagraphChars);
                 
                 string processedText = new string(allParagraphChars.ToArray()).Replace('\r', '↵').Replace('\n', '↓').Replace('\t', '→');
-                System.Console.WriteLine($"[PARA] After hyperlink processing: \"{processedText}\"");
+                TraceLogger.Debug("[PARA] After hyperlink processing: \"{0}\"", processedText);
                 
                 // Write the entire paragraph as one run with first available CHPX formatting
                 if (chpxs.Count > 0 && chpxs[0] != null)
@@ -701,12 +701,12 @@ namespace b2xtranslator.txt.TextMapping
 
                     // DEBUG: Show extracted characters
                     string extractedText = new string(chpxChars.ToArray()).Replace('\r', '↵').Replace('\n', '↓').Replace('\t', '→');
-                    System.Console.WriteLine($"[CHPX] Extracted {chpxChars.Count} chars from FC {fcChpxStart}-{fcChpxEnd}: \"{extractedText}\"");
+                    TraceLogger.Debug("[CHPX] Extracted {0} chars from FC {1}-{2}: \"{3}\"", chpxChars.Count, fcChpxStart, fcChpxEnd, extractedText);
                     
                     // Skip empty CHPX extractions
                     if (chpxChars.Count == 0)
                     {
-                        System.Console.WriteLine($"[PARA] Skipping empty CHPX {i} for FC range {fcChpxStart}-{fcChpxEnd}");
+                        TraceLogger.Debug("[PARA] Skipping empty CHPX {0} for FC range {1}-{2}", i, fcChpxStart, fcChpxEnd);
                         continue;
                     }
 
@@ -1033,7 +1033,7 @@ namespace b2xtranslator.txt.TextMapping
 
             // Debug output to check what text is being written
             string debugText = new string(chars.ToArray()).Replace('\r', '↵').Replace('\n', '↓').Replace('\t', '→');
-            System.Console.WriteLine($"[WRITETEXT] Writing text: \"{debugText}\"");
+            TraceLogger.Debug("[WRITETEXT] Writing text: \"{0}\"", debugText);
 
             //open a new w:t element
             writeTextStart(textType);
@@ -1214,7 +1214,7 @@ namespace b2xtranslator.txt.TextMapping
                 }
                 else if (c == TextMark.DrawnObject && fSpec)
                 {
-                    System.Console.WriteLine($"[DEBUG] Found DrawnObject at CP {cp}");
+                    TraceLogger.Debug("[DEBUG] Found DrawnObject at CP {0}", cp);
                     FileShapeAddress fspa = null;
                     if (GetType() == typeof(MainDocumentMapping))
                     {
@@ -1230,19 +1230,19 @@ namespace b2xtranslator.txt.TextMapping
                         var shape = _doc.OfficeArtContent.GetShapeContainer(fspa.spid);
                         if (shape != null)
                         {
-                            System.Console.WriteLine($"[DEBUG] Processing shape with spid {fspa.spid}");
+                            TraceLogger.Debug("[DEBUG] Processing shape with spid {0}", fspa.spid);
                             // Check if we're doing plain text output
                             bool isPlainText = _writer.GetType().Name == "TextWriter";
                             
                             // Extract TextBox content for plain text output
                             string textboxContent = extractTextBoxContent(shape, fspa);
-                            System.Console.WriteLine($"[DEBUG] TextBox content extracted: '{textboxContent}', isPlainText={isPlainText}");
+                            TraceLogger.Debug("[DEBUG] TextBox content extracted: '{0}', isPlainText={1}", textboxContent, isPlainText);
                             
                             if (!string.IsNullOrEmpty(textboxContent) && isPlainText)
                             {
                                 // For plain text output, write the textbox content directly
                                 _writer.WriteString(textboxContent);
-                                System.Console.WriteLine($"[DEBUG] Writing TextBox content to plain text output: '{textboxContent}'");
+                                TraceLogger.Debug("[DEBUG] Writing TextBox content to plain text output: '{0}'", textboxContent);
                             }
                             else if (!isPlainText)
                             {
@@ -1475,12 +1475,12 @@ namespace b2xtranslator.txt.TextMapping
         {
             try
             {
-                System.Console.WriteLine($"[DEBUG] Checking shape for TextBox content");
+                TraceLogger.Debug("[DEBUG] Checking shape for TextBox content");
                 // Check if shape contains textbox content
                 var textboxRecord = shape.FirstChildWithType<ClientTextbox>();
                 if (textboxRecord != null)
                 {
-                    System.Console.WriteLine($"[DEBUG] Found ClientTextbox record");
+                    TraceLogger.Debug("[DEBUG] Found ClientTextbox record");
                     // Word text box with ClientTextbox record
                     var box = (ClientTextbox)textboxRecord;
                     short textboxIndex = BitConverter.ToInt16(box.Bytes, 2);
@@ -1490,26 +1490,26 @@ namespace b2xtranslator.txt.TextMapping
                 }
                 else 
                 {
-                    System.Console.WriteLine($"[DEBUG] No ClientTextbox record, checking for lTxid property");
+                    TraceLogger.Debug("[DEBUG] No ClientTextbox record, checking for lTxid property");
                     // Check if it's an Open Office textbox or has lTxid property
                     var options = shape.ExtractOptions();
-                    System.Console.WriteLine($"[DEBUG] Found {options.Count} shape options");
+                    TraceLogger.Debug("[DEBUG] Found {0} shape options", options.Count);
                     foreach (var entry in options)
                     {
-                        System.Console.WriteLine($"[DEBUG] Shape option: {entry.pid}");
+                        TraceLogger.Debug("[DEBUG] Shape option: {0}", entry.pid);
                         if (entry.pid == ShapeOptions.PropertyId.lTxid)
                         {
-                            System.Console.WriteLine($"[DEBUG] Found lTxid property");
+                            TraceLogger.Debug("[DEBUG] Found lTxid property");
                             // Open Office textbox - use sequential indexing
                             return extractTextboxText(TextboxMapping.TextboxCount, GetType() == typeof(HeaderMapping) || GetType() == typeof(FooterMapping));
                         }
                     }
-                    System.Console.WriteLine($"[DEBUG] No TextBox properties found in shape");
+                    TraceLogger.Debug("[DEBUG] No TextBox properties found in shape");
                 }
             }
             catch (Exception ex)
             {
-                System.Diagnostics.Debug.WriteLine($"Error extracting textbox content: {ex.Message}");
+                TraceLogger.Error("Error extracting textbox content: {0}", ex.Message);
             }
             
             return string.Empty;
@@ -1525,7 +1525,7 @@ namespace b2xtranslator.txt.TextMapping
         {
             try
             {
-                System.Console.WriteLine($"[DEBUG] Extracting textbox text for index {textboxIndex}, isHeader={isHeader}");
+                TraceLogger.Debug("[DEBUG] Extracting textbox text for index {0}, isHeader={1}", textboxIndex, isHeader);
                 
                 // Use a temporary TextWriter to capture textbox content as plain text
                 var tempWriter = new TextWriter();
@@ -1538,17 +1538,17 @@ namespace b2xtranslator.txt.TextMapping
                 // Get the plain text output
                 string result = tempWriter.ToString();
                 
-                System.Console.WriteLine($"[DEBUG] Raw textbox result: '{result}'");
+                TraceLogger.Debug("[DEBUG] Raw textbox result: '{0}'", result);
                 
                 // Clean up the result - remove empty lines and trim
                 string cleaned = result.Trim();
-                System.Console.WriteLine($"[DEBUG] Cleaned textbox result: '{cleaned}'");
+                TraceLogger.Debug("[DEBUG] Cleaned textbox result: '{0}'", cleaned);
                 
                 return cleaned;
             }
             catch (Exception ex)
             {
-                System.Console.WriteLine($"[DEBUG] Error extracting textbox text: {ex.Message}");
+                TraceLogger.Error("Error extracting textbox text: {0}", ex.Message);
                 return string.Empty;
             }
         }
