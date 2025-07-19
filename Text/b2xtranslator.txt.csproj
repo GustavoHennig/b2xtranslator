@@ -15,6 +15,7 @@
 		<PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
 		<IncludeReferencedProjects>true</IncludeReferencedProjects>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
+		<PackageTags>word, doc, doc97, word97, word6, text extraction, doc text, word text, document text, word parser, doc parser, text extractor, legacy word, b2xtranslator</PackageTags>
 	</PropertyGroup>
 
 	<ItemGroup>

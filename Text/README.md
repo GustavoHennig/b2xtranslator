@@ -56,18 +56,5 @@ See [LICENSE](https://github.com/GustavoHennig/b2xtranslator/blob/master/LICENSE
 ## **Credits**
 
 Originally developed by **DIaLOGIKa** (2008-2009) and **Evolution Recruitment Solutions** (2017).
-Maintained and extended by **Gustavo Hennig / GH Software Ltda (2025)**.
+Maintained and extended by **Gustavo Hennig (2025)**.
 
----
-
-### **Why this version is better?**
-
-* Removes typos
-* Matches the NuGet package name (`GHSoftware.WordDocTextExtractor`)
-* Clarifies that this is a **public package**, not just an internal component
-* Adds **installation instructions** and **usage example** (crucial for NuGet discoverability)
-* Preserves credit to the original authors
-
----
-
-If you'd like, I can also prepare a **short version for the NuGet `Description` field**. Want that?
