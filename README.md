@@ -1,46 +1,33 @@
-# Binary(doc,xls,ppt) to OpenXMLTranslator
+# b2xtranslator
 
-.NET Core library to convert Microsoft Office binary files (`doc`, `xls` and `ppt`) to Open XML (`docx`, `xlsx` and `pptx`).
-You can use the [Open XML SDK](https://github.com/OfficeDev/Open-XML-SDK) to manipulate those.
+.NET Core library to convert Microsoft Office binary files to various formats. This fork focuses **exclusively on Word (.doc) files** and **plain text extraction** from legacy Microsoft Word documents (Word 97-2003, Word 95, and Word 6.0).
+
+You can also use the [Open XML SDK](https://github.com/OfficeDev/Open-XML-SDK) to manipulate OpenXML files.
 
 Forked from a [.NET 2 Mono implementation](https://sourceforge.net/projects/b2xtranslator/) under the BSD license.
 
-## Fork Goals and Roadmap
+## Key Features
 
-This fork aims to significantly expand the capabilities of the original implementation. The following sections outline planned enhancements and ongoing development goals:
+### Text Extraction (Primary Focus)
+- **DOC to Plain Text Conversion**: Robust extraction from Word 97-2003, Word 95, and Word 6.0 formats
+- **Enhanced Compatibility**: Handles tables, headers/footers, embedded objects, and complex document structures
+- **Clean Output**: Produces readable text while preserving document flow
+- **Edge Case Handling**: Robust processing of corrupted or non-standard .doc files
 
-### Roadmap
-- **Improve Text Extraction**: Better plain text extraction with support for complex document structures
-- **Extend Format Support**: Support for older Word file formats (Word 6.0, Word 95, etc.)
-- **Improve Error Handling**: Graceful handling of corrupted or non-standard files
-- Make it handle lists (numbers, bullet points, indents)
-- Handle TextBox content: "news-example.doc"
-- Symbol handling: "Bug49908.doc"
-- Make text extraction shell app accept extraction settings, e.g.: --no-headers-footers --no-textboxes --no-comments --no-bullets ... and make the extactor ignore these elements
+### Legacy Format Support (Not Maintained)
+- PowerPoint (.ppt) to PPTX conversion
+- Excel (.xls) to XLSX conversion
+- Word (.doc) to DOCX conversion
 
-### 🔧 Pending Issues
-- Address parsing loops that cause applications to hang
-- **Performance Optimization**: Fix extremely slow conversion scenarios
-- **Memory Management**: Resolve memory leaks in large file processing
-- **Parsing Stability**: Fix crashes and exceptions during document parsing
-- Lists are not extracted with proper bullet symbols during text conversion
-- Internal markers are being written to the output: HYPERLINK, MERGEFORMAT, DOCPROPERTY, PAGEREF... See EL_TechnicalTemplateHandling.doc, ProblemExtracting.doc, Bug51686.doc, ob_is.doc
-- testPictures.doc: testPictures.doc SHAPE  \* MERGEFORMAT
-- Revisit: samplehtmlfieldandlist.doc
-- fastsavedmix.doc - 1 line is missing
-- Entire paragraphs are missing: "Bug50936_1.doc", "ESTAT Article comparing RU-LFS-22 12 05_EN.doc", "Bug47958.doc", "Bug53380_3.doc"
-- Alternative space chars need to be handled: "Bug47742.doc" (space != 20)
-- URL not being shown: "pad.doc"
-- Not exporting summary, appearing: \l "_Toc70481107" : "parentinvguid.doc"
-- Wrong encoding decoding: Bug60942b.doc, Bug50955.doc, Bug49933.doc
- 
-### 📊 Reliability Improvements (Planned)
-- Enhanced validation of input files before processing
-- Better error recovery mechanisms
-- Comprehensive logging for debugging conversion issues
-- Support for timeout mechanisms in long-running operations 
+*Note: This fork maintains these legacy features but does not actively enhance them.*
 
-## Reference Projects and Implementations
+## Roadmap
+
+### Planned Enhancements
+- Enhanced formatting support for lists (numbers, bullet points, indents) and tables
+- Configurable text extraction options (--no-headers-footers, --no-textboxes, --no-comments, --no-bullets)
+- Performance optimizations for large document processing
+- Additional error handling and recovery mechanisms
 
 This project is inspired by and informed by several existing open-source implementations of the Word Binary Format:
 
