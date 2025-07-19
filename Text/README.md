@@ -33,7 +33,7 @@ dotnet add package GHSoftware.WordDocTextExtractor
 using b2xtranslator.txt;
 
 string path = "legacy-document.doc";
-string extractedText = DocTextExtractor.ExtractTextFromFile(docPath);(path);
+string extractedText = DocTextExtractor.ExtractTextFromFile(docPath);
 
 Console.WriteLine(extractedText);
 ```
@@ -42,14 +42,14 @@ Console.WriteLine(extractedText);
 
 ## **More Information**
 
-For advanced usage, CLI tools, or additional formats, see the main [`b2xtranslator`](https://github.com/GHSoftware/b2xtranslator) project.
+For advanced usage, CLI tools, or additional formats, see the main [`b2xtranslator`](https://github.com/GustavoHennig/b2xtranslator) project.
 
 ---
 
 ## **License**
 
 This project is open source and distributed under the same license as the original `b2xtranslator`.
-See [LICENSE](https://github.com/GHSoftware/b2xtranslator/blob/master/LICENSE).
+See [LICENSE](https://github.com/GustavoHennig/b2xtranslator/blob/master/LICENSE).
 
 ---
 

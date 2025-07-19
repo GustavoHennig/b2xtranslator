@@ -3,17 +3,18 @@
 		<TargetFramework>net6.0</TargetFramework>
 		<Version>1.0.0</Version>
 		<PackageId>GHSoftware.WordDocTextExtractor</PackageId>
-		<RepositoryUrl>https://github.com/GHSoftware/b2xtranslator</RepositoryUrl>
+		<RepositoryUrl>https://github.com/GustavoHennig/b2xtranslator</RepositoryUrl>
 		<RepositoryType>Git</RepositoryType>
-		<PackageProjectUrl>https://github.com/GHSoftware/b2xtranslator</PackageProjectUrl>
-		<PackageLicenseUrl>https://github.com/GHSoftware/b2xtranslator/blob/master/LICENSE</PackageLicenseUrl>
+		<PackageProjectUrl>https://github.com/GustavoHennig/b2xtranslator</PackageProjectUrl>
 		<Copyright>2025 Gustavo Hennig</Copyright>
 		<Company>GH Software Ltda</Company>
 		<Authors>Gustavo Hennig</Authors>
 		<Description>Extract text from legacy Microsoft Word .doc files (Word 97, Word 6.0).</Description>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
+		<PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
 		<IncludeReferencedProjects>true</IncludeReferencedProjects>
+		<PackageReadmeFile>README.md</PackageReadmeFile>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -29,6 +30,11 @@
 		<Content Include="..\Common\bin\$(Configuration)\net6.0\b2xtranslator.dll" Pack="true" PackagePath="lib/net6.0" />
 		<Content Include="..\Doc\bin\$(Configuration)\net6.0\b2xtranslator.doc.dll" Pack="true" PackagePath="lib/net6.0" />
 	</ItemGroup>
-
+	<ItemGroup>
+		<None Include="README.md">
+			<Pack>True</Pack>
+			<PackagePath>\</PackagePath>
+		</None>
+	</ItemGroup>
 
 </Project>
