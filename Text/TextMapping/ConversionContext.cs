@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using b2xtranslator.DocFileFormat;
 using System.Xml;
 using b2xtranslator.OpenXmlLib.WordprocessingML;
+using b2xtranslator.txt.TextModel;
 
 namespace b2xtranslator.txt.TextMapping
 {

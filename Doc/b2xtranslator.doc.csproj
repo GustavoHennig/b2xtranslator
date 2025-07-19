@@ -1,10 +1,24 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-<TargetFramework>net8.0</TargetFramework>
-    <AssemblyOriginatorKeyFile>..\..\key.snk</AssemblyOriginatorKeyFile>
-  </PropertyGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Common.CompoundFileBinary\b2xtranslator.CompoundFileBinary.csproj" />
-    <ProjectReference Include="..\Common\b2xtranslator.csproj" />
-  </ItemGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<AssemblyOriginatorKeyFile>..\..\key.snk</AssemblyOriginatorKeyFile>
+
+		<PackageId>GHSoftware.b2xtranslator.doc</PackageId>
+
+		<RepositoryUrl>https://github.com/GHSoftware/b2xtranslator</RepositoryUrl>
+		<RepositoryType>Git</RepositoryType>
+		<PackageProjectUrl>https://github.com/GHSoftware/b2xtranslator</PackageProjectUrl>
+		<PackageLicenseUrl>https://github.com/GHSoftware/b2xtranslator/blob/master/LICENSE</PackageLicenseUrl>
+
+		<Copyright>2025 Gustavo Hennig, 2017 Evolution Recruitment Solutions, 2008-2009 DIaLOGIKa</Copyright>
+		<Company>GH Software Ltda</Company>
+		<Authors>Gustavo Hennig, Evolution Recruitment Solutions, DIaLOGIKa</Authors>
+		<Description>Convert binary legacy Microsoft Office formats to OpenXML</Description>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\Common.CompoundFileBinary\b2xtranslator.CompoundFileBinary.csproj" />
+		<ProjectReference Include="..\Common\b2xtranslator.csproj" />
+	</ItemGroup>
 </Project>

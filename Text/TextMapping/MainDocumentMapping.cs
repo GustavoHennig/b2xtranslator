@@ -1,5 +1,6 @@
 using b2xtranslator.DocFileFormat;
 using b2xtranslator.OpenXmlLib;
+using b2xtranslator.txt.TextModel;
 using System.Collections.Generic;
 
 namespace b2xtranslator.txt.TextMapping

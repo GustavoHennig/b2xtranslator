@@ -3,7 +3,6 @@ using b2xtranslator.DocFileFormat;
 using b2xtranslator.StructuredStorage.Common;
 using b2xtranslator.Tools;
 using b2xtranslator.txt;
-using b2xtranslator.txt.TextMapping;
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -65,7 +64,7 @@ namespace b2xtranslator.Tests
 
             try
             {
-                resultOriginal = Converter.ConvertFileToString(docPath);
+                resultOriginal = DocTextExtractor.ExtractTextFromFile(docPath);
                 result = NormalizeText(resultOriginal);
                 bool isEqual = string.Equals(result, expected, StringComparison.InvariantCultureIgnoreCase);
                 if (!isEqual)

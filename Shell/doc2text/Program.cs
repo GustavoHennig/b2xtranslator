@@ -1,3 +1,4 @@
+using b2xtranslator.Common.Exceptions;
 using b2xtranslator.DocFileFormat;
 using b2xtranslator.OpenXmlLib.WordprocessingML;
 using b2xtranslator.Shell;
@@ -46,16 +47,10 @@ namespace b2xtranslator.doc2x
                 }
 
 
-               Converter.ConvertFiles(
+               DocTextExtractor.ConvertDocToTxt(
                     InputFile,
                     ChoosenOutputFile
                 );
-                //end time
-                //var end = DateTime.Now;
-                //TraceLogger.Info("Conversion of file {0} finished in {1} seconds.", InputFile, (end - start).TotalSeconds);
-
-
-
 
             }
             catch (DirectoryNotFoundException ex)
@@ -91,6 +86,11 @@ namespace b2xtranslator.doc2x
             catch (MappingException ex)
             {
                 TraceLogger.Error("There was an error while converting file {0}: {1}", InputFile, ex.Message);
+                TraceLogger.Debug(ex.ToString());
+            }
+            catch (EncryptedFileException ex)
+            {
+                TraceLogger.Error("File {0} is encrypted and cannot be converted.", InputFile);
                 TraceLogger.Debug(ex.ToString());
             }
             catch (Exception ex)

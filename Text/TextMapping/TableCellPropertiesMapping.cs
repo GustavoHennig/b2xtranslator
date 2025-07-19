@@ -6,6 +6,7 @@ using System.Xml;
 using b2xtranslator.OpenXmlLib;
 using System.Collections;
 using b2xtranslator.Tools;
+using b2xtranslator.txt.TextModel;
 
 namespace b2xtranslator.txt.TextMapping
 {

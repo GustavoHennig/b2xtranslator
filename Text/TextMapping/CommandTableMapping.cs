@@ -4,6 +4,7 @@ using b2xtranslator.CommonTranslatorLib;
 using b2xtranslator.OpenXmlLib;
 using System.Xml;
 using System.IO;
+using b2xtranslator.txt.TextModel;
 
 namespace b2xtranslator.txt.TextMapping
 {

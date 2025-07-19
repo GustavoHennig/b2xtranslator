@@ -5,6 +5,7 @@ using System.Xml;
 using b2xtranslator.DocFileFormat;
 using b2xtranslator.OpenXmlLib;
 using b2xtranslator.WordprocessingMLMapping;
+using b2xtranslator.txt.TextModel;
 
 namespace b2xtranslator.txt.TextMapping
 {

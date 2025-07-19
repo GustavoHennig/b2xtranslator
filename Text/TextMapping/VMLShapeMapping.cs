@@ -10,6 +10,7 @@ using b2xtranslator.DocFileFormat;
 using b2xtranslator.Tools;
 using System.Globalization;
 using b2xtranslator.OfficeDrawing.Shapetypes;
+using b2xtranslator.txt.TextModel;
 
 namespace b2xtranslator.txt.TextMapping
 {

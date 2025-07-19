@@ -8,6 +8,8 @@ using b2xtranslator.OpenXmlLib;
 using b2xtranslator.Tools;
 using b2xtranslator.OfficeDrawing;
 using b2xtranslator.WordprocessingMLMapping;
+using b2xtranslator.txt.TextModel;
+using TextWriter = b2xtranslator.txt.TextModel.TextWriter;
 
 namespace b2xtranslator.txt.TextMapping
 {
