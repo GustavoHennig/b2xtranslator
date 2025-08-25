@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<TargetFramework>net6.0</TargetFramework>
-		<Version>1.0.0</Version>
+		<Version>1.0.1</Version>
 		<PackageId>GHSoftware.WordDocTextExtractor</PackageId>
 		<RepositoryUrl>https://github.com/GustavoHennig/b2xtranslator</RepositoryUrl>
 		<RepositoryType>Git</RepositoryType>
@@ -19,10 +19,18 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\Common.Abstractions\b2xtranslator.Abstractions.csproj" />
-		<ProjectReference Include="..\Common.CompoundFileBinary\b2xtranslator.CompoundFileBinary.csproj" />
-		<ProjectReference Include="..\Common\b2xtranslator.csproj" />
-		<ProjectReference Include="..\Doc\b2xtranslator.doc.csproj" />
+		<ProjectReference Include="..\Common\b2xtranslator.csproj">
+			<PrivateAssets>all</PrivateAssets>
+		</ProjectReference>
+		<ProjectReference Include="..\Common.Abstractions\b2xtranslator.Abstractions.csproj">
+			<PrivateAssets>all</PrivateAssets>
+		</ProjectReference>
+		<ProjectReference Include="..\Common.CompoundFileBinary\b2xtranslator.CompoundFileBinary.csproj">
+			<PrivateAssets>all</PrivateAssets>
+		</ProjectReference>
+		<ProjectReference Include="..\Doc\b2xtranslator.doc.csproj">
+			<PrivateAssets>all</PrivateAssets>
+		</ProjectReference>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -31,6 +39,10 @@
 		<Content Include="..\Common\bin\$(Configuration)\net6.0\b2xtranslator.dll" Pack="true" PackagePath="lib/net6.0" />
 		<Content Include="..\Doc\bin\$(Configuration)\net6.0\b2xtranslator.doc.dll" Pack="true" PackagePath="lib/net6.0" />
 	</ItemGroup>
+
+
+
+
 	<ItemGroup>
 		<None Include="README.md">
 			<Pack>True</Pack>
