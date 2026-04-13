@@ -30,3 +30,4 @@ samples/out/
 samples/*.txt
 !samples/*.expected.txt
 samples/compare-doc-to-txt.ps1
+key.snk

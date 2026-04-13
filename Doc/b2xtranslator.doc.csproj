@@ -2,7 +2,8 @@
 	<PropertyGroup>
 		<TargetFrameworks>net462;net6.0</TargetFrameworks>
 		<LangVersion>latest</LangVersion>
-		<AssemblyOriginatorKeyFile>..\..\key.snk</AssemblyOriginatorKeyFile>
+		<SignAssembly>true</SignAssembly>
+		<AssemblyOriginatorKeyFile>..\key.snk</AssemblyOriginatorKeyFile>
 
 		<PackageId>GHSoftware.b2xtranslator.doc</PackageId>
 

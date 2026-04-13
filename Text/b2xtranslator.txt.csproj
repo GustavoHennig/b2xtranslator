@@ -2,7 +2,7 @@
 	<PropertyGroup>
 		<TargetFrameworks>net462;net6.0</TargetFrameworks>
 		<LangVersion>latest</LangVersion>
-		<Version>1.0.2</Version>
+		<Version>1.0.3</Version>
 		<PackageId>GHSoftware.WordDocTextExtractor</PackageId>
 		<RepositoryUrl>https://github.com/GustavoHennig/b2xtranslator</RepositoryUrl>
 		<RepositoryType>Git</RepositoryType>
@@ -14,13 +14,19 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<PackageLicenseExpression>BSD-3-Clause</PackageLicenseExpression>
-		<IncludeReferencedProjects>true</IncludeReferencedProjects>
+		<IncludeReferencedProjects>false</IncludeReferencedProjects>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<PackageTags>word, doc, doc97, word97, word6, text extraction, doc text, word text, document text, word parser, doc parser, text extractor, legacy word, b2xtranslator</PackageTags>
+		<SignAssembly>true</SignAssembly>
+		<AssemblyOriginatorKeyFile>..\key.snk</AssemblyOriginatorKeyFile>
 	</PropertyGroup>
 
 	<ItemGroup Condition="'$(TargetFramework)' == 'net462'">
 		<PackageReference Include="System.ValueTuple" Version="4.5.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="8.0.2" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -48,6 +54,9 @@
 			<TfmSpecificPackageFile Include="..\Common.CompoundFileBinary\bin\$(Configuration)\$(TargetFramework)\b2xtranslator.CompoundFileBinary.dll" PackagePath="lib\$(TargetFramework)\" />
 			<TfmSpecificPackageFile Include="..\Common\bin\$(Configuration)\$(TargetFramework)\b2xtranslator.dll" PackagePath="lib\$(TargetFramework)\" />
 			<TfmSpecificPackageFile Include="..\Doc\bin\$(Configuration)\$(TargetFramework)\b2xtranslator.doc.dll" PackagePath="lib\$(TargetFramework)\" />
+		</ItemGroup>
+		<ItemGroup Condition="'$(TargetFramework)' == 'net462'">
+			<TfmSpecificPackageFile Include="..\Common.CompoundFileBinary\bin\$(Configuration)\$(TargetFramework)\Microsoft.Extensions.Logging.Abstractions.dll" PackagePath="lib\$(TargetFramework)\" />
 		</ItemGroup>
 	</Target>
 

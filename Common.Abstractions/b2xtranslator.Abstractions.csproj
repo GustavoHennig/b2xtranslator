@@ -6,6 +6,8 @@
 	  <PackageId>GHSoftware.b2xtranslator.Abstractions</PackageId>
 	  <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\PlagiusInstallerSelfSigned3-nopass.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
 </Project>
