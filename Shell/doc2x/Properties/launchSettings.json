@@ -2,7 +2,7 @@
   "profiles": {
     "doc2x": {
       "commandName": "Project",
-      "commandLineArgs": "../../samples/file-sample_libreoffice.doc",
+      "commandLineArgs": "../../samples/text-with-link.doc",
       "workingDirectory": "."
     }
   }

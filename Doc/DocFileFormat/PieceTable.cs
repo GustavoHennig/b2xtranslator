@@ -37,13 +37,15 @@ namespace b2xtranslator.DocFileFormat
             Encoding encoding1252;
             try
             {
-                // Try to register encoding provider for .NET Core compatibility
+#if NET462
+                encoding1252 = Encoding.GetEncoding(1252);
+#else
                 Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
                 encoding1252 = Encoding.GetEncoding(1252);
+#endif
             }
             catch
             {
-                // Fallback to Latin1 if 1252 is not available
                 encoding1252 = Encoding.GetEncoding("iso-8859-1");
             }
 

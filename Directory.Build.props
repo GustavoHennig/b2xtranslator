@@ -1,0 +1,5 @@
+<Project>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net462'">
+    <Compile Include="$(MSBuildThisFileDirectory)NetStandardPolyfill.cs" Link="NetStandardPolyfill.cs" />
+  </ItemGroup>
+</Project>

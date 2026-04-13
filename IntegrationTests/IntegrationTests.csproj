@@ -22,6 +22,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Text\b2xtranslator.txt.csproj" />
+    <ProjectReference Include="..\Doc\b2xtranslator.doc.csproj" />
+    <ProjectReference Include="..\Common\b2xtranslator.csproj" />
+    <ProjectReference Include="..\Common.CompoundFileBinary\b2xtranslator.CompoundFileBinary.csproj" />
   </ItemGroup>
 
   <ItemGroup>

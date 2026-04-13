@@ -1,7 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
-		<TargetFramework>net6.0</TargetFramework>
-		<Version>2.3.0</Version>
+		<TargetFrameworks>net462;net6.0</TargetFrameworks>
+		<LangVersion>latest</LangVersion>
+		<Version>2.4.0</Version>
 
 
 		<PackageId>GHSoftware.b2xtranslator</PackageId>
@@ -11,7 +12,7 @@
 		<PackageProjectUrl>https://github.com/GustavoHennig/b2xtranslator</PackageProjectUrl>
 		<PackageLicenseUrl>https://github.com/GustavoHennig/b2xtranslator/blob/master/LICENSE</PackageLicenseUrl>
 
-		<Copyright>2025 Gustavo Hennig, 2017 Evolution Recruitment Solutions, 2008-2009 DIaLOGIKa</Copyright>
+		<Copyright>2026 Gustavo Hennig, 2017 Evolution Recruitment Solutions, 2008-2009 DIaLOGIKa</Copyright>
 		<Company>GH Software Ltda</Company>
 		<Authors>Gustavo Hennig, Evolution Recruitment Solutions, DIaLOGIKa</Authors>
 		<Description>Convert binary legacy Microsoft Office formats to OpenXML</Description>
@@ -19,5 +20,9 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\Common.Abstractions\b2xtranslator.Abstractions.csproj" />
+	</ItemGroup>
+
+	<ItemGroup Condition="'$(TargetFramework)' == 'net462'">
+		<Reference Include="System.IO.Compression" />
 	</ItemGroup>
 </Project>
