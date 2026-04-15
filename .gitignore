@@ -1,4 +1,4 @@
-﻿## Ignore Visual Studio temporary files and build results
+## Ignore Visual Studio temporary files and build results
 
 # Visual Studio 2015 cache/options directory
 .vs/
@@ -31,3 +31,6 @@ samples/*.txt
 !samples/*.expected.txt
 samples/compare-doc-to-txt.ps1
 key.snk
+
+# NativeAOT publish artifacts
+artifacts/

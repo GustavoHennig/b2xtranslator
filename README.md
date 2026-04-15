@@ -41,6 +41,24 @@ This project is inspired by and informed by several existing open-source impleme
 | **Catdoc**      | C        | Lightweight Word `.doc` to text converter                          | [GitHub Mirror](https://github.com/petewarden/catdoc)                 |
 | **DocToText**   | C++      | Lightweight any document file to text converter                    | [GitHub](https://github.com/tokgolich/doctotext)                      |
 
+## Testing
+
+### Unit & Integration Tests
+```bash
+dotnet test UnitTests/UnitTests.csproj
+dotnet test IntegrationTests/IntegrationTests.csproj
+```
+
+### NativeAOT Tests
+
+Tests that the library works correctly when compiled as NativeAOT. This publishes a minimal console app (`Shell/doc2text.aot`) as a native binary and runs it against all sample `.doc` files.
+
+```bash
+dotnet test NativeAotTests/NativeAotTests.csproj
+```
+
+The first run compiles the NativeAOT binary (may take a few minutes). The compiled binary is cached in `artifacts/nativeaot/` and reused on subsequent runs. Delete that directory to force a rebuild.
+
 ## References
 
 * [Microsoft Office binary files documentation](https://msdn.microsoft.com/en-us/library/cc313105.aspx)

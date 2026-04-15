@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <PublishAot>true</PublishAot>
+    <LangVersion>latest</LangVersion>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Text\b2xtranslator.txt.csproj" />
+    <ProjectReference Include="..\..\Doc\b2xtranslator.doc.csproj" />
+    <ProjectReference Include="..\..\Common\b2xtranslator.csproj" />
+    <ProjectReference Include="..\..\Common.CompoundFileBinary\b2xtranslator.CompoundFileBinary.csproj" />
+    <ProjectReference Include="..\..\Common.Abstractions\b2xtranslator.Abstractions.csproj" />
+  </ItemGroup>
+
+</Project>
