@@ -3,6 +3,7 @@
 using System;
 using System.Collections.Generic;
 using System.Reflection;
+using System.Diagnostics.CodeAnalysis;
 using b2xtranslator.StructuredStorage.Reader;
 
 namespace b2xtranslator.OfficeGraph
@@ -32,11 +33,19 @@ namespace b2xtranslator.OfficeGraph
 
         static OfficeGraphBiffRecord()
         {
+            InitializeTypeToRecordClassMapping();
+        }
+
+        [UnconditionalSuppressMessage("Trimming", "IL2026:RequiresUnreferencedCode", Justification = "Legacy compatibility path outside the Native AOT target scope.")]
+        private static void InitializeTypeToRecordClassMapping()
+        {
             UpdateTypeToRecordClassMapping(
                 Assembly.GetExecutingAssembly(), 
                 typeof(OfficeGraphBiffRecord).Namespace);
         }
 
+        [RequiresUnreferencedCode("Use explicit registration for Native AOT or trimmed builds.")]
+        [UnconditionalSuppressMessage("Trimming", "IL2026:RequiresUnreferencedCode", Justification = "Legacy compatibility path outside the Native AOT target scope.")]
         public static void UpdateTypeToRecordClassMapping(Assembly assembly, string ns)
         {
             foreach (var t in assembly.GetTypes())

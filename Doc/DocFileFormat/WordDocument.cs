@@ -4,18 +4,12 @@ using b2xtranslator.StructuredStorage.Common;
 using b2xtranslator.StructuredStorage.Reader;
 using System;
 using System.Collections.Generic;
-using System.Reflection;
 using b2xtranslator.Common.Exceptions;
 
 namespace b2xtranslator.DocFileFormat
 {
     public class WordDocument : IVisitable
     {
-        static WordDocument()
-        {
-            Record.UpdateTypeToRecordClassMapping(Assembly.GetExecutingAssembly(), typeof(WordDocument).Namespace);
-        }
-
         /// <summary>
         /// A dictionary that contains all SEPX of the document.<br/>
         /// The key is the CP at which sections ends.<br/>

@@ -1,18 +1,20 @@
 
-
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.IO;
 using System.Collections;
 using System.Reflection;
+using System.Diagnostics.CodeAnalysis;
 using b2xtranslator.CommonTranslatorLib;
 using b2xtranslator.Tools;
 
 namespace b2xtranslator.OfficeDrawing
 {
-    public class Record : IEnumerable<Record>, IVisitable
+    public partial class Record : IEnumerable<Record>, IVisitable
     {
+        private delegate Record RecordFactory(BinaryReader reader, uint bodySize, uint typeCode, uint version, uint instance);
+
         public const uint HEADER_SIZE_IN_BYTES = (16 + 16 + 32) / 8;
 
         public uint TotalSize
@@ -201,11 +203,11 @@ namespace b2xtranslator.OfficeDrawing
             return result.ToString();
         }
 
-        private static Dictionary<ushort, Type> TypeToRecordClassMapping = new Dictionary<ushort, Type>();
+        private static readonly Dictionary<ushort, RecordFactory> TypeToRecordFactoryMapping = new Dictionary<ushort, RecordFactory>();
 
         static Record()
         {
-            UpdateTypeToRecordClassMapping(Assembly.GetExecutingAssembly(), typeof(Record).Namespace);
+            RegisterKnownRecordFactories();
         }
 
         /// <summary>
@@ -216,6 +218,9 @@ namespace b2xtranslator.OfficeDrawing
         /// 
         /// <param name="assembly">Assembly to scan</param>
         /// <param name="ns">Namespace to scan or null for all namespaces</param>
+        [RequiresUnreferencedCode("Use explicit registration for Native AOT or trimmed builds.")]
+        [UnconditionalSuppressMessage("Trimming", "IL2026:RequiresUnreferencedCode", Justification = "Optional compatibility path for external record registration.")]
+        [UnconditionalSuppressMessage("Trimming", "IL2072:TargetParameterMismatch", Justification = "Optional compatibility path for external record registration.")]
         public static void UpdateTypeToRecordClassMapping(Assembly assembly, string ns)
         {
             foreach (var t in assembly.GetTypes())
@@ -231,17 +236,7 @@ namespace b2xtranslator.OfficeDrawing
 
                     if (attr != null)
                     {
-                        // Add the type codes of the array
-                        foreach (ushort typeCode in attr.TypeCodes)
-                        {
-                            if (TypeToRecordClassMapping.ContainsKey(typeCode))
-                            {
-                                throw new Exception(string.Format(
-                                    "Tried to register TypeCode {0} to {1}, but it is already registered to {2}",
-                                    typeCode, t, TypeToRecordClassMapping[typeCode]));
-                            }
-                            TypeToRecordClassMapping.Add(typeCode, t);
-                        }
+                        Register(t, attr.TypeCodes);
                     }
                 }
             }
@@ -257,57 +252,72 @@ namespace b2xtranslator.OfficeDrawing
             try
             {
                 ushort verAndInstance = reader.ReadUInt16();
-                uint version = verAndInstance & 0x000FU;         // first 4 bit of field verAndInstance
-                uint instance = (verAndInstance & 0xFFF0U) >> 4; // last 12 bit of field verAndInstance
+                uint version = verAndInstance & 0x000FU;
+                uint instance = (verAndInstance & 0xFFF0U) >> 4;
 
                 ushort typeCode = reader.ReadUInt16();
                 uint size = reader.ReadUInt32();
 
-                bool isContainer = (version == 0xF);
-
-                Record result;
-                Type cls;
-
-                if (TypeToRecordClassMapping.TryGetValue(typeCode, out cls))
+                if (TypeToRecordFactoryMapping.TryGetValue(typeCode, out var factory))
                 {
-                    var constructor = cls.GetConstructor(new Type[] {
-                    typeof(BinaryReader), typeof(uint), typeof(uint), typeof(uint), typeof(uint) });
-
-                    if (constructor == null)
-                    {
-                        throw new Exception(string.Format(
-                            "Internal error: Could not find a matching constructor for class {0}",
-                            cls));
-                    }
-
-                    //TraceLogger.DebugInternal("Going to read record of type {0} ({1})", cls, typeCode);
-
-                    try
-                    {
-                        result = (Record)constructor.Invoke(new object[] {
-                        reader, size, typeCode, version, instance
-                    });
-
-                        //TraceLogger.DebugInternal("Here it is: {0}", result);
-                    }
-                    catch (TargetInvocationException e)
-                    {
-                        TraceLogger.DebugInternal(e.InnerException.ToString());
-                        throw e.InnerException;
-                    }
-                }
-                else
-                {
-                    //TraceLogger.DebugInternal("Going to read record of type UnknownRecord ({1})", cls, typeCode);
-                    result = new UnknownRecord(reader, size, typeCode, version, instance);
+                    return factory(reader, size, typeCode, version, instance);
                 }
 
-                return result;
+                return new UnknownRecord(reader, size, typeCode, version, instance);
             }
             catch (OutOfMemoryException e)
             {
                 throw new InvalidRecordException("Invalid record", e);
             }
+        }
+
+        private static void Register(ushort typeCode, RecordFactory factory)
+        {
+            if (TypeToRecordFactoryMapping.ContainsKey(typeCode))
+            {
+                throw new Exception(string.Format(
+                    "Tried to register TypeCode {0}, but it is already registered",
+                    typeCode));
+            }
+
+            TypeToRecordFactoryMapping.Add(typeCode, factory);
+        }
+
+        private static void Register(IEnumerable<ushort> typeCodes, RecordFactory factory)
+        {
+            foreach (ushort typeCode in typeCodes)
+            {
+                Register(typeCode, factory);
+            }
+        }
+
+        [UnconditionalSuppressMessage("Trimming", "IL2072:TargetParameterMismatch", Justification = "Compatibility path for optional runtime registration.")]
+        private static void Register([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] Type type, IEnumerable<ushort> typeCodes)
+        {
+            var constructor = type.GetConstructor(new Type[] {
+                typeof(BinaryReader), typeof(uint), typeof(uint), typeof(uint), typeof(uint) });
+
+            if (constructor == null)
+            {
+                throw new Exception(string.Format(
+                    "Internal error: Could not find a matching constructor for class {0}",
+                    type));
+            }
+
+            Register(typeCodes, (reader, size, typeCode, version, instance) =>
+            {
+                try
+                {
+                    return (Record)constructor.Invoke(new object[] {
+                        reader, size, typeCode, version, instance
+                    });
+                }
+                catch (TargetInvocationException e)
+                {
+                    TraceLogger.DebugInternal(e.InnerException.ToString());
+                    throw e.InnerException;
+                }
+            });
         }
 
         #endregion

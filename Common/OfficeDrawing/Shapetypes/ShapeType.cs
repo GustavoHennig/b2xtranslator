@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using b2xtranslator.CommonTranslatorLib;
 using System.Reflection;
 using b2xtranslator.Tools;
+using System.Diagnostics.CodeAnalysis;
 
 namespace b2xtranslator.OfficeDrawing.Shapetypes
 {
-    public class ShapeType : IVisitable
+    public partial class ShapeType : IVisitable
     {
+        private delegate ShapeType ShapeFactory();
+
         public enum JoinStyle
         {
             miter,
@@ -41,8 +44,8 @@ namespace b2xtranslator.OfficeDrawing.Shapetypes
         }
 
         /// <summary>
-        /// This string describes a sequence of commands that define the shape’s path.<br/>
-        /// This string describes both the pSegmentInfo array and pVertices array in the shape’s geometry properties.
+        /// This string describes a sequence of commands that define the shapeï¿½s path.<br/>
+        /// This string describes both the pSegmentInfo array and pVertices array in the shapeï¿½s geometry properties.
         /// </summary>
         public string Path;
 
@@ -50,7 +53,7 @@ namespace b2xtranslator.OfficeDrawing.Shapetypes
         /// <summary>
         /// This specifies a list of formulas whose calculated values are referenced by other properties. <br/>
         /// Each formula is listed on a separate line. Formulas are ordered, with the first formula having index 0. <br/>
-        /// This section can be omitted if the shape doesn’t need any guides.
+        /// This section can be omitted if the shape doesnï¿½t need any guides.
         /// </summary>
         public List<string> Formulas;
 
@@ -65,7 +68,7 @@ namespace b2xtranslator.OfficeDrawing.Shapetypes
 
 
         /// <summary>
-        /// These values specify the location of connection points on the shape’s path. <br/>
+        /// These values specify the location of connection points on the shapeï¿½s path. <br/>
         /// The connection points are defined by a string consisting of pairs of x and y values, delimited by commas.
         /// </summary>
         public string ConnectorLocations;
@@ -81,7 +84,7 @@ namespace b2xtranslator.OfficeDrawing.Shapetypes
         /// This section specifies the properties of each adjust handle on the shape. <br/>
         /// One adjust handle is specified per line. <br/>
         /// The properties for each handle correspond to values of the ADJH structure 
-        /// contained in the pAdjustHandles array in the shape’s geometry properties.
+        /// contained in the pAdjustHandles array in the shapeï¿½s geometry properties.
         /// </summary>
         public List<Handle> Handles;
 
@@ -90,7 +93,7 @@ namespace b2xtranslator.OfficeDrawing.Shapetypes
         /// Specifies one or more text boxes inscribed inside the shape. <br/>
         /// A textbox is defined by one or more sets of numbers specifying (in order) the left, top, right, and bottom points of the rectangle. <br/>
         /// Multiple sets are delimited by a semicolon. <br/>
-        /// If omitted, the text box is the same as the geometry’s bounding box.
+        /// If omitted, the text box is the same as the geometryï¿½s bounding box.
         /// </summary>
         public string TextboxRectangle;
 
@@ -144,68 +147,35 @@ namespace b2xtranslator.OfficeDrawing.Shapetypes
         {
             get 
             {
-                uint ret = 0;
-
-                var attrs = this.GetType().GetCustomAttributes(typeof(OfficeShapeTypeAttribute), false);
-                OfficeShapeTypeAttribute attr = null;
-
-                if (attrs.Length > 0)
+                if (ShapeClassToTypeCodeMapping.TryGetValue(this.GetType(), out var typeCode))
                 {
-                    attr = attrs[0] as OfficeShapeTypeAttribute;
+                    return typeCode;
                 }
 
-                if (attr != null)
-                {
-                    ret = attr.TypeCode;
-                }
-
-                return ret;
+                return 0;
             }
         }
 	
 
 
-        private static Dictionary<uint, Type> TypeToShapeClassMapping = new Dictionary<uint, Type>();
+        private static readonly Dictionary<uint, ShapeFactory> TypeToShapeFactoryMapping = new Dictionary<uint, ShapeFactory>();
+        private static readonly Dictionary<Type, uint> ShapeClassToTypeCodeMapping = new Dictionary<Type, uint>();
 
 
         static ShapeType()
         {
-            UpdateTypeToShapeClassMapping(Assembly.GetExecutingAssembly(), typeof(ShapeType).Namespace);
+            RegisterKnownShapeTypes();
         }
 
 
         public static ShapeType GetShapeType(uint typeCode)
         {
-            ShapeType result;
-            Type cls;
-
-            if (TypeToShapeClassMapping.TryGetValue(typeCode, out cls))
+            if (TypeToShapeFactoryMapping.TryGetValue(typeCode, out var factory))
             {
-                var constructor = cls.GetConstructor(new Type[] {});
-
-                if (constructor == null)
-                {
-                    throw new Exception(string.Format(
-                        "Internal error: Could not find a matching constructor for class {0}",
-                        cls));
-                }
-
-                try
-                {
-                    result = (ShapeType)constructor.Invoke(new object[] {});
-                }
-                catch (TargetInvocationException e)
-                {
-                    TraceLogger.DebugInternal(e.InnerException.ToString());
-                    throw e.InnerException;
-                }
-            }
-            else
-            {
-                result = null;
+                return factory();
             }
 
-            return result;
+            return null;
         }
 
 
@@ -217,6 +187,9 @@ namespace b2xtranslator.OfficeDrawing.Shapetypes
         /// 
         /// <param name="assembly">Assembly to scan</param>
         /// <param name="ns">Namespace to scan or null for all namespaces</param>
+        [RequiresUnreferencedCode("Use explicit registration for Native AOT or trimmed builds.")]
+        [UnconditionalSuppressMessage("Trimming", "IL2026:RequiresUnreferencedCode", Justification = "Optional compatibility path for external shape registration.")]
+        [UnconditionalSuppressMessage("Trimming", "IL2072:TargetParameterMismatch", Justification = "Optional compatibility path for external shape registration.")]
         public static void UpdateTypeToShapeClassMapping(Assembly assembly, string ns)
         {
             foreach (var t in assembly.GetTypes())
@@ -233,10 +206,59 @@ namespace b2xtranslator.OfficeDrawing.Shapetypes
 
                     if (attr != null)
                     {
-                        TypeToShapeClassMapping.Add(attr.TypeCode, t);
+                        Register(attr.TypeCode, t);
                     }
                 }
             }
+        }
+
+        private static void Register(uint typeCode, ShapeFactory factory)
+        {
+            var instance = factory();
+            Register(typeCode, instance.GetType(), () => factory());
+        }
+
+        private static void Register(uint typeCode, Type type, ShapeFactory factory)
+        {
+            if (TypeToShapeFactoryMapping.ContainsKey(typeCode))
+            {
+                throw new Exception(string.Format(
+                    "Tried to register TypeCode {0}, but it is already registered",
+                    typeCode));
+            }
+
+            TypeToShapeFactoryMapping.Add(typeCode, factory);
+
+            if (type != null && !ShapeClassToTypeCodeMapping.ContainsKey(type))
+            {
+                ShapeClassToTypeCodeMapping.Add(type, typeCode);
+            }
+        }
+
+        [UnconditionalSuppressMessage("Trimming", "IL2072:TargetParameterMismatch", Justification = "Compatibility path for optional runtime registration.")]
+        private static void Register(uint typeCode, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)] Type type)
+        {
+            var constructor = type.GetConstructor(Type.EmptyTypes);
+
+            if (constructor == null)
+            {
+                throw new Exception(string.Format(
+                    "Internal error: Could not find a matching constructor for class {0}",
+                    type));
+            }
+
+            Register(typeCode, type, () =>
+            {
+                try
+                {
+                    return (ShapeType)constructor.Invoke(Array.Empty<object>());
+                }
+                catch (TargetInvocationException e)
+                {
+                    TraceLogger.DebugInternal(e.InnerException.ToString());
+                    throw e.InnerException;
+                }
+            });
         }
 
         #region IVisitable Members

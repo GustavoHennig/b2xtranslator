@@ -24,6 +24,10 @@
 		<ProjectReference Include="..\Common.Abstractions\b2xtranslator.Abstractions.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+		<Compile Include="..\Shared\CodeAnalysisAttributes.cs" Link="Compatibility\CodeAnalysisAttributes.cs" />
+	</ItemGroup>
+
 	<ItemGroup Condition="'$(TargetFramework)' == 'net462'">
 		<Reference Include="System.IO.Compression" />
 	</ItemGroup>

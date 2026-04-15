@@ -23,4 +23,7 @@
 		<ProjectReference Include="..\Common.CompoundFileBinary\b2xtranslator.CompoundFileBinary.csproj" />
 		<ProjectReference Include="..\Common\b2xtranslator.csproj" />
 	</ItemGroup>
+	<ItemGroup>
+		<Compile Include="..\Shared\CodeAnalysisAttributes.cs" Link="Compatibility\CodeAnalysisAttributes.cs" />
+	</ItemGroup>
 </Project>

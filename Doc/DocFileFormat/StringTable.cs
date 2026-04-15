@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using System.Diagnostics.CodeAnalysis;
 
 namespace b2xtranslator.DocFileFormat
 {
@@ -22,7 +23,9 @@ namespace b2xtranslator.DocFileFormat
 
         Encoding _enc;
 
-        public StringTable(Type dataType, VirtualStreamReader reader)
+        public StringTable(
+            [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)]
+            Type dataType, VirtualStreamReader reader)
         {
             this.Strings = new List<string>();
             this.Data = new List<ByteStructure>();
@@ -30,7 +33,9 @@ namespace b2xtranslator.DocFileFormat
             this.Parse(dataType, reader, (uint)reader.BaseStream.Position);
         }
 
-        public StringTable(Type dataType, VirtualStream tableStream, uint fc, uint lcb)
+        public StringTable(
+            [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)]
+            Type dataType, VirtualStream tableStream, uint fc, uint lcb)
         {
             this.Strings = new List<string>();
             this.Data = new List<ByteStructure>();
@@ -42,7 +47,9 @@ namespace b2xtranslator.DocFileFormat
             }
         }
 
-        void Parse(Type dataType, VirtualStreamReader reader, uint fc)
+        void Parse(
+            [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)]
+            Type dataType, VirtualStreamReader reader, uint fc)
         {
             if(reader.BaseStream.Position >= reader.BaseStream.Length)
             {

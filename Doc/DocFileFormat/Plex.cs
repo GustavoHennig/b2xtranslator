@@ -1,10 +1,13 @@
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using b2xtranslator.StructuredStorage.Reader;
 
 namespace b2xtranslator.DocFileFormat
 {
-    public class Plex<T>
+    public class Plex<
+        [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicConstructors)]
+        T>
     {
         protected const int CP_LENGTH = 4;
 
