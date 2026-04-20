@@ -85,7 +85,10 @@ namespace b2xtranslator.Tests
             {
                 File.Delete(Path.ChangeExtension(docPath, ".actual.txt"));
 
-                if (ex.Message.Contains(expected, StringComparison.InvariantCultureIgnoreCase))
+                var normalizedMessage = NormalizeText(ex.Message);
+
+                if (!string.IsNullOrEmpty(normalizedMessage) &&
+                    normalizedMessage.Contains(expected, StringComparison.InvariantCultureIgnoreCase))
                 {
                     // Expected error matches the exception message
                     File.Delete(Path.ChangeExtension(docPath, ".actual.txt"));
