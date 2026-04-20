@@ -109,7 +109,21 @@ namespace b2xtranslator.StructuredStorage.Reader
             {
                 return;
             }
-            this._sectorsUsedByMiniStream = this._fat.GetSectorChain(this._miniStreamStart, (ulong)Math.Ceiling((double)this._sizeOfMiniStream / this._header.SectorSize), "MiniStream");
+
+            var declaredSectorCount = (ulong)Math.Ceiling((double)this._sizeOfMiniStream / this._header.SectorSize);
+            try
+            {
+                this._sectorsUsedByMiniStream = this._fat.GetSectorChain(this._miniStreamStart, declaredSectorCount, "MiniStream");
+            }
+            catch (ChainSizeMismatchException)
+            {
+                // Some .doc files have a shorter MiniStream size in the root entry than the
+                // actual sector chain stored in FAT. Word still opens them, so retry with the
+                // physical file bound and let CheckConsistency() record the mismatch.
+                var maxSectorCount = (ulong)Math.Ceiling((double)this._fileHandler.IOStreamSize / this._header.SectorSize);
+                Trace.TraceWarning("StructuredStorage: MiniStream chain exceeds the size declared by the root entry. Retrying with file-bound limit.");
+                this._sectorsUsedByMiniStream = this._fat.GetSectorChain(this._miniStreamStart, maxSectorCount, "MiniStream");
+            }
         }
 
 

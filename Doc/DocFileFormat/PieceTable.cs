@@ -409,7 +409,16 @@ namespace b2xtranslator.DocFileFormat
                 {
                     text = cyrillicText;
                 }
-                else if (HasEmbeddedCharacter(text, 'ø', 'Ø'))
+                else
+                {
+                    string utf8Text = DecodeWithUtf8(bytes);
+                    if (LooksLikeUtf8Mojibake(text, utf8Text))
+                    {
+                        text = utf8Text;
+                    }
+                }
+
+                if (HasEmbeddedCharacter(text, 'ø', 'Ø'))
                 {
                     Encoding centralEuropeanEncoding = TryGetSingleByteEncoding(1250);
                     if (centralEuropeanEncoding != null)
@@ -430,6 +439,18 @@ namespace b2xtranslator.DocFileFormat
         {
             Encoding encoding = TryGetSingleByteEncoding(codePage);
             return encoding != null ? encoding.GetString(bytes) : string.Empty;
+        }
+
+        private static string DecodeWithUtf8(byte[] bytes)
+        {
+            try
+            {
+                return new UTF8Encoding(false, true).GetString(bytes);
+            }
+            catch (DecoderFallbackException)
+            {
+                return string.Empty;
+            }
         }
 
         private static bool HasEmbeddedCharacter(string text, char lower, char upper)
@@ -489,6 +510,50 @@ namespace b2xtranslator.DocFileFormat
             return supplementLetters >= 6 &&
                    asciiLetters <= Math.Max(1, westernLetters / 5) &&
                    cyrillicLetters * 10 >= westernLetters * 7;
+        }
+
+        private static bool LooksLikeUtf8Mojibake(string singleByteText, string utf8Text)
+        {
+            if (string.IsNullOrEmpty(utf8Text) || string.Equals(singleByteText, utf8Text, StringComparison.Ordinal))
+            {
+                return false;
+            }
+
+            int suspiciousBefore = CountUtf8MojibakeSequences(singleByteText);
+            if (suspiciousBefore < 2)
+            {
+                return false;
+            }
+
+            int suspiciousAfter = CountUtf8MojibakeSequences(utf8Text);
+            if (suspiciousAfter >= suspiciousBefore)
+            {
+                return false;
+            }
+
+            int latinSupplementLetters = CountMatchingChars(utf8Text, c => c >= '\u00C0' && c <= '\u024F' && char.IsLetter(c));
+            return latinSupplementLetters >= Math.Min(2, suspiciousBefore);
+        }
+
+        private static int CountUtf8MojibakeSequences(string text)
+        {
+            int count = 0;
+            for (int i = 0; i + 1 < text.Length; i++)
+            {
+                char current = text[i];
+                if (current != 'Ã' && current != 'Â' && current != 'â')
+                {
+                    continue;
+                }
+
+                char next = text[i + 1];
+                if ((next >= '\u0080' && next <= '\u00BF') || next == '€' || next == '™')
+                {
+                    count++;
+                }
+            }
+
+            return count;
         }
 
         private static int CountMatchingChars(string text, Func<char, bool> predicate)

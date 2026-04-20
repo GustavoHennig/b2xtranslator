@@ -1,56 +1,60 @@
- 	COMMISSION EUROPÉENNE
-DIRECTION GÉNÉRALE 
-PERSONNEL ET ADMINISTRATION 
-Direction DIL - Informatique et Administration, Luxembourg et Ispra
-Support technique et bureautique
-
-Personne à contacter:
-Hümbert Annerose, Téléphone:(352) 43 01-35414, Annerose.Huembert@cec.eu.int
+		COMMISSION EUROPÃ‰ENNEDIRECTION GÃ‰NÃ‰RALE PERSONNEL ET ADMINISTRATION Direction DIL - Informatique et Administration, Luxembourg et IspraSupport technique et bureautique
+Personne Ã  contacter:
+HÃ¼mbert Annerose, TÃ©lÃ©phone:(352) 43 01-35414, Annerose.Huembert@cec.eu.int
 
 
 
 Eurolook va sur le Web!
 Un nouvel outil: Eurolook/Web
 
- 
-TABLE DES MATIÈRES
-INTRODUCTION	3
-L'OUTIL	3
-1.	HISTORIQUE	3
-1.1.	Première étape	3
-1.2.	Seconde étape	3
-2.	TESTS ET PHASE PILOTE	4
-3.	QUELLES PERSPECTIVES POUR EUROLOOK/WEB?	4
-CONCLUSION	4
+TABLE DES MATIÃˆRES
+Introduction	3
+L'Outil	3
+1.	Historique	3
+1.1.	PremiÃ¨re Ã©tape	3
+1.2.	Seconde Ã©tape	3
+2.	Tests et phase pilote	4
+3.	Quelles perspectives pour Eurolook/Web?	4
+Conclusion	4
 
- 
-INTRODUCTION
-Actuellement la création de documents destinés à être publiés sur le Web n'est pas encore uniformisée, et se révèle être une tâche délicate pouvant occasionner de nombreux problèmes. Soit, les documents sont créés avec des outils spécifiques mais complexes tels que FrontPage 98 ou HotMetal Pro, soit les utilisateurs habituels de Word doivent d'abord effectuer manuellement un fastidieux travail de "nettoyage" et de simplification du document avant de procéder enfin à la conversion vers le format Web.
-Nous avons donc pensé que la création de documents Web dans l'environnement Eurolook faciliterait grandement et simplifierait le processus. L'intégration d'un outil à la fois commode et pratique permettrait aux utilisateurs de convertir aisément les documents Word en des documents destinés à être publiés sur le Web…
+Introduction
+Actuellement la crÃ©ation de documents destinÃ©s Ã  Ãªtre publiÃ©s sur le Web n'est pas encore uniformisÃ©e, et se rÃ©vÃ¨le Ãªtre une tÃ¢che dÃ©licate pouvant occasionner de nombreux problÃ¨mes. Soit, les documents sont crÃ©Ã©s avec des outils spÃ©cifiques mais complexes tels que FrontPage 98 ou HotMetal Pro, soit les utilisateurs habituels de Word doivent d'abord effectuer manuellement un fastidieux travail de "nettoyage" et de simplification du document avant de procÃ©der enfin Ã  la conversion vers le format Web.
+Nous avons donc pensÃ© que la crÃ©ation de documents Web dans l'environnement Eurolook faciliterait grandement et simplifierait le processus. L'intÃ©gration d'un outil Ã  la fois commode et pratique permettrait aux utilisateurs de convertir aisÃ©ment les documents Word en des documents destinÃ©s Ã  Ãªtre publiÃ©s sur le Webâ€¦
 
-L'OUTIL
-1.	HISTORIQUE
-1.1.	Première étape
-M. Francis Flaherty du Service de Traduction avait déjà développé un convertisseur Word/Eurolook vers HTML (appelé EuroHTML_98). Ce convertisseur, jusqu'à présent non encore intégré à Eurolook, répondait déjà en grande partie à de nombreuses conditions de la conversion vers HTML…
-1.2.	Seconde étape
-Nous avons alors décidé de l'introduire sous la forme d'un ajout intégré (add-on) à Word 97 proposant notamment entre autres options, la possibilité d'utiliser des modèles (skeletons). Ceux-ci ont été fournis à titre d'exemple pour démontrer sa flexibilité lors de la création de pages Web, d'autres skeletons peuvent toujours être ajoutés au fur et à mesure des besoins. 
- 
+L'Outil
+Historique
+PremiÃ¨re Ã©tape
+M. Francis Flaherty du Service de Traduction avait dÃ©jÃ  dÃ©veloppÃ© un convertisseur Word/Eurolook vers HTML (appelÃ© EuroHTML_98). Ce convertisseur, jusqu'Ã  prÃ©sent non encore intÃ©grÃ© Ã  Eurolook, rÃ©pondait dÃ©jÃ  en grande partie Ã  de nombreuses conditions de la conversion vers HTMLâ€¦
+Seconde Ã©tape
+Nous avons alors dÃ©cidÃ© de l'introduire sous la forme d'un ajout intÃ©grÃ© (add-on) Ã  Word 97 proposant notamment entre autres options, la possibilitÃ© d'utiliser des modÃ¨les (skeletons). Ceux-ci ont Ã©tÃ© fournis Ã  titre d'exemple pour dÃ©montrer sa flexibilitÃ© lors de la crÃ©ation de pages Web, d'autres skeletons peuvent toujours Ãªtre ajoutÃ©s au fur et Ã  mesure des besoins. 
 
-2.	TESTS ET PHASE PILOTE
-Dès la réception du prototype, nous avons entrepris quelques premiers tests limités. Un plan de test détaillé spécifiant les aspects à examiner, de quelle façon, et comment les répertorier, a été préparé. STB a ensuite effectué ces tests préliminaires  permettant une première évaluation de ce prototype sous différents angles tels que les limitations du convertisseur, la qualité des pages Web obtenues et de l'interface utilisateur …
- 
-3.	QUELLES PERSPECTIVES POUR EUROLOOK/WEB?
-Voici une liste non exhaustive des perspectives envisagées pour l’avenir d’Eurolook/Web:
-•	Distribution de la version 1.0 (Sofltine: sous-partie de Eurolook 3.9) avec un script d'installation automatique.
-•	Préparation et mise à disposition d'un guide pour la définition de skeletons.
-•	Conformité avec les règles de publication de la DG X en fournissant tout le support nécessaire pour modifier les modules "modifiables" d'Eurolook/Web (layouts, skeletons, …).
-•	Amélioration de l'intégration avec Eurolook et ses évolutions.
-•	Perfectionnement/optimisation de la procédure de conversion
-•	Suivi des évolutions de la configuration de référence en matière de traitement de textes, outils pour le Web…
-•	Enfin mais avant tout, écoute de vos besoins!
 
-CONCLUSION
-Ce nouvel outil se révèle être une méthode facile, sûre et rapide pour la conversion des documents Eurolook créés en Word 97 en des documents HTML destinés à être publiés sur le Web.
-Néanmoins, nous tenons à souligner que dans l'approche de ce nouveau concept, notre réflexion première a été de faire valoir :
-(1)	le capital informatif et la richesse des documents réalisés en Eurolook,
-(2)	le capital des connaissances constitué par l'expérience des utilisateurs Eurolook.
+Tests et phase pilote
+DÃ¨s la rÃ©ception du prototype, nous avons entrepris quelques premiers tests limitÃ©s. Un plan de test dÃ©taillÃ© spÃ©cifiant les aspects Ã  examiner, de quelle faÃ§on, et comment les rÃ©pertorier, a Ã©tÃ© prÃ©parÃ©. STB a ensuite effectuÃ© ces tests prÃ©liminaires  permettant une premiÃ¨re Ã©valuation de ce prototype sous diffÃ©rents angles tels que les limitations du convertisseur, la qualitÃ© des pages Web obtenues et de l'interface utilisateur â€¦
+
+Quelles perspectives pour Eurolook/Web?
+Voici une liste non exhaustive des perspectives envisagÃ©es pour lâ€™avenir dâ€™Eurolook/Web:
+Distribution de la version 1.0 (Sofltine: sous-partie de Eurolook 3.9 (http://www.cc.cec/softline/r/products/desktopapp/offaut/office/index.htm#eurolook)) avec un script d'installation automatique.
+PrÃ©paration et mise Ã  disposition d'un guide pour la dÃ©finition de skeletons.
+ConformitÃ© avec les rÃ¨gles de publication de la DG X en fournissant tout le support nÃ©cessaire pour modifier les modules "modifiables" d'Eurolook/Web (layouts, skeletons, â€¦).
+AmÃ©lioration de l'intÃ©gration avec Eurolook et ses Ã©volutions.
+Perfectionnement/optimisation de la procÃ©dure de conversion
+Suivi des Ã©volutions de la configuration de rÃ©fÃ©rence en matiÃ¨re de traitement de textes, outils pour le Webâ€¦
+Enfin mais avant tout, Ã©coute de vos besoins!
+
+Conclusion
+Ce nouvel outil se rÃ©vÃ¨le Ãªtre une mÃ©thode facile, sÃ»re et rapide pour la conversion des documents Eurolook crÃ©Ã©s en WordÂ 97 en des documents HTML destinÃ©s Ã  Ãªtre publiÃ©s sur le Web.
+NÃ©anmoins, nous tenons Ã  souligner que dans l'approche de ce nouveau concept, notre rÃ©flexion premiÃ¨re a Ã©tÃ© de faire valoirÂ :
+le capital informatif et la richesse des documents rÃ©alisÃ©s en Eurolook,
+le capital des connaissances constituÃ© par l'expÃ©rience des utilisateurs Eurolook.
+
+4
+
+BÃ¢timent Jean Monnet, Rue Alcide de Gasperi, L-2920 Luxembourg. TÃ©lÃ©phone: (352) 43 01-1.
+Bureau: JMO C2-012. TÃ©lÃ©phone: ligne directe (352) 43 01-35414. TÃ©lÃ©copieur: (352) 43 01-34311.
+
+Rue de la Loi 200, B-1049 Bruxelles - Belgique. TÃ©lÃ©phone: (32-2) 299 11 11.
+TÃ©lÃ©phone: ligne directe (32-2) 2958694. 
+
+www.cc.cec
+E-mail: Annerose.Huembert@cec.eu.int
