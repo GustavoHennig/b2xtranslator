@@ -28,103 +28,103 @@ MULTIMEDIA SOLUTIONS
 
 Table des matières
 
-		
-1.	Highlights	
-2.	Introduction	
-3.	L’Entreprise Multimédia Solutions	
-3.1	Historique	
-3.2	Raison sociale, statut juridique et actionnariat	
-3.3	Sociétés apparentées	
-3.4	Activités	
-3.5	Les logiciels chez Multimédia Solutions :	
-3.5.1	Windex	
-3.5.2	Windex Server	
-3.5.3	Jimage	
-3.5.4	IndexGED	
-3.6	Marché et chiffre d’affaire	
-3.7	Concurrence	
-3.8	Ressources Humaines et Organisation de l'entreprise	
-3.9	Recherche et développement	
-3.10	Systèmes de production	
-3.11	Systèmes de gestion	
-3.12	Politique de sous-traitance et d’achat	
-4.	Direction de Multimédia Solutions	
-4.1	Directrice Générale et Commerciale : Hélène Omari	
-4.2	Directeur Technique : Bruno Lacombe	
-5.	Les métiers de l’ingénieur au sein de Multimédia Solutions	
-5.1	Ingénieur : Marc Mendez	
-6.	Les objectifs de la mission technique	
-6.1	Sujet de stage	
-6.2	Objectifs, besoins et services fonctionnels	
-6.2.1	Filtrage des documents Word	
-6.2.2	Filtrage des documents PDF-Lzw	
-6.2.3	Recherche dans les news et les forums de discussions	
-6.2.4	Mise en œuvre du site de recherche	
-6.2.5	Génération de statistiques	
-6.2.6	Procédure de sauvegarde	
-6.3	Besoins non fonctionnels	
-6.3.1	Développer en langage Java	
-6.3.2	Utilisation de VisualAge for Java	
-6.3.3	Portabilité	
-6.3.4	Performances	
-6.3.5	Besoin esthétique	
-6.4	Moyens mis à disposition	
-6.5	Planification du projet	
-6.6	Structure du projet	
-7.	Réalisation des filtres pour Windex	
-7.1	Filtrage des documents Word	
-7.1.1	Analyse	
-7.1.2	Conception	
-7.1.3	Réalisaton	
-7.1.4	Validation	
-7.1.5	Intégration au logiciel Windex2	
-7.2	Filtrage des documents PDF-Lzw	
-7.2.1	Analyse	
-7.2.2	Conception	
-7.2.3	Réalisation	
-7.2.4	Validation	
-7.2.5	Intégration	
-7.3	Filtre Ascii85	
-7.3.1	Analyse	
-7.3.2	Conception et Réalisation	
-7.3.3	Validation et Intégration	
-7.4	Recherche dans les news et les forums de discussions	
-8.	Réalisation du site de recherche	
-8.1	Implémentation de la base de données d'URLs	
-8.1.1	AfnicSnooper et UrlBase : Les sites en ".fr"	
-8.1.2	D'autres sites :	
-8.2	Installation du moteur de recherche	
-8.2.1	Le nom de domaine : Naevis	
-8.2.2	L'interface Web	
-8.2.3	Le traitement des requêtes par la servlet	
-8.3	Formulaire d'ajout d'URL	
-8.3.1	Le formulaire	
-8.3.2	La démarche	
-8.3.3	Méthodes de détection des tricheurs	
-8.4	Formulaire d'administration	
-8.4.1	Le contrôle	
-8.4.2	Les statistiques	
-8.5	Mise en place sur le serveur Odin	
-8.6	Procédure de sauvegarde	
-9.	Résultats	
-9.1	Les filtres	
-9.2	Construction de la base de données d'URLs	
-9.2.1	Installation du site de recherche	
-9.2.2	Formulaire d'ajout d'URL	
-9.2.3	Formulaire d'administration	
-9.2.4	Procédure de sauvegarde	
-9.3	Orientations techniques souhaitées	
-10.	Conclusion	
-11.	Glossaire	
-12.	Bibliographie	
-12.1	Programmation en Java :	
-12.2	Les navigateurs :	
-12.3	Structure des documents Microsoft Word	
-12.4	La méthode de Lempel-Ziv-Welch :	
-12.5	Les moteurs de recherche :	
-12.6	Divers	
-13.	Matériel	
-14.	Annexes	
+0.	Table des matières	2
+1.	Highlights	5
+2.	Introduction	6
+3.	L’Entreprise Multimédia Solutions	7
+3.1	Historique	7
+3.2	Raison sociale, statut juridique et actionnariat	7
+3.3	Sociétés apparentées	7
+3.4	Activités	8
+3.5	Les logiciels chez Multimédia Solutions :	8
+3.5.1	Windex	8
+3.5.2	Windex Server	10
+3.5.3	Jimage	10
+3.5.4	IndexGED	11
+3.6	Marché et chiffre d’affaire	11
+3.7	Concurrence	11
+3.8	Ressources Humaines et Organisation de l'entreprise	12
+3.9	Recherche et développement	12
+3.10	Systèmes de production	13
+3.11	Systèmes de gestion	13
+3.12	Politique de sous-traitance et d’achat	13
+4.	Direction de Multimédia Solutions	15
+4.1	Directrice Générale et Commerciale : Hélène Omari	15
+4.2	Directeur Technique : Bruno Lacombe	15
+5.	Les métiers de l’ingénieur au sein de Multimédia Solutions	16
+5.1	Ingénieur : Marc Mendez	16
+6.	Les objectifs de la mission technique	17
+6.1	Sujet de stage	17
+6.2	Objectifs, besoins et services fonctionnels	17
+6.2.1	Filtrage des documents Word	17
+6.2.2	Filtrage des documents PDF-Lzw	18
+6.2.3	Recherche dans les news et les forums de discussions	18
+6.2.4	Mise en œuvre du site de recherche	18
+6.2.5	Génération de statistiques	19
+6.2.6	Procédure de sauvegarde	19
+6.3	Besoins non fonctionnels	19
+6.3.1	Développer en langage Java	19
+6.3.2	Utilisation de VisualAge for Java	20
+6.3.3	Portabilité	20
+6.3.4	Performances	20
+6.3.5	Besoin esthétique	21
+6.4	Moyens mis à disposition	21
+6.5	Planification du projet	21
+6.6	Structure du projet	22
+7.	Réalisation des filtres pour Windex	23
+7.1	Filtrage des documents Word	23
+7.1.1	Analyse	23
+7.1.2	Conception	24
+7.1.3	Réalisaton	24
+7.1.4	Validation	25
+7.1.5	Intégration au logiciel Windex2	25
+7.2	Filtrage des documents PDF-Lzw	26
+7.2.1	Analyse	26
+7.2.2	Conception	26
+7.2.3	Réalisation	27
+7.2.4	Validation	27
+7.2.5	Intégration	27
+7.3	Filtre Ascii85	28
+7.3.1	Analyse	28
+7.3.2	Conception et Réalisation	28
+7.3.3	Validation et Intégration	28
+7.4	Recherche dans les news et les forums de discussions	29
+8.	Réalisation du site de recherche	30
+8.1	Implémentation de la base de données d'URLs	30
+8.1.1	AfnicSnooper et UrlBase : Les sites en ".fr"	30
+8.1.2	D'autres sites :	31
+8.2	Installation du moteur de recherche	32
+8.2.1	Le nom de domaine : Naevis	32
+8.2.2	L'interface Web	32
+8.2.3	Le traitement des requêtes par la servlet	33
+8.3	Formulaire d'ajout d'URL	33
+8.3.1	Le formulaire	33
+8.3.2	La démarche	34
+8.3.3	Méthodes de détection des tricheurs	34
+8.4	Formulaire d'administration	35
+8.4.1	Le contrôle	35
+8.4.2	Les statistiques	36
+8.5	Mise en place sur le serveur Odin	36
+8.6	Procédure de sauvegarde	37
+9.	Résultats	39
+9.1	Les filtres	39
+9.2	Construction de la base de données d'URLs	39
+9.2.1	Installation du site de recherche	39
+9.2.2	Formulaire d'ajout d'URL	39
+9.2.3	Formulaire d'administration	39
+9.2.4	Procédure de sauvegarde	39
+9.3	Orientations techniques souhaitées	39
+10.	Conclusion	40
+11.	Glossaire	41
+12.	Bibliographie	45
+12.1	Programmation en Java :	45
+12.2	Les navigateurs :	45
+12.3	Structure des documents Microsoft Word	45
+12.4	La méthode de Lempel-Ziv-Welch :	45
+12.5	Les moteurs de recherche :	46
+12.6	Divers	47
+13.	Matériel	48
+14.	Annexes	50
 Highlights
 
 
@@ -137,7 +137,7 @@ Le 23 mai 2001, je rencontrais pour la première fois Hélène Omari et Bruno La
 
 Le lendemain, je signait une convention à l’Enseirb qui faisait de Bruno Lacombe, le directeur technique de Multimédia Solutions, mon maître de stage pour la période du 2 juillet au 30 novembre 2001.Durant ces cinq mois, j’ai pu réalisé les objectifs associés à ce stage, à savoir :
 L’approfondissement et la diversification de mes connaissances informatiques en langage Java, sur les Servlets, sur les mécanismes de transfert et de stockage de l’information sur Internet, sur l’utilisation d’Internet comme source d’informations et d’outils de travail.
-Appréhension d’une entreprise et son environnement : Découverte de Multimédia Solutions (assistée de l’enquête entreprise, je le reconnais), et aussi des autres entreprises présentes dans la pépinière de Cestas (en particulier d’Erebus, entreprise en infographie, partenaire de Multimédia solutions et anecdotiquement créatrice de la nouvelle charte graphique de l’Enseirb). Découverte de certains avantages et de certaines contraintes de l’entreprise (on peut par exemple entièrement se consacrer à son travail mais on ne peut s’en détacher totalement, c’est selon l’humeur de l’interprétation). Adaptation à l’environnement
+Appréhension d’une entreprise et son environnement : Découverte de Multimédia Solutions (assistée de l’enquête entreprise, je le reconnais), et aussi des autres entreprises présentes dans la pépinière de Cestas (en particulier d’Erebus, entreprise en infographie, partenaire de Multimédia solutions et anecdotiquement créatrice de la nouvelle charte graphique de l’Enseirb). Découverte de certains avantages et de certaines contraintes de l’entreprise (on peut par exemple entièrement se consacrer à son travail mais on ne peut s’en détacher totalement, c’est selon l’humeur de l’interprétation). Adaptation à l’environnement…
 
 Ce rapport relate, à travers l’enquête entreprise puis à travers l’explication de mon travail, le déroulement de mon stage, mais ne pourra refléter que médiocrement la véritable richesse des expériences que j’ai pu partagé au sein de Multimédia Solutions.
 
@@ -242,18 +242,18 @@ Une portabilité totale :
 Développé en langage Java, le moteur de recherche Windex fonctionne sur toute plate-forme (Windows 9X, NT, Windows 2000, MacOs, Linux, Unix, Psion...) possédant une machine virtuelle Java compatible minimum 1.1.
 
 Des sites Web qui utilisent Windex :
- 
- 
- 
- 
- 
-
+http://www.alsace.iufm.fr 
+http://www.drire-lr.org 
+http://www.ville-douai.fr 
+http://www.mmedium.com/presse/ 
+http://www.lug.com 
+http://www.infosport.org
 
 
 
 Un article au sujet de Windex 2 est paru dans le 01-informatique du 13 juillet 2001 (cf. Annexe).
 Cet article est consultable à l'adresse suivante :
-
+http://www.enseirb.fr/~barraud/Thirdyear/Stage/presse/
 
 Windex Server
 
@@ -316,9 +316,9 @@ Enfin, le marché international ne concerne que la vente de produits. Notons à 
 
 Cependant sur ces marchés, Multimédia Solutions vise principalement le marché professionnel :
 Les PME, PMI (Solectron)
-Grand Comptes (France Telecom, EDF)
+Grand Comptes (France Telecom, EDF…)
 Les administrations et organismes rattachés (Ministère de la justice)
-Les collectivités territoriales (CPAM, CAF, URSAF)
+Les collectivités territoriales (CPAM, CAF, URSAF…)
 
 
 Concurrence
@@ -398,7 +398,7 @@ Politique de sous-traitance et d’achat
 Politique de sous-traitance :
 Multimédia Solutions est une entreprise qui aime son indépendance et qui n’a pas de politique de sous-traitance, elle aime à régler ses problèmes comme une grande.
 
-Certains travaux sont cependant co-traité par les partenaires de l'entreprise, en particulier les travaux d'infographie, effectuées par la société . 
+Certains travaux sont cependant co-traité par les partenaires de l'entreprise, en particulier les travaux d'infographie, effectuées par la société Erebus. 
 De même pour certaines formalités administratives et comptables qui sont assurées par M. Minjon, l'expert comptable.
 
 Politique d'achat :
@@ -414,14 +414,14 @@ Diplômée d'un BTS secrétariat (1982), puis du CESI (Centre d'Etudes Supérieu
 Hélène c'est la fonction vitale de Multimédia Solutions.
 Son rôle dans l'entreprise est à la fois large, vague, ultra diversifié et décisif.
 Elle prend en charge :
-Le management : c'est elle qui énonce les règles de vie, qui définit les postes, leurs cadres
+Le management : c'est elle qui énonce les règles de vie, qui définit les postes, leurs cadres…
 La stratégie commerciale : elle est définie de concert avec Bruno Lacombe, le responsable technique de l'entreprise. A eux deux, ils fixent les objectifs financiers et commerciaux de la société.
 Les contacts commerciaux.
 La finance : Elle établit les budgets, trouve des investisseurs (les clients),
-Les relations : avec les fournisseurs, les disributeurs, les gros clients, les partenaires commerciaux, etc
+Les relations : avec les fournisseurs, les disributeurs, les gros clients, les partenaires commerciaux, etc…
 L’aspect juridique : établissement des contrats.
 La gestion générale : elle veille au bon déroulement des activités de l’entreprise, elle est toujours présente sur les gros problèmes qui peuvent survenir dans chacune de ces activités.
-Tout le reste(c'est beaucoup plus qu'on ne pourrait le croire).
+Tout le reste…(c'est beaucoup plus qu'on ne pourrait le croire).
 
 Donner un titre à sa fonction ressemblerait à Directrice générale, commerciale, administrative, financière et des ressources humaines.
 
@@ -454,7 +454,7 @@ Il s'occupe en partie de la hot-line (destinée à dépanner les utilisateurs-cl
 Par moments, il intègre la division R&D et travaille sur les projets en développement.
 
 Marc est très rigoureux dans son travail, il sait s'adapter à tous les types de travaux auxquels il est confronté, même s'il doit persévérer. Il parle couramment Anglais et connaît assez bien l'Espagnol. Il possède des connaissances informatiques aussi larges qu'hétéroclites, dont il m'a fait profiter durant tout le stage (en effet, Marc et moi avons travaillé dans le même bureau).  Je lui ai d'ailleurs un tant soi peu rendu la pareille en lui transmettant les premières notions de Java au début de sa propre formation Java.
-Enfin, Marc a un avis sur tout, ce qui est véritablement très intéressant lorsqu'on lui pose des questions
+Enfin, Marc a un avis sur tout, ce qui est véritablement très intéressant lorsqu'on lui pose des questions…
 
 
 
@@ -533,7 +533,7 @@ Quels sont les mots les plus recherchés ?
 D'où viennent les utilisateurs ? 
 Les utilisateurs trouvent-ils rapidement les informations ? 
 Combien y a-t-il d'utilisateurs connectés à cet instant ?
-Combien y a-t-il de recherches par jour, par semaine  ?
+Combien y a-t-il de recherches par jour, par semaine … ?
 
 Cette liste n'est pas exhaustive : il faudra voir avec les responsables de l'entreprise quelles informations pertinentes pourront apparaître.
 
@@ -725,7 +725,7 @@ Cependant, ce convertisseur a été testé sur un échantillon de plus de 120 do
 Le résultat était celui attendu pour l'ensemble des documents. En effet, pour tous les documents, le texte est rendu dans son intégralité, la mise en page est respectée :
 Les structures de paragraphes et les retours à la ligne sont conservés.
 Les hyperliens sont conservés.
-Lorsque cela m’a été possible, j’ai respecté quelques éléments de mise en forme tels que le gras, l’italique
+Lorsque cela m’a été possible, j’ai respecté quelques éléments de mise en forme tels que le gras, l’italique…
 
 
 Intégration au logiciel Windex2
@@ -761,7 +761,7 @@ Lorsque l’encodeur et le décodeur, indépendamment mais de manière synchrone
 
 Développement
 
-La lecture de ces différents codes sur 9, 10, 11 et 12 bits a été le principal obstacle lors de la conception et la réalisation de ce filtre. Il a en effet été difficile de bien se caler au bit près, surtout lors des passages de 9 à 10 ou 10 à 11
+La lecture de ces différents codes sur 9, 10, 11 et 12 bits a été le principal obstacle lors de la conception et la réalisation de ce filtre. Il a en effet été difficile de bien se caler au bit près, surtout lors des passages de 9 à 10 ou 10 à 11…
 
 Voici par exemple la manière dont sont lus les codes 9 bits à travers la lecture des bytes (octets).
 On peut remarquer que 9 octets d’informations ne nous donnent que 8 codes.
@@ -855,11 +855,11 @@ L'un des premiers problèmes abordés a été la matière du moteur de recherche
 
 AfnicSnooper et UrlBase : Les sites en ".fr"
 
-Un premier choix( il fallait en faire un) a été fait en ce qui concerne l'indexation de tout les sites en ".fr". Hélène m' a alors tout de suite suite parler de l'AFNIC (Association Française pour le Nommage Internet en Coopération) qui s'occupe de réglementer le domaine des sites en ".fr" et qui possède surtout l'annuaire de l'ensemble de ces sites (consultable sur ). 
+Un premier choix( il fallait en faire un) a été fait en ce qui concerne l'indexation de tout les sites en ".fr". Hélène m' a alors tout de suite suite parler de l'AFNIC (Association Française pour le Nommage Internet en Coopération) qui s'occupe de réglementer le domaine des sites en ".fr" et qui possède surtout l'annuaire de l'ensemble de ces sites (consultable sur http://harmonic.nic.fr/). 
 Nous avons donc tout d'abord contacter l'AFNIC afin d'obtenir la liste des URLs 
 Notre demande est restée lettre morte, en conséquence de quoi il m'a fallu récupérer cette base de données directement via le Web.
 Cependant, l'AFNIC, très certainement désireuse de ne partager que le strict minimum de ses informations, ne les distribue qu'au compte-gouttes sur son annuaire.
-En effet, une recherche sur l'annuaire de l'Afnic (qui se nomme Harmonic) ne donne les résultats que par paquets de 10 et il faut à chaque fois suivre un lien (codé) pour obtenir l'URL du site en question (ainsi que d'autres informations le concernant telles que leur propriétaire, leur adresse physique, leur activité, leur rubrique, le type de serveur).
+En effet, une recherche sur l'annuaire de l'Afnic (qui se nomme Harmonic) ne donne les résultats que par paquets de 10 et il faut à chaque fois suivre un lien (codé) pour obtenir l'URL du site en question (ainsi que d'autres informations le concernant telles que leur propriétaire, leur adresse physique, leur activité, leur rubrique, le type de serveur…).
 
 Je me suis donc lancé dans la conception puis la réalisation d'un petit aspirateur (AfnicSnooper) en Java permettant d'aspirer d'une part la liste des URLs de tous les sites en ".fr" mais aussi toutes les informations relatives à ces sites et les stockant dans la base UrlBase (sous Access).
 
@@ -912,7 +912,7 @@ La réservation du nom de domaine.
 
 Le nom de domaine : Naevis
 
-Un nom pour le moteur de recherche n’est pas seulement un nom pour le moteur de recherche mais aussi pour le nom de domaine. C’est ce qui a apporté une contrainte de taille : le nom est-il disponible en « .com », « .fr »
+Un nom pour le moteur de recherche n’est pas seulement un nom pour le moteur de recherche mais aussi pour le nom de domaine. C’est ce qui a apporté une contrainte de taille : le nom est-il disponible en « .com », « .fr »…
 C’est là que l’imagination et MozzleStd (un logiciel spécialisé dans la vérification de la disponibilité des noms de domaines) ont fait le reste.
 
 
@@ -1063,8 +1063,8 @@ C'est pourquoi je me suis renseigné sur les diverses méthodes des "tricheurs" 
 Voici quelques méthodes de triches et la manière dont elles ont été traitées:
 Texte repris en commentaires (balises <!--  -->). 
 Texte invisible dans la même couleur que le fond de la page.
-Les mêmes mots-clés repris indéfiniment dans la balise <meta name="keywords" >
-Le texte dans l'élément de formulaire <input type="hidden" > (éléments cachés).
+Les mêmes mots-clés repris indéfiniment dans la balise <meta name="keywords" …>
+Le texte dans l'élément de formulaire <input type="hidden" …> (éléments cachés).
 
 La plupart de ces méthodes de tricheurs sont “contrées” par l’indexateur de Windex. 
 On pourra imaginer un petit applicatif associé à l'Agent vérificateur qui « scannera » le site Web afin d’en vérifier l’intégrité.
@@ -1090,7 +1090,7 @@ Cet partie est gérée par la base de données de type MySQL, c’est la base de
 
 
 
-C’est aussi grâce à cette base que nous pourrons « scanner » les sites à indexer, à savoir vérifier éventuellement une partie des informations les concernant, vérifier s’il ne sont pas des tricheurs (au sens énoncé dans la partie 8.3),  et enfin valider le champ de sureté qui permettra leur indexation.
+C’est aussi grâce à cette base que nous pourrons « scanner » les sites à indexer, à savoir vérifier éventuellement une partie des informations les concernant, vérifier s’il ne sont pas des tricheurs (au sens énoncé dans la partie 8.3), … et enfin valider le champ de sureté qui permettra leur indexation.
 
 Les statistiques
 
@@ -1100,7 +1100,7 @@ Quels sont les mots les plus recherchés ?
 D'où viennent les utilisateurs ? 
 Les utilisateurs trouvent-ils rapidement les informations ? 
 Combien y a-t-il d'utilisateurs connectés à cet instant ?
-Combien y a-t-il de recherches par jour, par semaine  ?
+Combien y a-t-il de recherches par jour, par semaine … ?
 
 C’est la base Search qui nous donne toutes les réponses.
 Cette liste n'est pas exhaustive : il faudra voir avec les responsables de l'entreprise quelles informations pertinentes pourront apparaître.
@@ -1128,7 +1128,7 @@ Une sauvergarde générale de tous mes travaux a été gravée en plusieurs exem
 Pour ce qui est des bases d'Urls et de statistiques, elles sont stockées dans une base MySQL sur le serveur Zeus (le serveur Unix), de même que pour les index de Naevis.
 Dans un premier temps, la sauvegarde de ces données aura lieu les mêmes jours que la sauvegarde des données déjà mise en place par Marc.
 Puis, selon les besoins (concernant principalement la capacité mémoire), cette sauvegarde se trouvera déplacée les mardis et jeudis (qui seront alors consacrés à cette sauvegarde particulière).
-La mise en place de cette procédure de sauvegarde, bien évidemment automatisée (seule l'insertion du CD vierge ne l'est pas encore), n'a été qu'une formalité puisqu'il a suffit à Marc de notifier l'emplacement des données à sauvergarder dans son programme de sauvergarde.
+La mise en place de cette procédure de sauvegarde, bien évidemment automatisée (seule l'insertion du CD vierge ne l'est pas encore…), n'a été qu'une formalité puisqu'il a suffit à Marc de notifier l'emplacement des données à sauvergarder dans son programme de sauvergarde.
 Un programme particulier pourra être mis en place si la taille du support de sauvergarde (un CD de 650 Mo pour l'instant) n'est plus suffisante.
 
 Résultats
@@ -1151,7 +1151,7 @@ Le formulaire d’ajout d’Urls est entièrement opérationnel.
 Installation du site de recherche
 
 Le site est prêt à être mis en place.
-Une version de démonstration est disponible sur mon poste de travail Janus, on peut y accéder via l’Url suivante :  (cette démo n'est pas toujours en ligne).
+Une version de démonstration est disponible sur mon poste de travail Janus, on peut y accéder via l’Url suivante : http://www.naevis.fr.st/ (cette démo n'est pas toujours en ligne).
 
 
 Formulaire d'administration
@@ -1270,22 +1270,22 @@ SSI : Server Side Include. Avant d'envoyer un fichier, le serveur y inclut des d
 
 URL : Uniform Resource Locator. Sur le web, c'est la méthode d'accès à un document distant, créant ainsi un lien hypertexte (On peut aussi désigner de cette manière des serveurs en ftp anonyme ou des sites gopher. En fait, le type de connexion peut être : file, ftp, gopher, http, news ou wais). Un URL est dit « long » quand il contient des données concernant le client et pas seulement le serveur.
 
-W3C : World Wide Web Consortium. Organisme qui crée des standards pour le Web. Sa mission est de mener le Web à son potentiel maximal, tout en développant des technologies (spécifications, lignes directrices, logiciels et outils) qui favorisent l’échange d’information, le commerce, l’inspiration, le libre arbitre, et la compréhjension collective. Cette organisation internationale réunit près de 400 membres (pour la plupart des cadres de Apple, Microsoft, IBM, Macromedia) sous l’égide du MIT (Massachusett Institute of Technology), de l’INRIA (Institut National de la Recherche en Informatique et en Automatique) et de l’université de Keiô.
+W3C : World Wide Web Consortium. Organisme qui crée des standards pour le Web. Sa mission est de mener le Web à son potentiel maximal, tout en développant des technologies (spécifications, lignes directrices, logiciels et outils) qui favorisent l’échange d’information, le commerce, l’inspiration, le libre arbitre, et la compréhjension collective. Cette organisation internationale réunit près de 400 membres (pour la plupart des cadres de Apple, Microsoft, IBM, Macromedia…) sous l’égide du MIT (Massachusett Institute of Technology), de l’INRIA (Institut National de la Recherche en Informatique et en Automatique) et de l’université de Keiô.
 Bibliographie
 
 Programmation en Java :
 
-IBM VisualAge for Java 
-Java API Documentation : 
-Les servlets en Java : 
-Penser en Java : 
+IBM VisualAge for Java : http://www-4.ibm.com/software/ad/vajava/
+Java API Documentation : http://java.sun.com/j2se/1.3.0/docs/api/overview-summary.html
+Les servlets en Java : http://java.sun.com/products/servlet/2.2/javadoc/overview-summary.html
+Penser en Java : http://penserenjava.free.fr/
 
 Les navigateurs :
 
-Microsoft Internet Explorer : 
-Mozilla : 
-Netscape Navigator : 
-Opéra : 
+Microsoft Internet Explorer : http://www.microsoft.com/windows/ie/default.htm
+Mozilla : http://www.mozilla.org/
+Netscape Navigator : http://www.netscape.com/
+Opéra : http://www.opera.com/
 
 Microsoft, Windows et Internet Explorer sont des marques de Microsoft Corporation, déposées ou
 non aux Etats-Unis d'Amérique et/ou dans d'autres pays.
@@ -1296,14 +1296,14 @@ Structure des documents Microsoft Word
 
 Voici quelques articles et quelques documents qui m'ont permis d'enrichir ma connaissance de la structure des documents Word :
 
-
-
+http://support.microsoft.com/support/kb/articles/Q174/1/40.ASP
+http://snake.cs.tu-berlin.de:8081/~schwartz/pmh/elser/word6/format.html
 
 Microsoft Word 6.0 binary file format :
-
+http://www.btinternet.com/~shaheedhaque/generator_wword6.htm
 
 Microsoft Word 97 binary file format :
-
+http://www.redbrick.dcu.ie/~bob/Tech/wword8.html
 
 Ces deux derniers documents sont assez récursifs sur le Web et semblent être l'unique source d'informations disponible sur le Web au sujet de la structure des documents Word.
 
@@ -1311,64 +1311,64 @@ Ces deux derniers documents sont assez récursifs sur le Web et semblent être l
 La méthode de Lempel-Ziv-Welch :
 
 AlphaBeta - Algorithme de Lempel-Ziv-Welch (LZW) :
-
+http://www.alphabeta-net.com/LZW.html
 
 Autre explication (en Anglais) sur l'algorithme de LZW :
-
+http://www.rasip.fer.hr/research/compress/algorithms/fund/lz/lzw.html
 
 Les moteurs de recherche :
 
-Dans le cadre de la mise en place du moteur de recherche, il m’a fallu me documenter sur les moteurs de recherches, leurs fonctionnalités, leurs cibles, leur fonctionnement
+Dans le cadre de la mise en place du moteur de recherche, il m’a fallu me documenter sur les moteurs de recherches, leurs fonctionnalités, leurs cibles, leur fonctionnement…
 Ceci afin de déterminer les critères sur lesquels je pourrais me reposer pour la mise en place du site de recherche.
 
 Voici donc un échantillon des principaux sites de recherche existant sur le Web.
 
 Altavista : Moteur d'indexation automatique de l'Internet conçu par une équipe de Digital (dont le français Monnier) sur le campus de Stanford, qui indexe des dizaines de millions de documents du web et qui permet d'y effectuer une recherche en quelques secondes. Le robot d'indexation s'appelle Scooter. Devenu complètement commercial, c'est aussi devenu un moteur de mauvaise qualité (réponses orientées).
-
+http://www.altavista.com/
 
 Ebay :
- (version originale)
- (VF).
+http://pages.ebay.com/index.html (version originale)
+http://pages.fr.ebay.com/index.html (VF).
 
 Excite :  
- (version originale)
- (VF).
+http://www.excite.com/ (version originale)
+http://www.excite.fr/ (VF).
 
 Google : 
- (version originale)
- (VF).
+http://www.google.com/ (version originale)
+http://www.google.fr/ (VF).
 
-Lycos : 
+Lycos : http://www.fr.lycos.de/
 
-WebCrawler : 
+WebCrawler : http://www.webcrawler.com/
 
 Yahoo : Yet Another Hierarchically Officious Oracle. Système de recherche sur le Net. C'est en fait un site de référencement des adresses (URL), travail qui est ici effectué par des êtres humains qui trient les documents HTML, contrairement à la concurrence (Alta Vista), où ce sont des robots idiots qui bossent (et qui vont bien plus vite). Yahoo est cotée en bourse depuis le 12 avril 1996, obtenant 800 millions de dollars le premier jour, ce fut l'une des premières introductions en bourse miraculeuses du secteur, bien avant le délire de la nouvelle économie.
- (version originale).
- (VF).
+http://www.yahoo.com/ (version originale).
+http://fr.yahoo.com/ (VF).
 
 Outre les sites des moteurs de recherche bien connus, quelques sites parlant plus généralement des moteurs de recherche ont aussi retenu mon attention :
 
 Search Engine Watch Tips About Internet Search Engines & Search Engine Submission :
-
+http://searchenginewatch.com/
 
 Allsearchengines.com :
-
+http://www.allsearchengines.com/
 
 La recherche documentaire sur Internet :
-
+http://www.multimania.com/patderam/docu.htm
 
 Divers
 
-Lotus : 
+Lotus : http://www.lotus.com/
 
-Multimédia Solutions : 
+Multimédia Solutions : http://www.lug.com/
 Windex :
-Présentation : 
-Télécharger la version d'évaluation : 
+Présentation : http://www.lug.com/soft/windex.shtml
+Télécharger la version d'évaluation : http://www.lug.com/telecharger/telecharger.shtml
 
-Erebus : 
+Erebus : http://www.erebus.fr/
 
-Spy-CD : 
+Spy-CD : http://www.spycd.com/
 
 Apple, Mac et Macintosh sont des marques d'Apple Computer, Inc, déposées ou non aux Etats-Unis d'Amérique et/ou dans d'autres pays.
 
@@ -1428,7 +1428,7 @@ code source (pour les projets d’informatique)
 	ENSEIRB	Rapport de Stage de début de 3ème année	Multimédia Solutions
 
 
-	Guillaume Barraud	/
+	Guillaume Barraud	39/1
 
 	Rapport de stage de début de 3ème année.
 	Guillaume Barraud	Département : Informatique	30 novembre 2001

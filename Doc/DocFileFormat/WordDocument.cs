@@ -340,15 +340,16 @@ namespace b2xtranslator.DocFileFormat
             }
 
             //parse the piece table and construct a list that contains all chars
+            var singleByteEncoding = PieceTable.ResolveSingleByteEncoding(this.FIB, this.DocumentProperties);
             if (isWord95 && this.TableStream == null)
             {
                 // Use the Word 95 single-piece fallback constructor
-                this.PieceTable = new PieceTable(this.FIB);
+                this.PieceTable = new PieceTable(this.FIB, singleByteEncoding);
             }
             else
             {
                 // Use the standard piece table parser
-                this.PieceTable = new PieceTable(this.FIB, this.TableStream);
+                this.PieceTable = new PieceTable(this.FIB, this.TableStream, singleByteEncoding);
             }
             this.Text = this.PieceTable.GetAllChars(this.WordDocumentStream);
 

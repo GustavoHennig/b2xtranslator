@@ -89,5 +89,5 @@ Dieses Dokument wurde unter Berücksichtigung von Artikel 15 Absatz 3 der Gesch�
 __________
 F747 2002
 - 2 -
-CdR 32/2002 (FR) KI-CF/DC/ws	5=2 " " "/" /
-CdR 32/2002 (FR) KI-CF/DC/ws	1=1 " " "/"  
+CdR 32/2002 (FR) KI-CF/DC/ws	5=2 " " "…/…" …/…
+CdR 32/2002 (FR) KI-CF/DC/ws	1=1 " " "…/…"  

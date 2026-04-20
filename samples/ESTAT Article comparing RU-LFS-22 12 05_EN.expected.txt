@@ -172,9 +172,9 @@ The jobseeker register in Finland includes detailed information about labour sta
 Graph FI02a
 
 
+Due to the detailed information available, all groups of the PES register can be clearly assigned to the LFS categories of unemployed, employed and inactive.
 
-
-		Can be in the LFS
+	Groups identified in the PES register 	Can be in the LFS…
 	Registered unemployed + Laid off (RU)	LFS-registered-unemployed + LFS-employed < 4 hours a week (LFS-R-U, LFS-R-E)
 	On reduced working time (RJ-E)	LFS- registered-employed (LFS-R-E)
 	In the conventional labour market (RJ-E)	LFS- registered-employed (LFS-R-E)
@@ -229,7 +229,7 @@ Graph AT02a
 (c) Registration with the public employment service, register data vs. LFS data on registration
 As not all LFS-unemployed are registered with the PES whilst other persons not LFS-unemployed (inactive and employed) are registered, we also compare those in the LFS who claim to be registered with the actual jobseeker register. Besides the registered unemployed, the Austrian registered jobseekers include apprenticeship seekers, the marginally employed and other not unemployed jobseekers. These groups can be identified in the register data.
 
-	Register groups	Can be in the LFS
+	Register groups	Can be in the LFS…
 	Registered unemployed (without marginal employment) (RU)	LFS-R-U
 	Registered unemployed with marginal employment = RU-E	LFS-R-E
 	Training measure participants (Cat.2) = RJ-I	LFS-R-I
@@ -277,7 +277,7 @@ Though the figures for the registered unemployed in Germany are higher than the 
 (c) Registration with the public employment service, register data vs. LFS data on registration
 In the LFS, all participants are asked if they are registered with the public employment service, irrespective of claiming to be unemployed, employed or inactive. In the PES register, the unemployed have to fulfil all the conditions as mentioned above, while registered jobseekers also include for example those who do not fulfil all the conditions required. “Not unemployed registered jobseekers” include “employed at risk of losing their job” or just wanting to change as well as participants in labour market measures and jobseeking people in education or on parental leave or with care duties.
 
-	Register groups	Can be in the LFS
+	Register groups	Can be in the LFS…
 	Registered unemployed (RU)	LFS-R, normally LFS-R-U
 	Measure participants (cat. 2) (RJ)	LFS-R-I
 	Registered unemployed with marginal employment receiving benefits - (RU-E)	LFS-R-E
@@ -354,7 +354,7 @@ In the PES register three different categories of jobseekers are added to the to
 2 - jobseekers not registered as unemployed because they are excluded from the statistical concept (see definition above)
 3 – employed jobseekers who seek a different employment.
 
-	Register groups	Can be in the LFS
+	Register groups	Can be in the LFS…
 	Unemployed jobseekers, i.e. registered unemployed  (RU)	LFS-R-U
 	Jobseekers not registered as unemployed – RJ (JS-not RU)	LFS-R (labour status not identified)
 	Employed jobseekers – R-E (JS-E)	LFS-R-E
@@ -431,7 +431,7 @@ Graph SE01
 
 Besides the registered unemployed in Sweden registered jobseekers (not unemployed), measure participants and part-time unemployed receiving benefits can be identified.
 
-	Register groups	Can be in the LFS
+	Register groups	Can be in the LFS…
 	Registered unemployed (RU)	LFS-R-U
 	Measure participants (cat. 2)	LFS-R-I
 	Part-time unemployed (receiving benefits) (JS-E)	LFS-R-E
@@ -538,15 +538,15 @@ SIHTO Matti, in EUROSTAT, 2003 20th CEIES Seminar “Labour statistics – towar
 
 30
 
- LFS is used in this article as synonymous for ILO definition of unemployment. The definitions applied in the Labour Force Survey are aimed at improving the international comparability of labour statistics by means of measuring employment and unemployment according to the International Labour Organisation ILO). 
+ LFS is used in this article as synonymous for ILO definition of unemployment. The definitions applied in the Labour Force Survey are aimed at improving the international comparability of labour statistics by means of measuring employment and unemployment according to the International Labour Organisation (ILO). 
  Britta Lüdeke works at the Bundesagentur für Arbeit Statistics, Germany and is the German representative in the Labour Market Policy Methodological Task Force. Africa Melis works at Eurostat, Unit F2 “Labour Market”, and is the responsible for the Labour Market Policy database. 
 
 
- For the full text of the definition see Commission Regulation N° 1897/2000 of 7.09.00 implementing Council Regulation EC) N° 577/98 on the organisation of a Labour Force Survey in the Community concerning the operational definition of unemployment OJ – L 228/18 of 8.09.2000)
+ For the full text of the definition see Commission Regulation N° 1897/2000 of 7.09.00 implementing Council Regulation (EC) N° 577/98 on the organisation of a Labour Force Survey in the Community concerning the operational definition of unemployment (OJ – L 228/18 of 8.09.2000)
  The LFS-RU figures are smaller than the LFS-U figures, as they include only those LFS-U who claim to be registered with the public employment service.
  Pensioners’ regulation: According to the law the "unemployed pensioners" have to register at the employment office until statutory age of old age pension. According to studies only a very tiny part of this group continues their jobseeking. As they can be identified in the statistics they're in this study classifies as inactive jobseekers.
- Training measure participants LMP category 2) can be identified and, depending on the kind of the measure they are classified as employed cat. 2.2 and 2.4) or as inactive. Many of the participants are registered as jobseekers during participation. In this study measure participants are not included.
- Training participants can be identified in Austria, but are not quantified in this study. Training  measure participants are registered as training participants not unemployed) during participation.
+ Training measure participants (LMP category 2) can be identified and, depending on the kind of the measure they are classified as employed (cat. 2.2 and 2.4) or as inactive. Many of the participants are registered as jobseekers during participation. In this study measure participants are not included.
+ Training participants can be identified in Austria, but are not quantified in this study. Training  measure participants are registered as training participants (not unemployed) during participation.
  Both definitions and data refer to the legal regulations in 2003. Regulations have changed in 2005 resulting in a strong increase of figures of registered unemployed in January 2005.
  Measure participants of training measures are not registered as unemployed during their participation. They can be identified, but are not quantfied in this study.
  Social Code III, § 428
@@ -554,4 +554,4 @@ SIHTO Matti, in EUROSTAT, 2003 20th CEIES Seminar “Labour statistics – towar
  When this article was nearly finished the registration data from Spain were revised. The same applies not only to the data, but also to the regulations on who is counted as unemployed. To find out exactly what are the reasons resulting in changes in the data can only be part of further studies. As far as information is already available on the new data and regulations it is included in an extra box. All other information on Spain refers to the old data and regulations.
  Due to the new data the registered unemployed nearly match the LFS unemployed for the totals, the registered unemployed are 0,7 % higher than the LFS unemployed.
  Occasional registration compensation, LMP SE-29
- In Sweden RJnotRU) + RJcat2 > LFS-RI see graph SE02)
+ In Sweden RJ(notRU) + RJcat2 > LFS-RI (see graph SE02)

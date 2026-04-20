@@ -1,5 +1,5 @@
 
-COMMISSION 
+COMMISSION …
 
 
 
@@ -491,4 +491,4 @@ Guidelines - Version 2004 - page 2
 	Self-sampling = Samples taken by fishermen, which could include measurements. 
 	Observer at sea sampling = Sampling at sea by qualified sea-going observers. 
 	Port sampling = Sampling by qualified personnel while the vessel is in port, but before the landings are transferred to an auction. 
-	Market sampling = Sampling by qualified personnel in the auction. 
+	Market sampling = Sampling by qualified personnel in the auction. 

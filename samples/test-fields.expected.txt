@@ -1,4 +1,9 @@
-19/11/2010 14:49:00
-Here is a link to an endnotei
-Here is a link to a footnote1 
+Field in text box: 219/11/2010 14:49:00
+Here is a link to an endnote
+Here is a link to a footnote 
 Some annotation linking here
+Field in text box: 2page 1
+Document1
+ Footnote with field: Fridrich Strba
+ Field in EndNote. File size: 0
+Field in comment: 19/11/2010

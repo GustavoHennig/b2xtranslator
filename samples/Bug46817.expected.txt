@@ -2,6 +2,16 @@
 NAJKORZYSTNIEJSZEJ OFERTYZAMAWIAJĄCY
 
 I.1) OFICJALNA NAZWA I ADRES ZAMAWIAJĄCEGO
+Nazwa	Nazwisko osoby upoważnionej do kontaktów
+	Gmina Cekcyn	Elżbieta Czubak, Teresa Jaśtak
+	Adres	Kod pocztowy
+	ul. Szkolna 2	89-511
+	Miejscowość	Województwo
+	Cekcyn	kujawsko-pomorskie
+	Telefon	Faks
+	052 3347550	052 3364087
+	Poczta elektroniczna (e-mail)	Adres internetowy (URL)
+	inwestycje.cekcyn@las.pl	www.cekcyn.las.pl
 TRYB I PRZEDMIOT ZAMÓWIENIA
 RODZAJ ZAMÓWIENIA: roboty budowlane
 TRYB UDZIELENIA ZAMÓWIENIA:   przetarg nieograniczony
@@ -9,6 +19,16 @@ NAZWA NADANA ZAMÓWIENIU PRZEZ ZAMAWIAJĄCEGO:
 przebudowa ulic wraz z infrastrukturą w Cekcynie
 
 Nazwa i adres wykonawcy, któremu udzielono zamówienia
+Nazwa wykonawcy	
+	Przedsiębiorstwo Robót Melioracyjnych i Ochrony Środowiska „EKOMEL” Sp. z o.o.	
+	Adres	Kod pocztowy
+	ul. Angowicka 47	89-600
+	Miejscowość	Województwo
+	Chojnice	kujawsko-pomorskie
+	Telefon	Faks
+	(052)3974051	(052)3972898
+	Poczta elektroniczna (e-mail)	Adres internetowy (URL)
+	ekomel@ekomel.com.pl	ww.ekomel.com.pl
 Informacja o cenie wybranej oferty:  cena brutto 2.246.521,35 zł
 Cekcyn, dnia 30.01.2006 r.                                                                                                                                                        Wójt Gminy                                                                                     mgr inż. Jacek Brygman
 

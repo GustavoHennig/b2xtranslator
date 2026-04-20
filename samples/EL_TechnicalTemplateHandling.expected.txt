@@ -1,14 +1,14 @@
 		EUROPEAN COMMISSIONDIRECTORATE-GENERALINFORMATICSInfrastructure and Logistics DirectorateTechnical solutions and office systems	
 
+Technical&Quality Template
+User's Manual
 
 
-
-
-	Date:	
-	Version:	.
-	Authors:	
-	Revised by:	
-	Approved by:	
+	Date:	21/07/2005
+	Version:	0.51
+	Authors:	Françoise Hontoy
+	Revised by:	Monique Limbos, Marleen Leunens, Hazel Caplen, Emmanuel Genette
+	Approved by:	 
 
 
 
@@ -20,27 +20,27 @@ Commission européenne, B-1049 Bruxelles / Europese Commissie, B-1049 Brussel - 
 
 E-mail: francoise.hontoy@ext.cec.eu.int
 TABLE OF CONTENTS
-	
-2. Creation of a Technical and Quality Document	
-2.1. Document Creation	
-2.2. Properties Dialog	
-2.3. Properties Dialog: Front Information Table	
-2.4. Properties Dialog: Document Information	
-2.5. Properties Dialog: Document Layout	
-2.5.1. Title Page is one Page	
-2.5.2. Insert Table of Contents	
-2.5.3. Insert History Table	
-3. Update of a Technical and Quality Document	
-3.1. Use the Properties Dialog!	
-3.2. If the document does not update correctly	
-4. Structure of the Technical and Quality Document	
-4.1. Title Page	
-4.2. Introductory Elements	
-4.3. Document Body	
-4.4. Elements used in the Technical and Quality document	
-5. Summary of important recommendations	
-ANNEX: Styles	
-Index	
+1. Introduction	4
+2. Creation of a Technical and Quality Document	4
+2.1. Document Creation	4
+2.2. Properties Dialog	4
+2.3. Properties Dialog: Front Information Table	5
+2.4. Properties Dialog: Document Information	6
+2.5. Properties Dialog: Document Layout	6
+2.5.1. Title Page is one Page	6
+2.5.2. Insert Table of Contents	6
+2.5.3. Insert History Table	7
+3. Update of a Technical and Quality Document	7
+3.1. Use the Properties Dialog!	7
+3.2. If the document does not update correctly	7
+4. Structure of the Technical and Quality Document	8
+4.1. Title Page	8
+4.2. Introductory Elements	8
+4.3. Document Body	9
+4.4. Elements used in the Technical and Quality document	9
+5. Summary of important recommendations	11
+ANNEX: Styles	12
+Index	15
 
 Document History
 
@@ -76,20 +76,20 @@ Document Creation
 The creation of a Technical and Quality document is the same as the creation of any other Eurolook document. To create a document use the Eurolook | Create Document command to open the Eurolook dialog and select the necessary options. Options specific to the T&Q document are preferably set during document creation by using the Fill button in the Eurolook Dialog which will call the Properties Dialog. It is necessary to call this dialog upon document creation because some T&Q document settings are fixed upon document creation and cannot be modified afterwards. 
 Properties Dialog
 In contrast to other Eurolook document types, the Properties Dialog used during document creation remains available afterwards. This feature was added to the T&Q document type since this document type contains information which is displayed at different places within the document and which may need to be modified frequently, therefore, the use of this information was automated via the properties dialog. Examples of such information are the document date  and the current version number. 
-To display the current information or to update it, the properties dialog can be called via the corresponding button in the Technical&Quality toolbar: 
- consists of three tabs, the first two are associated with the document properties, the last tab is reserved for layout elements (see ). The first tab (see ) contains all the information displayed in the Front Information Table (FIT), the second tab contains the title and subject information (see ). 
+To display the current information or to update it, the properties dialog can be called via the corresponding button in the Technical&Quality toolbar: . 
+The Properties Dialog consists of three tabs, the first two are associated with the document properties, the last tab is reserved for layout elements (see Figure 3). The first tab (see Figure 1) contains all the information displayed in the Front Information Table (FIT), the second tab contains the title and subject information (see Figure 2). 
 Updating the value of any property within this dialog will be reflected in the document after closing the dialogue. This is important since all the properties displayed in the document are updated, independently of their number of occurrences in the document. The Properties Dialog can thus be called any time you need to update the document properties. For all properties, the last setting will be memorized by the dialog. 
 NOTE : the options present in this dialog rely on specific bookmarks and fields inside the document in order to be able to add the requested information at the defined spot. If these bookmarks and/or fields are removed or modified, it is possible that the properties dialog will not be able to achieve the desired result. 
 Properties Dialog: Front Information Table
 The first tab of the Properties Dialog, the Front Information Table Tab, allows you to enter all the information used to create a table on the cover page(s) of the document. This table is called the Front Information Table (FIT) and consists of one column containing the defined field names and one column displaying the corresponding field value. Moreover, the user can add some options via the "Add even if empty" group. A checked option adds the corresponding field to the FIT. Please note that these two options are only available at document creation. 
 
-Figure : Properties Dialog, parameters for the front information table
+Figure 1: Properties Dialog, parameters for the front information table
 
 The information entered in this tab is not only used to add information to the Front Information Table (FIT) but also to complete the footer of the T&Q document. To this end, Word fields are used which enables the T&Q document to update all occurrences when the properties dialog is closed. Thus the document version as well as the document date which are displayed in the footer, are updated any time the Properties Dialog is used to make changes.
 Properties Dialog: Document Information
 On the Document Information tab the title and the subject of your document can be entered as well as the responsible publisher. Upon document creation, the title and subject properties are inserted on the title page, whereas the publisher is only added to the document properties. 
 
-Figure : Properties Dialog, other document properties
+Figure 2: Properties Dialog, other document properties
 
 Properties Dialog: Document Layout
 Via the Document Layout tab the user can change the presentation. The last settings of this tab are memorized and reused upon creation of new documents.
@@ -102,7 +102,7 @@ To update the table of contents, please use the standard Eurolook method that is
 Insert History Table
 The history table gives the evolution of the document and helps a reviewer to see the latest changes. When checked, a history table is added at the predefined spot in the information part of the document. As long as no history table is inserted via the properties dialog, the option remains available. 
 
-Figure : Properties Dialog, layout elements
+Figure 3: Properties Dialog, layout elements
 Update of a Technical and Quality Document
 Use the Properties Dialog!
 Using the Properties Dialog is the only method to guarantee that the T&Q document is able to display the properties as set according to the selected layout. 
@@ -113,13 +113,13 @@ When creating the new document, use the FILL button to complete the Properties D
 Structure of the Technical and Quality Document
 The T&Q document initially consists of three sections. 
 Title Page
-The Title Page information can either be displayed on one page or on two pages depending on the setting chosen upon document creation. (see  ). 
-None of the information present on the title page should be modified manually. Using the Properties Dialog will update the title as well as the front information table which are fields displaying document properties (see  ). 
+The Title Page information can either be displayed on one page or on two pages depending on the setting chosen upon document creation. (see 2.5.1 Title Page is one Page). 
+None of the information present on the title page should be modified manually. Using the Properties Dialog will update the title as well as the front information table which are fields displaying document properties (see 2.2 Properties Dialog). 
 The title page does not display any page numbering information. 
 
-Figure : Title Page (one-page example)
+Figure 4: Title Page (one-page example)
 Introductory Elements
-This section shows the different document information elements. Depending on the selection made in the Document Layout tab of the properties dialog, the history table and/or table of contents are added. The first element, that is, the document history table, is added upon creation of the document (see  ). An abstract of the document could be added manually to this section. Upon document creation the contact person can also be inserted into this section. After document creation no automatism is available to add the contact information at the predefined spot. 
+This section shows the different document information elements. Depending on the selection made in the Document Layout tab of the properties dialog, the history table and/or table of contents are added. The first element, that is, the document history table, is added upon creation of the document (see 2.5 Properties Dialog: Document Layout). An abstract of the document could be added manually to this section. Upon document creation the contact person can also be inserted into this section. After document creation no automatism is available to add the contact information at the predefined spot. 
 If no table of contents or history table has been inserted upon document creation, the best method to add them afterwards is via the properties dialog. 
 The information present in the document footer of this section consists of document properties and should not be modified manually. To update the information present in the footer please use the Properties Dialog. 
 The section breaks present before and after this section should not be removed since this would influence the document layout. The T&Q document does not provide for any repair mechanism in this case. 
@@ -176,8 +176,8 @@ Do not update the footer manually
 
 ANNEX: Styles
 In the following paragraphs the different styles available within a technical template are shown as examples. For further information please refer to the "Specification for a Technical Document Template" document which can be found on softline 
-desktopapp/offaut/docmgmt/eurolookxl/ref/tech&qual.pdf" (http://www.cc.cec/digitline/u/products/)
-. 
+
+http://www.cc.cec/digitline/u/products/ desktopapp/offaut/docmgmt/eurolookxl/ref/tech&qual.pdf. 
 Heading 1
 Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal
 Heading 2
@@ -213,7 +213,7 @@ New Table Style
 New Table Style
 	Normal LeftCol 
 (new Style)	Normal 
-	Text Text Text 	Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal
+	Text Text Text …	Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal Normal
 
 Glossary
 Example 1 for Glossary Entries
@@ -230,51 +230,51 @@ Example 2 for Glossary Entries
 
 Index
 
- - 	Page  / 
-Document Version . dated 
+Technical&Quality Template - User's Manual	Page 6 / 15
+Document Version 0.51 dated 21/07/2005
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+Abstract	9
+Add even if empty	5
+Approved by	10
+Author	9
+Contact	9
+Date	4, 9
+Document Body	4
+Document Creation	4
+Document Information	6
+Document Information Section	4
+Document Layout	6
+Document properties	4
+Error! No table of contents entries found.	6
+Eurolook Dialog	4
+Fill button	4
+FIT	See Front Information Table
+Footer	10
+Front Information Table	4, 5
+Front Information Table Tab	5
+History Table	7
+Insert History Table	7
+Insert Table of Contents	6
+Layout Elements	7
+Properties Dialog	4, 5, 6, 7
+Document Information	6
+Document Layout	6
+Front Information Table	5
+Public	10
+Publisher	6
+Reference Number	10
+Revised by	10
+Section Breaks	9
+Subject	4, 6
+T&Q document	See Technical and Quality Document
+Table of Contents	6, 8, 9
+Technical and Quality Document	4
+Title	6, 9
+Title Page	6, 8
+Title Page is one Page	6
+Title Section	4
+ToC button	7
+Version	4, 9
 
 
 

@@ -68,9 +68,9 @@ This Clinical Trial Application presents information relating to AB1234 Capsules
 	Chirality/Stereochemistry	AB1234 is a single stereoisomer with the (2S) configuration.  
 	Description	A yellow crystalline solid.
 	pH and pKa	pKa of 2.37.
-	Melting Point	Material melts at approximately 160(C with decomposition at temperatures above approximately 190(C.
-	Solubility 	The solubility of AB1234  sodium salt in water at 20(C is approximately 35 mg/mL. Aqueous solubility is unaffected by pH in the range 1-8.
-	Hygroscopicity	AB1234 is not considered to be hygroscopic. No increase in moisture content was seen following storage at 25(C/90% RH, for 2 weeks.
+	Melting Point	Material melts at approximately 160°C with decomposition at temperatures above approximately 190°C.
+	Solubility 	The solubility of AB1234  sodium salt in water at 20°C is approximately 35 mg/mL. Aqueous solubility is unaffected by pH in the range 1-8.
+	Hygroscopicity	AB1234 is not considered to be hygroscopic. No increase in moisture content was seen following storage at 25°C/90% RH, for 2 weeks.
 	Crystal Form	There is only one known crystalline form of AB1234. 
 2.1.S.2	Manufacture
 2.1.S.2.1	Manufacturer(s)
@@ -166,7 +166,7 @@ The method for determination of AB1234 content is an isocratic reversed-phase HP
 Drug-related Impurities Content of AB1234 by HPLC
 The method for the determination of drug-related impurities content of AB1234 is a reversed-phase gradient HPLC method, using a 5 µm C8 column, or suitably validated alternative.  The mobile phase is a mixture of methanol and water, with UV detection at 280 nm.  
 Loss on Drying of AB123456G
-Perform according to USP <731>, drying at an oven temperature of 100(C for 3 hours.
+Perform according to USP <731>, drying at an oven temperature of 100°C for 3 hours.
 Residual Palladium
 The method for the determination of residual palladium is an ICP method.
 2.1.S.4.3.	Validation of Analytical Procedures
@@ -243,15 +243,15 @@ AB1234 is stored in double low density polyethylene bags, sealed with plastic ti
 Decomposition Chemistry
 [A brief summary of decomposition studies performed to date would be included.]
 Forced degradation studies of AB1234 were conducted on the solid state.
-Solid samples of AB1234 (Batch R1234/01/1) were stored at 60(C/75% RH for 6 weeks, at 80(C (under nitrogen, air and oxygen headspaces) for 2 weeks, under fluorescent light (1490 ft. candles) for 8 days.  
+Solid samples of AB1234 (Batch R1234/01/1) were stored at 60°C/75% RH for 6 weeks, at 80°C (under nitrogen, air and oxygen headspaces) for 2 weeks, under fluorescent light (1490 ft. candles) for 8 days.  
 The principal degradation product was LM1122. The solid state samples showed no significant changes in appearance, AB1234 content, drug-related impurities or physical form under any of the conditions studied.
 Stability Studies
 [Stability data available to date would be presented]. 
-A stability study is ongoing for one batch of AB1234 manufactured according to the synthetic process described in Section 2.1.S.2.2. and packed in individual sealed polyethylene bags, simulating routine storage of the drug substance.  Data are available to date for AB1234 stored for up to 6 months at 30(C/60% RH or 40(C/75% RH, for up to 3 months at 40(C/75% RH Exposed (i.e. in an open polythene bag), up to 3 months at 50(C or for 7 days in a light cabinet. Samples were tested at appropriate intervals for description, AB1234 content and drug-related impurities.
+A stability study is ongoing for one batch of AB1234 manufactured according to the synthetic process described in Section 2.1.S.2.2. and packed in individual sealed polyethylene bags, simulating routine storage of the drug substance.  Data are available to date for AB1234 stored for up to 6 months at 30°C/60% RH or 40°C/75% RH, for up to 3 months at 40°C/75% RH Exposed (i.e. in an open polythene bag), up to 3 months at 50°C or for 7 days in a light cabinet. Samples were tested at appropriate intervals for description, AB1234 content and drug-related impurities.
 Results and Conclusions
 [Depending on the extent of data available, it may be possible to state a retest period. If this is not stated then assurance should be provided on the steps taken to ensure the quality of the drug substance at time of manufacture of the investigational medicinal product]
 Results to date are summarised in Table 5.  There is no evidence of any significant physical or chemical changes in AB1234 at any of the storage conditions.  No significant changes were observed in appearance, AB1234 content or drug-related impurities under any of the storage conditions including light exposure, and all results comply with specification.  
-AB1234 should be stored at temperatures not exceeding 30(C.
+AB1234 should be stored at temperatures not exceeding 30°C.
 
 		
 
@@ -262,11 +262,11 @@ Table 5	Summary of Stability Data for AB1234 (Batch R1234/01/1)
 	Storage Condition	Storage Time 	Mean AB1234 Content by HPLC 	Drug-related Impurities by HPLC (% area)
 		(Months)	(% w/w)	LM1122	LM5566	Largest Other Impurity	Total
 	Initial	0	99.2	0.14, 0.14	0.23, 0.24	0.14, 0.13	0.74, 0.73
-	30(C/60% RH	3	98.2	0.14	0.20	0.13	0.65
+	30°C/60% RH	3	98.2	0.14	0.20	0.13	0.65
 		6	99.1	0.13	0.18	0.12	0.68
-	40(C/75% RH	3	98.1	0.12	0.15	0.11	0.57
+	40°C/75% RH	3	98.1	0.12	0.15	0.11	0.57
 		6	99.5	0.12	0.10	0.11	0.59
-	40(C/75% RH Exposed	1
+	40°C/75% RH Exposed	1
 3	99.1
 99.1	0.17
 0.13	0.20
@@ -320,10 +320,10 @@ The flow diagram of the manufacturing process of AB1234 Capsules is given in Fig
 
 Figure 7	Flow Diagram of the Manufacturing Process of AB1234 Capsules 1, 2.5 and 5 mg 
 
-
-
-
-
+In-process Controls
+[It would not be anticipated that in-process controls would be specified at this stage of development with the exception of those for parenteral products or where they are required to ensure final product quality i.e. fill weight for powder in bottle formulations. If the section is not completed it would be deleted.]
+2.1.P.3.4	Controls of Critical Steps and Intermediates
+[Information will not usually be required in early stage development but may be necessary for complex or novel products.]
 [With the exception of parenterals this section would not be not be presented. If the section is not completed it would be deleted.]
 2.1.P.3.5	Process Validation and/or Evaluation
 [Information will not usually be required in early stage development but may be necessary where this impacts on the safety of the product.]
@@ -453,8 +453,8 @@ Q = 75% at 45 minutes	98 % at 45 minutes
 The capsules are packaged into HDPE bottles, and closed with child-resistant plastic induction seal screw caps.
 2.1.P.8	Stability
 At Phase I it would be proposed that stability studies be conducted concurrently and tested at regular intervals throughout the duration of the clinical trial. A shelf-life would be assigned on an ongoing basis as supported by stability data. A recommended storage statement would be stated.
-Stability studies are being conducted with testing for content, dissolution and degradation products at regular intervals to confirm the stability of AB1234 Capsules over the proposed study duration. Samples of the 1mg and 5mg capsules have been stored at 25(C/60%RH and at 40(C/75%RH for 6 weeks. The results are provided in Table 11. 
-AB123456 Capsules will be stored at temperatures not exceeding 30(C with a shelf life of 6 months.
+Stability studies are being conducted with testing for content, dissolution and degradation products at regular intervals to confirm the stability of AB1234 Capsules over the proposed study duration. Samples of the 1mg and 5mg capsules have been stored at 25°C/60%RH and at 40°C/75%RH for 6 weeks. The results are provided in Table 11. 
+AB123456 Capsules will be stored at temperatures not exceeding 30°C with a shelf life of 6 months.
 
 
 23
@@ -464,9 +464,9 @@ Table11	Summary of Stability Data for AB1234 Capsules 1mg
 	Storage Condition	Storage Time 	Mean AB1234 Content by HPLC 	Dissolution(% at  45 minutes)	Degradation Products by HPLC (% area)
 		(Weeks)	(% w/w)		LM1122	LM5566	Largest Other Impurity	Total
 	Initial	0	102.0	99.0	None detected	None detected 	None detected 	None detected
-	25(C/60% RH	2	101.2	97.0	None detected	None detected	None detected	None detected
+	25°C/60% RH	2	101.2	97.0	None detected	None detected	None detected	None detected
 		6	99.1	100.0	0.10	None detected	None detected	0.10
-	40(C/75% RH	2	98.1	98.0	0.12	< 0.10	None detected	0.15
+	40°C/75% RH	2	98.1	98.0	0.12	< 0.10	None detected	0.15
 		6	99.5	96.0	0.20	0.10	None detected	0.30
 
 
@@ -475,9 +475,9 @@ Table11	Summary of Stability Data for AB1234 Capsules 1mg
 	Storage Condition	Storage Time 	Mean AB1234 Content by HPLC 	Dissolution(% at  45 minutes)	Degradation Products by HPLC (% area)
 		(Weeks)	(% w/w)		LM1122	LM5566	Largest Other Impurity	Total
 	Initial	0	102.0	98.0	None detected	None detected 	None detected 	None detected
-	25(C/60% RH	2	103.0	99.0	None detected	None detected	None detected	None detected
+	25°C/60% RH	2	103.0	99.0	None detected	None detected	None detected	None detected
 		6	99.1	96.5	0.23	None detected	None detected	0.23
-	40(C/75% RH	2	99.1	98.0	0.19	 0.11	None detected	0.30
+	40°C/75% RH	2	99.1	98.0	0.19	 0.11	None detected	0.30
 		6	97.5	92.0	0.25	0.15	None detected	0.40
 
 	
@@ -507,7 +507,7 @@ The batches of compound used in the toxicology studies had a similar impurity pr
 
 PHARMACOLOGY
 Summary
-AB1234 has been shown to be a selective proton pump inhibitor.  The proton pump inhibitory activity has been demonstrated in in vitro functional studies and its acid reducing activity has been confirmed in a number of in vivo animal models.  No significant activity has been demonstrated at 32 other receptor types investigated, with the exception that at high concentrations there was some evidence of (1 and (2-adrenoceptor binding activity.
+AB1234 has been shown to be a selective proton pump inhibitor.  The proton pump inhibitory activity has been demonstrated in in vitro functional studies and its acid reducing activity has been confirmed in a number of in vivo animal models.  No significant activity has been demonstrated at 32 other receptor types investigated, with the exception that at high concentrations there was some evidence of α1 and α2-adrenoceptor binding activity.
 
 Primary Pharmacodynamics
 AB1234 was shown to be 10 times more potent than omeprazole in the inhibition of pig H+/K+- ATPase with IC50 values of 2.0 x 10-7M and 2.6 x 10-6M respectively. It showed approximately 5% of the activity of ouabain in inhibiting Na+/K+- ATPase. The IC50 value for the inhibition of stimulated acid secretion in isolated rabbit glands was 1.9 x 10-7M. Reversibility of inhibition was observed in studies with pig gastric glands.
@@ -591,7 +591,7 @@ No studies have been completed to date, preliminary teratology studies are ongoi
 
 Mutagenicity and Genotoxicity
 
-	Ames	200 – 2500 (g·plate-1	Negative, + S9 mix, evidence of toxicity at the top concentrations.
+	Ames	200 – 2500 μg·plate-1	Negative, + S9 mix, evidence of toxicity at the top concentrations.
 	Human lymphocyte, CA test	200 – 1750μg·mL-1	Negative, + S9 mix, evidence of toxicity at the top concentrations.
 
 

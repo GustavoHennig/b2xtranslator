@@ -1,15 +1,15 @@
  " L'incapacité de travail après une hysterectomie "
 			
   
-Questionnaire rempli par le médecin conseil de la fédération :	
+Questionnaire rempli par le médecin conseil de la fédération :	      
 
-Date de l’examen médical (premier contact) :			
+Date de l’examen médical (premier contact) :			          
                   
 Concerne l'assuré en incapacité de travail :
 
-Numéro du Registre national:	 	
+Numéro du Registre national:	 	          
 Numéro federal:     				
-				
+Code postal :        				        
 Âge:						    
 Statut social:			
 				Autre, à spécfier :           
@@ -88,5 +88,5 @@ Autre           					    si oui, spécifier     
 
 Vous pouvez envoyer ce questionnaire à:
 
-mireille.debruyn2@socmut.be ou (mailto:mireille.debruyn2@socmut.be)
-mailto:mireille.debruyn2@socmut.bephiliep.berkein@socmut.be (mailto:philiep.berkein@socmut.be)                                       
+mireille.debruyn2@socmut.be (mailto:mireille.debruyn2@socmut.be) ou (mailto:mireille.debruyn2@socmut.be)
+philiep.berkein@socmut.be (mailto:philiep.berkein@socmut.be) (mailto:philiep.berkein@socmut.be)                                       

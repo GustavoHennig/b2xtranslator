@@ -80,7 +80,7 @@ A 9510
 	312 082	- Verspätungszuschlag (§ 7 Abs. 1 Satz 2)		50
 			
 
-
+2
 
 	Nr.	Gebührentatbestand	Gebühr inEuro
 
@@ -138,7 +138,7 @@ A 9510
 	312 207	- Verspätungszuschlag (§ 7 Abs. 1 Satz 2)		50
 			
 
-
+2
 
 	Nr.	Gebührentatbestand	Gebühr inEuro
 
@@ -193,7 +193,7 @@ und 3 ErstrG)		150
 	314 200	Recherche für ein erstrecktes Patent (§ 11 ErstrG)		250
 			
 
-
+2
 
 	Nr.	Gebührentatbestand	Gebühr inEuro
 
@@ -249,7 +249,7 @@ und 3 ErstrG)		150
 			
 	331 800	Verfahren bei Teilübertragung einer Anmeldung (§§ 27 Abs. 4, 31 MarkenG)		300
 
-
+2
 
 	Nr.	Gebührentatbestand	Gebühr inEuro
 
@@ -295,7 +295,7 @@ und 3 ErstrG)		150
 	334 500	- für eine Marke (§ 32 MarkenG)		300
 	334 600	- für eine Kollektivmarke (§ 97 MarkenG)		900
 
-
+2
 
 	Nr.	Gebührentatbestand	Gebühr inEuro
 
@@ -346,7 +346,7 @@ und 3 ErstrG)		150
 	341 500	- für jedes Muster einer Sammelanmeldung bei Aufschiebung der Bild-	bekanntmachung (§§ 12, 21 GeschmMG)		3 mindestens 30
 	341 600	Weiterbehandlungsgebühr (§ 17 GeschmMG)		100
 
-
+2
 
 	Nr.	Gebührentatbestand	Gebühr inEuro
 
@@ -401,7 +401,7 @@ und 3 ErstrG)		150
 			
 	344 100	pro Anmeldung mit einem Gewicht bis 2 kg		25
 
-
+2
 
 	Nr.	Gebührentatbestand	Gebühr inEuro
 
@@ -425,7 +425,7 @@ und 3 ErstrG)		150
 	362 000	Weiterbehandlungsgebühr (§ 11 Abs. 1 HalblSchG i.V.m. § 123a PatG)		100
 	362 100	Löschungsverfahren (§ 8 HalblSchG)		300
 
-
+2
 
 	Nr.	Gebührentatbestand	Gebührenbetrag/ Gebührensatz nach § 2 Abs. 2 i.V.m. § 2 Abs. 1 PatKostG*
 				
@@ -474,7 +474,7 @@ und 3 ErstrG)		150
 		Die Gebühr 402 200 ermäßigt sich auf		1,5	
 		Erledigungserklärungen stehen der Zurücknahme nicht gleich. Die Ermäßigung tritt auch ein, wenn mehrere Ermäßigungstatbestände erfüllt sind.		
 
-
+2
 
 *	Anm.: Nach § 2 PatKostG richten sich die Gebühren für Klagen und einstweilige Verfügungen vor dem BPatG nach dem Streitwert. Die Höhe der Gebühr bestimmt sich nach § 3 des Gerichtskostengesetzes; der Mindestbetrag beträgt 121 Euro. Für die Festsetzung des Streitwerts gelten die Vorschriften des Gerichtskostengesetzes entsprechend.
 	Nr.	Gebührentatbestand	Gebührenbetrag/ Gebührensatz nach § 2 Abs. 2 i.V.m. § 2 Abs. 1 PatKostG
@@ -497,7 +497,7 @@ und 3 ErstrG)		150
 
 
 
-
+2
 
 	3 – Auszug aus der Verordnung über Verwaltungskosten beim Deutschen Patent- und Markenamt (DPMA – Verwaltungskostenverordnung)
 			
@@ -547,7 +547,7 @@ und 3 ErstrG)		150
 		Die Akteneinsicht in solche Akten, deren Einsicht jedermann freisteht, in die Akten der eigenen Anmeldung oder des eigenen Schutzrechts ist gebührenfrei.	
 			
 
-
+2
 
 	Nummer	Gebührentatbestand	Gebührenbetrag in Euro
 
@@ -561,7 +561,7 @@ und 3 ErstrG)		150
 			
 	301 500	Erstattung von Beträgen, die ohne Rechtsgrund eingezahlt wurden		10
 
-
+2
 
 	Nummer	Auslagen	Höhe
 
@@ -611,7 +611,7 @@ DEPATISconnect wird eine Dokumenten- oder Datenträgerpauschale nicht erhoben.
 			
 	302 420	-	die nach dem Justizvergütungs- und -entschädigungsgesetz (JVEG) zu zahlenden Beträge; erhält ein Sachverständiger aufgrund des § 1 Abs. 2 Satz 2 JVEG keine Vergütung, ist der Betrag zu erheben, der ohne diese  Vorschrift nach dem JVEG zu zahlen wäre; sind die Auslagen durch verschiedene Verfahren veranlasst, werden sie auf die mehreren Verfahren angemessen verteilt		in voller Höhe
 
-
+2
 
 	Nummer	Auslagen	Höhe
 
@@ -638,7 +638,7 @@ DEPATISconnect wird eine Dokumenten- oder Datenträgerpauschale nicht erhoben.
 vom 27. Juni 2000 (BGBl. I S. 897)
 § 2
 Die Gebühr für die Ausstellung der Apostille und für die Prüfung gemäß Artikel 7 Abs. 2 des Übereinkommens beträgt je 13 Euro.+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-
+2
+2
 
 

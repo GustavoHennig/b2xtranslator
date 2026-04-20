@@ -642,11 +642,22 @@ namespace b2xtranslator.txt.TextMapping
                 shouldUseFallback = true;
                 TraceLogger.Debug("[PARA] CHPXs extracting {0} chars vs expected {1}, using direct fallback", totalValidChars, expectedCharCount);
             }
-            else if (expectedCharCount > 10 && _doc.FIB.cQuickSaves > 0)
+            else if (expectedCharCount > 10 &&
+                     _doc.FIB.cQuickSaves > 0 &&
+                     totalValidChars < expectedCharCount)
             {
-                // For larger paragraphs in fast-saved documents, use fallback if piece table is fragmented
-                shouldUseFallback = true;
-                TraceLogger.Debug("[PARA] Fast-saved document with {0} chars, using fallback for reliability", expectedCharCount);
+                bool isTableParagraph = papx != null && new TableInfo(papx).fInTable;
+                if (_doc.PieceTable.Pieces.Count > 1 || isTableParagraph)
+                {
+                    // Fast-saved documents still need the raw-text fallback for
+                    // fragmented piece tables and for some table paragraphs whose
+                    // CHPX walk drops visible text.
+                    shouldUseFallback = true;
+                    TraceLogger.Debug(
+                        "[PARA] Fast-saved paragraph with incomplete CHPX extraction (table={0}, pieces={1}), using fallback",
+                        isTableParagraph,
+                        _doc.PieceTable.Pieces.Count);
+                }
             }
             
             if (shouldUseFallback)
@@ -1147,7 +1158,10 @@ namespace b2xtranslator.txt.TextMapping
 
                         _writer.WriteEndElement();
 
-                        _skipRuns = 4;
+                        if (!(_writer is TextWriter))
+                        {
+                            _skipRuns = 4;
+                        }
                     }
                     else if (f.FieldCode?.StartsWith(" HYPERLINK") == true)
                     {
@@ -1163,8 +1177,9 @@ namespace b2xtranslator.txt.TextMapping
                     }
 
                     _writeInstrText = true;
+                    textType = "instrText";
 
-                    writeTextStart("instrText");
+                    writeTextStart(textType);
                     
                     // Write the field code to the instrText element
                     if (f.FieldCode != null)
@@ -1181,6 +1196,8 @@ namespace b2xtranslator.txt.TextMapping
                     _writer.WriteAttributeString("w", "fldCharType", OpenXmlNamespaces.WordprocessingML, "separate");
                     _writer.WriteEndElement();
 
+                    _writeInstrText = false;
+                    textType = "t";
                     writeTextStart(textType);
                 }
                 else if (c == TextMark.FieldEndMark)
@@ -1193,6 +1210,7 @@ namespace b2xtranslator.txt.TextMapping
                     _writer.WriteEndElement();
 
                     _writeInstrText = false;
+                    textType = "t";
 
                     writeTextStart("t");
                 }

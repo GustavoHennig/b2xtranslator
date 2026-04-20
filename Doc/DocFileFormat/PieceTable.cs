@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 using b2xtranslator.StructuredStorage.Reader;
 
@@ -26,7 +27,7 @@ namespace b2xtranslator.DocFileFormat
         /// Creates an empty piece table for Word 95 files (single piece fallback)
         /// </summary>
         /// <param name="fib">The FIB</param>
-        public PieceTable(FileInformationBlock fib)
+        public PieceTable(FileInformationBlock fib, Encoding singleByteEncoding = null)
         {
             this.Pieces = new List<PieceDescriptor>();
             this.FileCharacterPositions = new Dictionary<int, int>();
@@ -34,20 +35,7 @@ namespace b2xtranslator.DocFileFormat
 
             // Create a single piece descriptor covering the entire document text
             // Word 95 files typically store text as a single piece from fcMin to fcMac
-            Encoding encoding1252;
-            try
-            {
-#if NET462
-                encoding1252 = Encoding.GetEncoding(1252);
-#else
-                Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
-                encoding1252 = Encoding.GetEncoding(1252);
-#endif
-            }
-            catch
-            {
-                encoding1252 = Encoding.GetEncoding("iso-8859-1");
-            }
+            Encoding encoding1252 = GetSingleByteEncoding(singleByteEncoding);
 
             var singlePiece = new PieceDescriptor()
             {
@@ -80,7 +68,7 @@ namespace b2xtranslator.DocFileFormat
         /// </summary>
         /// <param name="fib">The FIB</param>
         /// <param name="tableStream">The 0Table or 1Table stream</param>
-        public PieceTable(FileInformationBlock fib, VirtualStream tableStream)
+        public PieceTable(FileInformationBlock fib, VirtualStream tableStream, Encoding singleByteEncoding = null)
         {
             //Read the bytes of complex file information
             var bytes = new byte[fib.lcbClx];
@@ -89,6 +77,7 @@ namespace b2xtranslator.DocFileFormat
             this.Pieces = new List<PieceDescriptor>();
             this.FileCharacterPositions = new Dictionary<int, int>();
             this.CharacterPositions = new Dictionary<int, int>();
+            Encoding defaultSingleByteEncoding = GetSingleByteEncoding(singleByteEncoding);
 
             int pos = 0;
             bool goon = true;
@@ -130,7 +119,7 @@ namespace b2xtranslator.DocFileFormat
                             int indexPcd = ((n + 1) * 4) + (i * 8);
                             var pcdBytes = new byte[8];
                             Array.Copy(piecetable, indexPcd, pcdBytes, 0, 8);
-                            var pcd = new PieceDescriptor(pcdBytes)
+                            var pcd = new PieceDescriptor(pcdBytes, defaultSingleByteEncoding)
                             {
                                 cpStart = cp,
                                 cpEnd = cpNext
@@ -200,7 +189,7 @@ namespace b2xtranslator.DocFileFormat
                 wordStream.Read(bytes, 0, cb, (int)pcd.fc);
 
                 //get the chars
-                var plainChars = pcd.encoding.GetString(bytes).ToCharArray();
+                var plainChars = DecodeChars(pcd, bytes);
 
                 //add to list
                 foreach (char c in plainChars)
@@ -242,7 +231,7 @@ namespace b2xtranslator.DocFileFormat
                     wordStream.Read(bytes, 0, cb, (int)fcStart);
 
                     //get the chars
-                    var plainChars = pcd.encoding.GetString(bytes).ToCharArray();
+                    var plainChars = DecodeChars(pcd, bytes);
 
                     //add to list
                     foreach (char c in plainChars)
@@ -263,7 +252,7 @@ namespace b2xtranslator.DocFileFormat
                     wordStream.Read(bytes, 0, cb, (int)pcd.fc);
 
                     //get the chars
-                    var plainChars = pcd.encoding.GetString(bytes).ToCharArray();
+                    var plainChars = DecodeChars(pcd, bytes);
 
                     //add to list
                     foreach (char c in plainChars)
@@ -284,7 +273,7 @@ namespace b2xtranslator.DocFileFormat
                     wordStream.Read(bytes, 0, cb, (int)pcd.fc);
 
                     //get the chars
-                    var plainChars = pcd.encoding.GetString(bytes).ToCharArray();
+                    var plainChars = DecodeChars(pcd, bytes);
 
                     //add to list
                     foreach (char c in plainChars)
@@ -312,7 +301,7 @@ namespace b2xtranslator.DocFileFormat
                     wordStream.Read(bytes, 0, cb, (int)fcStart);
 
                     //get the chars
-                    var plainChars = pcd.encoding.GetString(bytes).ToCharArray();
+                    var plainChars = DecodeChars(pcd, bytes);
 
                     //set the list
                     chars = new List<char>(plainChars);
@@ -326,6 +315,234 @@ namespace b2xtranslator.DocFileFormat
                 }
             }
             return chars;
+        }
+
+        public static Encoding ResolveSingleByteEncoding(FileInformationBlock fib, DocumentProperties documentProperties)
+        {
+            Encoding encoding = TryGetSingleByteEncoding(documentProperties?.cpgText ?? 0);
+            if (encoding != null)
+            {
+                return encoding;
+            }
+
+            encoding = TryGetEncodingFromLcid(fib?.lid ?? 0);
+            if (encoding != null)
+            {
+                return encoding;
+            }
+
+            encoding = TryGetEncodingFromLcid((ushort)(fib?.lidFE ?? 0));
+            if (encoding != null)
+            {
+                return encoding;
+            }
+
+            return GetSingleByteEncoding(null);
+        }
+
+        private static Encoding GetSingleByteEncoding(Encoding singleByteEncoding)
+        {
+            return singleByteEncoding != null && singleByteEncoding.IsSingleByte
+                ? singleByteEncoding
+                : TryGetSingleByteEncoding(1252) ?? Encoding.GetEncoding("ISO-8859-1");
+        }
+
+        private static Encoding TryGetEncodingFromLcid(ushort lcid)
+        {
+            if (lcid == 0 || lcid == 0x0400)
+            {
+                return null;
+            }
+
+            try
+            {
+                int ansiCodePage = CultureInfo.GetCultureInfo(lcid).TextInfo.ANSICodePage;
+                return TryGetSingleByteEncoding(ansiCodePage);
+            }
+            catch (ArgumentException)
+            {
+                return null;
+            }
+        }
+
+        private static Encoding TryGetSingleByteEncoding(int codePage)
+        {
+            if (codePage <= 0)
+            {
+                return null;
+            }
+
+            try
+            {
+#if !NET462
+                Encoding.RegisterProvider(CodePagesEncodingProvider.Instance);
+#endif
+                Encoding encoding = Encoding.GetEncoding(codePage);
+                return encoding.IsSingleByte ? encoding : null;
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        private static char[] DecodeChars(PieceDescriptor pcd, byte[] bytes)
+        {
+            string text = pcd.encoding.GetString(bytes);
+
+            if (pcd.encoding.CodePage == 10000)
+            {
+                string windows1252Text = DecodeWithSingleByteEncoding(bytes, 1252);
+                if (LooksLikeMacintoshSmartPunctuationMismatch(text, windows1252Text))
+                {
+                    text = windows1252Text;
+                }
+            }
+
+            // Some documents omit Central European metadata and default to 1252,
+            // but a few pieces still contain 1250 bytes. Keep this fallback very
+            // narrow to avoid changing normal Western European text.
+            if (pcd.encoding.CodePage == 1252 || pcd.encoding.CodePage == 28591)
+            {
+                string cyrillicText = DecodeWithSingleByteEncoding(bytes, 1251);
+                if (LooksLikeWesternMojibakeForCyrillic(text, cyrillicText))
+                {
+                    text = cyrillicText;
+                }
+                else if (HasEmbeddedCharacter(text, 'ø', 'Ø'))
+                {
+                    Encoding centralEuropeanEncoding = TryGetSingleByteEncoding(1250);
+                    if (centralEuropeanEncoding != null)
+                    {
+                        string centralEuropeanText = centralEuropeanEncoding.GetString(bytes);
+                        if (HasEmbeddedCharacter(centralEuropeanText, 'ř', 'Ř'))
+                        {
+                            text = centralEuropeanText;
+                        }
+                    }
+                }
+            }
+
+            return text.ToCharArray();
+        }
+
+        private static string DecodeWithSingleByteEncoding(byte[] bytes, int codePage)
+        {
+            Encoding encoding = TryGetSingleByteEncoding(codePage);
+            return encoding != null ? encoding.GetString(bytes) : string.Empty;
+        }
+
+        private static bool HasEmbeddedCharacter(string text, char lower, char upper)
+        {
+            for (int i = 0; i < text.Length; i++)
+            {
+                char current = text[i];
+                if (current != lower && current != upper)
+                {
+                    continue;
+                }
+
+                bool hasLetterBefore = i > 0 && char.IsLetter(text[i - 1]);
+                bool hasLetterAfter = i + 1 < text.Length && char.IsLetter(text[i + 1]);
+                if (hasLetterBefore && hasLetterAfter)
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        private static bool LooksLikeMacintoshSmartPunctuationMismatch(string macintoshText, string windows1252Text)
+        {
+            int improvements = 0;
+            int count = Math.Min(macintoshText.Length, windows1252Text.Length);
+
+            for (int i = 0; i < count; i++)
+            {
+                if (!IsSmartPunctuation(windows1252Text[i]))
+                {
+                    continue;
+                }
+
+                if (IsSuspiciousMacintoshPunctuation(macintoshText[i]))
+                {
+                    improvements++;
+                }
+            }
+
+            return improvements > 0;
+        }
+
+        private static bool LooksLikeWesternMojibakeForCyrillic(string westernText, string cyrillicText)
+        {
+            int westernLetters = CountMatchingChars(westernText, char.IsLetter);
+            if (westernLetters < 6)
+            {
+                return false;
+            }
+
+            int asciiLetters = CountMatchingChars(westernText, c => c <= 0x7F && char.IsLetter(c));
+            int supplementLetters = CountMatchingChars(westernText, c => c >= 0x00C0 && c <= 0x00FF && char.IsLetter(c));
+            int cyrillicLetters = CountMatchingChars(cyrillicText, IsCyrillicLetter);
+
+            return supplementLetters >= 6 &&
+                   asciiLetters <= Math.Max(1, westernLetters / 5) &&
+                   cyrillicLetters * 10 >= westernLetters * 7;
+        }
+
+        private static int CountMatchingChars(string text, Func<char, bool> predicate)
+        {
+            int count = 0;
+            for (int i = 0; i < text.Length; i++)
+            {
+                if (predicate(text[i]))
+                {
+                    count++;
+                }
+            }
+
+            return count;
+        }
+
+        private static bool IsCyrillicLetter(char c)
+        {
+            return (c >= '\u0400' && c <= '\u04FF') && char.IsLetter(c);
+        }
+
+        private static bool IsSmartPunctuation(char c)
+        {
+            switch (c)
+            {
+                case '\u2018':
+                case '\u2019':
+                case '\u201C':
+                case '\u201D':
+                case '\u2013':
+                case '\u2014':
+                case '\u2026':
+                    return true;
+
+                default:
+                    return false;
+            }
+        }
+
+        private static bool IsSuspiciousMacintoshPunctuation(char c)
+        {
+            switch (c)
+            {
+                case 'ë':
+                case 'í':
+                case 'ì':
+                case 'î':
+                case 'ñ':
+                case 'ó':
+                    return true;
+
+                default:
+                    return false;
+            }
         }
     }
 }

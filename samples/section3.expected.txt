@@ -1,8 +1,9 @@
 
 
 
+15
 
-
+35
 
 
 Overview
@@ -49,7 +50,7 @@ Func0_HwOptions (offset 17d)
 
 
 
-
+41
 
 7.3 21140 Info Leaf
 
@@ -60,7 +61,7 @@ Func0_HwOptions (offset 17d)
 
 
 
-
+19
 
 7.3.2 21140 Info Block Format
 
@@ -72,20 +73,20 @@ Func0_HwOptions (offset 17d)
 
 
 
-
+21
 
 7.3.2.2 21140 Extended Format
 
 
 
 
-
+51
 
 7.3.2.2.1 21140 Extended Format – Block Type 0
 
 
 
-
+13
 
 7.3.2.2.2 21140 Extended Format – Block Type 1
 
@@ -97,7 +98,7 @@ Func0_HwOptions (offset 17d)
 
 
 
-
+24
 
 7.4 21142 Info Leaf
 
@@ -107,7 +108,7 @@ Func0_HwOptions (offset 17d)
 
 
 
-
+26
 
 
 7.4.2 21142 Info Block Format
@@ -118,7 +119,7 @@ Func0_HwOptions (offset 17d)
 
 
 
-
+28
 
 7.4.2.1.2 21142 Extended Format – Block Type 3
 
@@ -130,7 +131,7 @@ Func0_HwOptions (offset 17d)
 
 
 
-
+30
 
 7.5 21143 Info Leaf
 
@@ -152,14 +153,14 @@ Func0_HwOptions (offset 17d)
 
 
 
-
+30
 
 7.5.2.1.4 21143 Extended Format - Block Type 5
 
 
 
 
-
+83
 
 7.5.2.1.5 21143 (Rev 4.1 and Above) Extended Format - Block Type 6
 
@@ -224,7 +225,7 @@ unsigned short CalcSromCrc(unsigned char *SromData)
 
 
 
-
+34
 
 
 Appendix B - ID_BLOCK_CRC Calculation Algorithm
@@ -437,5 +438,5 @@ The CIS pointer register for each function is constructed by using the SROM CIS 
 CIS Pointer register (located in PCI configuration space of each function) layout - BOOT ROM application
 
 
-
+39
 

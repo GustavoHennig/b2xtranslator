@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Xml.Linq;
 using b2xtranslator.Tools;
 
@@ -22,7 +23,8 @@ namespace b2xtranslator.txt.TextModel
         private string? _pendingHyperlinkUrl = null;
         private StringBuilder _hyperlinkDescription = new StringBuilder();
         private bool _isInHyperlinkDescription = false;
-        private int _hyperlinkFieldCharCount = 0;
+        private bool _isInsideField = false;
+        private StringBuilder _currentFieldInstruction = new StringBuilder();
 
         // Track if we've output any content to prevent leading newline
         private bool _isFirstStructuralElement = true;
@@ -198,70 +200,34 @@ namespace b2xtranslator.txt.TextModel
                     else if ("instrText".Equals(element.LocalName))
                     {
                         string content = element.Content.ToString();
-                        string trimmedContent = content.Trim();
-
-                        if (trimmedContent.StartsWith("HYPERLINK "))
+                        if (_isInsideField)
                         {
-                            // Extract URL from field instruction - handle both quoted and unquoted formats
-                            string url;
-                            if (trimmedContent.StartsWith("HYPERLINK \""))
-                            {
-                                // Use a regular expression to find the first quoted string, which is the URL.
-                                var match = System.Text.RegularExpressions.Regex.Match(trimmedContent, @"""([^""]+)""");
-                                if (match.Success)
-                                {
-                                    url = match.Groups[1].Value;
-                                }
-                                else
-                                {
-                                    // Fallback to the old logic if the regex fails for some reason.
-                                    url = trimmedContent.Replace("HYPERLINK \"", "").Replace("\"", "").Trim();
-                                }
-                            }
-                            else
-                            {
-                                // Unquoted format: HYPERLINK http://example.com
-                                url = trimmedContent.Replace("HYPERLINK ", "").Trim();
-                            }
-                            _pendingHyperlinkUrl = url;
-                            _hyperlinkDescription.Clear();
-                            _hyperlinkFieldCharCount = 0;
-                            // Don't start collecting description yet - wait for field separator or next instrText
+                            _currentFieldInstruction.Append(content);
                         }
-                        else if (_pendingHyperlinkUrl != null && !string.IsNullOrEmpty(trimmedContent))
-                        {
-                            // Collect hyperlink description text from subsequent instrText elements
-                            _hyperlinkDescription.Append(content); // Use original content to preserve spaces
-                            _isInHyperlinkDescription = true;
-                        }
-                        else if (_pendingHyperlinkUrl != null && string.IsNullOrWhiteSpace(trimmedContent) && !string.IsNullOrEmpty(content))
-                        {
-                            // Collect whitespace characters (like spaces) in hyperlink descriptions
-                            _hyperlinkDescription.Append(content);
-                            _isInHyperlinkDescription = true;
-                        }
-                        // Note: All other instrText elements (field instructions) are skipped for text output
-                        // Skip truly empty instrText elements during hyperlink processing
                     }
                     else if ("fldChar".Equals(element.LocalName))
                     {
-                        // Handle field character markers
-                        if (_pendingHyperlinkUrl != null)
+                        string? fieldCharType = GetAttributeValue(element, "fldCharType");
+                        if ("begin".Equals(fieldCharType, StringComparison.OrdinalIgnoreCase))
                         {
-                            _hyperlinkFieldCharCount++;
+                            _isInsideField = true;
+                            _currentFieldInstruction.Clear();
+                            _isInHyperlinkDescription = false;
+                        }
+                        else if ("separate".Equals(fieldCharType, StringComparison.OrdinalIgnoreCase))
+                        {
+                            BeginFieldResult();
+                        }
+                        else if ("end".Equals(fieldCharType, StringComparison.OrdinalIgnoreCase))
+                        {
+                            if (_pendingHyperlinkUrl != null)
+                            {
+                                OutputHyperlink();
+                            }
 
-                            // Output hyperlink after we've seen enough field characters
-                            // Some hyperlinks have 1 fldChar, others have 3 (begin, separator, end)
-                            if (_hyperlinkFieldCharCount >= 1 && _hyperlinkDescription.Length > 0)
-                            {
-                                // We have both URL and description - output complete hyperlink
-                                OutputHyperlink();
-                            }
-                            else if (_hyperlinkFieldCharCount >= 3)
-                            {
-                                // Three field chars means we're definitely at the end
-                                OutputHyperlink();
-                            }
+                            _isInsideField = false;
+                            _currentFieldInstruction.Clear();
+                            _isInHyperlinkDescription = false;
                         }
                     }
                     else if ("sym".Equals(element.LocalName))
@@ -418,7 +384,82 @@ namespace b2xtranslator.txt.TextModel
             _pendingHyperlinkUrl = null;
             _hyperlinkDescription.Clear();
             _isInHyperlinkDescription = false;
-            _hyperlinkFieldCharCount = 0;
+        }
+
+        private void BeginFieldResult()
+        {
+            string instruction = _currentFieldInstruction.ToString().Trim();
+            _currentFieldInstruction.Clear();
+
+            if (instruction.StartsWith("HYPERLINK ", StringComparison.OrdinalIgnoreCase))
+            {
+                _pendingHyperlinkUrl = ExtractHyperlinkUrl(instruction);
+                _hyperlinkDescription.Clear();
+                _isInHyperlinkDescription = _pendingHyperlinkUrl != null;
+            }
+            else
+            {
+                _isInHyperlinkDescription = false;
+            }
+        }
+
+        private static string? ExtractHyperlinkUrl(string instruction)
+        {
+            instruction = SanitizeFieldInstruction(instruction);
+
+            var bookmarkMatch = Regex.Match(
+                instruction,
+                @"^HYPERLINK\s+\\l\s+""([^""]+)""",
+                RegexOptions.IgnoreCase);
+            if (bookmarkMatch.Success)
+            {
+                return $@"\l ""{bookmarkMatch.Groups[1].Value}""";
+            }
+
+            if (instruction.StartsWith("HYPERLINK \"", StringComparison.OrdinalIgnoreCase))
+            {
+                var match = Regex.Match(instruction, @"""([^""]+)""");
+                if (match.Success)
+                {
+                    return match.Groups[1].Value;
+                }
+
+                return instruction.Replace("HYPERLINK \"", "").Replace("\"", "").Trim();
+            }
+
+            var unquotedMatch = Regex.Match(
+                instruction,
+                @"^HYPERLINK\s+([^\s]+)",
+                RegexOptions.IgnoreCase);
+            if (unquotedMatch.Success)
+            {
+                return unquotedMatch.Groups[1].Value.Trim();
+            }
+
+            return null;
+        }
+
+        private static string SanitizeFieldInstruction(string instruction)
+        {
+            if (string.IsNullOrEmpty(instruction))
+            {
+                return string.Empty;
+            }
+
+            var builder = new StringBuilder(instruction.Length);
+            foreach (char c in instruction)
+            {
+                if (c == '\r' || c == '\n' || c == '\t')
+                {
+                    builder.Append(' ');
+                }
+                else if (!char.IsControl(c))
+                {
+                    builder.Append(c);
+                }
+            }
+
+            return Regex.Replace(builder.ToString(), @"\s+", " ").Trim();
         }
 
     }

@@ -4,7 +4,7 @@ EN
 
 
 
-EN			EN
+EN		 	EN
 
 		COMMISSION OF THE EUROPEAN COMMUNITIES
 Brussels, 14.11.2005
@@ -18,11 +18,11 @@ providing macro-financial assistance to Georgia
 
 
 (SEC(2005)1449)
-ah: source= http://eur-lex.europa.eu/lexuriserv/site/en/com/2005/com2005_0571en01.doc (http://eur-lex.europa.eu/LexUriServ/site/en/com/2005/com2005_0571en01.doc).
+ah: source= http://eur-lex.europa.eu/LexUriServ/site/en/com/2005/com2005_0571en01.doc.
 (presented by the Commission)
 
-EN		http://eur-lex.europa.eu/LexUriServ/site/en/com/2005/com2005_0571en01.doc 	EN
-EN			EN
+EN		 	EN
+EN		 	EN
 EXPLANATORY MEMORANDUM
 	Context of the proposal
 	110	Grounds for and objectives of the proposalThe Commission proposes to provide macro-financial assistance to Georgia in the form of a grant with a view to supporting the government's economic reform programme and helping the country reduce external indebtedness, thereby improving external and fiscal sustainability over the medium-term.The proposed macro-financial assistance will be limited in time, complement support from the Bretton Woods Institutions, bilateral donors and the Paris Club, and will be conditional, in particular, on progress in the implementation of the IMF-supported PRGF arrangement. This operation will take place at a time when EU-Georgia relations are entering a phase of deeper integration through the inclusion of Georgia in the European Neighbourhood Policy. 
@@ -206,8 +206,8 @@ The Commission services have put in place an on-going programme of Operational A
 In Georgia, the Commission services, with the support of duly mandated external experts, carried out in October 2004 an operational assessment of the financial circuits and administrative procedures at the Ministry of Finance and the National Bank of Georgia. This review covered areas such as management structure and organisation, management and control of funds, security of IT systems, internal and external audit capacity as well as the independence of the central bank. It concluded that the framework for sound financial management of the Ministry of Finance is effective with regard to budgetary control, but needs to be strengthened and developed with regard to internal control within budget organisations and internal and external audit. The framework for sound financial management within the National Bank of Georgia is effective.
 The proposed legal basis for macro-financial assistance to Georgia includes a provision on fraud prevention measures. These measures will be elaborated further in a Memorandum of Understanding. It is envisaged that specific policy conditions aimed at strengthening efficiency, transparency and accountability will be attached to the assistance.
 The macro-financial assistance will be liable to verification, control and auditing procedures under the responsibility of the Commission, including the European Antifraud Office (OLAF), and by the European Court of Auditors.
-	OJ C [], [], p. [].
-	OJ C [], [], p. [].
+	OJ C […], […], p. […].
+	OJ C […], […], p. […].
 	OJ L 322, 25.11.1997, p. 37.
 	OJ L 77, 28.3.2000, p. 11.
 	For further information, see separate explanatory note.

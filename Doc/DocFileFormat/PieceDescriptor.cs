@@ -25,6 +25,14 @@ namespace b2xtranslator.DocFileFormat
         /// <summary>Parses the bytes to retrieve a PieceDescriptor</summary>
         /// <param name="bytes">The bytes</param>
         public PieceDescriptor(byte[] bytes)
+            : this(bytes, Encoding.GetEncoding("ISO-8859-1"))
+        {
+        }
+
+        /// <summary>Parses the bytes to retrieve a PieceDescriptor</summary>
+        /// <param name="bytes">The bytes</param>
+        /// <param name="singleByteEncoding">Encoding used for compressed ANSI pieces</param>
+        public PieceDescriptor(byte[] bytes, Encoding singleByteEncoding)
         {
             if (bytes.Length != 8)
                 throw new ByteParseException("Cannot parse the struct PCD, the length of the struct doesn't match");
@@ -41,7 +49,7 @@ namespace b2xtranslator.DocFileFormat
             //find encoding and offset
             if (flag)
             {
-                this.encoding = Encoding.GetEncoding("ISO-8859-1"); // windows-1252 not supported by platform
+                this.encoding = singleByteEncoding ?? Encoding.GetEncoding("ISO-8859-1");
                 this.fc = fcValue / 2;
             }
             else
