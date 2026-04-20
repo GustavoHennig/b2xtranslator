@@ -1,12 +1,12 @@
 using b2xtranslator.DocFileFormat;
 using b2xtranslator.OpenXmlLib.WordprocessingML;
 using b2xtranslator.StructuredStorage.Reader;
-using Microsoft.Office.Interop.Word;
 using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Xml;
 using static b2xtranslator.OpenXmlLib.OpenXmlPackage;
@@ -16,7 +16,9 @@ namespace UnitTests
     [TestFixture]
     public class DocOpenFile
     {
-        Application word2007 = null;
+        private const int WdMainTextStory = 1;
+
+        object word2007 = null;
         List<FileInfo> files;
         object confirmConversions = Type.Missing;
         object readOnly = true;
@@ -55,18 +57,38 @@ namespace UnitTests
                 this.files.Add(new FileInfo(fileNode.Attributes["path"].Value));
             }
 
-            //start the application
-            this.word2007 = new Application();
+            // Start Word via COM only when available on this machine.
+            Type wordApplicationType = Type.GetTypeFromProgID("Word.Application");
+            if (wordApplicationType == null)
+            {
+                Assert.Ignore("Microsoft Word is not installed. Skipping Office interop tests.");
+            }
+
+            try
+            {
+                this.word2007 = Activator.CreateInstance(wordApplicationType);
+            }
+            catch (Exception ex) when (ex is COMException || ex is FileNotFoundException || ex is TypeLoadException)
+            {
+                Assert.Ignore($"Microsoft Word interop is unavailable on this machine: {ex.Message}");
+            }
         }
 
 
         [OneTimeTearDown]
         public void TearDown()
         {
-            this.word2007.Quit(
-                ref this.saveChanges,
-                ref this.originalFormat,
-                ref this.routeDocument);
+            if (this.word2007 == null)
+            {
+                return;
+            }
+
+            InvokeComMethod(
+                this.word2007,
+                "Quit",
+                this.saveChanges,
+                this.originalFormat,
+                this.routeDocument);
         }
 
 
@@ -137,11 +159,12 @@ namespace UnitTests
             {
                 var omDoc = LoadDocument(inputFile.FullName);
                 var dffDoc = new WordDocument(new StructuredStorageReader(inputFile.FullName));
-                omDoc.Fields.ToggleShowCodes();
+                dynamic omFields = omDoc.Fields;
+                omFields.ToggleShowCodes();
 
                 var omText = new StringBuilder();
-                var omMainText = omDoc.StoryRanges[WdStoryType.wdMainTextStory].Text.ToCharArray();
-                foreach (char c in omMainText)
+                string omMainText = omDoc.StoryRanges[WdMainTextStory].Text;
+                foreach (char c in omMainText.ToCharArray())
                     if ((int)c > 0x20)
                         omText.Append(c);
 
@@ -258,33 +281,36 @@ namespace UnitTests
             }
         }
 
-        Document LoadDocument(object filename)
+        dynamic LoadDocument(object filename)
         {
-            return this.word2007.Documents.Open(
-                ref filename,
-                ref this.confirmConversions,
-                ref this.readOnly,
-                ref this.addToRecentFiles,
-                ref this.passwordDocument,
-                ref this.passwordTemplate,
-                ref this.revert,
-                ref this.writePasswordDocument,
-                ref this.writePasswordTemplate,
-                ref this.format,
-                ref this.encoding,
-                ref this.visible,
-                ref this.openConflictDocument,
-                ref this.openAndRepair,
-                ref this.documentDirection,
-                ref this.noEncodingDialog);
+            object documents = GetProperty(this.word2007, "Documents");
+            return InvokeComMethod(
+                documents,
+                "Open",
+                filename,
+                this.confirmConversions,
+                this.readOnly,
+                this.addToRecentFiles,
+                this.passwordDocument,
+                this.passwordTemplate,
+                this.revert,
+                this.writePasswordDocument,
+                this.writePasswordTemplate,
+                this.format,
+                this.encoding,
+                this.visible,
+                this.openConflictDocument,
+                this.openAndRepair,
+                this.documentDirection,
+                this.noEncodingDialog);
         }
 
-        object getDocumentProperty(Document document, string propertyName)
+        object getDocumentProperty(object document, string propertyName)
         {
             object propertyValue = null;
             try
             {
-                object builtInProperties = document.BuiltInDocumentProperties;
+                object builtInProperties = GetProperty(document, "BuiltInDocumentProperties");
                 var builtInPropertiesType = builtInProperties.GetType();
 
                 object property = builtInPropertiesType.InvokeMember("Item", BindingFlags.GetProperty, null, builtInProperties, new object[] { propertyName });
@@ -297,6 +323,17 @@ namespace UnitTests
             }
 
             return propertyValue;
+        }
+
+        static object GetProperty(object target, string propertyName)
+        {
+            return target.GetType().InvokeMember(propertyName, BindingFlags.GetProperty, null, target, Array.Empty<object>());
+        }
+
+        static object InvokeComMethod(object target, string methodName, params object[] arguments)
+        {
+            var invokeArgs = arguments.Length == 0 ? Array.Empty<object>() : arguments;
+            return target.GetType().InvokeMember(methodName, BindingFlags.InvokeMethod, null, target, invokeArgs);
         }
     }
 }

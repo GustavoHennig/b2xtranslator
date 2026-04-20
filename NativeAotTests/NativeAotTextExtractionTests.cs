@@ -132,7 +132,7 @@ public sealed class NativeAotPublishFixture : IDisposable
         string exeName = RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? "doc2text.aot.exe" : "doc2text.aot";
         ExecutablePath = Path.Combine(PublishDirectory, exeName);
 
-        if (File.Exists(ExecutablePath))
+        if (File.Exists(ExecutablePath) && !ShouldRepublishNativeExecutable(solutionRoot, ExecutablePath))
             return;
 
         Directory.CreateDirectory(PublishDirectory);
@@ -160,6 +160,65 @@ public sealed class NativeAotPublishFixture : IDisposable
 
         if (!File.Exists(ExecutablePath))
             throw new FileNotFoundException($"NativeAOT executable not found at {ExecutablePath} after publish.");
+    }
+
+    private static bool ShouldRepublishNativeExecutable(string solutionRoot, string executablePath)
+    {
+        if (!File.Exists(executablePath))
+            return true;
+
+        DateTime executableTimestamp = File.GetLastWriteTimeUtc(executablePath);
+        DateTime latestInputTimestamp = GetLatestInputTimestamp(solutionRoot);
+        return latestInputTimestamp > executableTimestamp;
+    }
+
+    private static DateTime GetLatestInputTimestamp(string solutionRoot)
+    {
+        string[] watchedPaths =
+        {
+            Path.Combine(solutionRoot, "Directory.Build.props"),
+            Path.Combine(solutionRoot, "Shell", "doc2text.aot"),
+            Path.Combine(solutionRoot, "Text"),
+            Path.Combine(solutionRoot, "Doc"),
+            Path.Combine(solutionRoot, "Common"),
+            Path.Combine(solutionRoot, "Common.CompoundFileBinary"),
+            Path.Combine(solutionRoot, "Common.Abstractions")
+        };
+
+        DateTime latest = DateTime.MinValue;
+        foreach (string path in watchedPaths)
+        {
+            if (File.Exists(path))
+            {
+                latest = Max(latest, File.GetLastWriteTimeUtc(path));
+                continue;
+            }
+
+            if (!Directory.Exists(path))
+                continue;
+
+            foreach (string file in Directory.EnumerateFiles(path, "*", SearchOption.AllDirectories))
+            {
+                if (IsBuildArtifact(file))
+                    continue;
+
+                latest = Max(latest, File.GetLastWriteTimeUtc(file));
+            }
+        }
+
+        return latest;
+    }
+
+    private static bool IsBuildArtifact(string filePath)
+    {
+        string separator = Path.DirectorySeparatorChar.ToString();
+        return filePath.Contains($"{separator}bin{separator}", StringComparison.OrdinalIgnoreCase) ||
+               filePath.Contains($"{separator}obj{separator}", StringComparison.OrdinalIgnoreCase);
+    }
+
+    private static DateTime Max(DateTime left, DateTime right)
+    {
+        return left >= right ? left : right;
     }
 
     public void Dispose()
