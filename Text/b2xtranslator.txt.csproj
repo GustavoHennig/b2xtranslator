@@ -2,7 +2,7 @@
 	<PropertyGroup>
 		<TargetFrameworks>net462;net6.0</TargetFrameworks>
 		<LangVersion>latest</LangVersion>
-		<Version>1.0.3</Version>
+		<Version>1.0.4</Version>
 		<PackageId>GHSoftware.WordDocTextExtractor</PackageId>
 		<RepositoryUrl>https://github.com/GustavoHennig/b2xtranslator</RepositoryUrl>
 		<RepositoryType>Git</RepositoryType>
